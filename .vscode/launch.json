@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "localhost",
+            "server": "http://BCExtManager/",
+            "serverInstance": "NAV",
+            "authentication": "UserPassword",
+            "breakOnError": true,
+            "launchBrowser": true
+        }
+    ]
+}

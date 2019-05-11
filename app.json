@@ -1,0 +1,26 @@
+{
+  "id": "b9954c96-ee6b-44ff-9b0d-3d8146fc034a",
+  "name": "Extension Manager",
+  "publisher": "picazin devs. ",
+  "version": "0.1.0.0",
+  "brief": "Manager for developing extensions.",
+  "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "14.0.0.0",
+  "application": "14.0.0.0",
+  "idRanges": [
+    {
+      "from": 83200,
+      "to": 834399
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://BCExtManager.com/help/",
+  "showMyCode": true,
+  "runtime": "3.0"
+}
