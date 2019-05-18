@@ -9,7 +9,8 @@
             "serverInstance": "NAV",
             "authentication": "UserPassword",
             "breakOnError": true,
-            "launchBrowser": true
+            "launchBrowser": true,
+            "schemaUpdateMode": "Synchronize"
         }
     ]
 }

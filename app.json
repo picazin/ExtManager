@@ -1,7 +1,7 @@
 {
   "id": "b9954c96-ee6b-44ff-9b0d-3d8146fc034a",
   "name": "Extension Manager",
-  "publisher": "picazin devs. ",
+  "publisher": "picazin dev",
   "version": "0.1.0.0",
   "brief": "Manager for developing extensions.",
   "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
@@ -9,11 +9,12 @@
   "EULA": "",
   "help": "",
   "url": "",
-  "logo": "",
+  "logo": "./src/logo/extmanager.png",
   "dependencies": [],
   "screenshots": [],
   "platform": "14.0.0.0",
   "application": "14.0.0.0",
+  "features": [ "TranslationFile" ],
   "idRanges": [
     {
       "from": 83200,

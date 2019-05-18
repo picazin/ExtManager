@@ -1,26 +1,27 @@
-table 83201 "Extension Lines"
+table 83205 "Extension Setup"
 {
     DataClassification = OrganizationIdentifiableInformation;
+
     fields
     {
-        field(1; "Extension Code"; Code[20])
+        field(1; "Primary Key"; Code[10])
         {
-            Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
+            Caption = 'Primary Key', Comment = 'ESP=""';
             DataClassification = OrganizationIdentifiableInformation;
         }
-        field(2; "Line No."; Integer)
+        field(2; "Extension Nos."; Code[20])
         {
-            Caption = 'Line No.', Comment = 'ESP="Nº línea"';
+            Caption = 'Extension Nos.', Comment = 'ESP="Nº série extensión"';
             DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = "No. Series";
         }
     }
 
     keys
     {
-        key(PK; "Extension Code", "Line No.")
+        key(PK; "Primary Key")
         {
             Clustered = true;
         }
     }
-
 }

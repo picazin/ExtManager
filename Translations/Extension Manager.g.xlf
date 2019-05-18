@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Extension Manager">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3481898274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal,External,Both</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Interna,Externa,Ambas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 511191822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Starting Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Inicio rango objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Object Starting Range - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3481898274 - Field 3965097055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Ending Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Final rango objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Header - Field Object Ending Range - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 460859576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Extension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº línea"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 1085746399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo objecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Object Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 1085746399 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension</source>
+          <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Object Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 3711240756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID objecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 2837438916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Object Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo objecto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Source Object Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 2837438916 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Table,,,,,,,Page</source>
+          <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,,,,,,Page"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Source Object Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 4264439119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Object ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID objecto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Source Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 1343707150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Source Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 36451968 - Field 3481801877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos relacionados"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Lines - Field Total Fields - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 36451968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Líneas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extension Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2278978186 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">ESP=""</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2278978186 - Field 3826841295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Nos.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Setup - Field Extension Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1651680493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extension List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4104591191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Setup</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Conf. extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Extension Manager Setup - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
