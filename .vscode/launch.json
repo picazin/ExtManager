@@ -5,12 +5,12 @@
             "type": "al",
             "request": "launch",
             "name": "localhost",
-            "server": "http://BCExtManager/",
+            "server": "http://BCExtManager143/",
             "serverInstance": "NAV",
             "authentication": "UserPassword",
             "breakOnError": true,
-            "launchBrowser": true,
-            "schemaUpdateMode": "Synchronize"
+            "launchBrowser": false,
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

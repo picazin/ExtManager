@@ -30,6 +30,9 @@ table 83202 "EXM Extension Lines"
                     else
                         "Source Object Type" := "Source Object Type"::" "
                 end;
+
+                if xRec."Object Type" <> "Object Type" then
+                    Name := GetObjectName("Object Type", "Object ID");
             end;
         }
         field(4; "Object ID"; Integer)
@@ -37,6 +40,13 @@ table 83202 "EXM Extension Lines"
             Caption = 'Object ID', Comment = 'ESP="ID objecto"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
+            NotBlank = true;
+            TableRelation = if ("Object Type" = filter (Codeunit | Page | Query | Report | Table | XMLport)) AllObj."Object ID" where ("Object Type" = field ("Object Type"));
+            trigger OnValidate()
+            begin
+                if xRec."Object ID" <> "Object ID" then
+                    Name := GetObjectName("Object Type", "Object ID");
+            end;
         }
         field(5; Name; Text[30])
         {
@@ -58,12 +68,10 @@ table 83202 "EXM Extension Lines"
             BlankZero = true;
 
             trigger OnValidate()
-            var
-                AllObjWithCaption: Record AllObjWithCaption;
             begin
-                "Source Name" := '';
-                if AllObjWithCaption.Get("Source Object Type", "Source Object ID") then
-                    "Source Name" := AllObjWithCaption."Object Name";
+
+                if xRec."Source Object ID" <> "Source Object ID" then
+                    "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
             end;
         }
         field(8; "Source Name"; Text[30])
@@ -86,5 +94,18 @@ table 83202 "EXM Extension Lines"
         {
             Clustered = true;
         }
+        key(PK2; "Extension Code", "Object Type")
+        {
+
+        }
     }
+    local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[30]
+    var
+        AllObj: Record AllObj;
+    begin
+        if not ("Object Type" in ["Object Type"::TableExt, "Object Type"::PageExt]) then
+            if AllObj.Get(ObjectType, ObjectID) then
+                exit(AllObj."Object Name");
+        exit('')
+    end;
 }

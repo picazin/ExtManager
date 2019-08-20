@@ -24,12 +24,15 @@ page 83201 "EXM Extension Header"
 
                 group(ObjectRange)
                 {
-                    field("Object Ending Range"; "Object Ending Range")
+                    Caption = 'Object Range', Comment = 'ESP="Rango objetos"';
+                    field("Object Starting ID"; "Object Starting ID")
                     {
+                        Caption = 'Starting No.', Comment = 'ESP="Nº inicial"';
                         ApplicationArea = All;
                     }
-                    field("Object Starting Range"; "Object Starting Range")
+                    field("Object Ending ID"; "Object Ending ID")
                     {
+                        Caption = 'Ending No.', Comment = 'ESP="Nº final"';
                         ApplicationArea = All;
                     }
                 }

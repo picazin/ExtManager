@@ -1,8 +1,9 @@
 page 83202 "EXM Extension Lines"
 {
-    Caption = 'Lines', Comment = 'ESP="Líneas"';
+    Caption = ' Objects', Comment = 'ESP="Objetos"';
     PageType = ListPart;
     SourceTable = "EXM Extension Lines";
+    SourceTableView = sorting ("Extension Code", "Object Type");
     DelayedInsert = true;
     AutoSplitKey = true;
 
@@ -23,6 +24,7 @@ page 83202 "EXM Extension Lines"
                 field("Name"; "Name")
                 {
                     ApplicationArea = All;
+                    Editable = (("Object Type" = "Object Type"::TableExt) or ("Object Type" = "Object Type"::PageExt));
                 }
                 field("Source Object Type"; "Source Object Type")
                 {
@@ -32,6 +34,7 @@ page 83202 "EXM Extension Lines"
                 field("Source Object ID"; "Source Object ID")
                 {
                     ApplicationArea = All;
+                    Editable = ("Source Object Type" <> "Source Object Type"::" ");
                 }
                 field("Source Name"; "Source Name")
                 {

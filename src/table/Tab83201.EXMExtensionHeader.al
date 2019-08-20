@@ -22,17 +22,21 @@ table 83201 "EXM Extension Header"
             OptionMembers = Internal,External,Both;
             OptionCaption = 'Internal,External,Both', Comment = 'ESP="Interna,Externa,Ambas"';
         }
-        field(4; "Object Starting Range"; Integer)
+        field(4; "Object Starting ID"; Integer)
         {
-            Caption = 'Object Starting Range', Comment = 'ESP="Inicio rango objetos"';
+            Caption = 'Object Starting ID', Comment = 'ESP="Inicio ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
+            MinValue = 50000;
+            MaxValue = 99000000;
         }
-        field(5; "Object Ending Range"; Integer)
+        field(5; "Object Ending ID"; Integer)
         {
-            Caption = 'Object Ending Range', Comment = 'ESP="Final rango objetos"';
+            Caption = 'Object Ending ID', Comment = 'ESP="Final ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
+            MinValue = 50000;
+            MaxValue = 99000000;
         }
     }
 
