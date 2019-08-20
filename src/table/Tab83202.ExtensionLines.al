@@ -1,4 +1,4 @@
-table 83202 "Extension Lines"
+table 83202 "EXM Extension Lines"
 {
     DataClassification = OrganizationIdentifiableInformation;
     fields

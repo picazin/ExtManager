@@ -1,4 +1,4 @@
-table 83205 "Extension Setup"
+table 83205 "EXM Extension Setup"
 {
     DataClassification = OrganizationIdentifiableInformation;
 

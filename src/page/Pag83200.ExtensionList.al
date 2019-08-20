@@ -1,12 +1,12 @@
-page 83200 "Extension List"
+page 83200 "EXM Extension List"
 {
     Caption = 'Extensions', Comment = 'ESP="Extensiones"';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "Extension Header";
+    SourceTable = "EXM Extension Header";
     Editable = false;
-    CardPageId = "Extension Header";
+    CardPageId = "EXM Extension Header";
     RefreshOnActivate = true;
     DataCaptionFields = Description;
 

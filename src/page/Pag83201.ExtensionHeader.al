@@ -1,7 +1,7 @@
-page 83201 "Extension Header"
+page 83201 "EXM Extension Header"
 {
     PageType = Document;
-    SourceTable = "Extension Header";
+    SourceTable = "EXM Extension Header";
 
     layout
     {
@@ -34,7 +34,7 @@ page 83201 "Extension Header"
                     }
                 }
             }
-            part(ExtLines; "Extension Lines")
+            part(ExtLines; "EXM Extension Lines")
             {
                 ApplicationArea = All;
                 SubPageLink = "Extension Code" = field (Code);

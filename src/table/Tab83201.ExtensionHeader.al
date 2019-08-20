@@ -1,4 +1,4 @@
-table 83201 "Extension Header"
+table 83201 "EXM Extension Header"
 {
     DataClassification = OrganizationIdentifiableInformation;
     Caption = 'Extension', Comment = 'ESP="Extensión"';
@@ -46,7 +46,7 @@ table 83201 "Extension Header"
 
     trigger OnInsert()
     var
-        ExtSetup: Record "Extension Setup";
+        ExtSetup: Record "EXM Extension Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
         if Code = '' then begin

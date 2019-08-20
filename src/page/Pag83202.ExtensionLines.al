@@ -1,8 +1,8 @@
-page 83202 "Extension Lines"
+page 83202 "EXM Extension Lines"
 {
     Caption = 'Lines', Comment = 'ESP="Líneas"';
     PageType = ListPart;
-    SourceTable = "Extension Lines";
+    SourceTable = "EXM Extension Lines";
     DelayedInsert = true;
     AutoSplitKey = true;
 

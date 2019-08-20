@@ -1,10 +1,10 @@
-page 83205 "Extension Manager Setup"
+page 83205 "EXM Extension Manager Setup"
 {
     Caption = 'Extension Setup', Comment = 'ESP="Conf. extensiones"';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Tasks;
-    SourceTable = "Extension Setup";
+    SourceTable = "EXM Extension Setup";
     InsertAllowed = false;
     DeleteAllowed = false;
 
