@@ -113,6 +113,56 @@
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 460859576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Extension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº línea"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Id. tabla"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 869342929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Id. campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 3070320983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre de campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 823559016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field Caption</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Título campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Field Caption - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 2145620180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo datos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Data Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 758032408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lenght</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Longitud"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Lenght - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 1409525680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field Class</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Clase campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Field Class - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 1871922346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Option String</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Texto opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Option String - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2313140234 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2">ESP=""</note>

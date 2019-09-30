@@ -5,7 +5,7 @@
             "type": "al",
             "request": "launch",
             "name": "localhost",
-            "server": "http://BCExtManager143/",
+            "server": "http://BC14/",
             "serverInstance": "NAV",
             "authentication": "UserPassword",
             "breakOnError": true,
