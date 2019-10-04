@@ -101,11 +101,11 @@ table 83202 "EXM Extension Lines"
     }
     local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[30]
     var
-        AllObj: Record AllObj;
+        AllObj: Record AllObjWithCaption;
     begin
-        if not ("Object Type" in ["Object Type"::TableExt, "Object Type"::PageExt]) then
+        if not ("Object Type" in ["Object Type"::Table, "Object Type"::TableExt, "Object Type"::Page, "Object Type"::PageExt]) then
             if AllObj.Get(ObjectType, ObjectID) then
-                exit(AllObj."Object Name");
+                exit(AllObj."Object Caption");
         exit('')
     end;
 }

@@ -42,6 +42,10 @@ page 83201 "EXM Extension Header"
                 ApplicationArea = All;
                 SubPageLink = "Extension Code" = field (Code);
             }
+            part(Detail; "EXM Field List")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }
