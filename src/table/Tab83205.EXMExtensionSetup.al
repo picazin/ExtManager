@@ -15,8 +15,36 @@ table 83205 "EXM Extension Setup"
             DataClassification = OrganizationIdentifiableInformation;
             TableRelation = "No. Series";
         }
+        field(3; "Default Object Starting ID"; Integer)
+        {
+            Caption = 'Default Starting Range', Comment = 'ESP="Rango inicial por defecto"';
+            DataClassification = OrganizationIdentifiableInformation;
+            trigger OnValidate()
+            var
+                EXMExtMgt: Codeunit "EXM Extension Management";
+            begin
+                EXMExtMgt.AllowedObjectsID("Default Object Starting ID");
+            end;
+        }
+        field(4; "Default Object Ending ID"; Integer)
+        {
+            Caption = 'Default Ending Range', Comment = 'ESP="Rango final por defecto"';
+            DataClassification = OrganizationIdentifiableInformation;
+            trigger OnValidate()
+            var
+                EXMExtMgt: Codeunit "EXM Extension Management";
+            begin
+                EXMExtMgt.AllowedObjectsID("Default Object Ending ID");
+            end;
+        }
+        field(5; "Object Names"; Option)
+        {
+            Caption = 'Object Names', Comment = 'ESP="Nombre objetos"';
+            DataClassification = OrganizationIdentifiableInformation;
+            OptionMembers = Caption,Name;
+            OptionCaption = 'Caption,Name', Comment = 'ESP="Traducción,Original"';
+        }
     }
-
     keys
     {
         key(PK; "Primary Key")

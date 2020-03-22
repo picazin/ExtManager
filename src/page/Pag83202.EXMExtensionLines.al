@@ -3,7 +3,7 @@ page 83202 "EXM Extension Lines"
     Caption = ' Objects', Comment = 'ESP="Objetos"';
     PageType = ListPart;
     SourceTable = "EXM Extension Lines";
-    SourceTableView = sorting ("Extension Code", "Object Type");
+    SourceTableView = sorting("Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID");
     DelayedInsert = true;
     AutoSplitKey = true;
 
@@ -44,6 +44,8 @@ page 83202 "EXM Extension Lines"
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
+                    Editable = ("Source Object Type" = "Source Object Type"::Table);
+                    Enabled = ("Source Object Type" = "Source Object Type"::Table);
                 }
             }
         }

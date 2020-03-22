@@ -1,9 +1,11 @@
 page 83203 "EXM Field List"
 {
-    PageType = ListPart;
-    ApplicationArea = All;
-    UsageCategory = Administration;
+    PageType = List;
     SourceTable = "EXM Extension Lines Detail";
+    DelayedInsert = true;
+    Editable = true;
+
+    //TODO Mostrar ID + nom taula
 
     layout
     {
@@ -14,14 +16,20 @@ page 83203 "EXM Field List"
                 field("Extension Code"; "Extension Code")
                 {
                     ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
                 }
-                field("Line No."; "Line No.")
+                field("Source Line No."; "Source Line No.")
                 {
                     ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
                 }
                 field("Table ID"; "Table ID")
                 {
                     ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
                 }
                 field("Field ID"; "Field ID")
                 {
@@ -30,33 +38,22 @@ page 83203 "EXM Field List"
                 field("Field Name"; "Field Name")
                 {
                     ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Field Caption"; "Field Caption")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
                 }
                 field("Data Type"; "Data Type")
                 {
                     ApplicationArea = All;
-                    Editable = false;
                 }
                 field(Lenght; Lenght)
                 {
                     ApplicationArea = All;
-                    Editable = false;
                 }
-
                 field("Field Class"; "Field Class")
                 {
                     ApplicationArea = All;
-                    Editable = false;
                 }
                 field("Option String"; "Option String")
                 {
                     ApplicationArea = All;
-                    Editable = false;
                 }
             }
         }

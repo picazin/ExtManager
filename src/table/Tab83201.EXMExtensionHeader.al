@@ -19,25 +19,63 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'Type', Comment = 'ESP="Tipo"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = Internal,External,Both;
-            OptionCaption = 'Internal,External,Both', Comment = 'ESP="Interna,Externa,Ambas"';
+            OptionMembers = Internal,External;
+            OptionCaption = 'Internal,External', Comment = 'ESP="Interna,Externa"';
         }
         field(4; "Object Starting ID"; Integer)
         {
             Caption = 'Object Starting ID', Comment = 'ESP="Inicio ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
-            MinValue = 50000;
-            MaxValue = 99000000;
+            trigger OnValidate()
+            var
+                EXMExtMgt: Codeunit "EXM Extension Management";
+            begin
+                EXMExtMgt.AllowedObjectsID("Object Starting ID");
+                //TODO VALIDAR RANG NO FET SERVIR INTERNAL + CLIENT
+            end;
         }
         field(5; "Object Ending ID"; Integer)
         {
             Caption = 'Object Ending ID', Comment = 'ESP="Final ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
-            MinValue = 50000;
-            MaxValue = 99000000;
+            trigger OnValidate()
+            var
+                EXMExtMgt: Codeunit "EXM Extension Management";
+            begin
+                EXMExtMgt.AllowedObjectsID("Object Ending ID");
+                //TODO VALIDAR RANG NO FET SERVIR INTERNAL + CLIENT
+            end;
         }
+        field(6; "Customer No."; Code[20])
+        {
+            Caption = 'Customer No.', Comment = 'ESP="Nº Cliente"';
+            DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = Customer;
+            trigger OnValidate()
+            var
+                Cust: Record Customer;
+            begin
+                if xRec."Customer No." <> "Customer No." then
+                    if "Customer No." = '' then
+                        "Customer Name" := ''
+                    else
+                        if Cust.Get("Customer No.") then
+                            "Customer Name" := Cust."Search Name";
+            end;
+        }
+        field(7; "Customer Name"; Text[100])
+        {
+            Caption = 'Name', Comment = 'ESP="Nombre"';
+            DataClassification = OrganizationIdentifiableInformation;
+            Editable = false;
+        }
+
+        //TODO Definir integració amb GIT
+        //TIPUS
+        //URL
+        //OBRIR REPOSITORI
     }
 
     keys
@@ -58,15 +96,25 @@ table 83201 "EXM Extension Header"
             ExtSetup.TestField("Extension Nos.");
             Code := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
         end;
+
+        "Object Starting ID" := ExtSetup."Default Object Starting ID";
+        "Object Ending ID" := ExtSetup."Default Object Ending ID";
     end;
 
     trigger OnDelete()
+    var
+        EXMExtLines: Record "EXM Extension Lines";
+        EXMExtDetail: Record "EXM Extension Lines Detail";
     begin
-        //eliminar linies relacionades  
+        EXMExtLines.SetRange("Extension Code", Code);
+        EXMExtLines.DeleteAll();
+
+        EXMExtDetail.SetRange("Extension Code", Code);
+        EXMExtDetail.DeleteAll();
     end;
 
     trigger OnRename()
     begin
-        //No permetre
+        Error('');
     end;
 }

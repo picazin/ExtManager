@@ -24,8 +24,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Internal,External,Both</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Interna,Externa,Ambas"</note>
+          <source>Internal,External</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Interna,Externa"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 1568877572 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -37,6 +37,26 @@
           <source>Object Ending ID</source>
           <note from="Developer" annotates="general" priority="2">ESP="Final ID objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Object Ending ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Information</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Información extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 1125457875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Target</source>
+          <note from="Developer" annotates="general" priority="2">Destino</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Target - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2608205474 - Control 2606000766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Range</source>
@@ -65,7 +85,7 @@
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 1085746399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Type</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Tipo objecto"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo objeto"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 1085746399 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
@@ -75,7 +95,7 @@
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 3711240756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="ID objecto"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="ID objeto"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Object ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -85,7 +105,7 @@
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 2837438916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Object Type</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Tipo objecto origen"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo objeto origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 2837438916 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
@@ -93,9 +113,14 @@
           <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,,,,,,Page"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object Type - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 70614016 - Field 2837438916 - Method 2126772001 - NamedType 4213946645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source value not allowed.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Valor no permitido"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object Type - Method OnValidate - NamedType NotAllowedValueErr</note>
+        </trans-unit>
         <trans-unit id="Table 70614016 - Field 4264439119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Object ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="ID objecto origen"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="ID objeto origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 1343707150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -113,15 +138,20 @@
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1943280871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1943280871 - Field 460859576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Extension Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1943280871 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nº línea"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Line No. - Property Caption</note>
+        <trans-unit id="Table 1943280871 - Field 312545736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Line No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº línea origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Source Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1943280871 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table ID</source>
@@ -172,6 +202,41 @@
           <source>Extension Nos.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Extension Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3376224445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Starting Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Rango inicial por defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Starting ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3719745416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Ending Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Rango final por defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Ending ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Names</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Caption,Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Traducción,Original"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acording to Microsoft guides, current ID not allowed.Check guide:</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID no permitido según guias de Microsoft. Más información:"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method AllowedObjectsID - NamedType ObjectNotAllowedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 3531209083" size-unit="char" translate="yes" xml:space="preserve">
+          <source>https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-object-ranges</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method AllowedObjectsID - NamedType URLLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 1886970247 - NamedType 3929586841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID must be on definid object range %1 - %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID debe estar dentro del rango definido %1 - %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
         </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extensions</source>

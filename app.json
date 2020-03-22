@@ -5,9 +5,9 @@
   "version": "0.1.0.0",
   "brief": "Manager for developing extensions.",
   "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
+  "privacyStatement": "https://BCExtManager.com/privacy/",
+  "EULA": "https://BCExtManager.com/EULA/",
+  "help": "https://BCExtManager.com/help/",
   "url": "http://www.picazin.dev",
   "logo": "./src/logo/extmanager.png",
   "dependencies": [
@@ -21,7 +21,7 @@
       "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
       "publisher": "Microsoft",
       "name": "Base Application",
-      "version": "15.0.0.0"
+      "version": "15.4.41023.41345"
     }
   ],
   "screenshots": [],

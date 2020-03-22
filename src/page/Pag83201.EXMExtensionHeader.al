@@ -2,6 +2,7 @@ page 83201 "EXM Extension Header"
 {
     PageType = Document;
     SourceTable = "EXM Extension Header";
+    Caption = 'Extension Information', Comment = 'ESP="Información extensión"';
 
     layout
     {
@@ -17,9 +18,22 @@ page 83201 "EXM Extension Header"
                 {
                     ApplicationArea = All;
                 }
-                field("Type"; "Type")
+                group(Target)
                 {
-                    ApplicationArea = All;
+                    Caption = 'Target', Comment = 'Destino';
+                    field("Type"; "Type")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("Customer No."; "Customer No.")
+                    {
+                        ApplicationArea = All;
+                        Editable = (Type = Type::External);
+                    }
+                    field("Customer Name"; "Customer Name")
+                    {
+                        ApplicationArea = All;
+                    }
                 }
 
                 group(ObjectRange)
@@ -40,12 +54,9 @@ page 83201 "EXM Extension Header"
             part(ExtLines; "EXM Extension Lines")
             {
                 ApplicationArea = All;
-                SubPageLink = "Extension Code" = field (Code);
-            }
-            part(Detail; "EXM Field List")
-            {
-                ApplicationArea = All;
+                SubPageLink = "Extension Code" = field(Code);
             }
         }
     }
+    //TODO Add customer ledger entry
 }

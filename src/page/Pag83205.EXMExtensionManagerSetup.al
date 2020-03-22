@@ -18,6 +18,18 @@ page 83205 "EXM Extension Manager Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("Default Object Starting ID"; "Default Object Starting ID")
+                {
+                    ApplicationArea = All;
+                }
+                field("Default Object Ending ID"; "Default Object Ending ID")
+                {
+                    ApplicationArea = All;
+                }
+                field("Object Names"; "Object Names")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
