@@ -41,14 +41,14 @@ table 83202 "EXM Extension Lines"
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
             NotBlank = true;
-            TableRelation = if ("Object Type" = filter (Codeunit | Page | Query | Report | Table | XMLport)) AllObj."Object ID" where ("Object Type" = field ("Object Type"));
+            TableRelation = if ("Object Type" = filter(Codeunit | Page | Query | Report | Table | XMLport)) AllObj."Object ID" where("Object Type" = field("Object Type"));
             trigger OnValidate()
             begin
                 if xRec."Object ID" <> "Object ID" then
                     Name := GetObjectName("Object Type", "Object ID");
             end;
         }
-        field(5; Name; Text[30])
+        field(5; Name; Text[250])
         {
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -64,7 +64,7 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Source Object ID', Comment = 'ESP="ID objecto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            TableRelation = AllObjWithCaption."Object ID" where ("Object Type" = field ("Source Object Type"));
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = field("Source Object Type"));
             BlankZero = true;
 
             trigger OnValidate()
@@ -74,7 +74,7 @@ table 83202 "EXM Extension Lines"
                     "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
             end;
         }
-        field(8; "Source Name"; Text[30])
+        field(8; "Source Name"; Text[250])
         {
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -99,7 +99,7 @@ table 83202 "EXM Extension Lines"
 
         }
     }
-    local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[30]
+    local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[249]
     var
         AllObj: Record AllObjWithCaption;
     begin

@@ -5,12 +5,14 @@
             "type": "al",
             "request": "launch",
             "name": "localhost",
-            "server": "http://BCExtManager/",
-            "serverInstance": "NAV",
+            "server": "http://BC15/",
+            "serverInstance": "BC",
             "authentication": "UserPassword",
             "breakOnError": true,
             "launchBrowser": false,
-            "schemaUpdateMode": "Synchronize"
+            "schemaUpdateMode": "Synchronize",
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
         }
     ]
 }
