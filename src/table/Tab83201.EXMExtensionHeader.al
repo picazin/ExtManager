@@ -69,11 +69,12 @@ table 83201 "EXM Extension Header"
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
         }
-
-        //TODO Definir integració amb GIT
-        //TIPUS
-        //URL
-        //OBRIR REPOSITORI
+        field(8; "GIT Repository URL"; Text[2048])
+        {
+            Caption = 'GIT Repository URL', Comment = 'ESP="URL repositorio GIT"';
+            DataClassification = OrganizationIdentifiableInformation;
+            ExtendedDatatype = URL;
+        }
     }
 
     keys

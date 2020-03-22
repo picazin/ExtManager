@@ -57,6 +57,14 @@ page 83201 "EXM Extension Header"
                 ApplicationArea = All;
                 SubPageLink = "Extension Code" = field(Code);
             }
+            group(GIT)
+            {
+                field("GIT Repository URL"; "GIT Repository URL")
+                {
+                    ApplicationArea = All;
+                    ExtendedDatatype = URL;
+                }
+            }
         }
     }
     //TODO Add customer ledger entry
