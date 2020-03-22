@@ -1,8 +1,8 @@
 page 83201 "EXM Extension Header"
 {
+    Caption = 'Extension Card', Comment = 'ESP="Ficha extensión"';
     PageType = Document;
     SourceTable = "EXM Extension Header";
-    Caption = 'Extension Information', Comment = 'ESP="Información extensión"';
 
     layout
     {
@@ -10,6 +10,7 @@ page 83201 "EXM Extension Header"
         {
             group(Header)
             {
+                Caption = 'Information', Comment = 'ESP="Información"';
                 field("Code"; "Code")
                 {
                     ApplicationArea = All;

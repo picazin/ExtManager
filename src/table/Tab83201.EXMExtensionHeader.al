@@ -32,7 +32,6 @@ table 83201 "EXM Extension Header"
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
                 EXMExtMgt.AllowedObjectsID("Object Starting ID");
-                //TODO VALIDAR RANG NO FET SERVIR INTERNAL + CLIENT
             end;
         }
         field(5; "Object Ending ID"; Integer)
@@ -45,7 +44,6 @@ table 83201 "EXM Extension Header"
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
                 EXMExtMgt.AllowedObjectsID("Object Ending ID");
-                //TODO VALIDAR RANG NO FET SERVIR INTERNAL + CLIENT
             end;
         }
         field(6; "Customer No."; Code[20])

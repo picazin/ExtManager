@@ -24,7 +24,6 @@ page 83202 "EXM Extension Lines"
                 field("Name"; "Name")
                 {
                     ApplicationArea = All;
-                    Editable = (("Object Type" = "Object Type"::TableExt) or ("Object Type" = "Object Type"::PageExt));
                 }
                 field("Source Object Type"; "Source Object Type")
                 {
@@ -50,7 +49,6 @@ page 83202 "EXM Extension Lines"
                         if not ("Object Type" in ["Object Type"::Table, "Object Type"::TableExt]) then
                             exit(false);
                     end;
-
                 }
                 field(Obsolete; Obsolete)
                 {

@@ -28,6 +28,22 @@ page 83200 "EXM Extension List"
                 {
                     ApplicationArea = All;
                 }
+                field("Customer No."; "Customer No.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Customer Name"; "Customer Name")
+                {
+                    ApplicationArea = All;
+                }
+                field("Object Starting ID"; "Object Starting ID")
+                {
+                    ApplicationArea = All;
+                }
+                field("Object Ending ID"; "Object Ending ID")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }

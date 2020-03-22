@@ -44,13 +44,6 @@ table 83202 "EXM Extension Lines"
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
             NotBlank = true;
-            trigger OnValidate()
-            var
-                EXMExtMgt: Codeunit "EXM Extension Management";
-            begin
-                //TODO Validate not used (INTERNAL / External)
-                EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Object ID");
-            end;
         }
         field(5; Name; Text[250])
         {
@@ -136,9 +129,17 @@ table 83202 "EXM Extension Lines"
     }
 
     trigger OnInsert()
+    var
+        EXMExtMgt: Codeunit "EXM Extension Management";
     begin
         "Created by" := CopyStr(UserId(), 1, MaxStrLen("Created by"));
         "Creation Date" := CurrentDateTime();
+
+        TestField(Name);
+        if "Object Type" in ["Object Type"::TableExt, "Object Type"::PageExt] then
+            TestField("Source Object ID");
+
+        EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Object ID");
     end;
 
     trigger OnDelete()
@@ -152,13 +153,16 @@ table 83202 "EXM Extension Lines"
 
     local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]): Integer
     var
+        EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMExtLine: Record "EXM Extension Lines";
         EXMExtMgt: Codeunit "EXM Extension Management";
     begin
-        //TODO Posar valor inicial o seguent segons extensió disponible (check)
-        //TODO Diferenciar per INTERNAL / EXTERNAL
         //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
+        EXMSetup.Get();
+        If EXMSetup."Disable Auto. Objects ID" then
+            exit;
+
         if CustNo <> '' then
             EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else

@@ -45,6 +45,32 @@ table 83205 "EXM Extension Setup"
             OptionMembers = Caption,Name;
             OptionCaption = 'Caption,Name', Comment = 'ESP="Traducción,Original"';
         }
+        field(6; "Disable Auto. Objects ID"; Boolean)
+        {
+            Caption = 'Disable Auto Objects ID', Comment = 'ESP="Deshabilitar asignación ID objetos"';
+            DataClassification = OrganizationIdentifiableInformation;
+            trigger OnValidate()
+            var
+                DisableQst: Label 'Enable this option will disable all objects ID validations and may cause extensions errors. Continue?', Comment = 'ESP="Habilitar esta opción implica que no se validaran los ID de los objetos y puede llevar a errores. Continuar?"';
+            begin
+                if "Disable Auto. Objects ID" then
+                    if not Confirm(DisableQst, false) then
+                        Error('');
+            end;
+        }
+        field(7; "Disable Auto. Field ID"; Boolean)
+        {
+            Caption = 'Disable Auto Field ID', Comment = 'ESP="Deshabilitar asignación ID campos"';
+            DataClassification = OrganizationIdentifiableInformation;
+            trigger OnValidate()
+            var
+                DisableQst: Label 'Enable this option will disable all fields ID validations and may cause extensions errors. Continue?', Comment = 'ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"';
+            begin
+                if "Disable Auto. Field ID" then
+                    if not Confirm(DisableQst, false) then
+                        Error('');
+            end;
+        }
     }
     keys
     {
