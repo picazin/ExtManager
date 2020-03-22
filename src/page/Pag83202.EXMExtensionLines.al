@@ -44,8 +44,25 @@ page 83202 "EXM Extension Lines"
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
-                    Editable = ("Source Object Type" = "Source Object Type"::Table);
-                    Enabled = ("Source Object Type" = "Source Object Type"::Table);
+                    Enabled = (("Object Type" = "Object Type"::Table) or ("Object Type" = "Object Type"::TableExt));
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        if not ("Object Type" in ["Object Type"::Table, "Object Type"::TableExt]) then
+                            exit(false);
+                    end;
+
+                }
+                field(Obsolete; Obsolete)
+                {
+                    ApplicationArea = All;
+                }
+                field("Created by"; "Created by")
+                {
+                    ApplicationArea = All;
+                }
+                field("Creation Date"; "Creation Date")
+                {
+                    ApplicationArea = All;
                 }
             }
         }

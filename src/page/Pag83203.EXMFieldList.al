@@ -54,6 +54,19 @@ page 83203 "EXM Field List"
                 field("Option String"; "Option String")
                 {
                     ApplicationArea = All;
+                    Editable = ("Data Type" = "Data Type"::Option);
+                }
+                field(Obsolete; Obsolete)
+                {
+                    ApplicationArea = All;
+                }
+                field("Created by"; "Created by")
+                {
+                    ApplicationArea = All;
+                }
+                field("Creation Date"; "Creation Date")
+                {
+                    ApplicationArea = All;
                 }
             }
         }

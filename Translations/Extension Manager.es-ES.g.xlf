@@ -81,6 +81,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Ending ID - Property Caption</note>
           <target>Nº final</target>
         </trans-unit>
+        <trans-unit id="Table 70614016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Objects</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Objetos extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Property Caption</note>
+          <target>Objetos extensión</target>
+        </trans-unit>
         <trans-unit id="Table 70614016 - Field 460859576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
@@ -153,11 +159,23 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Total Fields - Property Caption</note>
           <target>Campos relacionados</target>
         </trans-unit>
-        <trans-unit id="Table 70614016 - Method 967113360 - NamedType 3929586841" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ID must be on definid object range %1 - %2</source>
-          <note from="Developer" annotates="general" priority="2">ESP="ID debe estar dentro del rango definido %1 - %2"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Method ValidateRangeID - NamedType IDRangeErr</note>
-          <target>ID debe estar dentro del rango definido %1 - %2</target>
+        <trans-unit id="Table 70614016 - Field 139345763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Obsolete</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Obsolete - Property Caption</note>
+          <target>Obsoleto</target>
+        </trans-unit>
+        <trans-unit id="Table 70614016 - Field 98207365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Created by - Property Caption</note>
+          <target>Creado por</target>
+        </trans-unit>
+        <trans-unit id="Table 70614016 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Creation Date - Property Caption</note>
+          <target>Fecha creación</target>
         </trans-unit>
         <trans-unit id="Page 70614016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> Objects</source>
@@ -231,6 +249,30 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Option String - Property Caption</note>
           <target>Texto opciones</target>
         </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 139345763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Obsolete</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Obsolete - Property Caption</note>
+          <target>Obsoleto</target>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 98207365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Created by - Property Caption</note>
+          <target>Creado por</target>
+        </trans-unit>
+        <trans-unit id="Table 1943280871 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines Detail - Field Creation Date - Property Caption</note>
+          <target>Fecha creación</target>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Setup</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuración extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Property Caption</note>
+          <target>Configuración extensión</target>
+        </trans-unit>
         <trans-unit id="Table 2313140234 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2">ESP=""</note>
@@ -262,10 +304,10 @@
           <target>Nombre objetos</target>
         </trans-unit>
         <trans-unit id="Table 2313140234 - Field 1694956315 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Name,Caption</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Name,Caption"</note>
+          <source>Caption,Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Traducción,Original"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property OptionCaption</note>
-          <target>Name,Caption</target>
+          <target>Traducción,Original</target>
         </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Acording to Microsoft guides, current ID not allowed.Check guide:</source>
@@ -277,6 +319,12 @@
           <source>https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-object-ranges</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method AllowedObjectsID - NamedType URLLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 1886970247 - NamedType 3929586841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID must be on definid object range %1 - %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID debe estar dentro del rango definido %1 - %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
+          <target>ID debe estar dentro del rango definido %1 - %2</target>
         </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extensions</source>

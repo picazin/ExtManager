@@ -1,5 +1,6 @@
 table 83202 "EXM Extension Lines"
 {
+    Caption = 'Extension Objects', Comment = 'ESP="Objetos extensión"';
     DataClassification = OrganizationIdentifiableInformation;
     fields
     {
@@ -100,7 +101,25 @@ table 83202 "EXM Extension Lines"
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
             BlankZero = true;
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines Detail" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table ID" = field("Source Object ID")));
+            CalcFormula = count ("EXM Extension Lines Detail" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
+            Editable = false;
+        }
+        field(11; Obsolete; Boolean)
+        {
+            Caption = 'Obsolete', Comment = 'ESP="Obsoleto"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
+        field(12; "Created by"; Code[50])
+        {
+            Caption = 'Created by', Comment = 'ESP="Creado por"';
+            DataClassification = OrganizationIdentifiableInformation;
+            Editable = false;
+        }
+        field(13; "Creation Date"; DateTime)
+        {
+            Caption = 'Creation Date', Comment = 'ESP="Fecha creación"';
+            DataClassification = OrganizationIdentifiableInformation;
+            Editable = false;
         }
     }
 
@@ -115,6 +134,12 @@ table 83202 "EXM Extension Lines"
         key(K3; "Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID")
         { }
     }
+
+    trigger OnInsert()
+    begin
+        "Created by" := CopyStr(UserId(), 1, MaxStrLen("Created by"));
+        "Creation Date" := CurrentDateTime();
+    end;
 
     trigger OnDelete()
     var
