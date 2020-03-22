@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":83205,"Kind":12,"Name":"EXM Extension Manager Setup","PackagePath":"/src/src/page/Pag83205.EXMExtensionManagerSetup.al"},{"Id":83201,"Kind":12,"Name":"EXM Extension Header","PackagePath":"/src/src/page/Pag83201.EXMExtensionHeader.al"}],"Removed":[{"Id":0,"Kind":12,"Name":"MyPage9999","PackagePath":"/src/.vscode/temp-al-proxy.al"},{"Id":99999999,"Kind":11,"Name":"Temp","PackagePath":"/src/.alcache/Opening_1584902130735.al"}]}

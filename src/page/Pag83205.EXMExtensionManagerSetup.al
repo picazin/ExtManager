@@ -48,6 +48,30 @@ page 83205 "EXM Extension Manager Setup"
 
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action(Donate)
+            {
+                Caption = 'Donate', Comment = 'ESP="Donar"';
+                ApplicationArea = All;
+                Image = Payment;
+                Promoted = true;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    DonateQst: Label 'If you are enjoying this extension and want to thank me for my work, please donate.', Comment = 'ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"';
+                begin
+                    if Confirm(DonateQst, true) then
+                        Hyperlink('https://paypal.me/picazin');
+                end;
+            }
+        }
+    }
+
+
     trigger OnOpenPage()
     begin
         Reset();

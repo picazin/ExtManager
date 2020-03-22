@@ -358,6 +358,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="Opciones avanzadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Advanced - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3805068503 - Action 3523525559 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Donate</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Donar"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Action 3523525559 - Method 1377591017 - NamedType 4000782645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Method OnAction - NamedType DonateQst</note>
+        </trans-unit>
       </group>
     </body>
   </file>
