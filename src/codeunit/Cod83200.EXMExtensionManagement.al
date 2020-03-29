@@ -36,4 +36,39 @@ codeunit 83200 "EXM Extension Management"
                     ExtFilter += '|' + EXMExtHeader.Code;
             until EXMExtHeader.Next() = 0;
     end;
+
+
+    procedure GetTableFieldData(TableNo: Integer)
+    var
+        FieldData: Record Field;
+        TempEXMExtFields: Record "EXM Extension Table Fields" temporary;
+        intType: Integer;
+    begin
+        with TempEXMExtFields do begin
+            FieldData.SetRange(TableNo, TableNo);
+            if FieldData.FindSet() then
+                repeat
+                    Init();
+                    "Extension Code" := Format(SessionId());
+                    "Source Line No." := FieldData."No.";
+                    "Table Source Type" := "Table Source Type"::Table;
+                    "Table ID" := TableNo;
+                    "Field ID" := FieldData."No.";
+                    "Field Name" := FieldData.FieldName;
+                    "Field Caption" := FieldData."Field Caption";
+                    intType := FieldData.Type;
+                    "Data Type" := intType;
+                    Lenght := FieldData.Len;
+                    "Field Class" := FieldData.Class;
+                    "Option String" := FieldData.OptionString;
+                    Obsolete := (FieldData.ObsoleteState <> FieldData.ObsoleteState::No);
+                    Insert();
+                until FieldData.Next() = 0;
+
+            if not TempEXMExtFields.IsEmpty() then begin
+                TempEXMExtFields.FindFirst();
+                Page.Run(Page::"EXM Table Field Detail", TempEXMExtFields);
+            end;
+        end;
+    end;
 }

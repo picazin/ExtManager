@@ -69,7 +69,46 @@ table 83201 "EXM Extension Header"
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
         }
-        field(8; "GIT Repository URL"; Text[2048])
+
+        field(20; Price; Decimal)
+        {
+            Caption = 'Price', Comment = 'ESP="Precio"';
+            DataClassification = OrganizationIdentifiableInformation;
+            DecimalPlaces = 0 : 2;
+            MinValue = 0;
+        }
+        //TODO crear taula amb ventes / factures per poder treure dades --> nova taula
+        field(21; Installations; Integer)
+        {
+            Caption = 'Installations', Comment = 'ESP="Instalaciones"';
+            DataClassification = OrganizationIdentifiableInformation;
+            //FieldClass = FlowField;
+            //CalcFormula = 
+            Editable = false;
+        }
+        field(22; "Sell-Type"; Option)
+        {
+            Caption = 'Installations', Comment = 'ESP="Instalaciones"';
+            OptionMembers = " ",Account,Item;
+            OptionCaption = ' ,Account,Item', Comment = 'ESP=" ,Cuenta,Producto"';
+            DataClassification = OrganizationIdentifiableInformation;
+            trigger OnValidate()
+            begin
+                if "Sell-Type" = "Sell-Type"::" " then
+                    "No." := '';
+            end;
+        }
+        field(23; "No."; Code[20])
+        {
+            Caption = 'No.', Comment = 'ESP="Nº"';
+            DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = if ("Sell-Type" = filter(Account)) "G/L Account" else
+            if ("Sell-Type" = filter(Item)) Item;
+        }
+
+
+
+        field(50; "GIT Repository URL"; Text[2048])
         {
             Caption = 'GIT Repository URL', Comment = 'ESP="URL repositorio GIT"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -103,13 +142,13 @@ table 83201 "EXM Extension Header"
     trigger OnDelete()
     var
         EXMExtLines: Record "EXM Extension Lines";
-        EXMExtDetail: Record "EXM Extension Lines Detail";
+        EXMExtFields: Record "EXM Extension Table Fields";
     begin
         EXMExtLines.SetRange("Extension Code", Code);
         EXMExtLines.DeleteAll();
 
-        EXMExtDetail.SetRange("Extension Code", Code);
-        EXMExtDetail.DeleteAll();
+        EXMExtFields.SetRange("Extension Code", Code);
+        EXMExtFields.DeleteAll();
     end;
 
     trigger OnRename()

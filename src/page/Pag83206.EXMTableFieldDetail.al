@@ -1,37 +1,29 @@
-page 83204 "EXM TableExt Field List"
+page 83206 "EXM Table Field Detail"
 {
-    Caption = 'TableExt Fields', Comment = 'ESP="Campos TableExt"';
-    PageType = ListPart;
+    Caption = 'Table Fields', Comment = 'ESP="Campos Tabla"';
+    PageType = List;
     SourceTable = "EXM Extension Table Fields";
     InsertAllowed = false;
     ModifyAllowed = false;
     DeleteAllowed = false;
     ShowFilter = false;
+    Editable = false;
+
     layout
     {
         area(Content)
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
-                {
-                    ApplicationArea = All;
-                }
-                field("Source Table ID"; "Source Table ID")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Table ID"; "Table ID")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
                 field("Field ID"; "Field ID")
                 {
                     ApplicationArea = All;
                 }
                 field("Field Name"; "Field Name")
+                {
+                    ApplicationArea = All;
+                }
+                field("Field Caption"; "Field Caption")
                 {
                     ApplicationArea = All;
                 }
@@ -52,14 +44,6 @@ page 83204 "EXM TableExt Field List"
                     ApplicationArea = All;
                 }
                 field(Obsolete; Obsolete)
-                {
-                    ApplicationArea = All;
-                }
-                field("Created by"; "Created by")
-                {
-                    ApplicationArea = All;
-                }
-                field("Creation Date"; "Creation Date")
                 {
                     ApplicationArea = All;
                 }

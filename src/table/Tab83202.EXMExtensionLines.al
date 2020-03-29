@@ -94,7 +94,7 @@ table 83202 "EXM Extension Lines"
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
             BlankZero = true;
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines Detail" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
+            CalcFormula = count ("EXM Extension Table Fields" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
             Editable = false;
         }
         field(11; Obsolete; Boolean)
@@ -144,11 +144,11 @@ table 83202 "EXM Extension Lines"
 
     trigger OnDelete()
     var
-        EXMExtDetail: Record "EXM Extension Lines Detail";
+        EXMExtFields: Record "EXM Extension Table Fields";
     begin
-        EXMExtDetail.SetRange("Extension Code", "Extension Code");
-        EXMExtDetail.SetRange("Source Line No.", "Line No.");
-        EXMExtDetail.DeleteAll();
+        EXMExtFields.SetRange("Extension Code", "Extension Code");
+        EXMExtFields.SetRange("Source Line No.", "Line No.");
+        EXMExtFields.DeleteAll();
     end;
 
     local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]): Integer

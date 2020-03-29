@@ -1,4 +1,4 @@
-table 83203 "EXM Extension Lines Detail"
+table 83203 "EXM Extension Table Fields"
 {
     Caption = 'Extension Fields', Comment = 'ESP="Campos extensión"';
     LookupPageId = "EXM Field List";
@@ -118,6 +118,8 @@ table 83203 "EXM Extension Lines Detail"
         }
         key(K2; "Source Table ID", "Table ID", "Field ID")
         { }
+        key(K3; "Source Table ID", "Field ID")
+        { }
     }
 
     trigger OnInsert()
@@ -128,29 +130,33 @@ table 83203 "EXM Extension Lines Detail"
         ValidateData();
     end;
 
+    //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
     local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]): Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
-        EXMExtLineDetail: Record "EXM Extension Lines Detail";
+        EXMExtFields: Record "EXM Extension Table Fields";
         EXMExtMgt: Codeunit "EXM Extension Management";
     begin
-        //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
             exit;
 
-        EXMExtLineDetail.SetCurrentKey("Source Table ID", "Table ID", "Field ID");
-        if CustNo <> '' then
-            EXMExtLineDetail.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
-        else
-            EXMExtLineDetail.SetRange("Extension Code", "Extension Code");
-
-        EXMExtLineDetail.SetRange("Source Table ID", SourceTableID);
         if SourceTableID = 0 then
-            EXMExtLineDetail.SetRange("Table ID", TableID);
-        if EXMExtLineDetail.FindLast() then
-            exit(EXMExtLineDetail."Field ID" + 1)
+            EXMExtFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
+        else
+            EXMExtFields.SetCurrentKey("Source Table ID", "Field ID");
+
+        if CustNo <> '' then
+            EXMExtFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
+        else
+            EXMExtFields.SetRange("Extension Code", "Extension Code");
+
+        EXMExtFields.SetRange("Source Table ID", SourceTableID);
+        if SourceTableID = 0 then
+            EXMExtFields.SetRange("Table ID", TableID);
+        if EXMExtFields.FindLast() then
+            exit(EXMExtFields."Field ID" + 1)
         else
             if "Table Source Type" = "Table Source Type"::Table then
                 exit(1)
@@ -189,30 +195,5 @@ table 83203 "EXM Extension Lines Detail"
 
         if "Table Source Type" = "Table Source Type"::TableExt then
             EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Field ID");
-    end;
-
-    //TODO Funció per mostrar tots els camps de la taula - Funció a petició dades en ExtLines si tipus taula
-    //GetFieldData("Table ID", "Field ID");
-    local procedure GetFieldData(TableNo: Integer; FieldId: Integer)
-    var
-        FieldData: Record Field;
-        intType: Integer;
-    begin
-        if not FieldData.Get(TableNo, FieldId) then begin
-            "Field Name" := '';
-            "Field Caption" := '';
-            "Data Type" := 0;
-            Lenght := FieldData.Len;
-            "Field Class" := 0;
-            "Option String" := '';
-        end else begin
-            "Field Name" := FieldData.FieldName;
-            "Field Caption" := FieldData."Field Caption";
-            intType := FieldData.Type;
-            "Data Type" := intType;
-            Lenght := FieldData.Len;
-            "Field Class" := FieldData.Class;
-            "Option String" := FieldData.OptionString
-        end;
     end;
 }

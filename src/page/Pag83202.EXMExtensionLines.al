@@ -44,11 +44,6 @@ page 83202 "EXM Extension Lines"
                 {
                     ApplicationArea = All;
                     Enabled = (("Object Type" = "Object Type"::Table) or ("Object Type" = "Object Type"::TableExt));
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        if not ("Object Type" in ["Object Type"::Table, "Object Type"::TableExt]) then
-                            exit(false);
-                    end;
                 }
                 field(Obsolete; Obsolete)
                 {

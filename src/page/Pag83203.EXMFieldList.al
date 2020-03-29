@@ -2,7 +2,7 @@ page 83203 "EXM Field List"
 {
     //Caption = 'Extension Card', Comment = 'ESP="Ficha extensión"';
     PageType = List;
-    SourceTable = "EXM Extension Lines Detail";
+    SourceTable = "EXM Extension Table Fields";
     DelayedInsert = true;
     Editable = true;
 
@@ -112,6 +112,24 @@ page 83203 "EXM Field List"
                         ViewTableExtDetail := false
                     else
                         ViewTableExtDetail := true;
+                end;
+            }
+            action(ViewSourceTable)
+            {
+                Caption = 'View source table', Comment = 'ESP="Ver tabla origen"';
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                Image = Table;
+                Enabled = ("Table Source Type" = "Table Source Type"::TableExt);
+
+                trigger OnAction()
+                var
+                    EXMExtMgt: Codeunit "EXM Extension Management";
+                begin
+                    EXMExtMgt.GetTableFieldData("Source Table ID");
                 end;
             }
         }
