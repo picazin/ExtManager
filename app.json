@@ -12,20 +12,20 @@
   "logo": "./src/logo/extmanager.png",
   "dependencies": [
     {
-      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
       "publisher": "Microsoft",
       "name": "System Application",
-      "version": "1.0.0.0"
+      "version": "16.0.0.0"
     },
     {
-      "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
       "publisher": "Microsoft",
       "name": "Base Application",
-      "version": "15.4.41023.41345"
+      "version": "16.0.0.0"
     }
   ],
   "screenshots": [],
-  "platform": "15.0.0.0",
+  "platform": "16.0.0.0",
   "features": [ "TranslationFile" ],
   "idRanges": [
     {
@@ -35,5 +35,5 @@
   ],
   "contextSensitiveHelpUrl": "https://BCExtManager.com/help/",
   "showMyCode": true,
-  "runtime": "4.0"
+  "runtime": "5.0"
 }

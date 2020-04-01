@@ -1,0 +1,11 @@
+{
+    "name": "picazin",
+    "description": "Picazin rules",
+    "rules": [
+        {
+            "id": "AA0218",
+            "action": "Hidden",
+            "justification": "No efficient - You must write a tooltip in the Tooltip property for all controls of type Action and Field that exist on page objects. See the style guide for more information."
+        }
+    ]
+}
