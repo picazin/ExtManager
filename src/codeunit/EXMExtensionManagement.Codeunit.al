@@ -5,11 +5,14 @@ codeunit 83200 "EXM Extension Management"
     var
         ObjectNotAllowedErr: Label 'Acording to Microsoft guides, current ID not allowed.Check guide:', Comment = 'ESP="ID no permitido según guias de Microsoft. Más información:"';
         URLLbl: Label 'https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-object-ranges';
+        ErrTxt: Text;
     begin
         if not ((ObjectID >= 50000) and (ObjectID <= 999990)) then     //Customization range
             if not (ObjectID >= 1000000) and (ObjectID <= 69999999) then   //ISV solution range
-                if not (ObjectID >= 70000000) and (ObjectID <= 74999999) then   //Partner cloud solution
-                    Error(ObjectNotAllowedErr + '\' + URLLbl);
+                if not (ObjectID >= 70000000) and (ObjectID <= 74999999) then begin     //Partner cloud solution
+                    ErrTxt := ObjectNotAllowedErr + '\' + URLLbl;
+                    Error(ErrTxt);
+                end;
     end;
 
     procedure ValidateExtensionRangeID(ExtCode: code[20]; ObjectID: Integer);
@@ -36,7 +39,6 @@ codeunit 83200 "EXM Extension Management"
                     ExtFilter += '|' + EXMExtHeader.Code;
             until EXMExtHeader.Next() = 0;
     end;
-
 
     procedure GetTableFieldData(TableNo: Integer)
     var
