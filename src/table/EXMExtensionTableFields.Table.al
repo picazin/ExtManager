@@ -21,8 +21,8 @@ table 83203 "EXM Extension Table Fields"
         {
             Caption = 'Source Object Type', Comment = 'ESP="Tipo objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = " ",Table,,,,,,,,,,,,,,TableExt;
-            OptionCaption = ' ,Table,,,,,,,,,,,,,,TableExt', Comment = 'ESP=" ,Table,,,,,,,,,,,,,,TableExt"';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+            OptionCaption = ',Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, "';
         }
         field(4; "Source Table ID"; Integer)
         {
@@ -109,6 +109,12 @@ table 83203 "EXM Extension Table Fields"
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
         }
+        field(20; "IsPK"; Boolean)
+        {
+            Caption = 'Is Part Of Primary Key', Comment = 'ESP="Forma parte clave primária"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
+
     }
     keys
     {
@@ -177,7 +183,7 @@ table 83203 "EXM Extension Table Fields"
                     TestField("Source Table ID", 0);
                     TestField("Table ID");
                 end;
-            "Table Source Type"::TableExt:
+            "Table Source Type"::"TableExtension":
                 begin
                     TestField("Source Table ID");
                     TestField("Table ID");
@@ -193,7 +199,7 @@ table 83203 "EXM Extension Table Fields"
         if ("Data Type" in ["Data Type"::Text, "Data Type"::Code]) then
             TestField(Lenght);
 
-        if "Table Source Type" = "Table Source Type"::TableExt then
+        if "Table Source Type" = "Table Source Type"::"TableExtension" then
             EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Field ID");
     end;
 }

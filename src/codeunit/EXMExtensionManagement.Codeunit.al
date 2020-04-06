@@ -62,8 +62,9 @@ codeunit 83200 "EXM Extension Management"
                     "Data Type" := intType;
                     Lenght := FieldData.Len;
                     "Field Class" := FieldData.Class;
-                    "Option String" := FieldData.OptionString;
+                    "Option String" := CopyStr(FieldData.OptionString, 1, MaxStrLen("Option String"));
                     Obsolete := (FieldData.ObsoleteState <> FieldData.ObsoleteState::No);
+                    IsPK := FieldData.IsPartOfPrimaryKey;
                     Insert();
                 until FieldData.Next() = 0;
 

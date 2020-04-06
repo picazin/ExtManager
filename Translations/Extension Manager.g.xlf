@@ -129,8 +129,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 1085746399 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension</source>
-          <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension"</note>
+          <source>,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, </source>
+          <note from="Developer" annotates="general" priority="2">ESP=",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Object Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 3711240756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -149,8 +149,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 2837438916 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Table,,,,,,,Page</source>
-          <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,,,,,,Page"</note>
+          <source>,Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, </source>
+          <note from="Developer" annotates="general" priority="2">ESP=",Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 2837438916 - Method 2126772001 - NamedType 4213946645" size-unit="char" translate="yes" xml:space="preserve">
@@ -162,6 +162,11 @@
           <source>Source Object ID</source>
           <note from="Developer" annotates="general" priority="2">ESP="ID objeto origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 70614016 - Field 4264439119 - Method 2126772001 - NamedType 1568912471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profile with %1 %2 not found.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Perfil con %1 %2 no encontrado."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Source Object ID - Method OnValidate - NamedType ProfileNotFoundErr</note>
         </trans-unit>
         <trans-unit id="Table 70614016 - Field 1343707150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Name</source>
@@ -193,6 +198,61 @@
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2313140234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Setup</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuración extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Clave primária"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3826841295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Nos.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Extension Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3376224445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Starting Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Rango inicial por defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Starting ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3719745416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Ending Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Rango final por defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Ending ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Names</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Caption,Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Traducción,Original"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 819995202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Disable Auto Objects ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Objects ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 819995202 - Method 2126772001 - NamedType 1995065214" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable this option will disable all objects ID validations and may cause extensions errors. Continue?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los objetos y puede llevar a errores. Continuar?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Objects ID - Method OnValidate - NamedType DisableQst</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 2192616486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Disable Auto Field ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID campos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 2192616486 - Method 2126772001 - NamedType 1995065214" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable this option will disable all fields ID validations and may cause extensions errors. Continue?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Method OnValidate - NamedType DisableQst</note>
+        </trans-unit>
         <trans-unit id="Table 4207613778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Fields</source>
           <note from="Developer" annotates="general" priority="2">ESP="Campos extensión"</note>
@@ -214,8 +274,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Table Fields - Field Table Source Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4207613778 - Field 4147314965 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Table,,,,,,,,,,,,,,TableExt</source>
-          <note from="Developer" annotates="general" priority="2">ESP=" ,Table,,,,,,,,,,,,,,TableExt"</note>
+          <source>,Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, </source>
+          <note from="Developer" annotates="general" priority="2">ESP=",Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, "</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Table Fields - Field Table Source Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 4207613778 - Field 90601618 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -278,65 +338,15 @@
           <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Table Fields - Field Creation Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4207613778 - Field 1378277395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Part Of Primary Key</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Forma parte clave primária"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Table Fields - Field IsPK - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4207613778 - Method 3128179842 - NamedType 3124707823" size-unit="char" translate="yes" xml:space="preserve">
           <source>Must select a data type.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Debe seleccionar un tipo de datos."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Table Fields - Method ValidateData - NamedType SelectDataTypeErr</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extension Setup</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Configuración extensión"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primary Key</source>
-          <note from="Developer" annotates="general" priority="2">ESP=""</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Primary Key - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 3826841295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extension Nos.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Extension Nos. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 3376224445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default Starting Range</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Rango inicial por defecto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Starting ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 3719745416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Default Ending Range</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Rango final por defecto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Default Object Ending ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object Names</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nombre objetos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 1694956315 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Caption,Name</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Traducción,Original"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Object Names - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 819995202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Disable Auto Objects ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID objetos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Objects ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 819995202 - Method 2126772001 - NamedType 1995065214" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Enable this option will disable all objects ID validations and may cause extensions errors. Continue?</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los objetos y puede llevar a errores. Continuar?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Objects ID - Method OnValidate - NamedType DisableQst</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 2192616486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Disable Auto Field ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID campos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2313140234 - Field 2192616486 - Method 2126772001 - NamedType 1995065214" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Enable this option will disable all fields ID validations and may cause extensions errors. Continue?</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Method OnValidate - NamedType DisableQst</note>
         </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Acording to Microsoft guides, current ID not allowed.Check guide:</source>
@@ -354,24 +364,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
         </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extensions</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <source>Extension Manager</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Gestor Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1644431652 - Action 4223896452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View / Hide fields</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar campos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AllFields - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1644431652 - Action 524230234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View source table</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3527060737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TableExt Fields</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Campos TableExt"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3805068503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Management Setup</source>
@@ -397,6 +392,21 @@
           <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Method OnAction - NamedType DonateQst</note>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 4223896452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View / Hide fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar campos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AllFields - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 524230234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View source table</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TableExt Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos TableExt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 230153975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table Fields</source>

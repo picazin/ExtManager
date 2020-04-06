@@ -18,18 +18,23 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Object Type', Comment = 'ESP="Tipo objeto"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = " ",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExt,TableExt;
-            OptionCaption = ' ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension', Comment = 'ESP=" ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension"';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+            OptionCaption = ',Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, "';
+            InitValue = " ";
 
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
                 case "Object Type" of
-                    "Object Type"::PageExt:
-                        "Source Object Type" := "Source Object Type"::Page;
-                    "Object Type"::TableExt:
-                        "Source Object Type" := "Source Object Type"::Table;
+                    "Object Type"::"PageExtension":
+                        "Source Object Type" := "Source Object Type"::"Page";
+                    "Object Type"::"TableExtension":
+                        "Source Object Type" := "Source Object Type"::"Table";
+                    "Object Type"::"EnumExtension":
+                        "Source Object Type" := "Source Object Type"::"Enum";
+                    "Object Type"::"ProfileExtension":
+                        "Source Object Type" := "Source Object Type"::"Profile";
                     else
                         "Source Object Type" := "Source Object Type"::" "
                 end;
@@ -54,17 +59,23 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Source Object Type', Comment = 'ESP="Tipo objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = " ",Table,,,,,,,Page;
-            OptionCaption = ' ,Table,,,,,,,Page', Comment = 'ESP=" ,Table,,,,,,,Page"';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+            OptionCaption = ',Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, "';
+            InitValue = " ";
+
             trigger OnValidate()
             var
                 NotAllowedValueErr: Label 'Source value not allowed.', Comment = 'ESP="Valor no permitido"';
             begin
                 case "Object Type" of
-                    "Object Type"::Page:
-                        TestField("Object Type", "Object Type"::PageExt);
-                    "Object Type"::Table:
-                        TestField("Object Type", "Object Type"::TableExt);
+                    "Object Type"::"Page":
+                        TestField("Object Type", "Object Type"::"PageExtension");
+                    "Object Type"::"Table":
+                        TestField("Object Type", "Object Type"::"TableExtension");
+                    "Object Type"::"Enum":
+                        TestField("Object Type", "Object Type"::"EnumExtension");
+                    "Object Type"::"Profile":
+                        TestField("Object Type", "Object Type"::"ProfileExtension");
                     else
                         Error(NotAllowedValueErr);
                 end;
@@ -74,13 +85,63 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Source Object ID', Comment = 'ESP="ID objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = field("Source Object Type"));
             BlankZero = true;
 
             trigger OnValidate()
+            var
+                AllProfile: Record "All Profile";
+                AllObjects: Record AllObjWithCaption;
+                ProfileNotFoundErr: Label 'Profile with %1 %2 not found.', Comment = 'ESP="Perfil con %1 %2 no encontrado."';
             begin
-                if xRec."Source Object ID" <> "Source Object ID" then
+                if xRec."Source Object ID" <> "Source Object ID" then begin
+                    if "Object Type" = "Object Type"::"ProfileExtension" then begin
+                        AllProfile.SetRange("Role Center ID", "Source Object ID");
+                        if AllProfile.IsEmpty() then
+                            Error(ProfileNotFoundErr, AllProfile.FieldCaption("Role Center ID"), "Source Object ID");
+                    end else
+                        AllObjects.Get("Source Object Type", "Source Object ID");
+
                     "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
+                end;
+            end;
+
+            trigger OnLookup()
+            var
+                AllProfile: Record "All Profile";
+                AllObjects: Record AllObjWithCaption;
+                ProfileList: Page "Profile List";
+                AllObjList: Page "All Objects with Caption";
+            begin
+                if "Object Type" = "Object Type"::"ProfileExtension" then begin
+                    AllProfile.SetRange("Role Center ID", "Source Object ID");
+                    if not AllProfile.IsEmpty() then begin
+                        AllProfile.FindLast();
+                        ProfileList.SetSelectionFilter(AllProfile);
+                    end;
+
+                    ProfileList.Editable(false);
+                    ProfileList.LookupMode(true);
+                    if ProfileList.RunModal() = Action::LookupOK then begin
+                        ProfileList.GetRecord(AllProfile);
+                        Validate("Source Object ID", AllProfile."Role Center ID");
+                    end;
+                end else begin
+                    if AllObjects.Get("Source Object Type", "Source Object ID") then
+                        AllObjList.SetRecord(AllObjects);
+
+                    AllObjects.FilterGroup(2);
+                    AllObjects.SetRange("Object Type", "Source Object Type");
+                    AllObjects.FilterGroup(0);
+                    if AllObjects.FindSet() then
+                        AllObjList.SetTableView(AllObjects);
+
+                    AllObjList.Editable(false);
+                    AllObjList.LookupMode(true);
+                    if AllObjList.RunModal() = Action::LookupOK then begin
+                        AllObjList.GetRecord(AllObjects);
+                        Validate("Source Object ID", AllObjects."Object ID");
+                    end;
+                end;
             end;
         }
         field(8; "Source Name"; Text[250])
@@ -128,6 +189,7 @@ table 83202 "EXM Extension Lines"
         { }
     }
 
+    //#region Triggers
     trigger OnInsert()
     var
         EXMExtMgt: Codeunit "EXM Extension Management";
@@ -136,7 +198,7 @@ table 83202 "EXM Extension Lines"
         "Creation Date" := CurrentDateTime();
 
         TestField(Name);
-        if "Object Type" in ["Object Type"::TableExt, "Object Type"::PageExt] then
+        if "Object Type" in ["Object Type"::"TableExtension", "Object Type"::"PageExtension", "Object Type"::"EnumExtension", "Object Type"::"ProfileExtension"] then
             TestField("Source Object ID");
 
         EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Object ID");
@@ -150,6 +212,7 @@ table 83202 "EXM Extension Lines"
         EXMExtFields.SetRange("Source Line No.", "Line No.");
         EXMExtFields.DeleteAll();
     end;
+    //#endregion Triggers   
 
     local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]): Integer
     var
@@ -163,6 +226,7 @@ table 83202 "EXM Extension Lines"
         If EXMSetup."Disable Auto. Objects ID" then
             exit;
 
+        EXMExtLine.SetCurrentKey("Extension Code", "Object Type", "Object ID");
         if CustNo <> '' then
             EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else
@@ -180,16 +244,22 @@ table 83202 "EXM Extension Lines"
     local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[249]
     var
         AllObj: Record AllObjWithCaption;
+        AllProfile: Record "All Profile";
         EXMExtSetup: Record "EXM Extension Setup";
     begin
         EXMExtSetup.Get();
 
-        if AllObj.Get(ObjectType, ObjectID) then
-            case EXMExtSetup."Object Names" of
-                EXMExtSetup."Object Names"::Caption:
-                    exit(AllObj."Object Caption");
-                EXMExtSetup."Object Names"::Name:
-                    exit(AllObj."Object Name");
-            end;
+        if ObjectType = 18 then begin
+            AllProfile.SetRange("Role Center ID", ObjectID);
+            if AllProfile.FindSet() then
+                exit(AllProfile."Profile ID")
+        end else
+            if AllObj.Get(ObjectType, ObjectID) then
+                case EXMExtSetup."Object Names" of
+                    EXMExtSetup."Object Names"::Caption:
+                        exit(AllObj."Object Caption");
+                    EXMExtSetup."Object Names"::Name:
+                        exit(AllObj."Object Name");
+                end;
     end;
 }

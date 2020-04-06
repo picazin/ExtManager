@@ -1,6 +1,5 @@
 page 83203 "EXM Field List"
 {
-    //Caption = 'Extension Card', Comment = 'ESP="Ficha extensión"';
     PageType = List;
     SourceTable = "EXM Extension Table Fields";
     DelayedInsert = true;
@@ -83,7 +82,7 @@ page 83203 "EXM Field List"
             part(ExtTableExtDetail; "EXM TableExt Field List")
             {
                 ApplicationArea = All;
-                SubPageLink = "Table Source Type" = filter(TableExt), "Source Table ID" = field("Source Table ID");
+                SubPageLink = "Table Source Type" = filter("TableExtension"), "Source Table ID" = field("Source Table ID");
                 SubPageView = sorting("Source Table ID", "Field ID");
                 Visible = ViewTableExtDetail;
                 Editable = false;
@@ -104,7 +103,7 @@ page 83203 "EXM Field List"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = ResetStatus;
-                Enabled = ("Table Source Type" = "Table Source Type"::TableExt);
+                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 begin
@@ -123,7 +122,7 @@ page 83203 "EXM Field List"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = Table;
-                Enabled = ("Table Source Type" = "Table Source Type"::TableExt);
+                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 var

@@ -7,7 +7,7 @@ table 83205 "EXM Extension Setup"
     {
         field(1; "Primary Key"; Code[10])
         {
-            Caption = 'Primary Key', Comment = 'ESP=""';
+            Caption = 'Primary Key', Comment = 'ESP="Clave primária"';
             DataClassification = OrganizationIdentifiableInformation;
         }
         field(2; "Extension Nos."; Code[20])

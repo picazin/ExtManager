@@ -1,6 +1,6 @@
 page 83200 "EXM Extension List"
 {
-    Caption = 'Extensions', Comment = 'ESP="Extensiones"';
+    Caption = 'Extension Manager', Comment = 'ESP="Gestor Extensiones"';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
