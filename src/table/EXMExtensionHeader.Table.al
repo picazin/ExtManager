@@ -21,6 +21,13 @@ table 83201 "EXM Extension Header"
             DataClassification = OrganizationIdentifiableInformation;
             OptionMembers = Internal,External;
             OptionCaption = 'Internal,External', Comment = 'ESP="Interna,Externa"';
+            trigger OnValidate()
+            begin
+                if (xRec.Type <> Rec.Type) and (Rec.Type = Rec.Type::Internal) then begin
+                    "Customer No." := '';
+                    "Customer Name" := '';
+                end;
+            end;
         }
         field(4; "Object Starting ID"; Integer)
         {

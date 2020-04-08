@@ -1,4 +1,4 @@
-table 83205 "EXM Extension Setup"
+table 83200 "EXM Extension Setup"
 {
     Caption = 'Extension Setup', Comment = 'ESP="Configuración extensión"';
     DataClassification = OrganizationIdentifiableInformation;

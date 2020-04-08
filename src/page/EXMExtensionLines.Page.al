@@ -44,7 +44,7 @@ page 83202 "EXM Extension Lines"
                 {
                     ApplicationArea = All;
                     //TODO Afegir ENUMS
-                    Enabled = (("Object Type" = "Object Type"::"Table") or ("Object Type" = "Object Type"::"TableExtension") or ("Object Type" = "Object Type"::"EnumExtension"));
+                    Enabled = (("Object Type" = "Object Type"::"Table") or ("Object Type" = "Object Type"::"TableExtension")); // or ("Object Type" = "Object Type"::"EnumExtension"));
                 }
                 field(Obsolete; Obsolete)
                 {

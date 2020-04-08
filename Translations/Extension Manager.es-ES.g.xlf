@@ -488,6 +488,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Property Caption</note>
           <target>Campos Tabla</target>
         </trans-unit>
+        <trans-unit id="PageExtension 3125390708 - Action 2792072681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer Card - Action EXMALExtensions - Property Caption</note>
+          <target>Extensiones</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 1208936658 - Action 2792072681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer List - Action EXMALExtensions - Property Caption</note>
+          <target>Extensiones</target>
+        </trans-unit>
       </group>
     </body>
   </file>

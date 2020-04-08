@@ -10,7 +10,7 @@
             "authentication": "UserPassword",
             "breakOnError": true,
             "launchBrowser": false,
-            "schemaUpdateMode": "ForceSync",
+            "schemaUpdateMode": "Synchronize",
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         }
