@@ -148,6 +148,8 @@ table 83203 "EXM Extension Table Fields"
         If EXMSetup."Disable Auto. Field ID" then
             exit;
 
+        EXMExtHeader.Get("Extension Code");
+
         if SourceTableID = 0 then
             EXMExtFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
         else
@@ -159,6 +161,7 @@ table 83203 "EXM Extension Table Fields"
             EXMExtFields.SetRange("Extension Code", "Extension Code");
 
         EXMExtFields.SetRange("Source Table ID", SourceTableID);
+        EXMExtFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         if SourceTableID = 0 then
             EXMExtFields.SetRange("Table ID", TableID);
         if EXMExtFields.FindLast() then
@@ -166,10 +169,8 @@ table 83203 "EXM Extension Table Fields"
         else
             if "Table Source Type" = "Table Source Type"::Table then
                 exit(1)
-            else begin
-                EXMExtHeader.Get("Extension Code");
+            else
                 exit(EXMExtHeader."Object Starting ID");
-            end;
     end;
 
     local procedure ValidateData()

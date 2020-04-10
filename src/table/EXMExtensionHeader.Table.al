@@ -129,6 +129,8 @@ table 83201 "EXM Extension Header"
         {
             Clustered = true;
         }
+        key(P2; Type, "Customer No.")
+        { }
     }
 
     trigger OnInsert()

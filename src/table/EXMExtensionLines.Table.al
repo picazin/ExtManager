@@ -220,11 +220,14 @@ table 83202 "EXM Extension Lines"
         EXMExtHeader: Record "EXM Extension Header";
         EXMExtLine: Record "EXM Extension Lines";
         EXMExtMgt: Codeunit "EXM Extension Management";
+
     begin
         //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Objects ID" then
             exit;
+
+        EXMExtHeader.Get("Extension Code");
 
         EXMExtLine.SetCurrentKey("Extension Code", "Object Type", "Object ID");
         if CustNo <> '' then
@@ -233,12 +236,11 @@ table 83202 "EXM Extension Lines"
             EXMExtLine.SetRange("Extension Code", "Extension Code");
 
         EXMExtLine.SetRange("Object Type", ObjectType);
+        EXMExtLine.SetFilter("Object ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         if EXMExtLine.FindLast() then
             exit(EXMExtLine."Object ID" + 1)
-        else begin
-            EXMExtHeader.Get("Extension Code");
+        else
             exit(EXMExtHeader."Object Starting ID");
-        end;
     end;
 
     local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[249]
