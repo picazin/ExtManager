@@ -1,6 +1,6 @@
 page 83204 "EXM TableExt Field List"
 {
-    Caption = 'TableExt Fields', Comment = 'ESP="Campos TableExt"';
+    Caption = 'TableExtensions Fields', Comment = 'ESP="Campos TableExtensions"';
     PageType = ListPart;
     SourceTable = "EXM Extension Table Fields";
     InsertAllowed = false;

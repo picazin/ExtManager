@@ -112,35 +112,40 @@ table 83202 "EXM Extension Lines"
                 ProfileList: Page "Profile List";
                 AllObjList: Page "All Objects with Caption";
             begin
-                if "Object Type" = "Object Type"::"ProfileExtension" then begin
-                    AllProfile.SetRange("Role Center ID", "Source Object ID");
-                    if not AllProfile.IsEmpty() then begin
-                        AllProfile.FindLast();
-                        ProfileList.SetSelectionFilter(AllProfile);
-                    end;
+                case "Object Type" of
+                    "Object Type"::"ProfileExtension":
+                        begin
+                            AllProfile.SetRange("Role Center ID", "Source Object ID");
+                            if not AllProfile.IsEmpty() then begin
+                                AllProfile.FindLast();
+                                ProfileList.SetSelectionFilter(AllProfile);
+                            end;
 
-                    ProfileList.Editable(false);
-                    ProfileList.LookupMode(true);
-                    if ProfileList.RunModal() = Action::LookupOK then begin
-                        ProfileList.GetRecord(AllProfile);
-                        Validate("Source Object ID", AllProfile."Role Center ID");
-                    end;
-                end else begin
-                    if AllObjects.Get("Source Object Type", "Source Object ID") then
-                        AllObjList.SetRecord(AllObjects);
+                            ProfileList.Editable(false);
+                            ProfileList.LookupMode(true);
+                            if ProfileList.RunModal() = Action::LookupOK then begin
+                                ProfileList.GetRecord(AllProfile);
+                                Validate("Source Object ID", AllProfile."Role Center ID");
+                            end;
 
-                    AllObjects.FilterGroup(2);
-                    AllObjects.SetRange("Object Type", "Source Object Type");
-                    AllObjects.FilterGroup(0);
-                    if AllObjects.FindSet() then
-                        AllObjList.SetTableView(AllObjects);
+                        end;
+                    else begin
+                            if AllObjects.Get("Source Object Type", "Source Object ID") then
+                                AllObjList.SetRecord(AllObjects);
 
-                    AllObjList.Editable(false);
-                    AllObjList.LookupMode(true);
-                    if AllObjList.RunModal() = Action::LookupOK then begin
-                        AllObjList.GetRecord(AllObjects);
-                        Validate("Source Object ID", AllObjects."Object ID");
-                    end;
+                            AllObjects.FilterGroup(2);
+                            AllObjects.SetRange("Object Type", "Source Object Type");
+                            AllObjects.FilterGroup(0);
+                            if AllObjects.FindSet() then
+                                AllObjList.SetTableView(AllObjects);
+
+                            AllObjList.Editable(false);
+                            AllObjList.LookupMode(true);
+                            if AllObjList.RunModal() = Action::LookupOK then begin
+                                AllObjList.GetRecord(AllObjects);
+                                Validate("Source Object ID", AllObjects."Object ID");
+                            end;
+                        end;
                 end;
             end;
         }

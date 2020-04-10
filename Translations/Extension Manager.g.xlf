@@ -404,8 +404,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3527060737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TableExt Fields</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Campos TableExt"</note>
+          <source>TableExtensions Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos TableExtensions"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 230153975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

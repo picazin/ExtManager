@@ -4,6 +4,7 @@ page 83203 "EXM Field List"
     SourceTable = "EXM Extension Table Fields";
     DelayedInsert = true;
     Editable = true;
+    DataCaptionExpression = GetDesc();
 
     layout
     {
@@ -133,6 +134,19 @@ page 83203 "EXM Field List"
             }
         }
     }
+
+    local procedure GetDesc(): Text
+    var
+        AllObject: Record AllObj;
+        EXMExtLine: Record "EXM Extension Lines";
+    begin
+        EXMExtLine.Get("Extension Code", "Source Line No.");
+        if Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension" then begin
+            AllObject.Get(AllObject."Object Type"::Table, "Source Table ID");
+            exit(Format("Source Table ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+        end else
+            exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+    end;
 
     var
         ViewTableExtDetail: Boolean;

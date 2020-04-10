@@ -8,6 +8,7 @@ page 83206 "EXM Table Field Detail"
     DeleteAllowed = false;
     ShowFilter = false;
     Editable = false;
+    DataCaptionExpression = GetTableDesc();
 
     layout
     {
@@ -64,6 +65,14 @@ page 83206 "EXM Table Field Detail"
         StyleExp := 'standard';
         if IsPK then
             StyleExp := 'strong';
+    end;
+
+    local procedure GetTableDesc(): Text
+    var
+        AllObject: Record AllObj;
+    begin
+        AllObject.Get(AllObject."Object Type"::Table, "Table ID");
+        exit(Format("Table ID") + ' ' + AllObject."Object Name")
     end;
 
     var
