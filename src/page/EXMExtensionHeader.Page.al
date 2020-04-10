@@ -3,6 +3,7 @@ page 83201 "EXM Extension Header"
     Caption = 'Extension Card', Comment = 'ESP="Ficha extensión"';
     PageType = Document;
     SourceTable = "EXM Extension Header";
+    DataCaptionFields = Code, Description;
 
     layout
     {
