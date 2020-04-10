@@ -36,7 +36,7 @@ Once the app is installed on our BC we can find the extension on the menu.
 
 Try typing ***"extension"*** and 2 additional links appear:
 
-<img src="C:\Users\picaz\Documents\AL\BCExtManager\images\EXM_Menu.gif" style="zoom:200%;" />
+<img src=".\images\EXM_Menu.gif" style="zoom:100%;" />
 
 - ### Setup
 
@@ -48,7 +48,7 @@ Try typing ***"extension"*** and 2 additional links appear:
 
   - When "Extension Manager Setup" is clicked the setup page opens and these are the available options (ToolTips not yet done):
 
-    <img src="C:\Users\picaz\Documents\AL\BCExtManager\images\EXM_Setup_detail.png" style="zoom:150%;" />
+    <img src=".\images\EXM_Setup_detail.png" style="zoom:100%;" />
 
     - #### ***General tab***
 
@@ -75,13 +75,13 @@ Try typing ***"extension"*** and 2 additional links appear:
 
   - When selecting "Extension Manager" we'll see all of our extensions. Easy way to take a look and select which one to take care or create a new. Standard BC functionality.
 
-    <img src="C:\Users\picaz\Documents\AL\BCExtManager\images\EXM_List.png" style="zoom:200%;" />
+    <img src=".\images\EXM_List.png" style="zoom:200%;" />
 
     
 
   - When one selected (or New button) we'll take a look at Extension Card where we'll have available all extension information.
 
-    <img src="C:\Users\picaz\Documents\AL\BCExtManager\images\EXM_Ext_Header.png" style="zoom:200%;" />
+    <img src=".\images\EXM_Ext_Header.png" style="zoom:200%;" />
 
 
 
