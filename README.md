@@ -81,7 +81,7 @@ Try typing ***"extension"*** and 2 additional links appear:
 
   - When one selected (or New button) we'll take a look at Extension Card where we'll have available all extension information.
 
-    <img src=".\images\EXM_Ext_Header.png" onmouseover="this.src='.\images\EXM_Ext_Header_Zoom.png'" onmouseout="this.src='.\images\EXM_Ext_Header.png'" /> 
+    <img src=".\images\EXM_Ext_Header.png"/>
 
 
 
