@@ -61,4 +61,22 @@ page 83202 "EXM Extension Lines"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action(ViewField)
+            {
+                Caption = 'Fields', Comment = 'ESP="Campos"';
+                ApplicationArea = All;
+                Image = ViewPage;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+                PromotedIsBig = true;
+                RunObject = Page "EXM Field List";
+                RunPageLink = "Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID");
+            }
+        }
+    }
 }

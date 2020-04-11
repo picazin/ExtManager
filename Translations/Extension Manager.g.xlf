@@ -198,6 +198,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 70614016 - Action 445248289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Action ViewField - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2313140234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Setup</source>
           <note from="Developer" annotates="general" priority="2">ESP="Configuración extensión"</note>
