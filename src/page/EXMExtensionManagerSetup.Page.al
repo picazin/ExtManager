@@ -1,6 +1,6 @@
 page 83205 "EXM Extension Manager Setup"
 {
-    Caption = 'Extension Management Setup', Comment = 'ESP="Conf. gestor extensiones"';
+    Caption = 'Extension Manager Setup', Comment = 'ESP="Conf. gestor extensiones"';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
