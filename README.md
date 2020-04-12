@@ -59,7 +59,7 @@ When "Extension Manager Setup" is clicked the setup page opens and these are the
 
  The app proposes the next ID available when selecting an object type. Disabling this option won't validate if set ID is used on current / other extension per same object.
 
- The proposal system is easy. Looks for next available ID taking care of the extension range and other extensions created depending on extension type. In case of external extension type the proposed ID 	takes care of all extensions of selected customer.
+ The proposal system is easy. Looks for next available ID taking care of the extension range and other extensions created depending on extension type. In case of external extension type the proposed ID takes care of all extensions of selected customer.
 
 ##### **Disable Auto Field ID**
 
@@ -121,7 +121,7 @@ In case you're selecting ***TableExtension***, ***PageExtension***, ***EnumExten
 
 ### Set extension objects
 
-When working with ***Table***, ***TableExtension***, ***Enum*** or ***EnumExtension*** fields details must be set. 
+When working with ***Table***, ***TableExtension***, ***Enum*** or ***EnumExtension*** fields details must be set.
 
 In order to fill the field data information we can select ***Total Fields*** or ***Manage - Fields*** and a new page where we can input or check fields related data
 
@@ -129,13 +129,13 @@ In order to fill the field data information we can select ***Total Fields*** or 
 
 As you can see in the following images, there are 2 option available
 
-**View / Hide fields**
+#### **View / Hide fields**
 
  Allow to show other fields set on same table when creating a new ***TableExtension***
 
 ![View extended fields](.\images\EXM_View_Ext_Same_Table.gif)
 
-**View source table**
+#### **View source table**
 
  Allows to see all fields on source table
 
