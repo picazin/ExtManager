@@ -27,17 +27,17 @@ Once the app is installed on our BC we can find the extension on the menu.
 
 Try typing ***"extension"*** and 2 additional links appear:
 
-![Extension menu](\images\EXM_Menu.gif)
+![Extension menu](/images/EXM_Menu.gif)
 
 ### Setup
 
 Type ***"extension"*** and select **"Extension Manager Setup"**
 
-![Extension setup](\images\EXM_Setup.png)
+![Extension setup](/images/EXM_Setup.png)
 
 When "Extension Manager Setup" is clicked the setup page opens and these are the available options (ToolTips not yet done):
 
-![Extension setup detail](\images\EXM_Setup_detail.png)
+![Extension setup detail](/images/EXM_Setup_detail.png)
 
 #### ***General tab***
 
@@ -69,11 +69,11 @@ When "Extension Manager Setup" is clicked the setup page opens and these are the
 
 When selecting "Extension Manager" we'll see all of our extensions. Easy way to take a look and select which one to take care or create a new. Standard BC functionality.
 
-![Extension list](\images\EXM_List.png)
+![Extension list](/images/EXM_List.png)
 
 When one selected (or New button) we'll take a look at Extension Card where we'll have available all extension information.
 
-![Extension card](\images\EXM_Ext_Header.png)
+![Extension card](/images/EXM_Ext_Header.png)
 
 As you can see on the picture the Extension Card is composed by Header and Lines.
 
@@ -117,7 +117,7 @@ In case you're selecting ***TableExtension***, ***PageExtension***, ***EnumExten
 
 **Source Object ID** must be filled. Once selected the Name is set depending to your setup choice (Name or Caption)
 
-![Auto object ID](\images\EXM_Auto_Object_ID.gif)
+![Auto object ID](/images/EXM_Auto_Object_ID.gif)
 
 ### Set extension objects
 
@@ -125,7 +125,7 @@ When working with ***Table***, ***TableExtension***, ***Enum*** or ***EnumExtens
 
 In order to fill the field data information we can select ***Total Fields*** or ***Manage - Fields*** and a new page where we can input or check fields related data
 
-![Fields detail](\images\EXM_Ext_Detail_Table.png)
+![Fields detail](/images/EXM_Ext_Detail_Table.png)
 
 As you can see in the following images, there are 2 option available
 
@@ -133,13 +133,13 @@ As you can see in the following images, there are 2 option available
 
  Allow to show other fields set on same table when creating a new ***TableExtension***
 
-![View extended fields](\images\EXM_View_Ext_Same_Table.gif)
+![View extended fields](/images/EXM_View_Ext_Same_Table.gif)
 
 #### **View source table**
 
  Allows to see all fields on source table
 
-![View source table](\images\EXM_View_Source_Table.gif)
+![View source table](/images/EXM_View_Source_Table.gif)
 
 ## Future improvements
 
