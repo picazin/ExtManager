@@ -434,6 +434,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
           <target>ID debe estar dentro del rango definido %1 - %2</target>
         </trans-unit>
+        <trans-unit id="Codeunit 2989322446 - NamedType 96739838" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Want to learn more about EXM?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Desea más información sobre EXM (Extension Manager)?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM RC Headlines Page Common - NamedType DocumentationTxt</note>
+          <target>Desea más información sobre EXM (Extension Manager)?</target>
+        </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Manager</source>
           <note from="Developer" annotates="general" priority="2">ESP="Gestor Extensiones"</note>
@@ -441,7 +447,7 @@
           <target>Gestor Extensiones</target>
         </trans-unit>
         <trans-unit id="Page 3805068503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extension Management Setup</source>
+          <source>Extension Manager Setup</source>
           <note from="Developer" annotates="general" priority="2">ESP="Conf. gestor extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Property Caption</note>
           <target>Conf. gestor extensiones</target>
@@ -481,6 +487,84 @@
           <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
           <target>Ver tabla origen</target>
+        </trans-unit>
+        <trans-unit id="Page 1528526893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Extension Manager</source>
+          <note from="Developer" annotates="general" priority="2">ESP="EXM Gestor Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Property Caption</note>
+          <target>EXM Gestor Extensiones</target>
+        </trans-unit>
+        <trans-unit id="Page 1528526893 - Control 3322762936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Greeting headline</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Bienvenida!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control GreetingText - Property Caption</note>
+          <target>Bienvenida!</target>
+        </trans-unit>
+        <trans-unit id="Page 1528526893 - Control 1396140313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documentation headline</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Documentación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control DocumentationText - Property Caption</note>
+          <target>Documentación</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXtension Manager</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Gestor Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Property Caption</note>
+          <target>Gestor Extensiones</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 368576447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nueva extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMExtensionCard - Property Caption</note>
+          <target>Nueva extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 368576447 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create new extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear nueva extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMExtensionCard - Property ToolTip</note>
+          <target>Crear nueva extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1482726517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMExtensionList - Property Caption</note>
+          <target>Extensiones</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1482726517 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View all extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMExtensionList - Property ToolTip</note>
+          <target>Ver extensiones</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3606140129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customers</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Clientes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Customers - Property Caption</note>
+          <target>Clientes</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1514883969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuración"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Setup - Property Caption</note>
+          <target>Configuración</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1514883969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Overview and change system and application settings</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Modificar parámetros aplicación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Setup - Property ToolTip</note>
+          <target>Modificar parámetros aplicación</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3167279993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup EXM</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuración EXM"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMSetup - Property Caption</note>
+          <target>Configuración EXM</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3167279993 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup EXM</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configuración EXM"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMSetup - Property ToolTip</note>
+          <target>Configuración EXM</target>
         </trans-unit>
         <trans-unit id="Page 3527060737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>TableExtensions Fields</source>

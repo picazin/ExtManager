@@ -7,7 +7,6 @@ Extension Manager for Microsoft Dynamics 365 Business Central is a free-to-use a
 1. Idea
 2. How-to
 3. Future improvements
-4. About
 
 ## ***Idea***
 
@@ -147,7 +146,3 @@ As you can see in the following images, there are 2 option available
 - [ ] Create specific role for **EXM**. Also include as profile extensions to IT role.
 - [ ] Guided setup
 - [ ] Financial management
-
-## About
-
-Andreu + Olivia + Contacte + suggeriments + bugs

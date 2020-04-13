@@ -71,8 +71,10 @@ page 83201 "EXM Extension Header"
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
-        TestField("Object Starting ID");
-        TestField("Object Ending ID");
+        if Code <> '' then begin
+            TestField("Object Starting ID");
+            TestField("Object Ending ID");
+        end;
     end;
     //TODO Add customer ledger entry
 }
