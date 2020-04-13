@@ -143,6 +143,6 @@ As you can see in the following images, there are 2 option available
 ## Future improvements
 
 - [ ] Include Enums values detail
-- [ ] Create specific role for **EXM**. Also include as profile extensions to IT role.
+- [X] Create specific role for **EXM**. Also include as profile extensions to IT role.
 - [ ] Guided setup
 - [ ] Financial management

@@ -203,6 +203,26 @@
           <note from="Developer" annotates="general" priority="2">ESP="Campos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Action ViewField - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2135376867 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Manager Cue - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2135376867 - Field 1663039630 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Manager Cue - Field Extensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2135376867 - Field 2581125407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones internas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Manager Cue - Field Internal Extensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2135376867 - Field 886950601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones externas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Manager Cue - Field External Extensions - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2313140234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Setup</source>
           <note from="Developer" annotates="general" priority="2">ESP="Configuración extensión"</note>
@@ -402,6 +422,21 @@
           <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Method OnAction - NamedType DonateQst</note>
+        </trans-unit>
+        <trans-unit id="Page 2306209299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activities</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Actividades"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2306209299 - Control 3856756185 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control ExtInfo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2306209299 - Control 2642869315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions per type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Extensiones por tipo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control Detail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1644431652 - Action 4223896452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View / Hide fields</source>

@@ -11,10 +11,10 @@ page 83207 "EXM Role Center"
             {
                 ApplicationArea = All;
             }
-            //part(Activities; "EXM Ext. Manager Activities") //"SO Processor Activities
-            //{
-            //    ApplicationArea = Basic, Suite;
-            //}
+            part(Activities; "EXM Extensions Activities")
+            {
+                ApplicationArea = Basic, Suite;
+            }
             part("Report Inbox Part"; "Report Inbox Part")
             {
                 AccessByPermission = TableData "Report Inbox" = R;
