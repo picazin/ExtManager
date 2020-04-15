@@ -5,9 +5,9 @@
   "version": "0.1.0.0",
   "brief": "Manager for developing extensions.",
   "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
-  "privacyStatement": "https://BCExtManager.com/privacy/",
-  "EULA": "https://BCExtManager.com/EULA/",
-  "help": "https://BCExtManager.com/help/",
+  "privacyStatement": "http://www.picazin.dev",
+  "EULA": "http://www.picazin.dev",
+  "help": "https://github.com/picazin/ExtManager/blob/master/README.md",
   "url": "http://www.picazin.dev",
   "logo": "./src/logo/extmanager.png",
   "dependencies": [
@@ -33,7 +33,7 @@
       "to": 834399
     }
   ],
-  "contextSensitiveHelpUrl": "https://BCExtManager.com/help/",
+  "contextSensitiveHelpUrl": "https://github.com/picazin/ExtManager/blob/master/README.md",
   "showMyCode": true,
   "runtime": "5.0"
 }
