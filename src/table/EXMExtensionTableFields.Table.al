@@ -2,7 +2,6 @@ table 83203 "EXM Extension Table Fields"
 {
     Caption = 'Extension Fields', Comment = 'ESP="Campos extensión"';
     LookupPageId = "EXM Field List";
-    DrillDownPageId = "EXM Field List";
     DataClassification = OrganizationIdentifiableInformation;
 
     fields
@@ -152,8 +151,10 @@ table 83203 "EXM Extension Table Fields"
 
         if SourceTableID = 0 then
             EXMExtFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
-        else
+        else begin
             EXMExtFields.SetCurrentKey("Source Table ID", "Field ID");
+            EXMExtFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
+        end;
 
         if CustNo <> '' then
             EXMExtFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
@@ -161,7 +162,6 @@ table 83203 "EXM Extension Table Fields"
             EXMExtFields.SetRange("Extension Code", "Extension Code");
 
         EXMExtFields.SetRange("Source Table ID", SourceTableID);
-        EXMExtFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         if SourceTableID = 0 then
             EXMExtFields.SetRange("Table ID", TableID);
         if EXMExtFields.FindLast() then

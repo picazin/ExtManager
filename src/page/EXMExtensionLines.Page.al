@@ -43,8 +43,25 @@ page 83202 "EXM Extension Lines"
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
-                    //TODO Afegir ENUMS
-                    Enabled = (("Object Type" = "Object Type"::"Table") or ("Object Type" = "Object Type"::"TableExtension")); // or ("Object Type" = "Object Type"::"EnumExtension"));
+                    trigger OnAssistEdit()
+                    var
+                        EXMExtTableFields: Record "EXM Extension Table Fields";
+                        EXMFieldList: Page "EXM Field List";
+                    begin
+                        if not ("Object Type" in ["Object Type"::"Table", "Object Type"::"TableExtension", "Object Type"::Enum, "Object Type"::EnumExtension]) then
+                            exit;
+
+                        EXMExtTableFields.SetRange("Extension Code", "Extension Code");
+                        EXMExtTableFields.SetRange("Source Line No.", "Line No.");
+                        EXMExtTableFields.SetRange("Table Source Type", "Object Type");
+                        EXMExtTableFields.SetRange("Table ID", "Object ID");
+                        EXMExtTableFields.SetRange("Source Table ID", "Source Object ID");
+
+                        EXMFieldList.SetTableView(EXMExtTableFields);
+                        EXMFieldList.LookupMode := true;
+                        if EXMFieldList.RunModal() = Action::LookupOK then
+                            CurrPage.Update(true);
+                    end;
                 }
                 field(Obsolete; Obsolete)
                 {
