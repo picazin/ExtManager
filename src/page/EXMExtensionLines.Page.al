@@ -46,21 +46,41 @@ page 83202 "EXM Extension Lines"
                     trigger OnAssistEdit()
                     var
                         EXMExtTableFields: Record "EXM Extension Table Fields";
+                        EXMEnumValues: Record "EXM Enum Values";
                         EXMFieldList: Page "EXM Field List";
+                        EXMEnumVal: Page "EXM Enum Values";
                     begin
-                        if not ("Object Type" in ["Object Type"::"Table", "Object Type"::"TableExtension", "Object Type"::Enum, "Object Type"::EnumExtension]) then
-                            exit;
+                        case "Object Type" of
+                            "Object Type"::"Table", "Object Type"::"TableExtension":
+                                begin
+                                    EXMExtTableFields.SetRange("Extension Code", "Extension Code");
+                                    EXMExtTableFields.SetRange("Source Line No.", "Line No.");
+                                    EXMExtTableFields.SetRange("Table Source Type", "Object Type");
+                                    EXMExtTableFields.SetRange("Table ID", "Object ID");
+                                    EXMExtTableFields.SetRange("Source Table ID", "Source Object ID");
 
-                        EXMExtTableFields.SetRange("Extension Code", "Extension Code");
-                        EXMExtTableFields.SetRange("Source Line No.", "Line No.");
-                        EXMExtTableFields.SetRange("Table Source Type", "Object Type");
-                        EXMExtTableFields.SetRange("Table ID", "Object ID");
-                        EXMExtTableFields.SetRange("Source Table ID", "Source Object ID");
+                                    EXMFieldList.SetTableView(EXMExtTableFields);
+                                    EXMFieldList.LookupMode := true;
+                                    if EXMFieldList.RunModal() = Action::LookupOK then
+                                        CurrPage.Update(true);
+                                end;
 
-                        EXMFieldList.SetTableView(EXMExtTableFields);
-                        EXMFieldList.LookupMode := true;
-                        if EXMFieldList.RunModal() = Action::LookupOK then
-                            CurrPage.Update(true);
+                            "Object Type"::Enum, "Object Type"::EnumExtension:
+                                begin
+                                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
+                                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
+                                    EXMEnumValues.SetRange("Source Type", "Object Type");
+                                    EXMEnumValues.SetRange("Enum ID", "Object ID");
+                                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
+
+                                    EXMEnumVal.SetTableView(EXMEnumValues);
+                                    EXMEnumVal.LookupMode := true;
+                                    if EXMEnumVal.RunModal() = Action::LookupOK then
+                                        CurrPage.Update(true);
+                                end;
+                            else
+                                exit;
+                        end;
                     end;
                 }
                 field(Obsolete; Obsolete)

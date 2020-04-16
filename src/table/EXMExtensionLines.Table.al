@@ -158,9 +158,10 @@ table 83202 "EXM Extension Lines"
         field(10; "Total Fields"; Integer)
         {
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
+            DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
-            FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Table Fields" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
+            //FieldClass = FlowField;
+            //CalcFormula = count ("EXM Extension Table Fields" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
             Editable = false;
         }
         field(11; Obsolete; Boolean)
@@ -212,10 +213,15 @@ table 83202 "EXM Extension Lines"
     trigger OnDelete()
     var
         EXMExtFields: Record "EXM Extension Table Fields";
+        EXMEnumValues: Record "EXM Enum Values";
     begin
         EXMExtFields.SetRange("Extension Code", "Extension Code");
         EXMExtFields.SetRange("Source Line No.", "Line No.");
         EXMExtFields.DeleteAll();
+
+        EXMEnumValues.SetRange("Extension Code", "Extension Code");
+        EXMEnumValues.SetRange("Source Line No.", "Line No.");
+        EXMEnumValues.DeleteAll();
     end;
     //#endregion Triggers   
 

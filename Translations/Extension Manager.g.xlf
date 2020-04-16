@@ -3,6 +3,61 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Extension Manager">
     <body>
       <group id="body">
+        <trans-unit id="Table 2931733741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enums values</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Valores Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 460859576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Extension Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 312545736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Line No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº línea origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Source Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 1753214751 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Source Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 1753214751 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>,,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, </source>
+          <note from="Developer" annotates="general" priority="2">ESP=",,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, "</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Source Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 3603434469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Enum ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Id. Enum origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Source Enum ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 72044306 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enum ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Id. Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Enum ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 988276474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ordinal ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Id. ordinal"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Ordinal ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 1156442700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enum Value</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Valor Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Enum Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 98207365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created by</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Created by - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Creation Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension</source>
           <note from="Developer" annotates="general" priority="2">ESP="Extensión"</note>
