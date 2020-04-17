@@ -34,7 +34,7 @@ Type ***"extension"*** and select **"Extension Manager Setup"**
 
 ![Extension setup](/images/EXM_Setup.png)
 
-When "Extension Manager Setup" is clicked the setup page opens and these are the available options (ToolTips not yet done):
+When "Extension Manager Setup" is clicked the setup page opens and these are the available options (***ToolTips*** not yet done):
 
 ![Extension setup detail](/images/EXM_Setup_detail.png)
 
@@ -63,6 +63,16 @@ When "Extension Manager Setup" is clicked the setup page opens and these are the
 ##### **Disable Auto Field ID**
 
  Same functionality described above but per fields ID.
+
+### Role Center
+
+Personalized role center for **EXM** is available. You only need to assign to your user (or selected users) from Profile List
+
+![Select Role Center](/images/EXM_Role_Center_Selection.png)
+
+Once selected the role center allows to have a quick view of all your extensions. It also allows us to create directly a new extension.
+
+![EXM Role Center](/images/EXM_Role_Center.png)
 
 ### Create new extension
 
@@ -126,23 +136,32 @@ In order to fill the field data information we can select ***Total Fields*** or 
 
 ![Fields detail](/images/EXM_Ext_Detail_Table.png)
 
+#### Working with Tables & TableExtension
+
 As you can see in the following images, there are 2 option available
 
-#### **View / Hide fields**
+##### **View / Hide fields**
 
  Allow to show other fields set on same table when creating a new ***TableExtension***
 
 ![View extended fields](/images/EXM_View_Ext_Same_Table.gif)
 
-#### **View source table**
+##### **View source table**
 
  Allows to see all fields on source table
 
 ![View source table](/images/EXM_View_Source_Table.gif)
 
+#### Working with Enum & EnumExtension
+
+Same functionality as on tables but with Enum data information.
+
+With ***View/Hide values*** all extended values on **Enum** are shown. Also available to view source **Enum** values with ***View source Enum*** button.
+
+![View Enum Details](/images/EXM_Enums_Detail.gif)
+
 ## Future improvements
 
-- [ ] Include Enums values detail
-- [X] Create specific role for **EXM**. Also include as profile extensions to IT role.
+- [ ] Catalan translation
 - [ ] Guided setup
 - [ ] Financial management
