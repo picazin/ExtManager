@@ -151,13 +151,17 @@ table 83201 "EXM Extension Header"
     trigger OnDelete()
     var
         EXMExtLines: Record "EXM Extension Lines";
-        EXMExtFields: Record "EXM Extension Table Fields";
+        EXMFields: Record "EXM Table Fields";
+        EXMEnumValues: Record "EXM Enum Values";
     begin
         EXMExtLines.SetRange("Extension Code", Code);
         EXMExtLines.DeleteAll();
 
-        EXMExtFields.SetRange("Extension Code", Code);
-        EXMExtFields.DeleteAll();
+        EXMFields.SetRange("Extension Code", Code);
+        EXMFields.DeleteAll();
+
+        EXMEnumValues.SetRange("Extension Code", Code);
+        EXMEnumValues.DeleteAll();
     end;
 
     trigger OnRename()

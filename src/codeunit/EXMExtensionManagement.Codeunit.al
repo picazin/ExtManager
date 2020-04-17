@@ -43,10 +43,10 @@ codeunit 83200 "EXM Extension Management"
     procedure GetTableFieldData(TableNo: Integer)
     var
         FieldData: Record Field;
-        TempEXMExtFields: Record "EXM Extension Table Fields" temporary;
+        TempEXMFields: Record "EXM Table Fields" temporary;
         intType: Integer;
     begin
-        with TempEXMExtFields do begin
+        with TempEXMFields do begin
             FieldData.SetRange(TableNo, TableNo);
             if FieldData.FindSet() then
                 repeat
@@ -68,10 +68,38 @@ codeunit 83200 "EXM Extension Management"
                     Insert();
                 until FieldData.Next() = 0;
 
-            if not TempEXMExtFields.IsEmpty() then begin
-                TempEXMExtFields.FindFirst();
-                Page.Run(Page::"EXM Table Field Detail", TempEXMExtFields);
+            if not TempEXMFields.IsEmpty() then begin
+                TempEXMFields.FindFirst();
+                Page.Run(Page::"EXM Table Field Detail", TempEXMFields);
             end;
+        end;
+    end;
+
+    procedure GetEnumValues(EnumID: Integer)
+    var
+        TempEXMEnums: Record "EXM Enum Values" temporary;
+        EnumRec: RecordRef;
+        EnumRef: FieldRef;
+        TotalValues, Counter : Integer;
+    begin
+        EnumRec.Open(EnumID);
+        EnumRef := EnumRec.Field(1);
+        TotalValues := (EnumRef.EnumValueCount());
+        with TempEXMEnums do
+            for Counter := 1 to TotalValues do begin
+                Init();
+                "Extension Code" := Format(SessionId());
+                "Source Line No." := Counter;
+                "Source Type" := "Source Type"::Enum;
+                "Enum ID" := EnumID;
+                "Ordinal ID" := EnumRef.GetEnumValueOrdinal(Counter);
+                "Enum Value" := CopyStr(EnumRef.GetEnumValueName(Counter), 1, MaxStrLen("Enum Value"));
+                Insert();
+            end;
+
+        if not TempEXMEnums.IsEmpty() then begin
+            TempEXMEnums.FindFirst();
+            Page.Run(Page::"EXM Enum Values", TempEXMEnums);
         end;
     end;
 }

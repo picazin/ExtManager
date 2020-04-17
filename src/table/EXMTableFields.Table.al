@@ -1,4 +1,4 @@
-table 83203 "EXM Extension Table Fields"
+table 83203 "EXM Table Fields"
 {
     Caption = 'Extension Fields', Comment = 'ESP="Campos extensión"';
     LookupPageId = "EXM Field List";
@@ -140,7 +140,7 @@ table 83203 "EXM Extension Table Fields"
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
-        EXMExtFields: Record "EXM Extension Table Fields";
+        EXMFields: Record "EXM Table Fields";
         EXMExtMgt: Codeunit "EXM Extension Management";
     begin
         EXMSetup.Get();
@@ -150,22 +150,22 @@ table 83203 "EXM Extension Table Fields"
         EXMExtHeader.Get("Extension Code");
 
         if SourceTableID = 0 then
-            EXMExtFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
+            EXMFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
         else begin
-            EXMExtFields.SetCurrentKey("Source Table ID", "Field ID");
-            EXMExtFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
+            EXMFields.SetCurrentKey("Source Table ID", "Field ID");
+            EXMFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         end;
 
         if CustNo <> '' then
-            EXMExtFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
+            EXMFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else
-            EXMExtFields.SetRange("Extension Code", "Extension Code");
+            EXMFields.SetRange("Extension Code", "Extension Code");
 
-        EXMExtFields.SetRange("Source Table ID", SourceTableID);
+        EXMFields.SetRange("Source Table ID", SourceTableID);
         if SourceTableID = 0 then
-            EXMExtFields.SetRange("Table ID", TableID);
-        if EXMExtFields.FindLast() then
-            exit(EXMExtFields."Field ID" + 1)
+            EXMFields.SetRange("Table ID", TableID);
+        if EXMFields.FindLast() then
+            exit(EXMFields."Field ID" + 1)
         else
             if "Table Source Type" = "Table Source Type"::Table then
                 exit(1)

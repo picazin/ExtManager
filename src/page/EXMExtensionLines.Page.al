@@ -34,6 +34,7 @@ page 83202 "EXM Extension Lines"
                 {
                     ApplicationArea = All;
                     Editable = ("Source Object Type" <> "Source Object Type"::" ");
+                    Enabled = ("Source Object Type" <> "Source Object Type"::" ");
                 }
                 field("Source Name"; "Source Name")
                 {
@@ -45,7 +46,7 @@ page 83202 "EXM Extension Lines"
                     ApplicationArea = All;
                     trigger OnAssistEdit()
                     var
-                        EXMExtTableFields: Record "EXM Extension Table Fields";
+                        EXMTableFields: Record "EXM Table Fields";
                         EXMEnumValues: Record "EXM Enum Values";
                         EXMFieldList: Page "EXM Field List";
                         EXMEnumVal: Page "EXM Enum Values";
@@ -53,16 +54,18 @@ page 83202 "EXM Extension Lines"
                         case "Object Type" of
                             "Object Type"::"Table", "Object Type"::"TableExtension":
                                 begin
-                                    EXMExtTableFields.SetRange("Extension Code", "Extension Code");
-                                    EXMExtTableFields.SetRange("Source Line No.", "Line No.");
-                                    EXMExtTableFields.SetRange("Table Source Type", "Object Type");
-                                    EXMExtTableFields.SetRange("Table ID", "Object ID");
-                                    EXMExtTableFields.SetRange("Source Table ID", "Source Object ID");
+                                    EXMTableFields.SetRange("Extension Code", "Extension Code");
+                                    EXMTableFields.SetRange("Source Line No.", "Line No.");
+                                    EXMTableFields.SetRange("Table Source Type", "Object Type");
+                                    EXMTableFields.SetRange("Table ID", "Object ID");
+                                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
 
-                                    EXMFieldList.SetTableView(EXMExtTableFields);
-                                    EXMFieldList.LookupMode := true;
-                                    if EXMFieldList.RunModal() = Action::LookupOK then
+                                    EXMFieldList.SetTableView(EXMTableFields);
+                                    EXMFieldList.LookupMode(true);
+                                    if EXMFieldList.RunModal() = Action::LookupOK then begin
+                                        "Total Fields" := GetTotalFields();
                                         CurrPage.Update(true);
+                                    end;
                                 end;
 
                             "Object Type"::Enum, "Object Type"::EnumExtension:
@@ -74,9 +77,11 @@ page 83202 "EXM Extension Lines"
                                     EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
 
                                     EXMEnumVal.SetTableView(EXMEnumValues);
-                                    EXMEnumVal.LookupMode := true;
-                                    if EXMEnumVal.RunModal() = Action::LookupOK then
+                                    EXMEnumVal.LookupMode(true);
+                                    if EXMEnumVal.RunModal() = Action::LookupOK then begin
+                                        "Total Fields" := GetTotalFields();
                                         CurrPage.Update(true);
+                                    end;
                                 end;
                             else
                                 exit;
@@ -116,4 +121,8 @@ page 83202 "EXM Extension Lines"
             }
         }
     }
+    trigger OnAfterGetRecord()
+    begin
+        "Total Fields" := GetTotalFields();
+    end;
 }

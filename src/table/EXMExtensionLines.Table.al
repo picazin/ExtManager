@@ -129,7 +129,8 @@ table 83202 "EXM Extension Lines"
                             end;
 
                         end;
-                    else begin
+                    "Object Type"::"TableExtension", "Object Type"::"PageExtension", "Object Type"::EnumExtension:
+                        begin
                             if AllObjects.Get("Source Object Type", "Source Object ID") then
                                 AllObjList.SetRecord(AllObjects);
 
@@ -146,6 +147,8 @@ table 83202 "EXM Extension Lines"
                                 Validate("Source Object ID", AllObjects."Object ID");
                             end;
                         end;
+                    else
+                        exit;
                 end;
             end;
         }
@@ -160,8 +163,6 @@ table 83202 "EXM Extension Lines"
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
-            //FieldClass = FlowField;
-            //CalcFormula = count ("EXM Extension Table Fields" where("Extension Code" = field("Extension Code"), "Source Line No." = field("Line No."), "Table Source Type" = field("Object Type"), "Table ID" = field("Object ID"), "Source Table ID" = field("Source Object ID")));
             Editable = false;
         }
         field(11; Obsolete; Boolean)
@@ -212,12 +213,12 @@ table 83202 "EXM Extension Lines"
 
     trigger OnDelete()
     var
-        EXMExtFields: Record "EXM Extension Table Fields";
+        EXMFields: Record "EXM Table Fields";
         EXMEnumValues: Record "EXM Enum Values";
     begin
-        EXMExtFields.SetRange("Extension Code", "Extension Code");
-        EXMExtFields.SetRange("Source Line No.", "Line No.");
-        EXMExtFields.DeleteAll();
+        EXMFields.SetRange("Extension Code", "Extension Code");
+        EXMFields.SetRange("Source Line No.", "Line No.");
+        EXMFields.DeleteAll();
 
         EXMEnumValues.SetRange("Extension Code", "Extension Code");
         EXMEnumValues.SetRange("Source Line No.", "Line No.");
@@ -274,5 +275,35 @@ table 83202 "EXM Extension Lines"
                     EXMExtSetup."Object Names"::Name:
                         exit(AllObj."Object Name");
                 end;
+    end;
+
+    procedure GetTotalFields(): Integer
+    var
+        EXMTableFields: Record "EXM Table Fields";
+        EXMEnumValues: Record "EXM Enum Values";
+    begin
+        case "Object Type" of
+            "Object Type"::"Table", "Object Type"::"TableExtension":
+                begin
+                    EXMTableFields.SetRange("Extension Code", "Extension Code");
+                    EXMTableFields.SetRange("Source Line No.", "Line No.");
+                    EXMTableFields.SetRange("Table Source Type", "Object Type");
+                    EXMTableFields.SetRange("Table ID", "Object ID");
+                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                    exit(EXMTableFields.Count());
+                end;
+
+            "Object Type"::Enum, "Object Type"::EnumExtension:
+                begin
+                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
+                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
+                    EXMEnumValues.SetRange("Source Type", "Object Type");
+                    EXMEnumValues.SetRange("Enum ID", "Object ID");
+                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
+                    exit(EXMEnumValues.Count());
+                end;
+            else
+                exit(0);
+        end;
     end;
 }

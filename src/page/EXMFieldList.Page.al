@@ -1,7 +1,7 @@
 page 83203 "EXM Field List"
 {
     PageType = List;
-    SourceTable = "EXM Extension Table Fields";
+    SourceTable = "EXM Table Fields";
     DelayedInsert = true;
     Editable = true;
     DataCaptionExpression = GetDesc();

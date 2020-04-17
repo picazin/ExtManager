@@ -2,7 +2,7 @@ page 83206 "EXM Table Field Detail"
 {
     Caption = 'Table Fields', Comment = 'ESP="Campos Tabla"';
     PageType = List;
-    SourceTable = "EXM Extension Table Fields";
+    SourceTable = "EXM Table Fields";
     InsertAllowed = false;
     ModifyAllowed = false;
     DeleteAllowed = false;

@@ -29,15 +29,13 @@ table 83205 "EXM Enum Values"
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
 
-            /*
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
                 EXMExtHeader.Get("Extension Code");
-                Validate("Field ID", SetFieldID("Source Table ID", "Table ID", EXMExtHeader."Customer No."))
+                Validate("Ordinal ID", SetEnumID("Source Enum ID", "Enum ID", EXMExtHeader."Customer No."))
             end;
-            */
         }
         field(5; "Enum ID"; Integer)
         {
@@ -50,16 +48,15 @@ table 83205 "EXM Enum Values"
                 EXMExtHeader: Record "EXM Extension Header";
             begin
                 EXMExtHeader.Get("Extension Code");
-                Validate("Enum ID", SetEnumID("Source Enum ID", "Enum ID", EXMExtHeader."Customer No."))
+                Validate("Ordinal ID", SetEnumID("Source Enum ID", "Enum ID", EXMExtHeader."Customer No."))
             end;
         }
         field(6; "Ordinal ID"; Integer)
         {
             Caption = 'Ordinal ID', Comment = 'ESP="Id. ordinal"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
         }
-        field(7; "Enum Value"; Text[30])
+        field(7; "Enum Value"; Text[250])
         {
             Caption = 'Enum Value', Comment = 'ESP="Valor Enum"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -163,6 +160,6 @@ table 83205 "EXM Enum Values"
         TestField("Enum Value");
 
         if "Source Type" = "Source Type"::"EnumExtension" then
-            EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Ordinal ID");
+            EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Enum ID");
     end;
 }
