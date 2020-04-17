@@ -33,8 +33,7 @@ page 83202 "EXM Extension Lines"
                 field("Source Object ID"; "Source Object ID")
                 {
                     ApplicationArea = All;
-                    Editable = ("Source Object Type" <> "Source Object Type"::" ");
-                    Enabled = ("Source Object Type" <> "Source Object Type"::" ");
+                    Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile);
                 }
                 field("Source Name"; "Source Name")
                 {
@@ -54,11 +53,15 @@ page 83202 "EXM Extension Lines"
                         case "Object Type" of
                             "Object Type"::"Table", "Object Type"::"TableExtension":
                                 begin
+                                    CurrPage.SaveRecord();
+                                    Commit();
+
                                     EXMTableFields.SetRange("Extension Code", "Extension Code");
                                     EXMTableFields.SetRange("Source Line No.", "Line No.");
                                     EXMTableFields.SetRange("Table Source Type", "Object Type");
                                     EXMTableFields.SetRange("Table ID", "Object ID");
                                     EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+
 
                                     EXMFieldList.SetTableView(EXMTableFields);
                                     EXMFieldList.LookupMode(true);
@@ -70,6 +73,9 @@ page 83202 "EXM Extension Lines"
 
                             "Object Type"::Enum, "Object Type"::EnumExtension:
                                 begin
+                                    CurrPage.SaveRecord();
+                                    Commit();
+
                                     EXMEnumValues.SetRange("Extension Code", "Extension Code");
                                     EXMEnumValues.SetRange("Source Line No.", "Line No.");
                                     EXMEnumValues.SetRange("Source Type", "Object Type");

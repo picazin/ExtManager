@@ -61,44 +61,40 @@ page 83210 "EXM Enum Values"
                     Visible = IsVisible;
                 }
             }
-            /*
-            part(ExtTableExtDetail; "EXM TableExt Field List")
+            part(ExtEnumDetail; "EXM EnumExt Values")
             {
                 ApplicationArea = All;
-                SubPageLink = "Table Source Type" = filter("TableExtension"), "Source Table ID" = field("Source Table ID");
-                SubPageView = sorting("Source Table ID", "Field ID");
-                Visible = ViewTableExtDetail;
+                SubPageLink = "Source Type" = filter("EnumExtension"), "Source Enum ID" = field("Source Enum ID");
+                SubPageView = sorting("Source Enum ID", "Ordinal ID");
+                Visible = ViewEnumExtDetail;
                 Editable = false;
                 ShowFilter = false;
             }
-            */
         }
     }
     actions
     {
         area(Processing)
         {
-            /*
-            action(AllFields)
+            action(AllEnumValues)
             {
-                Caption = 'View / Hide fields', Comment = 'ESP="Ver / ocultar campos"';
+                Caption = 'View / Hide values', Comment = 'ESP="Ver / ocultar valores"';
                 ApplicationArea = All;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = ResetStatus;
-                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Enabled = ("Source Type" = "Source Type"::"EnumExtension");
 
                 trigger OnAction()
                 begin
-                    if ViewTableExtDetail then
-                        ViewTableExtDetail := false
+                    if ViewEnumExtDetail then
+                        ViewEnumExtDetail := false
                     else
-                        ViewTableExtDetail := true;
+                        ViewEnumExtDetail := true;
                 end;
             }
-            */
             action(ViewSourceEnum)
             {
                 Caption = 'View source Enum', Comment = 'ESP="Ver Enum origen"';
@@ -146,7 +142,7 @@ page 83210 "EXM Enum Values"
     end;
 
     var
-        //ViewTableExtDetail: Boolean;
+        ViewEnumExtDetail: Boolean;
         [InDataSet]
         IsVisible: Boolean;
 }

@@ -63,6 +63,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Enum"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2931733741 - Action 744506414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View / Hide values</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar valores"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action AllEnumValues - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2931733741 - Action 721040237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View source Enum</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver Enum origen"</note>
@@ -457,6 +462,11 @@
           <source>Want to learn more about EXM?</source>
           <note from="Developer" annotates="general" priority="2">ESP="Desea más información sobre EXM (Extension Manager)?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM RC Headlines Page Common - NamedType DocumentationTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 2206494614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EnumExt Values</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Valores EnumExt"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Manager</source>

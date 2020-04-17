@@ -94,12 +94,13 @@ table 83202 "EXM Extension Lines"
                 ProfileNotFoundErr: Label 'Profile with %1 %2 not found.', Comment = 'ESP="Perfil con %1 %2 no encontrado."';
             begin
                 if xRec."Source Object ID" <> "Source Object ID" then begin
-                    if "Object Type" = "Object Type"::"ProfileExtension" then begin
-                        AllProfile.SetRange("Role Center ID", "Source Object ID");
-                        if AllProfile.IsEmpty() then
-                            Error(ProfileNotFoundErr, AllProfile.FieldCaption("Role Center ID"), "Source Object ID");
-                    end else
-                        AllObjects.Get("Source Object Type", "Source Object ID");
+                    if "Source Object Type" in ["Source Object Type"::Table, "Source Object Type"::Page, "Source Object Type"::Enum, "Source Object Type"::Profile] then
+                        if "Object Type" = "Object Type"::"ProfileExtension" then begin
+                            AllProfile.SetRange("Role Center ID", "Source Object ID");
+                            if AllProfile.IsEmpty() then
+                                Error(ProfileNotFoundErr, AllProfile.FieldCaption("Role Center ID"), "Source Object ID");
+                        end else
+                            AllObjects.Get("Source Object Type", "Source Object ID");
 
                     "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
                 end;
