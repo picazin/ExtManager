@@ -12,7 +12,8 @@
             "launchBrowser": false,
             "schemaUpdateMode": "Synchronize",
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
+            "enableSqlInformationDebugger": true,
+            "startupObjectId": 83200
         }
     ]
 }

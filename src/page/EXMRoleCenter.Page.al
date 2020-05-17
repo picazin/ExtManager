@@ -78,15 +78,13 @@ page 83207 "EXM Role Center"
                     ApplicationArea = Basic, Suite;
 
                 }
-                //TODO Crear assisted setup
-                /*
                 action("Assisted Setup")
                 {
-                    ToolTip = 'Set up core functionality such as sales tax, sending documents as email, and approval workflow by running through a few pages that guide you through the information.';
-                    RunObject = Page "Assisted Setup";
+                    Caption = 'Assisted Setup', Comment = 'ESP="Asistente de configuración"';
+                    ToolTip = 'Setup EXM using an assisted wizard', Comment = 'ESP="Configurar mediante asistente"';
+                    RunObject = Page "EXM Setup Wizard";
                     ApplicationArea = Basic, Suite;
                 }
-                */
             }
         }
     }

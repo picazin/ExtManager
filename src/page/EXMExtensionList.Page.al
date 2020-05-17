@@ -46,5 +46,13 @@ page 83200 "EXM Extension List"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(EXMExtDetail; "EXM Extension FactBox")
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = Code = FIELD(Code);
+            }
+        }
     }
 }

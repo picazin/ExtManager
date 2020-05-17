@@ -135,20 +135,25 @@ table 83203 "EXM Table Fields"
         ValidateData();
     end;
 
-    //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
-    local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]): Integer
+    //TODO Improvement - Look for empty ID
+    local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]) FieldID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMFields: Record "EXM Table Fields";
         EXMExtMgt: Codeunit "EXM Extension Management";
+        IsHandled: Boolean;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
             exit;
 
-        EXMExtHeader.Get("Extension Code");
+        IsHandled := false;
+        OnBeforeCalculateFieldID(SourceTableID, TableID, CustNo, FieldID, IsHandled);
+        if IsHandled then
+            exit(FieldID);
 
+        EXMExtHeader.Get("Extension Code");
         if SourceTableID = 0 then
             EXMFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
         else begin
@@ -165,12 +170,14 @@ table 83203 "EXM Table Fields"
         if SourceTableID = 0 then
             EXMFields.SetRange("Table ID", TableID);
         if EXMFields.FindLast() then
-            exit(EXMFields."Field ID" + 1)
+            FieldID := EXMFields."Field ID" + 1
         else
             if "Table Source Type" = "Table Source Type"::Table then
-                exit(1)
+                FieldID := 1
             else
-                exit(EXMExtHeader."Object Starting ID");
+                FieldID := EXMExtHeader."Object Starting ID";
+
+        exit(FieldID);
     end;
 
     local procedure ValidateData()
@@ -202,5 +209,10 @@ table 83203 "EXM Table Fields"
 
         if "Table Source Type" = "Table Source Type"::"TableExtension" then
             EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Field ID");
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalculateFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]; var FieldID: Integer; var IsHandled: Boolean)
+    begin
     end;
 }

@@ -84,7 +84,6 @@ table 83201 "EXM Extension Header"
             DecimalPlaces = 0 : 2;
             MinValue = 0;
         }
-        //TODO crear taula amb ventes / factures per poder treure dades --> nova taula
         field(21; Installations; Integer)
         {
             Caption = 'Installations', Comment = 'ESP="Instalaciones"';
@@ -112,9 +111,90 @@ table 83201 "EXM Extension Header"
             TableRelation = if ("Sell-Type" = filter(Account)) "G/L Account" else
             if ("Sell-Type" = filter(Item)) Item;
         }
-
-
-
+        field(25; "No. of Tables"; Integer)
+        {
+            Caption = 'No. of Tables', Comment = 'ESP="Nº tablas"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Table)));
+            Editable = false;
+        }
+        field(26; "No. of Reports"; Integer)
+        {
+            Caption = 'No. of Reports', Comment = 'ESP="Nº informes"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Report)));
+            Editable = false;
+        }
+        field(27; "No. of Codeunits"; Integer)
+        {
+            Caption = 'No. of Codeunits', Comment = 'ESP="Nº Codeunits"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Codeunit)));
+            Editable = false;
+        }
+        field(28; "No. of XMLports"; Integer)
+        {
+            Caption = 'No. of XMLports', Comment = 'ESP="Nº XMLports"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(XMLport)));
+            Editable = false;
+        }
+        field(29; "No. of Page"; Integer)
+        {
+            Caption = 'No. of Pages', Comment = 'ESP="Nº Pages"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Page)));
+            Editable = false;
+        }
+        field(30; "No. of Querys"; Integer)
+        {
+            Caption = 'No. of Querys', Comment = 'ESP="Nº Querys"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Query)));
+            Editable = false;
+        }
+        field(31; "No. of PageExtensions"; Integer)
+        {
+            Caption = 'No. of PageExtensions', Comment = 'ESP="Nº PageExtensions"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("PageExtension")));
+            Editable = false;
+        }
+        field(32; "No. of TableExtensions"; Integer)
+        {
+            Caption = 'No. of TableExtensions', Comment = 'ESP="Nº TableExtensions"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("TableExtension")));
+            Editable = false;
+        }
+        field(33; "No. of Enums"; Integer)
+        {
+            Caption = 'No. of Enums', Comment = 'ESP="Nº Enums"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Enum)));
+            Editable = false;
+        }
+        field(34; "No. of EnumExtensions"; Integer)
+        {
+            Caption = 'No. of EnumExtensions', Comment = 'ESP="Nº EnumExtensions"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(EnumExtension)));
+            Editable = false;
+        }
+        field(35; "No. of Profiles"; Integer)
+        {
+            Caption = 'No. of Profiles', Comment = 'ESP="Nº Profiles"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Profile)));
+            Editable = false;
+        }
+        field(36; "No. of ProfileExtensions"; Integer)
+        {
+            Caption = 'No. of ProfileExtensions', Comment = 'ESP="Nº ProfileExtensions"';
+            FieldClass = FlowField;
+            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("ProfileExtension")));
+            Editable = false;
+        }
         field(50; "GIT Repository URL"; Text[2048])
         {
             Caption = 'GIT Repository URL', Comment = 'ESP="URL repositorio GIT"';

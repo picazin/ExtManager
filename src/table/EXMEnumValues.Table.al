@@ -102,19 +102,25 @@ table 83205 "EXM Enum Values"
         ValidateData();
     end;
 
-    local procedure SetEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]): Integer
+    //TODO Improvement - Look for empty ID
+    local procedure SetEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]) EnumValueID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMEnumValues: Record "EXM Enum Values";
         EXMExtMgt: Codeunit "EXM Extension Management";
+        IsHandled: Boolean;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
             exit;
 
-        EXMExtHeader.Get("Extension Code");
+        IsHandled := false;
+        OnBeforeCalculateEnumValueID(SourceEnumID, EnumID, CustNo, EnumValueID, IsHandled);
+        if IsHandled then
+            exit(EnumValueID);
 
+        EXMExtHeader.Get("Extension Code");
         if SourceEnumID = 0 then
             EXMEnumValues.SetCurrentKey("Source Enum ID", "Enum ID", "Ordinal ID")
         else begin
@@ -131,12 +137,14 @@ table 83205 "EXM Enum Values"
         if SourceEnumID = 0 then
             EXMEnumValues.SetRange("Enum ID", EnumID);
         if EXMEnumValues.FindLast() then
-            exit(EXMEnumValues."Ordinal ID" + 1)
+            EnumValueID := EXMEnumValues."Ordinal ID" + 1
         else
             if "Source Type" = "Source Type"::Enum then
-                exit(1)
+                EnumValueID := 1
             else
-                exit(EXMExtHeader."Object Starting ID");
+                EnumValueID := EXMExtHeader."Object Starting ID";
+
+        exit(EnumValueID)
     end;
 
     local procedure ValidateData()
@@ -161,5 +169,10 @@ table 83205 "EXM Enum Values"
 
         if "Source Type" = "Source Type"::"EnumExtension" then
             EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Enum ID");
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var FieldID: Integer; var IsHandled: Boolean)
+    begin
     end;
 }

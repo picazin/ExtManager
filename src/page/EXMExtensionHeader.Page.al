@@ -67,6 +67,14 @@ page 83201 "EXM Extension Header"
                 }
             }
         }
+        area(factboxes)
+        {
+            part(EXMExtDetail; "EXM Extension FactBox")
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = Code = FIELD(Code);
+            }
+        }
     }
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -76,5 +84,4 @@ page 83201 "EXM Extension Header"
             TestField("Object Ending ID");
         end;
     end;
-    //TODO Add customer ledger entry
 }

@@ -227,21 +227,25 @@ table 83202 "EXM Extension Lines"
     end;
     //#endregion Triggers   
 
-    local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]): Integer
+    //TODO Improvement - Look for empty ID
+    local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMExtLine: Record "EXM Extension Lines";
         EXMExtMgt: Codeunit "EXM Extension Management";
-
+        IsHandled: Boolean;
     begin
-        //TODO Millora - Buscar espai buit dins d'extensió!! 50000, 50004 ha de proposar 50001
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Objects ID" then
             exit;
 
-        EXMExtHeader.Get("Extension Code");
+        IsHandled := false;
+        OnBeforeCalculateObjectID(ObjectType, CustNo, ObjectID, IsHandled);
+        if IsHandled then
+            exit(ObjectID);
 
+        EXMExtHeader.Get("Extension Code");
         EXMExtLine.SetCurrentKey("Extension Code", "Object Type", "Object ID");
         if CustNo <> '' then
             EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
@@ -251,9 +255,11 @@ table 83202 "EXM Extension Lines"
         EXMExtLine.SetRange("Object Type", ObjectType);
         EXMExtLine.SetFilter("Object ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         if EXMExtLine.FindLast() then
-            exit(EXMExtLine."Object ID" + 1)
+            ObjectID := EXMExtLine."Object ID" + 1
         else
-            exit(EXMExtHeader."Object Starting ID");
+            ObjectID := EXMExtHeader."Object Starting ID";
+
+        exit(ObjectID)
     end;
 
     local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[249]
@@ -306,5 +312,10 @@ table 83202 "EXM Extension Lines"
             else
                 exit(0);
         end;
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalculateObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer; var IsHandled: Boolean)
+    begin
     end;
 }
