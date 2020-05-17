@@ -113,14 +113,14 @@ table 83201 "EXM Extension Header"
         }
         field(25; "No. of Tables"; Integer)
         {
-            Caption = 'No. of Tables', Comment = 'ESP="Nº tablas"';
+            Caption = 'No. of Tables', Comment = 'ESP="Nº Tablas"';
             FieldClass = FlowField;
             CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Table)));
             Editable = false;
         }
         field(26; "No. of Reports"; Integer)
         {
-            Caption = 'No. of Reports', Comment = 'ESP="Nº informes"';
+            Caption = 'No. of Reports', Comment = 'ESP="Nº Informes"';
             FieldClass = FlowField;
             CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Report)));
             Editable = false;

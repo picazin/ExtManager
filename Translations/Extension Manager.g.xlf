@@ -145,12 +145,12 @@
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 666729213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. of Tables</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nº tablas"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Tablas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field No. of Tables - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 3594050349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. of Reports</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nº informes"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Informes"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field No. of Reports - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 330729858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

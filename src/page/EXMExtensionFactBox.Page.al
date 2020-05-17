@@ -3,6 +3,7 @@ page 83213 "EXM Extension FactBox"
     PageType = CardPart;
     SourceTable = "EXM Extension Header";
     Caption = 'Extension objects detail', Comment = 'ESP="Detalle objetos extensión"';
+    Editable = false;
 
     layout
     {
