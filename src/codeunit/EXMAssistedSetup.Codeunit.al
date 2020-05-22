@@ -1,28 +1,32 @@
 codeunit 83203 "EXM Assisted Setup"
 {
-
     var
         AssistedSetup: Codeunit "Assisted Setup";
-        AssistedSetupGroup: Enum "Assisted Setup Group";
-        CurrentGlobalLanguage: Integer;
-        SetupWizardTxt: Label 'Set up Extension Manager', Comment = 'ESP="Configurar Gestor Extensiones"';
-        SetupWizardLinkTxt: Label 'https://www.picazin.dev', Locked = true;
-        AlreadySetUpQst: Label 'Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?', Comment = 'ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"';
-
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', false, false)]
     local procedure SetupInitialize()
+    var
+        Language: Codeunit Language;
+        AssistedSetupGroup: Enum "Assisted Setup Group";
+        VideoCategory: Enum "Video Category";
+        CurrentGlobalLanguage: Integer;
+        SetupWizardLinkTxt: Label 'https://www.picazin.dev', Locked = true;
+        SetupWizardTxt: Label 'Set up Extension Manager', Comment = 'ESP="Configurar Gestor Extensiones"';
+        InitialEXMSetupDescTxt: Label 'EXM need some amazing information from you to make everything works fine!', Comment = 'ESP="EXM necesita pedirte información para funcionar correctamente, Será rápido!!"';
     begin
         CurrentGlobalLanguage := GlobalLanguage();
-        AssistedSetup.Add(GetAppId(), Page::"EXM Setup Wizard", SetupWizardTxt, AssistedSetupGroup::Extensions, '', SetupWizardLinkTxt);
-        GlobalLanguage(1033);
-        AssistedSetup.AddTranslation(Page::"EXM Setup Wizard", 1033, SetupWizardTxt);
+        AssistedSetup.Add(GetAppId(), Page::"EXM Setup Wizard", SetupWizardTxt, AssistedSetupGroup::Extensions, '', VideoCategory::Extensions, SetupWizardLinkTxt, InitialEXMSetupDescTxt);
+        GlobalLanguage(Language.GetDefaultApplicationLanguageId());
+
+        AssistedSetup.AddTranslation(Page::"EXM Setup Wizard", Language.GetDefaultApplicationLanguageId(), SetupWizardTxt);
         GlobalLanguage(CurrentGlobalLanguage);
         GetInformationSetupStatus();
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnReRunOfCompletedSetup', '', false, false)]
     local procedure OnReRunOfCompletedSetup(ExtensionId: Guid; PageID: Integer; var Handled: Boolean)
+    var
+        AlreadySetUpQst: Label 'Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?', Comment = 'ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"';
     begin
         if ExtensionId <> GetAppId() then
             exit;

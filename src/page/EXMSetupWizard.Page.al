@@ -109,7 +109,7 @@ page 83212 "EXM Setup Wizard"
 
                 group("ActivationDone")
                 {
-                    Caption = 'You''re done! Hope you enjoy this app!!', Comment = 'ESP="Hecho!! Espero que disfute de esta aplicación!!"';
+                    Caption = 'You''re done! Hope you enjoy this app!!', Comment = 'ESP="Hecho!! Espero que disfrute de esta aplicación!!"';
                     Visible = FinalPageVisible;
 
                     group(DoneMessage)

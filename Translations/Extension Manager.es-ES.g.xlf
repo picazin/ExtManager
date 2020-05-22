@@ -596,21 +596,27 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Table Fields - Method ValidateData - NamedType SelectDataTypeErr</note>
           <target>Debe seleccionar un tipo de datos.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set up Extension Manager</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - NamedType SetupWizardTxt</note>
-          <target>Configurar Gestor Extensiones</target>
-        </trans-unit>
-        <trans-unit id="Codeunit 245402963 - NamedType 3855015360" size-unit="char" translate="no" xml:space="preserve">
+        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 3855015360" size-unit="char" translate="no" xml:space="preserve">
           <source>https://www.picazin.dev</source>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - NamedType SetupWizardLinkTxt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardLinkTxt</note>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set up Extension Manager</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardTxt</note>
+          <target>Configurar Gestor Extensiones</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 198194196" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM need some amazing information from you to make everything works fine!</source>
+          <note from="Developer" annotates="general" priority="2">ESP="EXM necesita pedirte información para funcionar correctamente, Será rápido!!"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType InitialEXMSetupDescTxt</note>
+          <target>EXM necesita pedirte información para funcionar correctamente, Será rápido!!</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 245402963 - Method 1858114840 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?</source>
           <note from="Developer" annotates="general" priority="2">ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - NamedType AlreadySetUpQst</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method OnReRunOfCompletedSetup - NamedType AlreadySetUpQst</note>
           <target>La configuración se ha realizado. Desea ejecutar nuevamente?</target>
         </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
@@ -910,9 +916,9 @@
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 3559045584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>You're done! Hope you enjoy this app!!</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Hecho!! Espero que disfute de esta aplicación!!"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Hecho!! Espero que disfrute de esta aplicación!!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ActivationDone - Property Caption</note>
-          <target>Hecho!! Espero que disfute de esta aplicación!!</target>
+          <target>Hecho!! Espero que disfrute de esta aplicación!!</target>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 3882300021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source/>

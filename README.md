@@ -30,6 +30,22 @@ Try typing ***"extension"*** and 2 additional links appear:
 
 ### Setup
 
+There are two available ways to setup data on the extension:
+
+#### Assisted Setup
+
+Selecting ***"Set up Extension Manager"*** from assisted setup list under list point ***"Install extensions..."***. It's also available from EXM Profile
+
+![Assisted setup list](/images/EXM_Assisted_Setup.png)
+
+
+
+Once selected a wizard guides us through the process and ask for all setup data needed in order to work properly.
+
+![Assisted setup](/images/EXM_Assisted_Setup.gif)
+
+#### Setup Table
+
 Type ***"extension"*** and select **"Extension Manager Setup"**
 
 ![Extension setup](/images/EXM_Setup.png)
@@ -127,6 +143,10 @@ In case you're selecting ***TableExtension***, ***PageExtension***, ***EnumExten
 **Source Object ID** must be filled. Once selected the Name is set depending to your setup choice (Name or Caption)
 
 ![Auto object ID](/images/EXM_Auto_Object_ID.gif)
+
+There's also a briefing Factbox with all extension objects resume.
+
+![Fields detail](/images/EXM_Ext_Factbox.png)
 
 ### Set extension objects
 
