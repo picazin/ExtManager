@@ -6,7 +6,6 @@ Extension Manager for Microsoft Dynamics 365 Business Central is a free-to-use a
 
 1. Idea
 2. How-to
-3. Future improvements
 
 ## ***Idea***
 
@@ -179,9 +178,3 @@ Same functionality as on tables but with Enum data information.
 With ***View/Hide values*** all extended values on **Enum** are shown. Also available to view source **Enum** values with ***View source Enum*** button.
 
 ![View Enum Details](/images/EXM_Enums_Detail.gif)
-
-## Future improvements
-
-- [ ] Catalan translation
-- [ ] Guided setup
-- [ ] Financial management
