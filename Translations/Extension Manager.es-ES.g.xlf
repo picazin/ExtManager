@@ -720,6 +720,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
           <target>Ver tabla origen</target>
         </trans-unit>
+        <trans-unit id="Page 1644431652 - Method 4177352842 - NamedType 4100000954" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key must be set.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Se debe indicar clave primária"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Method OnQueryClosePage - NamedType PKErr</note>
+          <target>Se debe indicar clave primária</target>
+        </trans-unit>
         <trans-unit id="Page 1528526893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Extension Manager</source>
           <note from="Developer" annotates="general" priority="2">ESP="EXM Gestor Extensiones"</note>
