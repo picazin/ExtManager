@@ -102,5 +102,6 @@ page 83214 "EXM Object Detail"
     end;
 
     var
-        FieldsVisible, SourceVisible : Boolean;
+        FieldsVisible: Boolean;
+        SourceVisible: Boolean;
 }

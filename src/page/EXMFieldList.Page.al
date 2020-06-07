@@ -50,7 +50,7 @@ page 83203 "EXM Field List"
                 field(IsPK; IsPK)
                 {
                     ApplicationArea = All;
-                    Visible = ("Source Table ID" = 0);
+                    Visible = PKVisible;
                     Enabled = ("Source Table ID" = 0);
                     StyleExpr = StyleExp;
                     trigger OnValidate()
@@ -177,6 +177,7 @@ page 83203 "EXM Field List"
 
     trigger OnAfterGetRecord()
     begin
+        PKVisible := ("Source Table ID" = 0);
         StyleExp := 'standard';
         if IsPK then
             StyleExp := 'strong';
@@ -211,5 +212,7 @@ page 83203 "EXM Field List"
 
     var
         ViewTableExtDetail: Boolean;
+        PKVisible: Boolean;
         StyleExp: Text;
+
 }
