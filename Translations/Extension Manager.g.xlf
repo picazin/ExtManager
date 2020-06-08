@@ -558,6 +558,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="Gestor Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1097993837 - Action 1621166485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tree view</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Vista arbol"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Action TreeView - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Action 1621166485 - Method 1377591017 - NamedType 1253109618" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All,Selected</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Todos,Seleccionado"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Action TreeView - Method OnAction - NamedType OptionsQst</note>
+        </trans-unit>
         <trans-unit id="Page 3805068503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Manager Setup</source>
           <note from="Developer" annotates="general" priority="2">ESP="Conf. gestor extensiones"</note>
@@ -598,6 +608,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="Extensiones por tipo"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control Detail - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2385468214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Extension TreeView</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 3481801877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nivel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Total Fields - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1644431652 - Action 4223896452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View / Hide fields</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar campos"</note>
@@ -607,6 +627,11 @@
           <source>View source table</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Method 4177352842 - NamedType 4100000954" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key must be set.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Se debe indicar clave primária"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Method OnQueryClosePage - NamedType PKErr</note>
         </trans-unit>
         <trans-unit id="Page 1528526893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Extension Manager</source>

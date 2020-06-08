@@ -47,15 +47,4 @@ page 83209 "EXM Extensions Activities"
         end;
 
     end;
-
-    trigger OnAfterGetRecord()
-    begin
-        CalculateCueFieldValues();
-    end;
-
-    local procedure CalculateCueFieldValues()
-    begin
-        //if FIELDACTIVE("Normal field") then
-        //    "Normal field" := 2 + 1 //add some calculation here for normal fields;
-    end;
 }

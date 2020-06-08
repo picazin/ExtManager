@@ -72,7 +72,7 @@ page 83201 "EXM Extension Header"
             part(EXMExtDetail; "EXM Extension FactBox")
             {
                 ApplicationArea = Basic, Suite;
-                SubPageLink = Code = FIELD(Code);
+                SubPageLink = Code = field(Code);
             }
         }
     }

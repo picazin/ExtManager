@@ -51,7 +51,43 @@ page 83200 "EXM Extension List"
             part(EXMExtDetail; "EXM Extension FactBox")
             {
                 ApplicationArea = Basic, Suite;
-                SubPageLink = Code = FIELD(Code);
+                SubPageLink = Code = field(Code);
+            }
+        }
+    }
+    actions
+    {
+        area(Navigation)
+        {
+            action(TreeView)
+            {
+
+                Caption = 'Tree view', Comment = 'ESP="Vista arbol"';
+                ApplicationArea = All;
+                Image = Trendscape;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    EXMExtTreeView: Page "EXM Extension TreeView";
+                    OptionsQst: Label 'All,Selected', Comment = 'ESP="Todos,Seleccionado"';
+                    SelOption: Integer;
+                begin
+                    SelOption := StrMenu(OptionsQst);
+
+                    case SelOption of
+                        1:
+                            EXMExtTreeView.SetFilters(Type, '', "Customer No.");
+                        2:
+                            EXMExtTreeView.SetFilters(Type, Code, "Customer No.");
+                        else
+                            exit;
+                    end;
+
+                    EXMExtTreeView.Run();
+                end;
             }
         }
     }

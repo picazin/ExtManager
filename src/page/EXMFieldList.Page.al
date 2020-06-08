@@ -15,69 +15,96 @@ page 83203 "EXM Field List"
                 field("Extension Code"; "Extension Code")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     Editable = false;
+                    StyleExpr = StyleExp;
                 }
                 field("Source Line No."; "Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    StyleExpr = StyleExp;
                 }
                 field("Table Source Type"; "Table Source Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    StyleExpr = StyleExp;
                 }
                 field("Source Table ID"; "Source Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    StyleExpr = StyleExp;
                 }
                 field("Table ID"; "Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    StyleExpr = StyleExp;
+                }
+                field(IsPK; IsPK)
+                {
+                    ApplicationArea = All;
+                    Visible = PKVisible;
+                    Enabled = ("Source Table ID" = 0);
+                    StyleExpr = StyleExp;
+                    trigger OnValidate()
+                    begin
+                        if xRec.IsPK <> IsPK then
+                            CurrPage.Update(true);
+                    end;
                 }
                 field("Field ID"; "Field ID")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field("Field Name"; "Field Name")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field("Data Type"; "Data Type")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field(Lenght; Lenght)
                 {
                     ApplicationArea = All;
                     Editable = (("Data Type" = "Data Type"::Text) or ("Data Type" = "Data Type"::Code));
+                    StyleExpr = StyleExp;
                 }
                 field("Field Class"; "Field Class")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field("Option String"; "Option String")
                 {
                     ApplicationArea = All;
                     Editable = ("Data Type" = "Data Type"::Option);
+                    StyleExpr = StyleExp;
                 }
                 field(Obsolete; Obsolete)
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field("Created by"; "Created by")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
                 field("Creation Date"; "Creation Date")
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleExp;
                 }
             }
             part(ExtTableExtDetail; "EXM TableExt Field List")
@@ -148,6 +175,44 @@ page 83203 "EXM Field List"
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
 
+    trigger OnAfterGetRecord()
+    begin
+        PKVisible := ("Source Table ID" = 0);
+        StyleExp := 'standard';
+        if IsPK then
+            StyleExp := 'strong';
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        StyleExp := 'standard';
+
+    end;
+
+    trigger OnOpenPage()
+    begin
+        CurrPage.Editable(true);
+    end;
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        EXMTableFields: Record "EXM Table Fields";
+        PKErr: Label 'Primary key must be set.', Comment = 'ESP="Se debe indicar clave primária"';
+    begin
+        if CloseAction = CloseAction::LookupOK then
+            if "Source Table ID" = 0 then begin
+                EXMTableFields.SetRange("Extension Code", "Extension Code");
+                EXMTableFields.SetRange("Source Line No.", "Source Line No.");
+                EXMTableFields.SetRange("Table Source Type", "Table Source Type"::Table);
+                EXMTableFields.SetRange(IsPK, true);
+                if EXMTableFields.IsEmpty then
+                    Error(PKErr);
+            end;
+    end;
+
     var
         ViewTableExtDetail: Boolean;
+        PKVisible: Boolean;
+        StyleExp: Text;
+
 }

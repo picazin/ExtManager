@@ -9,7 +9,7 @@ page 83213 "EXM Extension FactBox"
     {
         area(content)
         {
-            group(General)
+            cuegroup(General)
             {
                 field("No. of Tables"; "No. of Tables")
                 {

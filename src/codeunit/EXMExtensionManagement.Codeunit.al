@@ -80,7 +80,8 @@ codeunit 83200 "EXM Extension Management"
         TempEXMEnums: Record "EXM Enum Values" temporary;
         EnumRec: RecordRef;
         EnumRef: FieldRef;
-        TotalValues, Counter : Integer;
+        TotalValues: Integer;
+        Counter: Integer;
     begin
         EnumRec.Open(EnumID);
         EnumRef := EnumRec.Field(1);
