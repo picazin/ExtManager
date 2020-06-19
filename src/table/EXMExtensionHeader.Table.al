@@ -76,6 +76,16 @@ table 83201 "EXM Extension Header"
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
         }
+        field(8; "App Version"; Code[20])
+        {
+            Caption = 'App Version', Comment = 'ESP="Versión App"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
+        field(9; "App File"; Blob)
+        {
+            Caption = 'App File', Comment = 'ESP="Fichero App"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
 
         field(20; Price; Decimal)
         {

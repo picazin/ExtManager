@@ -46,32 +46,30 @@ codeunit 83200 "EXM Extension Management"
         TempEXMFields: Record "EXM Table Fields" temporary;
         intType: Integer;
     begin
-        with TempEXMFields do begin
-            FieldData.SetRange(TableNo, TableNo);
-            if FieldData.FindSet() then
-                repeat
-                    Init();
-                    "Extension Code" := Format(SessionId());
-                    "Source Line No." := FieldData."No.";
-                    "Table Source Type" := "Table Source Type"::Table;
-                    "Table ID" := TableNo;
-                    "Field ID" := FieldData."No.";
-                    "Field Name" := FieldData.FieldName;
-                    "Field Caption" := FieldData."Field Caption";
-                    intType := FieldData.Type;
-                    "Data Type" := intType;
-                    Lenght := FieldData.Len;
-                    "Field Class" := FieldData.Class;
-                    "Option String" := CopyStr(FieldData.OptionString, 1, MaxStrLen("Option String"));
-                    Obsolete := (FieldData.ObsoleteState <> FieldData.ObsoleteState::No);
-                    IsPK := FieldData.IsPartOfPrimaryKey;
-                    Insert();
-                until FieldData.Next() = 0;
+        FieldData.SetRange(TableNo, TableNo);
+        if FieldData.FindSet() then
+            repeat
+                TempEXMFields.Init();
+                TempEXMFields."Extension Code" := Format(SessionId());
+                TempEXMFields."Source Line No." := FieldData."No.";
+                TempEXMFields."Table Source Type" := TempEXMFields."Table Source Type"::Table;
+                TempEXMFields."Table ID" := TableNo;
+                TempEXMFields."Field ID" := FieldData."No.";
+                TempEXMFields."Field Name" := FieldData.FieldName;
+                TempEXMFields."Field Caption" := FieldData."Field Caption";
+                intType := FieldData.Type;
+                TempEXMFields."Data Type" := intType;
+                TempEXMFields.Lenght := FieldData.Len;
+                TempEXMFields."Field Class" := FieldData.Class;
+                TempEXMFields."Option String" := CopyStr(FieldData.OptionString, 1, MaxStrLen(TempEXMFields."Option String"));
+                TempEXMFields.Obsolete := (FieldData.ObsoleteState <> FieldData.ObsoleteState::No);
+                TempEXMFields.IsPK := FieldData.IsPartOfPrimaryKey;
+                TempEXMFields.Insert();
+            until FieldData.Next() = 0;
 
-            if not TempEXMFields.IsEmpty() then begin
-                TempEXMFields.FindFirst();
-                Page.Run(Page::"EXM Table Field Detail", TempEXMFields);
-            end;
+        if not TempEXMFields.IsEmpty() then begin
+            TempEXMFields.FindFirst();
+            Page.Run(Page::"EXM Table Field Detail", TempEXMFields);
         end;
     end;
 
@@ -86,17 +84,16 @@ codeunit 83200 "EXM Extension Management"
         EnumRec.Open(EnumID);
         EnumRef := EnumRec.Field(1);
         TotalValues := (EnumRef.EnumValueCount());
-        with TempEXMEnums do
-            for Counter := 1 to TotalValues do begin
-                Init();
-                "Extension Code" := Format(SessionId());
-                "Source Line No." := Counter;
-                "Source Type" := "Source Type"::Enum;
-                "Enum ID" := EnumID;
-                "Ordinal ID" := EnumRef.GetEnumValueOrdinal(Counter);
-                "Enum Value" := CopyStr(EnumRef.GetEnumValueName(Counter), 1, MaxStrLen("Enum Value"));
-                Insert();
-            end;
+        for Counter := 1 to TotalValues do begin
+            TempEXMEnums.Init();
+            TempEXMEnums."Extension Code" := Format(SessionId());
+            TempEXMEnums."Source Line No." := Counter;
+            TempEXMEnums."Source Type" := TempEXMEnums."Source Type"::Enum;
+            TempEXMEnums."Enum ID" := EnumID;
+            TempEXMEnums."Ordinal ID" := EnumRef.GetEnumValueOrdinal(Counter);
+            TempEXMEnums."Enum Value" := CopyStr(EnumRef.GetEnumValueName(Counter), 1, MaxStrLen(TempEXMEnums."Enum Value"));
+            TempEXMEnums.Insert();
+        end;
 
         if not TempEXMEnums.IsEmpty() then begin
             TempEXMEnums.FindFirst();

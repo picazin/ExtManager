@@ -5,6 +5,7 @@ page 83201 "EXM Extension Header"
     SourceTable = "EXM Extension Header";
     DataCaptionFields = Code, Description;
 
+
     layout
     {
         area(Content)
@@ -17,6 +18,10 @@ page 83201 "EXM Extension Header"
                     ApplicationArea = All;
                 }
                 field("Description"; "Description")
+                {
+                    ApplicationArea = All;
+                }
+                field("App Version"; "App Version")
                 {
                     ApplicationArea = All;
                 }

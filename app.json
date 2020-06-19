@@ -2,7 +2,7 @@
   "id": "b9954c96-ee6b-44ff-9b0d-3d8146fc034a",
   "name": "Extension Manager",
   "publisher": "picazin dev",
-  "version": "0.2.5.0",
+  "version": "0.2.6.0",
   "brief": "Manager for developing extensions.",
   "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
   "privacyStatement": "http://www.picazin.dev",
