@@ -250,7 +250,7 @@ table 83202 "EXM Extension Lines"
         if CustNo <> '' then
             EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else
-            EXMExtLine.SetRange("Extension Code", "Extension Code");
+            EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
 
         EXMExtLine.SetRange("Object Type", ObjectType);
         EXMExtLine.SetFilter("Object ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");

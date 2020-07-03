@@ -40,6 +40,20 @@ codeunit 83200 "EXM Extension Management"
             until EXMExtHeader.Next() = 0;
     end;
 
+    procedure GetInternalExtensions() ExtFilter: Text
+    var
+        EXMExtHeader: Record "EXM Extension Header";
+    begin
+        EXMExtHeader.SetRange(Type, EXMExtHeader.Type::Internal);
+        if EXMExtHeader.FindSet() then
+            repeat
+                if ExtFilter = '' then
+                    ExtFilter := EXMExtHeader.Code
+                else
+                    ExtFilter += '|' + EXMExtHeader.Code;
+            until EXMExtHeader.Next() = 0;
+    end;
+
     procedure GetTableFieldData(TableNo: Integer)
     var
         FieldData: Record Field;

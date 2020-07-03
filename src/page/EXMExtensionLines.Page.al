@@ -88,6 +88,12 @@ page 83202 "EXM Extension Lines"
         "Total Fields" := GetTotalFields();
     end;
 
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        if xRec."Object Type" <> xRec."Object Type"::" " then
+            Validate(Rec."Object Type", xRec."Object Type");
+    end;
+
     local procedure ViewRelatedFields()
     var
         EXMTableFields: Record "EXM Table Fields";

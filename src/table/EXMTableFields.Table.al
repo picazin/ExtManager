@@ -164,7 +164,8 @@ table 83203 "EXM Table Fields"
         if CustNo <> '' then
             EXMFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else
-            EXMFields.SetRange("Extension Code", "Extension Code");
+            EXMFields.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
+
 
         EXMFields.SetRange("Source Table ID", SourceTableID);
         if SourceTableID = 0 then

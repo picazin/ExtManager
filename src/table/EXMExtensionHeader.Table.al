@@ -104,6 +104,7 @@ table 83201 "EXM Extension Header"
         }
         field(22; "Sell-Type"; Option)
         {
+
             Caption = 'Installations', Comment = 'ESP="Instalaciones"';
             OptionMembers = " ",Account,Item;
             OptionCaption = ' ,Account,Item', Comment = 'ESP=" ,Cuenta,Producto"';

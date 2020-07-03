@@ -131,7 +131,7 @@ table 83205 "EXM Enum Values"
         if CustNo <> '' then
             EXMEnumValues.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
         else
-            EXMEnumValues.SetRange("Extension Code", "Extension Code");
+            EXMEnumValues.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
 
         EXMEnumValues.SetRange("Source Enum ID", SourceEnumID);
         if SourceEnumID = 0 then
