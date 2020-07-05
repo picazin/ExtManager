@@ -218,6 +218,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="URL repositorio GIT"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field GIT Repository URL - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 804474859 - NamedType 430254759" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="No se puede renombrar una %1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method OnRename - NamedType RenameErr</note>
+        </trans-unit>
         <trans-unit id="Page 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Card</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ficha extensión"</note>

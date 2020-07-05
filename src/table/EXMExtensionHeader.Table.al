@@ -256,7 +256,9 @@ table 83201 "EXM Extension Header"
     end;
 
     trigger OnRename()
+    var
+        RenameErr: Label 'You cannot rename an %1.', Comment = 'ESP="No se puede renombrar una %1"';
     begin
-        Error('');
+        Error(RenameErr, TableCaption);
     end;
 }

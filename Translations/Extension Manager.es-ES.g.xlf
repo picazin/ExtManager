@@ -141,6 +141,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Customer Name - Property Caption</note>
           <target>Nombre</target>
         </trans-unit>
+        <trans-unit id="Table 2608205474 - Field 2709452997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Version</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Versión App"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field App Version - Property Caption</note>
+          <target>Versión App</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Field 3673089793 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App File</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Fichero App"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field App File - Property Caption</note>
+          <target>Fichero App</target>
+        </trans-unit>
         <trans-unit id="Table 2608205474 - Field 3635338911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price</source>
           <note from="Developer" annotates="general" priority="2">ESP="Precio"</note>
@@ -248,6 +260,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="URL repositorio GIT"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field GIT Repository URL - Property Caption</note>
           <target>URL repositorio GIT</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 804474859 - NamedType 430254759" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="No se puede renombrar una %1"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method OnRename - NamedType RenameErr</note>
+          <target>No se puede renombrar una %1</target>
         </trans-unit>
         <trans-unit id="Page 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Card</source>
