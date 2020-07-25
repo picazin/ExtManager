@@ -40,7 +40,7 @@ table 83202 "EXM Extension Lines"
                 end;
 
                 EXMExtHeader.Get("Extension Code");
-                Validate("Object ID", SetObjectID("Object Type", EXMExtHeader."Customer No."))
+                Validate("Object ID", SetObjectID("Object Type", EXMExtHeader."Customer No."));
             end;
         }
         field(4; "Object ID"; Integer)
@@ -49,6 +49,12 @@ table 83202 "EXM Extension Lines"
             DataClassification = OrganizationIdentifiableInformation;
             BlankZero = true;
             NotBlank = true;
+
+            trigger OnValidate()
+            begin
+                if (xRec."Object ID" <> "Object ID") then
+                    UpdateRelated();
+            end;
         }
         field(5; Name; Text[250])
         {
@@ -103,6 +109,9 @@ table 83202 "EXM Extension Lines"
                             AllObjects.Get("Source Object Type", "Source Object ID");
 
                     "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
+
+                    if (xRec."Source Object ID" <> "Source Object ID") then
+                        UpdateRelated();
                 end;
             end;
 
@@ -225,7 +234,56 @@ table 83202 "EXM Extension Lines"
         EXMEnumValues.SetRange("Source Line No.", "Line No.");
         EXMEnumValues.DeleteAll();
     end;
-    //#endregion Triggers   
+    //#endregion Triggers
+
+    local procedure UpdateRelated()
+    var
+        TableFields: Record "EXM Table Fields";
+        NewTableFields: Record "EXM Table Fields";
+        EnumValues: Record "EXM Enum Values";
+        NewEnumValues: Record "EXM Enum Values";
+    begin
+        case "Object Type" of
+            "Object Type"::Table, "Object Type"::"TableExtension":
+                begin
+                    TableFields.SetRange("Extension Code", "Extension Code");
+                    TableFields.SetRange("Source Line No.", "Line No.");
+                    TableFields.SetRange("Table Source Type", xRec."Object Type");
+                    TableFields.SetRange("Source Table ID", xRec."Source Object ID");
+                    TableFields.SetRange("Table ID", xRec."Object ID");
+                    if TableFields.FindSet() then
+                        repeat
+                            NewTableFields.Init();
+                            NewTableFields := TableFields;
+                            NewTableFields."Table Source Type" := "Object Type";
+                            NewTableFields."Source Table ID" := "Source Object ID";
+                            NewTableFields."Table ID" := "Object ID";
+                            NewTableFields.Insert();
+                            TableFields.Delete();
+                        until TableFields.Next() = 0;
+                    TableFields.ModifyAll("Table ID", "Object ID");
+                end;
+
+            "Object Type"::Enum, "Object Type"::EnumExtension:
+                begin
+                    EnumValues.SetRange("Extension Code", "Extension Code");
+                    EnumValues.SetRange("Source Line No.", "Line No.");
+                    EnumValues.SetRange("Source Type", xRec."Object Type");
+                    EnumValues.SetRange("Source Enum ID", xRec."Object ID");
+                    EnumValues.SetRange("Enum ID", xRec."Object ID");
+                    if EnumValues.FindSet() then
+                        repeat
+                            NewEnumValues.Init();
+                            NewEnumValues := EnumValues;
+                            NewEnumValues."Source Type" := "Object Type";
+                            NewEnumValues."Source Enum ID" := "Source Object ID";
+                            NewEnumValues."Enum ID" := "Object ID";
+                            NewEnumValues.Insert();
+                            EnumValues.Delete();
+                        until EnumValues.Next() = 0;
+                end;
+        end;
+    end;
 
     //TODO Improvement - Look for empty ID
     local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer

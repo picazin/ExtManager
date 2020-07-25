@@ -37,7 +37,11 @@ table 83201 "EXM Extension Header"
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
+                ObjectRangeErr: Label '%1 must be lower then %2.', comment = 'ESP="%1 debe ser superior a %2."';
             begin
+                if (("Object Starting ID" > "Object Ending ID") and ("Object Ending ID" <> 0)) then
+                    Error(ObjectRangeErr, FieldCaption("Object Starting ID"), FieldCaption("Object Ending ID"));
+
                 EXMExtMgt.AllowedObjectsID("Object Starting ID");
             end;
         }
@@ -49,7 +53,11 @@ table 83201 "EXM Extension Header"
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
+                ObjectRangeErr: Label '%1 must be greater then %2.', comment = 'ESP="%1 debe ser superior a %2."';
             begin
+                if ("Object Ending ID" < "Object Starting ID") then
+                    Error(ObjectRangeErr, FieldCaption("Object Ending ID"), FieldCaption("Object Starting ID"));
+
                 EXMExtMgt.AllowedObjectsID("Object Ending ID");
             end;
         }

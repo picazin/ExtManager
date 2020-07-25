@@ -3,7 +3,7 @@ page 83202 "EXM Extension Lines"
     Caption = ' Objects', Comment = 'ESP="Objetos"';
     PageType = ListPart;
     SourceTable = "EXM Extension Lines";
-    SourceTableView = sorting("Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID");
+    //SourceTableView = sorting("Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID");
     DelayedInsert = true;
     AutoSplitKey = true;
 
@@ -90,8 +90,7 @@ page 83202 "EXM Extension Lines"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        if xRec."Object Type" <> xRec."Object Type"::" " then
-            Validate(Rec."Object Type", xRec."Object Type");
+        Validate("Object Type", xRec."Object Type");
     end;
 
     local procedure ViewRelatedFields()

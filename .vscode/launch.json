@@ -9,7 +9,7 @@
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "breakOnError": true,
-            "launchBrowser": false,
+            "launchBrowser": true,
             "schemaUpdateMode": "Synchronize",
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
