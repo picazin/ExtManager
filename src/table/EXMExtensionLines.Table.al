@@ -261,7 +261,6 @@ table 83202 "EXM Extension Lines"
                             NewTableFields.Insert();
                             TableFields.Delete();
                         until TableFields.Next() = 0;
-                    TableFields.ModifyAll("Table ID", "Object ID");
                 end;
 
             "Object Type"::Enum, "Object Type"::EnumExtension:
@@ -312,11 +311,12 @@ table 83202 "EXM Extension Lines"
 
         EXMExtLine.SetRange("Object Type", ObjectType);
         EXMExtLine.SetFilter("Object ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
-        if EXMExtLine.FindLast() then
+        if not EXMExtLine.IsEmpty() then begin
+            EXMExtLine.SetCurrentKey("Object Type", "Object ID");
+            EXMExtLine.FindLast();
             ObjectID := EXMExtLine."Object ID" + 1
-        else
+        end else
             ObjectID := EXMExtHeader."Object Starting ID";
-
         exit(ObjectID)
     end;
 

@@ -166,7 +166,6 @@ table 83203 "EXM Table Fields"
         else
             EXMFields.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
 
-
         EXMFields.SetRange("Source Table ID", SourceTableID);
         if SourceTableID = 0 then
             EXMFields.SetRange("Table ID", TableID);
