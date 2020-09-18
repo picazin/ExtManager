@@ -17,6 +17,7 @@ page 83208 "EXM Headline RC Ext. Manager"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Greeting headline', Comment = 'ESP="Bienvenida!"';
                     Editable = false;
+                    ToolTip = 'Welcome message. If pressed go to picazin.dev website', Comment = 'ESP="Mensaje de bienvenida. Visitar picazin.dev si pulsamos."';
                 }
             }
             group(Control2)
@@ -29,6 +30,7 @@ page 83208 "EXM Headline RC Ext. Manager"
                     Caption = 'Documentation headline', Comment = 'ESP="Documentación"';
                     DrillDown = true;
                     Editable = false;
+                    ToolTip = 'View documentation', Comment = 'ESP="Ver documentación"';
 
                     trigger OnDrillDown()
                     begin

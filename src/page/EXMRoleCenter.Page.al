@@ -35,7 +35,7 @@ page 83207 "EXM Role Center"
     {
         area(Creation)
         {
-            action("EXMExtensionCard")
+            action(EXMExtensionCard)
             {
                 RunPageMode = Create;
                 Caption = 'New extension', Comment = 'ESP="Nueva extensión"';
@@ -47,7 +47,7 @@ page 83207 "EXM Role Center"
         }
         area(Embedding)
         {
-            action("EXMExtensionList")
+            action(EXMExtensionList)
             {
                 Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 ToolTip = 'View all extensions', Comment = 'ESP="Ver extensiones"';
@@ -60,6 +60,7 @@ page 83207 "EXM Role Center"
                 Caption = 'Customers', Comment = 'ESP="Clientes"';
                 Image = Customer;
                 RunObject = Page "Customer List";
+                ToolTip = 'View customers list', Comment = 'ESP="Ver listado de clientes"';
             }
         }
         area(Sections)
@@ -70,7 +71,7 @@ page 83207 "EXM Role Center"
                 ToolTip = 'Overview and change system and application settings', Comment = 'ESP="Modificar parámetros aplicación"';
                 Image = Setup;
 
-                action("EXMSetup")
+                action(EXMSetup)
                 {
                     Caption = 'Setup EXM', Comment = 'ESP="Configuración EXM"';
                     ToolTip = 'Setup EXM', Comment = 'ESP="Configuración EXM"';

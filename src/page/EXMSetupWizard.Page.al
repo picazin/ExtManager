@@ -24,6 +24,7 @@ page 83212 "EXM Setup Wizard"
                     ApplicationArea = Basic, Suite;
                     Editable = false;
                     ShowCaption = false;
+                    ToolTip = 'Specifies the value of the MediaResourcesStandard.Media Reference field';
                 }
             }
 
@@ -32,7 +33,7 @@ page 83212 "EXM Setup Wizard"
                 Caption = '';
                 Visible = FirstPageVisible;
 
-                group("Welcome")
+                group(Welcome)
                 {
                     Caption = 'Welcome to Extension Manager Setup', Comment = 'ESP="Bienvenido a la configuración de EXM Gestor Extensiones"';
                     Visible = FirstPageVisible;
@@ -64,7 +65,10 @@ page 83212 "EXM Setup Wizard"
                     Visible = SecondPageVisible;
 
                     field("Object Names"; "Object Names")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Object Names'', Comment = ''ESP="Nombre objetos" field';
+                    }
                 }
                 group(NosSerie)
                 {
@@ -72,7 +76,10 @@ page 83212 "EXM Setup Wizard"
                     InstructionalText = 'Define an Extension Series Nos. in order to assign default extension code when creating new extensions.', Comment = 'ESP="Defina un numerador para asignar automaticamente un código al generar una nueva extensión."';
                     Visible = SecondPageVisible;
                     field("Extension Nos."; "Extension Nos.")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Extension Nos.'', Comment = ''ESP="Nº série extensión" field';
+                    }
                 }
             }
 
@@ -86,9 +93,15 @@ page 83212 "EXM Setup Wizard"
                     InstructionalText = 'Define starting and ending default object IDs for extensions. You can change them in every extension.', Comment = 'ESP="Defina IDs iniciales y finales por defecto en las extensiones. Se pueden modificar en cada extensión."';
                     Visible = ThirdPageVisible;
                     field("Default Object Starting ID"; "Default Object Starting ID")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Default Starting Range'', Comment = ''ESP="Rango inicial por defecto" field';
+                    }
                     field("Default Object Ending ID"; "Default Object Ending ID")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Default Ending Range'', Comment = ''ESP="Rango final por defecto" field';
+                    }
                 }
                 group(DisableIDSuggestions)
                 {
@@ -96,9 +109,15 @@ page 83212 "EXM Setup Wizard"
                     InstructionalText = 'Define if you want do disable automatic objects and fields ID. OPTION NOT RECOMMENDED.', Comment = 'ESP="Defina si quiere deshabilitar la asignación automática de ID para objetos y campos. OPCIÓN NO RECOMENDADA."';
                     Visible = ThirdPageVisible;
                     field("Disable Auto. Objects ID"; "Disable Auto. Objects ID")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Disable Auto Objects ID'', Comment = ''ESP="Deshabilitar asignación ID objetos" field';
+                    }
                     field("Disable Auto. Field ID"; "Disable Auto. Field ID")
-                    { ApplicationArea = All; }
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Disable Auto Field ID'', Comment = ''ESP="Deshabilitar asignación ID campos" field';
+                    }
                 }
             }
 
@@ -107,7 +126,7 @@ page 83212 "EXM Setup Wizard"
                 Caption = '';
                 Visible = FinalPageVisible;
 
-                group("ActivationDone")
+                group(ActivationDone)
                 {
                     Caption = 'You''re done! Hope you enjoy this app!!', Comment = 'ESP="Hecho!! Espero que disfrute de esta aplicación!!"';
                     Visible = FinalPageVisible;
@@ -135,6 +154,7 @@ page 83212 "EXM Setup Wizard"
                 Visible = FinalPageVisible;
                 Image = Check;
                 InFooterBar = true;
+                ToolTip = 'Thanks developer with an small tip.', Comment = 'ESP="Agradece al desarrollador con una propina."';
 
                 trigger OnAction();
                 var
@@ -152,6 +172,7 @@ page 83212 "EXM Setup Wizard"
                 Visible = BackEnabled;
                 Image = PreviousRecord;
                 InFooterBar = true;
+                ToolTip = 'Go Back', Comment = 'ESP="Volver atrás"';
 
                 trigger OnAction();
                 begin
@@ -167,6 +188,7 @@ page 83212 "EXM Setup Wizard"
                 Visible = NextEnabled;
                 Image = NextRecord;
                 InFooterBar = true;
+                ToolTip = 'Move to next page', Comment = 'ESP="Ver siguiente página"';
 
                 trigger OnAction();
                 begin
@@ -181,6 +203,7 @@ page 83212 "EXM Setup Wizard"
                 Enabled = FinalPageVisible;
                 Image = Approve;
                 InFooterBar = true;
+                ToolTip = 'Finish setup', Comment = 'ESP="Finalizar la configuración"';
 
                 trigger OnAction();
                 begin

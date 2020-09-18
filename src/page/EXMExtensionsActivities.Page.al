@@ -18,6 +18,7 @@ page 83209 "EXM Extensions Activities"
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
+                    ToolTip = 'View All Extensions list', Comment = 'ESP="Muestra todas las extensiones"';
                 }
             }
             cuegroup(Detail)
@@ -27,12 +28,14 @@ page 83209 "EXM Extensions Activities"
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
+                    ToolTip = 'View Internal Extensions list', Comment = 'ESP="Muestra todas las extensiones internas"';
                 }
 
                 field("External Extensions"; "External Extensions")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
+                    ToolTip = 'View External Extensions list', Comment = 'ESP="Muestra todas las extensiones externas"';
                 }
             }
         }

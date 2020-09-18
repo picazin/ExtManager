@@ -13,6 +13,7 @@ pageextension 83200 "EXM Customer List" extends "Customer List"
                 PromotedCategory = Category7;
                 RunObject = Page "EXM Extension List";
                 RunPageLink = "Customer No." = field("No.");
+                ToolTip = 'View Customer Extensions.', Comment = 'ESP="Ver las extensiones del cliente."';
             }
         }
     }

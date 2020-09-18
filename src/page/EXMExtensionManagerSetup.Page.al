@@ -59,6 +59,7 @@ page 83205 "EXM Extension Manager Setup"
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 PromotedIsBig = true;
+                ToolTip = 'Thanks developer with an small tip.', Comment = 'ESP="Agradece al desarrollador con una propina."';
 
                 trigger OnAction()
                 var
