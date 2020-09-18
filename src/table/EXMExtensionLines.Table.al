@@ -53,7 +53,7 @@ table 83202 "EXM Extension Lines"
             trigger OnValidate()
             begin
                 if (xRec."Object ID" <> "Object ID") then
-                    UpdateRelated();
+                    UpdateRelated()
             end;
         }
         field(5; Name; Text[250])
@@ -285,7 +285,7 @@ table 83202 "EXM Extension Lines"
     end;
 
     //TODO Improvement - Look for empty ID
-    local procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer
+    procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
