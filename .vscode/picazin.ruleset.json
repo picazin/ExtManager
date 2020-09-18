@@ -1,0 +1,21 @@
+{
+    "name": "picazin",
+    "description": "picazin rules",
+    "rules": [
+        {
+            "id": "AA0214",
+            "action": "Hidden",
+            "justification": "WTF?!?! - The local record should be modified before saving to the database."
+        },
+        {
+            "id": "AA0218",
+            "action": "Hidden",
+            "justification": "No efficient - You must write a tooltip in the Tooltip property for all controls of type Action and Field that exist on page objects. See the style guide for more information."
+        },
+        {
+            "id": "AW0006",
+            "action": "Hidden",
+            "justification": "No need all objects to be searchable."
+        }
+    ]
+}

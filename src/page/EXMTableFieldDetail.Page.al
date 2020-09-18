@@ -26,6 +26,7 @@ page 83206 "EXM Table Field Detail"
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
+                
                 field("Field Caption"; "Field Caption")
                 {
                     ApplicationArea = All;
