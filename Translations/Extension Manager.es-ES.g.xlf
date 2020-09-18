@@ -666,6 +666,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
           <target>ID debe estar dentro del rango definido %1 - %2</target>
         </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 2372545329 - NamedType 1636972671" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 used on %2 extension.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="%1 usado en extensión %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ChechManualObjectID - NamedType ObjectIDErr</note>
+          <target>%1 usado en extensión %2</target>
+        </trans-unit>
         <trans-unit id="Codeunit 2989322446 - NamedType 96739838" size-unit="char" translate="yes" xml:space="preserve">
           <source>Want to learn more about EXM?</source>
           <note from="Developer" annotates="general" priority="2">ESP="Desea más información sobre EXM (Extension Manager)?"</note>

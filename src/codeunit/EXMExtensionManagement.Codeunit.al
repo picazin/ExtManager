@@ -114,4 +114,23 @@ codeunit 83200 "EXM Extension Management"
             Page.Run(Page::"EXM Enum Values", TempEXMEnums);
         end;
     end;
+
+    procedure ChechManualObjectID(ExtLine: Record "EXM Extension Lines")
+    var
+        EXMExtHeader: Record "EXM Extension Header";
+        EXMExtLine: Record "EXM Extension Lines";
+        ObjectIDErr: Label '%1 used on %2 extension.', comment = 'ESP="%1 usado en extensión %2"';
+    begin
+        EXMExtHeader.Get(ExtLine."Extension Code");
+        EXMExtLine.SetCurrentKey("Extension Code", "Object Type", "Object ID");
+        if EXMExtHeader."Customer No." <> '' then
+            EXMExtLine.SetFilter("Extension Code", GetCustomerExtensions(EXMExtHeader."Customer No."))
+        else
+            EXMExtLine.SetFilter("Extension Code", GetInternalExtensions());
+
+        EXMExtLine.SetRange("Object Type", ExtLine."Object Type");
+        EXMExtLine.SetRange("Object ID", ExtLine."Object ID");
+        if EXMExtLine.FindFirst() then
+            Error(ObjectIDErr, ExtLine."Object ID", EXMExtLine."Extension Code");
+    end;
 }

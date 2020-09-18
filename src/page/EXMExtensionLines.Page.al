@@ -20,8 +20,15 @@ page 83202 "EXM Extension Lines"
                 field("Object ID"; "Object ID")
                 {
                     ApplicationArea = All;
+                    trigger OnValidate()
+                    var
+                        EXMExtMgt: Codeunit "EXM Extension Management";
+                    begin
+                        if (xRec."Object ID" <> "Object ID") then
+                            EXMExtMgt.ChechManualObjectID(Rec);
+                    end;
                 }
-                field("Name"; "Name")
+                field(Name; "Name")
                 {
                     ApplicationArea = All;
                 }

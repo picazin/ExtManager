@@ -16,6 +16,17 @@
             "id": "AW0006",
             "action": "Hidden",
             "justification": "No need all objects to be searchable."
+        },
+        {
+            "id": "AS0084",
+            "action": "Hidden",
+            "justification": "No AppSource extension"
+        }
+        ,
+        {
+            "id": "AS0085",
+            "action": "Hidden",
+            "justification": "No AppSource extension"
         }
     ]
 }
