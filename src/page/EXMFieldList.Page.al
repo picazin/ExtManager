@@ -175,7 +175,7 @@ page 83203 "EXM Field List"
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
 
-    trigger OnAfterGetRecord()
+    local procedure GetPKStyle()
     begin
         PKVisible := ("Source Table ID" = 0);
         StyleExp := 'standard';
@@ -183,15 +183,19 @@ page 83203 "EXM Field List"
             StyleExp := 'strong';
     end;
 
-    trigger OnNewRecord(BelowxRec: Boolean)
+    trigger OnAfterGetRecord()
     begin
-        StyleExp := 'standard';
-
+        GetPKStyle();
     end;
 
-    trigger OnOpenPage()
+    trigger OnAfterGetCurrRecord()
     begin
-        CurrPage.Editable(true);
+        GetPKStyle();
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        GetPKStyle();
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean

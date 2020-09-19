@@ -16,7 +16,7 @@ page 83210 "EXM Enum Values"
                 field("Extension Code"; "Extension Code")
                 {
                     ApplicationArea = All;
-                    Visible = IsVisible;
+                    Visible = false;
                 }
                 field("Source Line No."; "Source Line No.")
                 {

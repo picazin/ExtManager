@@ -76,13 +76,15 @@ page 83202 "EXM Extension Lines"
         {
             action(ViewField)
             {
-                Caption = 'Fields', Comment = 'ESP="Campos"';
+                Caption = 'view detail', Comment = 'ESP="Ver detalle"';
                 ApplicationArea = All;
                 Image = ViewPage;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 PromotedIsBig = true;
+                ToolTip = 'View object detail.', Comment = 'ESP="Ver detalle objeto."';
+
                 trigger OnAction()
                 begin
                     ViewRelatedFields();
@@ -113,19 +115,35 @@ page 83202 "EXM Extension Lines"
                     CurrPage.SaveRecord();
                     Commit();
 
+                    if ("Object Type" = "Object Type"::Table) and ("Source Object ID" = 0) then begin
+                        EXMTableFields.SetRange("Extension Code", "Extension Code");
+                        EXMTableFields.SetRange("Source Line No.", "Line No.");
+                        EXMTableFields.SetRange("Table Source Type", "Object Type");
+                        EXMTableFields.SetRange("Table ID", "Object ID");
+                        EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                        if EXMTableFields.IsEmpty() then begin
+                            EXMTableFields.Init();
+                            EXMTableFields."Extension Code" := "Extension Code";
+                            EXMTableFields."Source Line No." := "Line No.";
+                            EXMTableFields."Table Source Type" := "Object Type";
+                            EXMTableFields."Table ID" := "Object ID";
+                            EXMTableFields."Source Table ID" := "Source Object ID";
+                            EXMTableFields."Field ID" := 1;
+                            EXMTableFields.IsPK := true;
+                            EXMTableFields.Insert();
+                            Commit();
+                        end;
+                    end;
+
                     EXMTableFields.SetRange("Extension Code", "Extension Code");
                     EXMTableFields.SetRange("Source Line No.", "Line No.");
                     EXMTableFields.SetRange("Table Source Type", "Object Type");
                     EXMTableFields.SetRange("Table ID", "Object ID");
                     EXMTableFields.SetRange("Source Table ID", "Source Object ID");
-
-
                     EXMFieldList.SetTableView(EXMTableFields);
-                    EXMFieldList.LookupMode(true);
-                    if EXMFieldList.RunModal() = Action::LookupOK then begin
-                        "Total Fields" := GetTotalFields();
-                        CurrPage.Update(true);
-                    end;
+
+                    EXMFieldList.Editable(true);
+                    EXMFieldList.RunModal();
                 end;
 
             "Object Type"::Enum, "Object Type"::EnumExtension:
@@ -140,11 +158,7 @@ page 83202 "EXM Extension Lines"
                     EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
 
                     EXMEnumVal.SetTableView(EXMEnumValues);
-                    EXMEnumVal.LookupMode(true);
-                    if EXMEnumVal.RunModal() = Action::LookupOK then begin
-                        "Total Fields" := GetTotalFields();
-                        CurrPage.Update(true);
-                    end;
+                    EXMEnumVal.RunModal();
                 end;
             else
                 exit;

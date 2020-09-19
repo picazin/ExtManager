@@ -354,9 +354,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 70614016 - Action 445248289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fields</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Campos"</note>
+          <source>view detail</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver detalle"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Action ViewField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Action 445248289 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View object detail.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver detalle objeto."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Action ViewField - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Table 2135376867 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
@@ -618,6 +623,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Donar"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3805068503 - Action 3523525559 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thanks developer with an small tip.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Agradece al desarrollador con una propina."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Action Donate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3805068503 - Action 3523525559 - Method 1377591017 - NamedType 4000782645" size-unit="char" translate="yes" xml:space="preserve">
           <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
@@ -633,10 +643,25 @@
           <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control ExtInfo - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2306209299 - Control 1663039630 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View All Extensions list</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra todas las extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control Extensions - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2306209299 - Control 2642869315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extensions per type</source>
           <note from="Developer" annotates="general" priority="2">ESP="Extensiones por tipo"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2306209299 - Control 2581125407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View Internal Extensions list</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra todas las extensiones internas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control Internal Extensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2306209299 - Control 886950601 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View External Extensions list</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra todas las extensiones externas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extensions Activities - Control External Extensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2385468214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Extension TreeView</source>
@@ -673,10 +698,20 @@
           <note from="Developer" annotates="general" priority="2">ESP="Bienvenida!"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control GreetingText - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1528526893 - Control 3322762936 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Welcome message. If pressed go to picazin.dev website</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Mensaje de bienvenida. Visitar picazin.dev si pulsamos."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control GreetingText - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1528526893 - Control 1396140313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documentation headline</source>
           <note from="Developer" annotates="general" priority="2">ESP="Documentación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control DocumentationText - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1528526893 - Control 1396140313 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View documentation</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver documentación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control DocumentationText - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2272169128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Objects Detail</source>
@@ -712,6 +747,11 @@
           <source>Customers</source>
           <note from="Developer" annotates="general" priority="2">ESP="Clientes"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Customers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3606140129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View customers list</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver listado de clientes"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Customers - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Action 1514883969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup</source>
@@ -753,6 +793,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control MediaStandard - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 2237194031 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the MediaResourcesStandard.Media Reference field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control MediaRef - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1966572419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -793,6 +838,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Al recuperar datos de Business Central, ¿cómo le gustaría ver los nombres de objetos y campos?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectNames - Property InstructionalText</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 1694956315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Names', Comment = 'ESP="Nombre objetos" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Object Names - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1746393414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Extensions Series Nos.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Definir numerador extensiones"</note>
@@ -802,6 +852,11 @@
           <source>Define an Extension Series Nos. in order to assign default extension code when creating new extensions.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Defina un numerador para asignar automaticamente un código al generar una nueva extensión."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control NosSerie - Property InstructionalText</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 3826841295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Nos.', Comment = 'ESP="Nº série extensión" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Extension Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 2606000766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Objects Default IDs</source>
@@ -813,6 +868,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="Defina IDs iniciales y finales por defecto en las extensiones. Se pueden modificar en cada extensión."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectRange - Property InstructionalText</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 3376224445 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Default Starting Range', Comment = 'ESP="Rango inicial por defecto" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Starting ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 3719745416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Default Ending Range', Comment = 'ESP="Rango final por defecto" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Ending ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1513475938 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Disable automatic IDs</source>
           <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar IDs automáticos"</note>
@@ -822,6 +887,16 @@
           <source>Define if you want do disable automatic objects and fields ID. OPTION NOT RECOMMENDED.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Defina si quiere deshabilitar la asignación automática de ID para objetos y campos. OPCIÓN NO RECOMENDADA."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DisableIDSuggestions - Property InstructionalText</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 819995202 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Disable Auto Objects ID', Comment = 'ESP="Deshabilitar asignación ID objetos" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Objects ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 2192616486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Disable Auto Field ID', Comment = 'ESP="Deshabilitar asignación ID campos" field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Field ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 368964769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source></source>
@@ -848,6 +923,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Donar"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action Donate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Action 3523525559 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Thanks developer with an small tip.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Agradece al desarrollador con una propina."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action Donate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Action 3523525559 - Method 1377591017 - NamedType 4000782645" size-unit="char" translate="yes" xml:space="preserve">
           <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
@@ -858,15 +938,30 @@
           <note from="Developer" annotates="general" priority="2">ESP="Atrás"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionBack - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Action 2438272767 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Go Back</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Volver atrás"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionBack - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Next</source>
           <note from="Developer" annotates="general" priority="2">ESP="Siguiente"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionNext - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1798175232 - Action 914282563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move to next page</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver siguiente página"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionNext - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1798175232 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Finish</source>
           <note from="Developer" annotates="general" priority="2">ESP="Finalizar"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionFinish - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Action 3259912055 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finish setup</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Finalizar la configuración"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionFinish - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3527060737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>TableExtensions Fields</source>
@@ -883,10 +978,20 @@
           <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer Card - Action EXMALExtensions - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3125390708 - Action 2792072681 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>View Customer Extensions.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver las extensiones del cliente."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer Card - Action EXMALExtensions - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1208936658 - Action 2792072681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
           <source>Extensions</source>
           <note from="Developer" annotates="general" priority="2">ESP="Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer List - Action EXMALExtensions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1208936658 - Action 2792072681 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
+          <source>View Customer Extensions.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver las extensiones del cliente."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension EXM Customer List - Action EXMALExtensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Profile 3221202957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM - Extension Manager</source>
