@@ -10,6 +10,7 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = "EXM Extension Header";
         }
         field(2; "Source Line No."; Integer)
         {
@@ -74,7 +75,7 @@ table 83203 "EXM Table Fields"
             OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
             InitValue = " ";
         }
-        field(10; "Lenght"; Integer)
+        field(10; Lenght; Integer)
         {
             Caption = 'Lenght', Comment = 'ESP="Longitud"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -108,7 +109,7 @@ table 83203 "EXM Table Fields"
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
         }
-        field(20; "IsPK"; Boolean)
+        field(20; IsPK; Boolean)
         {
             Caption = 'Is Part Of Primary Key', Comment = 'ESP="Forma parte clave primária"';
             DataClassification = OrganizationIdentifiableInformation;

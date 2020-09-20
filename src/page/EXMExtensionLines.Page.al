@@ -7,12 +7,14 @@ page 83202 "EXM Extension Lines"
     DelayedInsert = true;
     AutoSplitKey = true;
 
+
     layout
     {
         area(Content)
         {
             repeater(Lines)
             {
+                FreezeColumn = Name;
                 field("Object Type"; "Object Type")
                 {
                     ApplicationArea = All;
@@ -76,7 +78,7 @@ page 83202 "EXM Extension Lines"
         {
             action(ViewField)
             {
-                Caption = 'view detail', Comment = 'ESP="Ver detalle"';
+                Caption = 'View detail', Comment = 'ESP="Ver detalle"';
                 ApplicationArea = All;
                 Image = ViewPage;
                 Promoted = true;
@@ -130,6 +132,8 @@ page 83202 "EXM Extension Lines"
                             EXMTableFields."Source Table ID" := "Source Object ID";
                             EXMTableFields."Field ID" := 1;
                             EXMTableFields.IsPK := true;
+                            EXMTableFields."Created by" := CopyStr(UserId(), 1, MaxStrLen(EXMTableFields."Created by"));
+                            EXMTableFields."Creation Date" := CurrentDateTime();
                             EXMTableFields.Insert();
                             Commit();
                         end;

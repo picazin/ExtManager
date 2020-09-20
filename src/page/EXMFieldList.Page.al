@@ -159,6 +159,25 @@ page 83203 "EXM Field List"
                     EXMExtMgt.GetTableFieldData("Source Table ID");
                 end;
             }
+            action(AddRelField)
+            {
+                Caption = 'Add to Related Tables', Comment = 'ESP="Añadir a tablas relacionadas"';
+                ApplicationArea = All;
+                Image = Add;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+                PromotedIsBig = true;
+                Visible = ("Table Source Type" = "Table Source Type"::"TableExtension");
+
+                trigger OnAction()
+                var
+                    ExtMngt: Codeunit "EXM Extension Management";
+                begin
+                    TestField("Table Source Type", "Table Source Type"::"TableExtension");
+                    ExtMngt.CreateRelatedFields(Rec);
+                end;
+            }
         }
     }
 

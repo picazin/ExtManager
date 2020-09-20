@@ -10,6 +10,7 @@ table 83205 "EXM Enum Values"
         {
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = "EXM Extension Header";
         }
         field(2; "Source Line No."; Integer)
         {
