@@ -8,6 +8,7 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = "EXM Extension Header";
         }
         field(2; "Line No."; Integer)
         {
@@ -73,14 +74,14 @@ table 83202 "EXM Extension Lines"
             var
                 NotAllowedValueErr: Label 'Source value not allowed.', Comment = 'ESP="Valor no permitido"';
             begin
-                case "Object Type" of
-                    "Object Type"::"Page":
+                case "Source Object Type" of
+                    "Source Object Type"::"Page":
                         TestField("Object Type", "Object Type"::"PageExtension");
-                    "Object Type"::"Table":
+                    "Source Object Type"::"Table":
                         TestField("Object Type", "Object Type"::"TableExtension");
-                    "Object Type"::"Enum":
+                    "Source Object Type"::"Enum":
                         TestField("Object Type", "Object Type"::"EnumExtension");
-                    "Object Type"::"Profile":
+                    "Source Object Type"::"Profile":
                         TestField("Object Type", "Object Type"::"ProfileExtension");
                     else
                         Error(NotAllowedValueErr);
@@ -97,6 +98,7 @@ table 83202 "EXM Extension Lines"
             var
                 AllProfile: Record "All Profile";
                 AllObjects: Record AllObjWithCaption;
+                ExtMngt: Codeunit "EXM Extension Management";
                 ProfileNotFoundErr: Label 'Profile with %1 %2 not found.', Comment = 'ESP="Perfil con %1 %2 no encontrado."';
             begin
                 if xRec."Source Object ID" <> "Source Object ID" then begin
@@ -108,7 +110,7 @@ table 83202 "EXM Extension Lines"
                         end else
                             AllObjects.Get("Source Object Type", "Source Object ID");
 
-                    "Source Name" := GetObjectName("Source Object Type", "Source Object ID");
+                    "Source Name" := ExtMngt.GetObjectName("Source Object Type", "Source Object ID");
 
                     if (xRec."Source Object ID" <> "Source Object ID") then
                         UpdateRelated();
@@ -320,28 +322,6 @@ table 83202 "EXM Extension Lines"
         exit(ObjectID)
     end;
 
-    local procedure GetObjectName(ObjectType: Integer; ObjectID: Integer): Text[249]
-    var
-        AllObj: Record AllObjWithCaption;
-        AllProfile: Record "All Profile";
-        EXMExtSetup: Record "EXM Extension Setup";
-    begin
-        EXMExtSetup.Get();
-
-        if ObjectType = 18 then begin
-            AllProfile.SetRange("Role Center ID", ObjectID);
-            if AllProfile.FindSet() then
-                exit(AllProfile."Profile ID")
-        end else
-            if AllObj.Get(ObjectType, ObjectID) then
-                case EXMExtSetup."Object Names" of
-                    EXMExtSetup."Object Names"::Caption:
-                        exit(AllObj."Object Caption");
-                    EXMExtSetup."Object Names"::Name:
-                        exit(AllObj."Object Name");
-                end;
-    end;
-
     procedure GetTotalFields(): Integer
     var
         EXMTableFields: Record "EXM Table Fields";
@@ -370,6 +350,16 @@ table 83202 "EXM Extension Lines"
             else
                 exit(0);
         end;
+    end;
+
+    procedure GetLineNo(): Integer
+    var
+        ExtLine: Record "EXM Extension Lines";
+    begin
+        ExtLine.SetRange("Extension Code", "Extension Code");
+        if ExtLine.FindLast() then
+            exit(ExtLine."Line No." + 10000);
+        exit(10000);
     end;
 
     [IntegrationEvent(false, false)]

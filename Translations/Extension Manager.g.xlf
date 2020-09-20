@@ -354,7 +354,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 70614016 - Action 445248289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>view detail</source>
+          <source>View detail</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver detalle"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Action ViewField - Property Caption</note>
         </trans-unit>
@@ -437,6 +437,46 @@
           <source>Enable this option will disable all fields ID validations and may cause extensions errors. Continue?</source>
           <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Method OnValidate - NamedType DisableQst</note>
+        </trans-unit>
+        <trans-unit id="Table 1961282653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Related Groups</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Groups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1961282653 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Groups - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1961282653 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Groups - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1724440998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Related Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1724440998 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Lines - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1724440998 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID Tabla"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Lines - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1724440998 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Lines - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1724440998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Related Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2974860049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Fields</source>
@@ -683,6 +723,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 3349517884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add to Related Tables</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Añadir a tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AddRelField - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1644431652 - Method 4177352842 - NamedType 4100000954" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary key must be set.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Se debe indicar clave primária"</note>
@@ -717,6 +762,21 @@
           <source>Objects Detail</source>
           <note from="Developer" annotates="general" priority="2">ESP="Detalle Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3445873649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM - Create fields on related tables</source>
+          <note from="Developer" annotates="general" priority="2">ESP="EXM - Crear campos en tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3445873649 - Control 3471137671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related tables</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data - Control Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3952319399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM - Related tables fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="EXM - Campos tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXtension Manager</source>
