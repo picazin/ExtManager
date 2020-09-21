@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PermissionSets>
-  <PermissionSet RoleID="EXTENSION MANAGER" RoleName="Extension Manager">
+  <PermissionSet RoleID="EXM MANAGER" RoleName="EXM - Extension Manager">
     <Permission>
       <ObjectID>83205</ObjectID>
       <ObjectType>0</ObjectType>

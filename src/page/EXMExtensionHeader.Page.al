@@ -17,7 +17,7 @@ page 83201 "EXM Extension Header"
                 {
                     ApplicationArea = All;
                 }
-                field("Description"; "Description")
+                field(Description; "Description")
                 {
                     ApplicationArea = All;
                 }
@@ -25,10 +25,14 @@ page 83201 "EXM Extension Header"
                 {
                     ApplicationArea = All;
                 }
+                field(Dependencies; Dependencies)
+                {
+                    ApplicationArea = All;
+                }
                 group(Target)
                 {
                     Caption = 'Target', Comment = 'Destino';
-                    field("Type"; "Type")
+                    field(Type; "Type")
                     {
                         ApplicationArea = All;
                     }

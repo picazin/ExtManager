@@ -73,6 +73,36 @@
           <note from="Developer" annotates="general" priority="2">ESP="Ver Enum origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action ViewSourceEnum - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 38012172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension Dependencies</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Dependencias extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 38012172 - Field 1555295332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensión Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Extensión Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 38012172 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 38012172 - Field 3822673717 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dependent Ext. Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Dependent Ext. Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 38012172 - Field 84179483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dependent Ext. Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Dependent Ext. Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 38012172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EXM Extension Dependencies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dependencies - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension</source>
           <note from="Developer" annotates="general" priority="2">ESP="Extensión"</note>
@@ -137,6 +167,11 @@
           <source>App File</source>
           <note from="Developer" annotates="general" priority="2">ESP="Fichero App"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field App File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Field 3523694699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dependencies</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Dependencias"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Dependencies - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Field 3635338911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price</source>
