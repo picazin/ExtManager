@@ -23,8 +23,11 @@ page 83216 "EXM Related Data List"
                 {
                     ApplicationArea = All;
                 }
+                field("Related Tables No."; "Related Tables No.")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
-
 }

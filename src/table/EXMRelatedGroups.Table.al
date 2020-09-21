@@ -15,6 +15,13 @@ table 83206 "EXM Related Groups"
             Caption = 'Description', comment = 'ESP="Descripción"';
             DataClassification = OrganizationIdentifiableInformation;
         }
+        field(3; "Related Tables No."; Integer)
+        {
+            Caption = 'Related Tables No.', comment = 'ESP="Nº tablas relacionadas"';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Count ("EXM Related Lines" where(Code = field(Code)));
+        }
     }
     keys
     {

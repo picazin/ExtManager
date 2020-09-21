@@ -535,6 +535,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Groups - Field Description - Property Caption</note>
           <target>Descripción</target>
         </trans-unit>
+        <trans-unit id="Table 1961282653 - Field 3079439231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related Tables No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Related Groups - Field Related Tables No. - Property Caption</note>
+          <target>Nº tablas relacionadas</target>
+        </trans-unit>
         <trans-unit id="Table 1724440998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Related Lines</source>
           <note from="Developer" annotates="general" priority="2"/>
