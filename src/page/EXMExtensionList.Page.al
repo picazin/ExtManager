@@ -20,11 +20,11 @@ page 83200 "EXM Extension List"
                 {
                     ApplicationArea = All;
                 }
-                field("Description"; "Description")
+                field(Description; "Description")
                 {
                     ApplicationArea = All;
                 }
-                field("Type"; "Type")
+                field(Type; "Type")
                 {
                     ApplicationArea = All;
                 }
@@ -52,6 +52,11 @@ page 83200 "EXM Extension List"
             {
                 ApplicationArea = Basic, Suite;
                 SubPageLink = Code = field(Code);
+            }
+            part(EXMExtDep; "EXM Extension Dep. Factbox")
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Extensión Code" = field(Code);
             }
         }
     }
