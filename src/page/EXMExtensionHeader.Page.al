@@ -83,6 +83,11 @@ page 83201 "EXM Extension Header"
                 ApplicationArea = Basic, Suite;
                 SubPageLink = Code = field(Code);
             }
+            part(EXMExtDep; "EXM Extension Dep. Factbox")
+            {
+                ApplicationArea = Basic, Suite;
+                SubPageLink = "Extensión Code" = field(Code);
+            }
         }
     }
 

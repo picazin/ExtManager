@@ -98,6 +98,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Extensión Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 38012172 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Customer No. - Property Caption</note>
+          <target>Nº Cliente</target>
+        </trans-unit>
         <trans-unit id="Table 38012172 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"/>
@@ -115,8 +121,9 @@
         </trans-unit>
         <trans-unit id="Page 38012172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Extension Dependencies</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP="Dependencias extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dependencies - Property Caption</note>
+          <target>Dependencias extensión</target>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension</source>
@@ -777,6 +784,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Valores EnumExt"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Property Caption</note>
           <target>Valores EnumExt</target>
+        </trans-unit>
+        <trans-unit id="Page 2163887421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extension dependencies</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Dependencias extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dep. Factbox - Property Caption</note>
+          <target>Dependencias extensión</target>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension objects detail</source>

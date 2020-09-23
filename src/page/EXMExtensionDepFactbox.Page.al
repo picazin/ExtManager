@@ -1,17 +1,17 @@
-page 83219 "EXM Extension Dependencies"
+page 83220 "EXM Extension Dep. Factbox"
 {
-    Caption = 'EXM Extension Dependencies', comment = 'ESP="Dependencias extensión"';
-    PageType = List;
+    PageType = ListPart;
     SourceTable = "EXM Extension Dependencies";
-    DelayedInsert = true;
-    AutoSplitKey = true;
+    Caption = 'Extension dependencies', Comment = 'ESP="Dependencias extensión"';
+    Editable = false;
 
     layout
     {
         area(content)
         {
-            repeater(General)
+            repeater(Control1)
             {
+
                 field("Dependent Ext. Code"; "Dependent Ext. Code")
                 {
                     ApplicationArea = All;
