@@ -5,7 +5,7 @@ table 83201 "EXM Extension Header"
 
     fields
     {
-        field(1; Code; Code[20])
+        field(1; "Code"; Code[20])
         {
             Caption = 'Code', Comment = 'ESP="Código"';
             DataClassification = OrganizationIdentifiableInformation;
@@ -93,6 +93,13 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'App File', Comment = 'ESP="Fichero App"';
             DataClassification = OrganizationIdentifiableInformation;
+        }
+        field(10; Dependencies; Integer)
+        {
+            Caption = 'Dependencies', Comment = 'ESP="Dependencias"';
+            FieldClass = FlowField;
+            CalcFormula = Count ("EXM Extension Dependencies" where("Extensión Code" = field(Code)));
+            Editable = false;
         }
 
         field(20; Price; Decimal)
