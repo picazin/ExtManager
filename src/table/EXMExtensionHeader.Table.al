@@ -26,6 +26,7 @@ table 83201 "EXM Extension Header"
                 if (xRec.Type <> Rec.Type) and (Rec.Type = Rec.Type::Internal) then begin
                     "Customer No." := '';
                     "Customer Name" := '';
+                    SetRelLines();
                 end;
             end;
         }
@@ -69,13 +70,17 @@ table 83201 "EXM Extension Header"
             trigger OnValidate()
             var
                 Cust: Record Customer;
+
             begin
-                if xRec."Customer No." <> "Customer No." then
+                if xRec."Customer No." <> "Customer No." then begin
                     if "Customer No." = '' then
                         "Customer Name" := ''
                     else
                         if Cust.Get("Customer No.") then
                             "Customer Name" := Cust."Search Name";
+
+                    SetRelLines();
+                end;
             end;
         }
         field(7; "Customer Name"; Text[100])
@@ -238,6 +243,23 @@ table 83201 "EXM Extension Header"
         key(P2; Type, "Customer No.")
         { }
     }
+
+    local procedure SetRelLines()
+    var
+        ExtLine: Record "EXM Extension Lines";
+        ExtField: Record "EXM Table Fields";
+        ExtEnum: Record "EXM Enum Values";
+    begin
+        ExtLine.SetRange("Extension Code", Code);
+        ExtLine.ModifyAll("Customer No.", "Customer No.");
+
+        ExtField.SetRange("Extension Code", Code);
+        ExtField.ModifyAll("Customer No.", "Customer No.");
+
+        ExtEnum.SetRange("Extension Code", Code);
+        ExtEnum.ModifyAll("Customer No.", "Customer No.");
+    end;
+
 
     trigger OnInsert()
     var

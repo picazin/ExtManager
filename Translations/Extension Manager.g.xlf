@@ -58,6 +58,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Creation Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2931733741 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Enum Values - Field Customer No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2931733741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Enum</source>
           <note from="Developer" annotates="general" priority="2">ESP="Enum"</note>
@@ -388,6 +393,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Creation Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 70614016 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Customer No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 70614016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> Objects</source>
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
@@ -607,6 +617,11 @@
           <source>Creation Date</source>
           <note from="Developer" annotates="general" priority="2">ESP="Fecha creación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Table Fields - Field Creation Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2974860049 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Table Fields - Field Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2974860049 - Field 1378277395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Is Part Of Primary Key</source>
