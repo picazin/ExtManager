@@ -11,6 +11,13 @@ table 83203 "EXM Table Fields"
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
             TableRelation = "EXM Extension Header";
+            trigger OnValidate()
+            var
+                ExtHeader: Record "EXM Extension Header";
+            begin
+                ExtHeader.Get("Extension Code");
+                "Customer No." := ExtHeader."Customer No.";
+            end;
         }
         field(2; "Source Line No."; Integer)
         {
@@ -108,6 +115,12 @@ table 83203 "EXM Table Fields"
             Caption = 'Creation Date', Comment = 'ESP="Fecha creación"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+        }
+        field(16; "Customer No."; Code[20])
+        {
+            Caption = 'Customer No.', Comment = 'ESP="Nº Cliente"';
+            DataClassification = OrganizationIdentifiableInformation;
+            TableRelation = Customer;
         }
         field(20; IsPK; Boolean)
         {
