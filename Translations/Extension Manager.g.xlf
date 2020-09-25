@@ -398,6 +398,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Nº Cliente"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Field Customer No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 70614016 - Method 1255665046 - NamedType 2202858143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next object ID (%1) is bigger than extension ending id (%2).</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Propuesta ID objeto (%1) es superior al id final de la extensión (%2)."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Lines - Method SetObjectID - NamedType ObjectIdErr</note>
+        </trans-unit>
         <trans-unit id="Page 70614016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> Objects</source>
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
@@ -487,6 +492,11 @@
           <source>Enable this option will disable all fields ID validations and may cause extensions errors. Continue?</source>
           <note from="Developer" annotates="general" priority="2">ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Disable Auto. Field ID - Method OnValidate - NamedType DisableQst</note>
+        </trans-unit>
+        <trans-unit id="Table 2313140234 - Field 3657230932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Find Object ID Gaps</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Buscar huecos ID Objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Setup - Field Find Object ID Gaps - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1961282653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Related Groups</source>
@@ -717,6 +727,11 @@
           <source>General</source>
           <note from="Developer" annotates="general" priority="2">ESP="General"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 3657230932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Always find for possible gaps between IDs.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Buscar siempre huecos entre los ID."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Find Object ID Gaps - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3805068503 - Control 4270985946 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Advanced Options</source>
@@ -964,8 +979,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectNames - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1694956315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Object Names', Comment = 'ESP="Nombre objetos" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Object Names</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre objetos" field</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Object Names - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1746393414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -979,8 +994,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control NosSerie - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 3826841295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Extension Nos.', Comment = 'ESP="Nº série extensión" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Extension Nos.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión" field</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Extension Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 2606000766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -994,14 +1009,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectRange - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 3376224445 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Default Starting Range', Comment = 'ESP="Rango inicial por defecto" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Default Starting Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Indicar valor para campo Rango inicial por defecto"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Starting ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 3719745416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Default Ending Range', Comment = 'ESP="Rango final por defecto" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Default Ending Range</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Indicar valor para campo Rango final por defecto"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Ending ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1798175232 - Control 3657230932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Always find for possible gaps between IDs.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Buscar siempre huecos entre los ID."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Find Object ID Gaps - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 1513475938 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Disable automatic IDs</source>
@@ -1014,13 +1034,13 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DisableIDSuggestions - Property InstructionalText</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 819995202 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Disable Auto Objects ID', Comment = 'ESP="Deshabilitar asignación ID objetos" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Disable Auto Objects ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Objects ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 2192616486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Disable Auto Field ID', Comment = 'ESP="Deshabilitar asignación ID campos" field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <source>Specifies the value of the Disable Auto Field ID</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID campos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Field ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Control 368964769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

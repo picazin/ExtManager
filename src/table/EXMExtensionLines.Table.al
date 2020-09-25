@@ -219,6 +219,8 @@ table 83202 "EXM Extension Lines"
         { }
         key(K3; "Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID")
         { }
+        key(K4; "Customer No.", "Object Type", "Object ID")
+        { }
     }
 
     //#region Triggers
@@ -299,14 +301,14 @@ table 83202 "EXM Extension Lines"
         end;
     end;
 
-    //TODO Improvement - Look for empty ID
     procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMExtLine: Record "EXM Extension Lines";
-        EXMExtMgt: Codeunit "EXM Extension Management";
         IsHandled: Boolean;
+        ExpectedId: Integer;
+        ObjectIdErr: Label 'Next object ID (%1) is bigger than extension ending id (%2).', comment = 'ESP="Propuesta ID objeto (%1) es superior al id final de la extensión (%2)."';
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Objects ID" then
@@ -318,20 +320,33 @@ table 83202 "EXM Extension Lines"
             exit(ObjectID);
 
         EXMExtHeader.Get("Extension Code");
-        EXMExtLine.SetCurrentKey("Extension Code", "Object Type", "Object ID");
-        if CustNo <> '' then
-            EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
-        else
-            EXMExtLine.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
-
+        EXMExtLine.SetCurrentKey("Customer No.", "Object Type", "Object ID");
+        EXMExtLine.SetRange("Customer No.", CustNo);
         EXMExtLine.SetRange("Object Type", ObjectType);
         EXMExtLine.SetFilter("Object ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         if not EXMExtLine.IsEmpty() then begin
-            EXMExtLine.SetCurrentKey("Object Type", "Object ID");
-            EXMExtLine.FindLast();
-            ObjectID := EXMExtLine."Object ID" + 1
+            if EXMSetup."Find Object ID Gaps" then begin
+                EXMExtLine.FindSet();
+                ExpectedId := EXMExtHeader."Object Starting ID";
+                repeat
+                    if ExpectedId <> EXMExtLine."Object ID" then
+                        exit(ExpectedId)
+                    else
+                        ExpectedId += 1;
+                until EXMExtLine.Next() = 0;
+                ObjectID := ExpectedId;
+            end else begin
+                EXMExtLine.FindLast();
+                ObjectID := EXMExtLine."Object ID" + 1
+            end;
         end else
             ObjectID := EXMExtHeader."Object Starting ID";
+
+        if ObjectID > EXMExtHeader."Object Ending ID" then
+            Error(ObjectIdErr, ObjectID, EXMExtHeader."Object Ending ID");
+
+        OnAfterAssignObjectID(ObjectType, CustNo, ObjectID);
+
         exit(ObjectID)
     end;
 
@@ -377,6 +392,11 @@ table 83202 "EXM Extension Lines"
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeCalculateObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterAssignObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer)
     begin
     end;
 }

@@ -28,6 +28,7 @@ codeunit 83200 "EXM Extension Management"
     var
         EXMExtHeader: Record "EXM Extension Header";
     begin
+        EXMExtHeader.SetCurrentKey(Type, "Customer No.", Code);
         EXMExtHeader.SetRange(Type, EXMExtHeader.Type::External);
         EXMExtHeader.SetRange("Customer No.", CustNo);
         if EXMExtHeader.FindSet() then
@@ -43,6 +44,7 @@ codeunit 83200 "EXM Extension Management"
     var
         EXMExtHeader: Record "EXM Extension Header";
     begin
+        EXMExtHeader.SetCurrentKey(Type, Code);
         EXMExtHeader.SetRange(Type, EXMExtHeader.Type::Internal);
         if EXMExtHeader.FindSet() then
             repeat
