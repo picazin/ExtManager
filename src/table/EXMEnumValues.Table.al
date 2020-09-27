@@ -149,7 +149,10 @@ table 83205 "EXM Enum Values"
         if not EXMEnumValues.IsEmpty() then begin
             if EXMSetup."Find Object ID Gaps" then begin
                 EXMEnumValues.FindSet();
-                ExpectedId := EXMExtHeader."Object Starting ID";
+                if "Source Type" = "Source Type"::Enum then
+                    ExpectedId := 1
+                else
+                    ExpectedId := EXMExtHeader."Object Starting ID";
                 repeat
                     if ExpectedId <> EXMEnumValues."Ordinal ID" then
                         exit(ExpectedId)
