@@ -71,6 +71,11 @@ table 83200 "EXM Extension Setup"
                         Error('');
             end;
         }
+        field(8; "Find Object ID Gaps"; Boolean)
+        {
+            Caption = 'Find Object ID Gaps', Comment = 'ESP="Buscar huecos ID Objetos"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
     }
     keys
     {

@@ -31,6 +31,12 @@ page 83205 "EXM Extension Manager Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("Find Object ID Gaps"; "Find Object ID Gaps")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Always find for possible gaps between IDs.', comment = 'ESP="Buscar siempre huecos entre los ID."';
+                }
+
             }
             group(Advanced)
             {

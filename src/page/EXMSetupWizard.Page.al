@@ -67,7 +67,7 @@ page 83212 "EXM Setup Wizard"
                     field("Object Names"; "Object Names")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Object Names'', Comment = ''ESP="Nombre objetos" field';
+                        ToolTip = 'Specifies the value of the Object Names', Comment = 'ESP="Nombre objetos" field';
                     }
                 }
                 group(NosSerie)
@@ -78,7 +78,7 @@ page 83212 "EXM Setup Wizard"
                     field("Extension Nos."; "Extension Nos.")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Extension Nos.'', Comment = ''ESP="Nº série extensión" field';
+                        ToolTip = 'Specifies the value of the Extension Nos.', Comment = 'ESP="Nº série extensión" field';
                     }
                 }
             }
@@ -95,13 +95,19 @@ page 83212 "EXM Setup Wizard"
                     field("Default Object Starting ID"; "Default Object Starting ID")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Default Starting Range'', Comment = ''ESP="Rango inicial por defecto" field';
+                        ToolTip = 'Specifies the value of the Default Starting Range', Comment = 'ESP="Indicar valor para campo Rango inicial por defecto"';
                     }
                     field("Default Object Ending ID"; "Default Object Ending ID")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Default Ending Range'', Comment = ''ESP="Rango final por defecto" field';
+                        ToolTip = 'Specifies the value of the Default Ending Range', Comment = 'ESP="Indicar valor para campo Rango final por defecto"';
                     }
+                    field("Find Object ID Gaps"; "Find Object ID Gaps")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Always find for possible gaps between IDs.', comment = 'ESP="Buscar siempre huecos entre los ID."';
+                    }
+
                 }
                 group(DisableIDSuggestions)
                 {
@@ -111,12 +117,12 @@ page 83212 "EXM Setup Wizard"
                     field("Disable Auto. Objects ID"; "Disable Auto. Objects ID")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Disable Auto Objects ID'', Comment = ''ESP="Deshabilitar asignación ID objetos" field';
+                        ToolTip = 'Specifies the value of the Disable Auto Objects ID', Comment = 'ESP="Deshabilitar asignación ID objetos"';
                     }
                     field("Disable Auto. Field ID"; "Disable Auto. Field ID")
                     {
                         ApplicationArea = All;
-                        ToolTip = 'Specifies the value of the Disable Auto Field ID'', Comment = ''ESP="Deshabilitar asignación ID campos" field';
+                        ToolTip = 'Specifies the value of the Disable Auto Field ID', Comment = 'ESP="Deshabilitar asignación ID campos"';
                     }
                 }
             }

@@ -122,7 +122,7 @@ table 83205 "EXM Enum Values"
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMEnumValues: Record "EXM Enum Values";
-        EXMExtMgt: Codeunit "EXM Extension Management";
+        ExpectedId: Integer;
         IsHandled: Boolean;
     begin
         EXMSetup.Get();
@@ -142,21 +142,35 @@ table 83205 "EXM Enum Values"
             EXMEnumValues.SetFilter("Ordinal ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         end;
 
-        if CustNo <> '' then
-            EXMEnumValues.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
-        else
-            EXMEnumValues.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
-
+        EXMEnumValues.SetFilter("Customer No.", CustNo);
         EXMEnumValues.SetRange("Source Enum ID", SourceEnumID);
         if SourceEnumID = 0 then
             EXMEnumValues.SetRange("Enum ID", EnumID);
-        if EXMEnumValues.FindLast() then
-            EnumValueID := EXMEnumValues."Ordinal ID" + 1
-        else
+        if not EXMEnumValues.IsEmpty() then begin
+            if EXMSetup."Find Object ID Gaps" then begin
+                EXMEnumValues.FindSet();
+                if "Source Type" = "Source Type"::Enum then
+                    ExpectedId := 1
+                else
+                    ExpectedId := EXMExtHeader."Object Starting ID";
+                repeat
+                    if ExpectedId <> EXMEnumValues."Ordinal ID" then
+                        exit(ExpectedId)
+                    else
+                        ExpectedId += 1;
+                until EXMEnumValues.Next() = 0;
+                EnumValueID := ExpectedId;
+            end else begin
+                EXMEnumValues.FindLast();
+                EnumValueID := EXMEnumValues."Ordinal ID" + 1;
+            end;
+        end else
             if "Source Type" = "Source Type"::Enum then
                 EnumValueID := 1
             else
                 EnumValueID := EXMExtHeader."Object Starting ID";
+
+        OnAfterAssignEnumID(SourceEnumID, EnumID, CustNo, EnumValueID);
 
         exit(EnumValueID)
     end;
@@ -186,7 +200,12 @@ table 83205 "EXM Enum Values"
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var FieldID: Integer; var IsHandled: Boolean)
+    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterAssignEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer)
     begin
     end;
 }

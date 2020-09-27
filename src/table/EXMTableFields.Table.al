@@ -149,13 +149,12 @@ table 83203 "EXM Table Fields"
         ValidateData();
     end;
 
-    //TODO Improvement - Look for empty ID
     local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]) FieldID: Integer
     var
         EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMFields: Record "EXM Table Fields";
-        EXMExtMgt: Codeunit "EXM Extension Management";
+        ExpectedId: Integer;
         IsHandled: Boolean;
     begin
         EXMSetup.Get();
@@ -175,21 +174,35 @@ table 83203 "EXM Table Fields"
             EXMFields.SetFilter("Field ID", '%1..%2', EXMExtHeader."Object Starting ID", EXMExtHeader."Object Ending ID");
         end;
 
-        if CustNo <> '' then
-            EXMFields.SetFilter("Extension Code", EXMExtMgt.GetCustomerExtensions(CustNo))
-        else
-            EXMFields.SetFilter("Extension Code", EXMExtMgt.GetInternalExtensions());
-
+        EXMFields.SetFilter("Customer No.", CustNo);
         EXMFields.SetRange("Source Table ID", SourceTableID);
         if SourceTableID = 0 then
             EXMFields.SetRange("Table ID", TableID);
-        if EXMFields.FindLast() then
-            FieldID := EXMFields."Field ID" + 1
-        else
+        if not EXMFields.IsEmpty() then begin
+            if EXMSetup."Find Object ID Gaps" then begin
+                EXMFields.FindSet();
+                if "Table Source Type" = "Table Source Type"::Table then
+                    ExpectedId := 1
+                else
+                    ExpectedId := EXMExtHeader."Object Starting ID";
+                repeat
+                    if ExpectedId <> EXMFields."Field ID" then
+                        exit(ExpectedId)
+                    else
+                        ExpectedId += 1;
+                until EXMFields.Next() = 0;
+                FieldID := ExpectedId;
+            end else begin
+                EXMFields.FindLast();
+                FieldID := EXMFields."Field ID" + 1;
+            end;
+        end else
             if "Table Source Type" = "Table Source Type"::Table then
                 FieldID := 1
             else
                 FieldID := EXMExtHeader."Object Starting ID";
+
+        OnAfterAssignFieldID(SourceTableID, TableID, CustNo, FieldID);
 
         exit(FieldID);
     end;
@@ -227,6 +240,11 @@ table 83203 "EXM Table Fields"
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeCalculateFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]; var FieldID: Integer; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterAssignFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]; var FieldID: Integer)
     begin
     end;
 }
