@@ -337,7 +337,7 @@ table 83202 "EXM Extension Lines"
                 ObjectID := ExpectedId;
             end else begin
                 EXMExtLine.FindLast();
-                ObjectID := EXMExtLine."Object ID" + 1
+                ObjectID := EXMExtLine."Object ID" + 1;
             end;
         end else
             ObjectID := EXMExtHeader."Object Starting ID";
