@@ -54,11 +54,21 @@ page 83201 "EXM Extension Header"
                     {
                         Caption = 'Starting No.', Comment = 'ESP="Nº inicial"';
                         ApplicationArea = All;
+                        trigger OnValidate()
+                        begin
+                            if xRec."Object Starting ID" <> "Object Starting ID" then
+                                CurrPage.Update(true);
+                        end;
                     }
                     field("Object Ending ID"; "Object Ending ID")
                     {
                         Caption = 'Ending No.', Comment = 'ESP="Nº final"';
                         ApplicationArea = All;
+                        trigger OnValidate()
+                        begin
+                            if xRec."Object Ending ID" <> "Object Ending ID" then
+                                CurrPage.Update(true);
+                        end;
                     }
                 }
             }
@@ -90,6 +100,11 @@ page 83201 "EXM Extension Header"
             }
         }
     }
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        InitRecord();
+    end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin

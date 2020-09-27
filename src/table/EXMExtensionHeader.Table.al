@@ -38,12 +38,12 @@ table 83201 "EXM Extension Header"
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
-                ObjectRangeErr: Label '%1 must be lower then %2.', comment = 'ESP="%1 debe ser superior a %2."';
             begin
                 if (("Object Starting ID" > "Object Ending ID") and ("Object Ending ID" <> 0)) then
-                    Error(ObjectRangeErr, FieldCaption("Object Starting ID"), FieldCaption("Object Ending ID"));
+                    "Object Ending ID" := "Object Starting ID";
 
                 EXMExtMgt.AllowedObjectsID("Object Starting ID");
+                CheckObjectRange();
             end;
         }
         field(5; "Object Ending ID"; Integer)
@@ -60,6 +60,7 @@ table 83201 "EXM Extension Header"
                     Error(ObjectRangeErr, FieldCaption("Object Ending ID"), FieldCaption("Object Starting ID"));
 
                 EXMExtMgt.AllowedObjectsID("Object Ending ID");
+                CheckObjectRange();
             end;
         }
         field(6; "Customer No."; Code[20])
@@ -243,6 +244,78 @@ table 83201 "EXM Extension Header"
         key(P2; Type, "Customer No.")
         { }
     }
+    local procedure CheckObjectRange();
+    var
+        ExtLine: Record "EXM Extension Lines";
+        ExtField: Record "EXM Table Fields";
+        ExtEnum: Record "EXM Enum Values";
+        ErrorMsg: Text;
+        ShowError: Boolean;
+        ObjectIDRangeErr: Label 'Already exist objects outside range %1 - %2.', comment = 'ESP="Existen objetos fuera del rango %1 - %2."';
+        FieldIDRangeErr: Label 'Already exist field IDs on TableExtensions outside range %1 - %2.', comment = 'ESP="Existen IDs de campo en TableExtension fuera del rango %1 - %2."';
+        OrdinalIDRangeErr: Label 'Already exist IDs on EnumExtensions outside range %1 - %2.', comment = 'ESP="Existen IDs en EnumExtension fuera del rango %1 - %2."';
+    begin
+        //Check Objects ID fits current range
+        ExtLine.SetRange("Extension Code", Code);
+        ExtLine.SetFilter("Object ID", '<%1', "Object Starting ID");
+        if not ExtLine.IsEmpty() then begin
+            ShowError := true;
+            SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, "Object Starting ID", "Object Ending ID"));
+        end else begin
+            ExtLine.SetFilter("Object ID", '>%1', "Object Ending ID");
+            if not ExtLine.IsEmpty() then begin
+                ShowError := true;
+                SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            end;
+        end;
+
+        //Check Fields ID for TableExt fits current range.
+        ExtField.SetRange("Extension Code", Code);
+        ExtField.SetRange("Table Source Type", ExtField."Table Source Type"::"TableExtension");
+        ExtField.SetFilter("Field ID", '<%1', "Object Starting ID");
+        if not ExtField.IsEmpty() then begin
+            ShowError := true;
+            SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, "Object Starting ID", "Object Ending ID"));
+        end else begin
+            ExtField.SetFilter("Field ID", '>%1', "Object Ending ID");
+            if not ExtField.IsEmpty() then begin
+                ShowError := true;
+                SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            end;
+        end;
+
+        //Check Ordinals ID for EnumExt fits current range
+        ExtEnum.SetRange("Extension Code", Code);
+        ExtEnum.SetRange("Source Type", ExtEnum."Source Type"::EnumExtension);
+        ExtEnum.SetFilter("Ordinal ID", '<%1', "Object Starting ID");
+        if not ExtEnum.IsEmpty() then begin
+            ShowError := true;
+            SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, "Object Starting ID", "Object Ending ID"));
+        end else begin
+            ExtEnum.SetFilter("Ordinal ID", '>%1', "Object Ending ID");
+            if not ExtEnum.IsEmpty() then begin
+                ShowError := true;
+                SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            end;
+        end;
+
+        if ShowError then
+            Error(ErrorMsg);
+    end;
+
+    local procedure SetErrorMessage(var ErrorMsg: Text; ErrorTxt: Text)
+    var
+        CRLF: Text[2];
+    begin
+
+        if ErrorMsg = '' then
+            ErrorMsg := ErrorTxt
+        else begin
+            CRLF[1] := 13;
+            CRLF[2] := 10;
+            ErrorMsg += CRLF + ErrorTxt;
+        end;
+    end;
 
     local procedure SetRelLines()
     var
@@ -260,16 +333,15 @@ table 83201 "EXM Extension Header"
         ExtEnum.ModifyAll("Customer No.", "Customer No.");
     end;
 
-
-    trigger OnInsert()
+    procedure InitRecord()
     var
         ExtSetup: Record "EXM Extension Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
         if Code = '' then begin
             ExtSetup.Get();
-            ExtSetup.TestField("Extension Nos.");
-            Code := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
+            if ExtSetup."Extension Nos." <> '' then
+                Code := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
         end;
 
         "Object Starting ID" := ExtSetup."Default Object Starting ID";

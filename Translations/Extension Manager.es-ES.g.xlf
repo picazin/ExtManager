@@ -167,12 +167,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Object Starting ID - Property Caption</note>
           <target>Inicio ID objetos</target>
         </trans-unit>
-        <trans-unit id="Table 2608205474 - Field 1568877572 - Method 2126772001 - NamedType 3970842649" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 must be lower then %2.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="%1 debe ser superior a %2."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field Object Starting ID - Method OnValidate - NamedType ObjectRangeErr</note>
-          <target>%1 debe ser superior a %2.</target>
-        </trans-unit>
         <trans-unit id="Table 2608205474 - Field 3193109377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Ending ID</source>
           <note from="Developer" annotates="general" priority="2">ESP="Final ID objetos"</note>
@@ -322,6 +316,24 @@
           <note from="Developer" annotates="general" priority="2">ESP="URL repositorio GIT"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field GIT Repository URL - Property Caption</note>
           <target>URL repositorio GIT</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2715715622" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Already exist objects outside range %1 - %2.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Existen objetos fuera del rango %1 - %2."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType ObjectIDRangeErr</note>
+          <target>Existen objetos fuera del rango %1 - %2.</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2565769143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Already exist field IDs on TableExtensions outside range %1 - %2.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Existen IDs de campo en TableExtension fuera del rango %1 - %2."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType FieldIDRangeErr</note>
+          <target>Existen IDs de campo en TableExtension fuera del rango %1 - %2.</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2356061672" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Already exist IDs on EnumExtensions outside range %1 - %2.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Existen IDs en EnumExtension fuera del rango %1 - %2."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType OrdinalIDRangeErr</note>
+          <target>Existen IDs en EnumExtension fuera del rango %1 - %2.</target>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Method 804474859 - NamedType 430254759" size-unit="char" translate="yes" xml:space="preserve">
           <source>You cannot rename an %1.</source>
