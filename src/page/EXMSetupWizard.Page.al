@@ -271,10 +271,8 @@ page 83212 "EXM Setup Wizard"
         FirstPageVisible := true;
         SecondPageVisible := false;
         ThirdPageVisible := false;
-        FinishEnabled := false;
         BackEnabled := false;
         NextEnabled := true;
-        DonateEnable := false;
     end;
 
     local procedure ShowSecondPage();
@@ -282,10 +280,8 @@ page 83212 "EXM Setup Wizard"
         FirstPageVisible := false;
         SecondPageVisible := true;
         ThirdPageVisible := false;
-        FinishEnabled := false;
         BackEnabled := true;
         NextEnabled := true;
-        DonateEnable := false;
     end;
 
     local procedure ShowThirdPage();
@@ -293,10 +289,8 @@ page 83212 "EXM Setup Wizard"
         FirstPageVisible := false;
         SecondPageVisible := false;
         ThirdPageVisible := true;
-        FinishEnabled := true;
         BackEnabled := true;
         NextEnabled := true;
-        DonateEnable := false;
     end;
 
     local procedure ShowFinalPage();
@@ -304,12 +298,10 @@ page 83212 "EXM Setup Wizard"
         FinalPageVisible := true;
         BackEnabled := true;
         NextEnabled := false;
-        DonateEnable := true;
     end;
 
     local procedure ResetControls();
     begin
-        FinishEnabled := true;
         BackEnabled := true;
         NextEnabled := true;
         FirstPageVisible := false;
@@ -329,14 +321,6 @@ page 83212 "EXM Setup Wizard"
         MediaRepositoryStandard: Record "Media Repository";
         MediaResourcesStandard: Record "Media Resources";
         Step: Option First,Second,Third,Finish;
-        TopBannerVisible: Boolean;
-        FirstPageVisible: Boolean;
-        SecondPageVisible: Boolean;
-        ThirdPageVisible: Boolean;
-        FinalPageVisible: Boolean;
-        FinishEnabled: Boolean;
-        BackEnabled: Boolean;
-        NextEnabled: Boolean;
-        DonateEnable: Boolean;
+        TopBannerVisible, FirstPageVisible, SecondPageVisible, ThirdPageVisible, FinalPageVisible, BackEnabled, NextEnabled : Boolean;
 }
 
