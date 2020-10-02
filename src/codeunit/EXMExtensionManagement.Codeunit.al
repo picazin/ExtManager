@@ -145,7 +145,7 @@ codeunit 83200 "EXM Extension Management"
 
         if SourceObjectType = 18 then begin
             AllProfile.SetRange("Role Center ID", ObjectID);
-            if AllProfile.FindSet() then
+            if AllProfile.FindFirst() then
                 exit(AllProfile."Profile ID")
         end else
             if AllObj.Get(SourceObjectType, ObjectID) then

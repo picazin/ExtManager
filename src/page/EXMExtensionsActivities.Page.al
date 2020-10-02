@@ -43,10 +43,10 @@ page 83209 "EXM Extensions Activities"
 
     trigger OnOpenPage()
     begin
-        Reset();
-        If not Get() then begin
-            Init();
-            Insert();
+        Rec.Reset();
+        If not Rec.Get() then begin
+            Rec.Init();
+            Rec.Insert();
         end;
 
     end;

@@ -2,7 +2,7 @@ page 83216 "EXM Related Data List"
 {
 
     ApplicationArea = All;
-    Caption = 'EXM - Related tables fields', comment = 'ESP="EXM - Campos tablas relacionadas"';
+    Caption = 'EXM Related tables fields', comment = 'ESP="EXM Campos tablas relacionadas"';
     PageType = List;
     SourceTable = "EXM Related Groups";
     UsageCategory = Administration;

@@ -1019,10 +1019,10 @@
           <target>Tablas relacionadas</target>
         </trans-unit>
         <trans-unit id="Page 3952319399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>EXM - Related tables fields</source>
-          <note from="Developer" annotates="general" priority="2">ESP="EXM - Campos tablas relacionadas"</note>
+          <source>EXM Related tables fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="EXM Campos tablas relacionadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Property Caption</note>
-          <target>EXM - Campos tablas relacionadas</target>
+          <target>EXM Campos tablas relacionadas</target>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXtension Manager</source>
@@ -1041,6 +1041,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Crear nueva extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action EXMExtensionCard - Property ToolTip</note>
           <target>Crear nueva extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1023290046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New table group</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nuevo grupo de tablas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action RelatedTables - Property Caption</note>
+          <target>Nuevo grupo de tablas</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1023290046 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create new table group where fields will be replicated when one selected</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear nuevo grupo de tablas donde replicar campos."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action RelatedTables - Property ToolTip</note>
+          <target>Crear nuevo grupo de tablas donde replicar campos.</target>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Action 1482726517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extensions</source>
@@ -1065,6 +1077,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Ver listado de clientes"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Customers - Property ToolTip</note>
           <target>Ver listado de clientes</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1621166485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extensions Tree View</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Vista arbol extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action TreeView - Property Caption</note>
+          <target>Vista arbol extensiones</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 1621166485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View all data from all extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver datos extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action TreeView - Property ToolTip</note>
+          <target>Ver datos extensiones</target>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Action 1514883969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup</source>
@@ -1101,6 +1125,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Configurar mediante asistente"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Assisted Setup - Property ToolTip</note>
           <target>Configurar mediante asistente</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3943027940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related Table Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campos tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Related Table Fields - Property Caption</note>
+          <target>Campos tablas relacionadas</target>
+        </trans-unit>
+        <trans-unit id="Page 2457472809 - Action 3943027940 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set tables to create same fields as selected one.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Definir tablas donde crear copias de campo seleccionado."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Related Table Fields - Property ToolTip</note>
+          <target>Definir tablas donde crear copias de campo seleccionado.</target>
         </trans-unit>
         <trans-unit id="Page 1798175232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Manager assisted setup guide</source>

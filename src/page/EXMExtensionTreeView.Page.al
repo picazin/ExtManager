@@ -1,11 +1,8 @@
 page 83215 "EXM Extension TreeView"
 {
-
-    ApplicationArea = All;
-    Caption = 'EXM Extension TreeView';
     PageType = List;
+    Caption = 'EXM Extension TreeView';
     SourceTable = "EXM Extension Lines";
-    UsageCategory = Lists;
     SourceTableTemporary = true;
     InsertAllowed = false;
     ModifyAllowed = false;
@@ -15,7 +12,7 @@ page 83215 "EXM Extension TreeView"
     {
         area(content)
         {
-            repeater(General)
+            repeater(Content1)
             {
                 IndentationColumn = "Total Fields";
                 IndentationControls = "Object Type";

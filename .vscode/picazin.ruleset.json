@@ -21,12 +21,16 @@
             "id": "AS0084",
             "action": "Hidden",
             "justification": "No AppSource extension"
-        }
-        ,
+        }        ,
         {
             "id": "AS0085",
             "action": "Hidden",
             "justification": "No AppSource extension"
+        },
+        {
+            "id": "AA0072",
+            "action": "Hidden",
+            "justification": "WTF?!?!"
         }
     ]
 }
