@@ -12,11 +12,11 @@ page 83220 "EXM Extension Dep. Factbox"
             repeater(Control1)
             {
 
-                field("Dependent Ext. Code"; "Dependent Ext. Code")
+                field("Dependent Ext. Code"; Rec."Dependent Ext. Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Dependent Ext. Name"; "Dependent Ext. Name")
+                field("Dependent Ext. Name"; Rec."Dependent Ext. Name")
                 {
                     ApplicationArea = All;
                 }

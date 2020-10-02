@@ -11,34 +11,34 @@ page 83214 "EXM Object Detail"
         {
             repeater(General)
             {
-                field("Object Type"; "Object Type")
+                field("Object Type"; Rec."Object Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Object ID"; "Object ID")
+                field("Object ID"; Rec."Object ID")
                 {
                     ApplicationArea = All;
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                 }
-                field("Source Object Type"; "Source Object Type")
-                {
-                    ApplicationArea = All;
-                    Visible = SourceVisible;
-                }
-                field("Source Object ID"; "Source Object ID")
+                field("Source Object Type"; Rec."Source Object Type")
                 {
                     ApplicationArea = All;
                     Visible = SourceVisible;
                 }
-                field("Source Name"; "Source Name")
+                field("Source Object ID"; Rec."Source Object ID")
                 {
                     ApplicationArea = All;
                     Visible = SourceVisible;
                 }
-                field("Total Fields"; "Total Fields")
+                field("Source Name"; Rec."Source Name")
+                {
+                    ApplicationArea = All;
+                    Visible = SourceVisible;
+                }
+                field("Total Fields"; Rec."Total Fields")
                 {
                     ApplicationArea = All;
                     Visible = FieldsVisible;
@@ -57,36 +57,36 @@ page 83214 "EXM Object Detail"
         EXMFieldList: Page "EXM Field List";
         EXMEnumVal: Page "EXM Enum Values";
     begin
-        case "Object Type" of
-            "Object Type"::"Table", "Object Type"::"TableExtension":
+        case Rec."Object Type" of
+            Rec."Object Type"::"Table", Rec."Object Type"::"TableExtension":
                 begin
-                    EXMTableFields.SetRange("Extension Code", "Extension Code");
-                    EXMTableFields.SetRange("Source Line No.", "Line No.");
-                    EXMTableFields.SetRange("Table Source Type", "Object Type");
-                    EXMTableFields.SetRange("Table ID", "Object ID");
-                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                    EXMTableFields.SetRange("Extension Code", Rec."Extension Code");
+                    EXMTableFields.SetRange("Source Line No.", Rec."Line No.");
+                    EXMTableFields.SetRange("Table Source Type", Rec."Object Type");
+                    EXMTableFields.SetRange("Table ID", Rec."Object ID");
+                    EXMTableFields.SetRange("Source Table ID", Rec."Source Object ID");
 
 
                     EXMFieldList.SetTableView(EXMTableFields);
                     EXMFieldList.LookupMode(true);
                     if EXMFieldList.RunModal() = Action::LookupOK then begin
-                        "Total Fields" := GetTotalFields();
+                        Rec."Total Fields" := Rec.GetTotalFields();
                         CurrPage.Update(true);
                     end;
                 end;
 
-            "Object Type"::Enum, "Object Type"::EnumExtension:
+            Rec."Object Type"::Enum, Rec."Object Type"::EnumExtension:
                 begin
-                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
-                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
-                    EXMEnumValues.SetRange("Source Type", "Object Type");
-                    EXMEnumValues.SetRange("Enum ID", "Object ID");
-                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
+                    EXMEnumValues.SetRange("Extension Code", Rec."Extension Code");
+                    EXMEnumValues.SetRange("Source Line No.", Rec."Line No.");
+                    EXMEnumValues.SetRange("Source Type", Rec."Object Type");
+                    EXMEnumValues.SetRange("Enum ID", Rec."Object ID");
+                    EXMEnumValues.SetRange("Source Enum ID", Rec."Source Object ID");
 
                     EXMEnumVal.SetTableView(EXMEnumValues);
                     EXMEnumVal.LookupMode(true);
                     if EXMEnumVal.RunModal() = Action::LookupOK then begin
-                        "Total Fields" := GetTotalFields();
+                        Rec."Total Fields" := Rec.GetTotalFields();
                         CurrPage.Update(true);
                     end;
                 end;
@@ -97,8 +97,8 @@ page 83214 "EXM Object Detail"
 
     trigger OnAfterGetRecord()
     begin
-        SourceVisible := ("Source Object Type" <> "Source Object Type"::" ");
-        FieldsVisible := "Object Type" in ["Object Type"::Table, "Object Type"::"TableExtension", "Object Type"::Enum, "Object Type"::EnumExtension]
+        SourceVisible := (Rec."Source Object Type" <> Rec."Source Object Type"::" ");
+        FieldsVisible := Rec."Object Type" in [Rec."Object Type"::Table, Rec."Object Type"::"TableExtension", Rec."Object Type"::Enum, Rec."Object Type"::EnumExtension]
     end;
 
     var

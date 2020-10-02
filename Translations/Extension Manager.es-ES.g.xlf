@@ -769,11 +769,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Table Fields - Method ValidateData - NamedType SelectDataTypeErr</note>
           <target>Debe seleccionar un tipo de datos.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 3855015360" size-unit="char" translate="no" xml:space="preserve">
-          <source>https://www.picazin.dev</source>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardLinkTxt</note>
-        </trans-unit>
         <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set up Extension Manager</source>
           <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>

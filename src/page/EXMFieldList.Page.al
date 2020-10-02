@@ -12,96 +12,96 @@ page 83203 "EXM Field List"
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                     Visible = false;
                     Editable = false;
                     StyleExpr = StyleExp;
                 }
-                field("Source Line No."; "Source Line No.")
+                field("Source Line No."; Rec."Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                     StyleExpr = StyleExp;
                 }
-                field("Table Source Type"; "Table Source Type")
+                field("Table Source Type"; Rec."Table Source Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                     StyleExpr = StyleExp;
                 }
-                field("Source Table ID"; "Source Table ID")
+                field("Source Table ID"; Rec."Source Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                     StyleExpr = StyleExp;
                 }
-                field("Table ID"; "Table ID")
+                field("Table ID"; Rec."Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                     StyleExpr = StyleExp;
                 }
-                field(IsPK; IsPK)
+                field(IsPK; Rec.IsPK)
                 {
                     ApplicationArea = All;
                     Visible = PKVisible;
-                    Enabled = ("Source Table ID" = 0);
+                    Enabled = (Rec."Source Table ID" = 0);
                     StyleExpr = StyleExp;
                     trigger OnValidate()
                     begin
-                        if xRec.IsPK <> IsPK then
+                        if xRec.IsPK <> Rec.IsPK then
                             CurrPage.Update(true);
                     end;
                 }
-                field("Field ID"; "Field ID")
+                field("Field ID"; Rec."Field ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
-                field("Field Name"; "Field Name")
+                field("Field Name"; Rec."Field Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
-                field("Data Type"; "Data Type")
+                field("Data Type"; Rec."Data Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
-                field(Lenght; Lenght)
+                field(Lenght; Rec.Lenght)
                 {
                     ApplicationArea = All;
-                    Editable = (("Data Type" = "Data Type"::Text) or ("Data Type" = "Data Type"::Code));
+                    Editable = ((Rec."Data Type" = Rec."Data Type"::Text) or (Rec."Data Type" = Rec."Data Type"::Code));
                     StyleExpr = StyleExp;
                 }
-                field("Field Class"; "Field Class")
-                {
-                    ApplicationArea = All;
-                    StyleExpr = StyleExp;
-                }
-                field("Option String"; "Option String")
-                {
-                    ApplicationArea = All;
-                    Editable = ("Data Type" = "Data Type"::Option);
-                    StyleExpr = StyleExp;
-                }
-                field(Obsolete; Obsolete)
+                field("Field Class"; Rec."Field Class")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
-                field("Created by"; "Created by")
+                field("Option String"; Rec."Option String")
+                {
+                    ApplicationArea = All;
+                    Editable = (Rec."Data Type" = Rec."Data Type"::Option);
+                    StyleExpr = StyleExp;
+                }
+                field(Obsolete; Rec.Obsolete)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                 }
-                field("Creation Date"; "Creation Date")
+                field("Created by"; Rec."Created by")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = StyleExp;
+                }
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
@@ -131,7 +131,7 @@ page 83203 "EXM Field List"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = ResetStatus;
-                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Enabled = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 begin
@@ -150,13 +150,13 @@ page 83203 "EXM Field List"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = Table;
-                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Enabled = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 var
                     EXMExtMgt: Codeunit "EXM Extension Management";
                 begin
-                    EXMExtMgt.GetTableFieldData("Source Table ID");
+                    EXMExtMgt.GetTableFieldData(Rec."Source Table ID");
                 end;
             }
             action(AddRelField)
@@ -168,13 +168,13 @@ page 83203 "EXM Field List"
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 PromotedIsBig = true;
-                Visible = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Visible = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 var
                     ExtMngt: Codeunit "EXM Extension Management";
                 begin
-                    TestField("Table Source Type", "Table Source Type"::"TableExtension");
+                    Rec.TestField("Table Source Type", Rec."Table Source Type"::"TableExtension");
                     ExtMngt.CreateRelatedFields(Rec);
                 end;
             }
@@ -186,19 +186,19 @@ page 83203 "EXM Field List"
         AllObject: Record AllObj;
         EXMExtLine: Record "EXM Extension Lines";
     begin
-        EXMExtLine.Get("Extension Code", "Source Line No.");
+        EXMExtLine.Get(Rec."Extension Code", Rec."Source Line No.");
         if Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension" then begin
-            AllObject.Get(AllObject."Object Type"::Table, "Source Table ID");
-            exit(Format("Source Table ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+            AllObject.Get(AllObject."Object Type"::Table, Rec."Source Table ID");
+            exit(Format(Rec."Source Table ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
         end else
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
 
     local procedure GetPKStyle()
     begin
-        PKVisible := ("Source Table ID" = 0);
+        PKVisible := (Rec."Source Table ID" = 0);
         StyleExp := 'standard';
-        if IsPK then
+        if Rec.IsPK then
             StyleExp := 'strong';
     end;
 
@@ -223,10 +223,10 @@ page 83203 "EXM Field List"
         PKErr: Label 'Primary key must be set.', Comment = 'ESP="Se debe indicar clave primária"';
     begin
         if CloseAction = CloseAction::LookupOK then
-            if "Source Table ID" = 0 then begin
-                EXMTableFields.SetRange("Extension Code", "Extension Code");
-                EXMTableFields.SetRange("Source Line No.", "Source Line No.");
-                EXMTableFields.SetRange("Table Source Type", "Table Source Type"::Table);
+            if Rec."Source Table ID" = 0 then begin
+                EXMTableFields.SetRange("Extension Code", Rec."Extension Code");
+                EXMTableFields.SetRange("Source Line No.", Rec."Source Line No.");
+                EXMTableFields.SetRange("Table Source Type", Rec."Table Source Type"::Table);
                 EXMTableFields.SetRange(IsPK, true);
                 if EXMTableFields.IsEmpty then
                     Error(PKErr);

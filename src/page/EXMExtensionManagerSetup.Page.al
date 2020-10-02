@@ -15,23 +15,23 @@ page 83205 "EXM Extension Manager Setup"
             group(General)
             {
                 Caption = 'General', Comment = 'ESP="General"';
-                field("Extension Nos."; "Extension Nos.")
+                field("Extension Nos."; Rec."Extension Nos.")
                 {
                     ApplicationArea = All;
                 }
-                field("Object Names"; "Object Names")
+                field("Object Names"; Rec."Object Names")
                 {
                     ApplicationArea = All;
                 }
-                field("Default Object Starting ID"; "Default Object Starting ID")
+                field("Default Object Starting ID"; Rec."Default Object Starting ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Default Object Ending ID"; "Default Object Ending ID")
+                field("Default Object Ending ID"; Rec."Default Object Ending ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Find Object ID Gaps"; "Find Object ID Gaps")
+                field("Find Object ID Gaps"; Rec."Find Object ID Gaps")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Always find for possible gaps between IDs.', comment = 'ESP="Buscar siempre huecos entre los ID."';
@@ -41,11 +41,11 @@ page 83205 "EXM Extension Manager Setup"
             group(Advanced)
             {
                 Caption = 'Advanced Options', Comment = 'ESP="Opciones avanzadas"';
-                field("Disable Auto. Objects ID"; "Disable Auto. Objects ID")
+                field("Disable Auto. Objects ID"; Rec."Disable Auto. Objects ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Disable Auto. Field ID"; "Disable Auto. Field ID")
+                field("Disable Auto. Field ID"; Rec."Disable Auto. Field ID")
                 {
                     ApplicationArea = All;
                 }
@@ -80,10 +80,10 @@ page 83205 "EXM Extension Manager Setup"
 
     trigger OnOpenPage()
     begin
-        Reset();
-        if not Get() then begin
-            Init();
-            Insert();
+        Rec.Reset();
+        if not Rec.Get() then begin
+            Rec.Init();
+            Rec.Insert();
         end;
     end;
 }

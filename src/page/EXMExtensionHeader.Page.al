@@ -13,35 +13,35 @@ page 83201 "EXM Extension Header"
             group(Header)
             {
                 Caption = 'Information', Comment = 'ESP="Información"';
-                field("Code"; "Code")
+                field("Code"; Rec."Code")
                 {
                     ApplicationArea = All;
                 }
-                field(Description; "Description")
+                field(Description; Rec."Description")
                 {
                     ApplicationArea = All;
                 }
-                field("App Version"; "App Version")
+                field("App Version"; Rec."App Version")
                 {
                     ApplicationArea = All;
                 }
-                field(Dependencies; Dependencies)
+                field(Dependencies; Rec.Dependencies)
                 {
                     ApplicationArea = All;
                 }
                 group(Target)
                 {
                     Caption = 'Target', Comment = 'Destino';
-                    field(Type; "Type")
+                    field(Type; Rec."Type")
                     {
                         ApplicationArea = All;
                     }
-                    field("Customer No."; "Customer No.")
+                    field("Customer No."; Rec."Customer No.")
                     {
                         ApplicationArea = All;
-                        Editable = (Type = Type::External);
+                        Editable = (Rec.Type = Rec.Type::External);
                     }
-                    field("Customer Name"; "Customer Name")
+                    field("Customer Name"; Rec."Customer Name")
                     {
                         ApplicationArea = All;
                     }
@@ -50,23 +50,23 @@ page 83201 "EXM Extension Header"
                 group(ObjectRange)
                 {
                     Caption = 'Object Range', Comment = 'ESP="Rango objetos"';
-                    field("Object Starting ID"; "Object Starting ID")
+                    field("Object Starting ID"; Rec."Object Starting ID")
                     {
                         Caption = 'Starting No.', Comment = 'ESP="Nº inicial"';
                         ApplicationArea = All;
                         trigger OnValidate()
                         begin
-                            if xRec."Object Starting ID" <> "Object Starting ID" then
+                            if xRec."Object Starting ID" <> Rec."Object Starting ID" then
                                 CurrPage.Update(true);
                         end;
                     }
-                    field("Object Ending ID"; "Object Ending ID")
+                    field("Object Ending ID"; Rec."Object Ending ID")
                     {
                         Caption = 'Ending No.', Comment = 'ESP="Nº final"';
                         ApplicationArea = All;
                         trigger OnValidate()
                         begin
-                            if xRec."Object Ending ID" <> "Object Ending ID" then
+                            if xRec."Object Ending ID" <> Rec."Object Ending ID" then
                                 CurrPage.Update(true);
                         end;
                     }
@@ -79,7 +79,7 @@ page 83201 "EXM Extension Header"
             }
             group(GIT)
             {
-                field("GIT Repository URL"; "GIT Repository URL")
+                field("GIT Repository URL"; Rec."GIT Repository URL")
                 {
                     ApplicationArea = All;
                     ExtendedDatatype = URL;
@@ -103,14 +103,14 @@ page 83201 "EXM Extension Header"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        InitRecord();
+        Rec.InitRecord();
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
-        if Code <> '' then begin
-            TestField("Object Starting ID");
-            TestField("Object Ending ID");
+        if Rec.Code <> '' then begin
+            Rec.TestField("Object Starting ID");
+            Rec.TestField("Object Ending ID");
         end;
     end;
 }

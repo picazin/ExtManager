@@ -16,31 +16,31 @@ page 83200 "EXM Extension List"
         {
             repeater(General)
             {
-                field("Code"; "Code")
+                field("Code"; Rec."Code")
                 {
                     ApplicationArea = All;
                 }
-                field(Description; "Description")
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
                 }
-                field(Type; "Type")
+                field(Type; Rec."Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer No."; "Customer No.")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Object Starting ID"; "Object Starting ID")
+                field("Object Starting ID"; Rec."Object Starting ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Object Ending ID"; "Object Ending ID")
+                field("Object Ending ID"; Rec."Object Ending ID")
                 {
                     ApplicationArea = All;
                 }
@@ -84,9 +84,9 @@ page 83200 "EXM Extension List"
 
                     case SelOption of
                         1:
-                            EXMExtTreeView.SetFilters(Type, '', "Customer No.");
+                            EXMExtTreeView.SetFilters(Rec.Type, '', Rec."Customer No.");
                         2:
-                            EXMExtTreeView.SetFilters(Type, Code, "Customer No.");
+                            EXMExtTreeView.SetFilters(Rec.Type, Rec.Code, Rec."Customer No.");
                         else
                             exit;
                     end;

@@ -14,23 +14,23 @@ page 83211 "EXM EnumExt Values"
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Ordinal ID"; "Ordinal ID")
+                field("Ordinal ID"; Rec."Ordinal ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Enum Value"; "Enum Value")
+                field("Enum Value"; Rec."Enum Value")
                 {
                     ApplicationArea = All;
                 }
-                field("Created by"; "Created by")
+                field("Created by"; Rec."Created by")
                 {
                     ApplicationArea = All;
                 }
-                field("Creation Date"; "Creation Date")
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
                 }
