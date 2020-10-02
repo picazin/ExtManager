@@ -11,11 +11,11 @@ page 83217 "EXM Related Data"
         {
             group(General)
             {
-                field("Code"; Rec.Code)
+                field("Code"; Code)
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Rec.Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }

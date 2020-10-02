@@ -12,11 +12,11 @@ page 83219 "EXM Extension Dependencies"
         {
             repeater(General)
             {
-                field("Dependent Ext. Code"; Rec."Dependent Ext. Code")
+                field("Dependent Ext. Code"; "Dependent Ext. Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Dependent Ext. Name"; Rec."Dependent Ext. Name")
+                field("Dependent Ext. Name"; "Dependent Ext. Name")
                 {
                     ApplicationArea = All;
                 }

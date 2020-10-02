@@ -14,7 +14,7 @@ page 83209 "EXM Extensions Activities"
             {
                 Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 CuegroupLayout = Wide;
-                field(Extensions; Rec.Extensions)
+                field(Extensions; Extensions)
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
@@ -24,14 +24,14 @@ page 83209 "EXM Extensions Activities"
             cuegroup(Detail)
             {
                 Caption = 'Extensions per type', Comment = 'ESP="Extensiones por tipo"';
-                field("Internal Extensions"; Rec."Internal Extensions")
+                field("Internal Extensions"; "Internal Extensions")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
                     ToolTip = 'View Internal Extensions list', Comment = 'ESP="Muestra todas las extensiones internas"';
                 }
 
-                field("External Extensions"; Rec."External Extensions")
+                field("External Extensions"; "External Extensions")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";

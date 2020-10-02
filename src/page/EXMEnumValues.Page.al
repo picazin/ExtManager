@@ -13,49 +13,49 @@ page 83210 "EXM Enum Values"
         {
             repeater(Fields)
             {
-                field("Extension Code"; Rec."Extension Code")
+                field("Extension Code"; "Extension Code")
                 {
                     ApplicationArea = All;
                     Visible = false;
                 }
-                field("Source Line No."; Rec."Source Line No.")
+                field("Source Line No."; "Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
-                field("Source Type"; Rec."Source Type")
+                field("Source Type"; "Source Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
-                field("Source Enum ID"; Rec."Source Enum ID")
+                field("Source Enum ID"; "Source Enum ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
-                field("Enum ID"; Rec."Enum ID")
+                field("Enum ID"; "Enum ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
-                field("Ordinal ID"; Rec."Ordinal ID")
+                field("Ordinal ID"; "Ordinal ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Enum Value"; Rec."Enum Value")
+                field("Enum Value"; "Enum Value")
                 {
                     ApplicationArea = All;
                 }
-                field("Created by"; Rec."Created by")
+                field("Created by"; "Created by")
                 {
                     ApplicationArea = All;
                     Visible = IsVisible;
                 }
-                field("Creation Date"; Rec."Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                     ApplicationArea = All;
                     Visible = IsVisible;
@@ -85,7 +85,7 @@ page 83210 "EXM Enum Values"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = ResetStatus;
-                Enabled = (Rec."Source Type" = Rec."Source Type"::"EnumExtension");
+                Enabled = ("Source Type" = "Source Type"::"EnumExtension");
 
                 trigger OnAction()
                 begin
@@ -104,14 +104,14 @@ page 83210 "EXM Enum Values"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 Image = Table;
-                Enabled = (Rec."Source Type" = Rec."Source Type"::"EnumExtension");
+                Enabled = ("Source Type" = "Source Type"::"EnumExtension");
                 Visible = IsVisible;
 
                 trigger OnAction()
                 var
                     EXMExtMgt: Codeunit "EXM Extension Management";
                 begin
-                    EXMExtMgt.GetEnumValues(Rec."Source Enum ID");
+                    EXMExtMgt.GetEnumValues("Source Enum ID");
                 end;
             }
         }
@@ -121,22 +121,22 @@ page 83210 "EXM Enum Values"
         AllObject: Record AllObj;
         EXMExtLine: Record "EXM Extension Lines";
     begin
-        if Rec.IsTemporary() then begin
-            AllObject.Get(AllObject."Object Type"::Enum, Rec."Enum ID");
-            exit(Format(Rec."Enum ID") + ' ' + AllObject."Object Name");
+        if IsTemporary then begin
+            AllObject.Get(AllObject."Object Type"::Enum, "Enum ID");
+            exit(Format("Enum ID") + ' ' + AllObject."Object Name");
         end;
 
-        EXMExtLine.Get(Rec."Extension Code", Rec."Source Line No.");
+        EXMExtLine.Get("Extension Code", "Source Line No.");
         if Rec."Source Type" = Rec."Source Type"::"EnumExtension" then begin
-            AllObject.Get(AllObject."Object Type"::Enum, Rec."Source Enum ID");
-            exit(Format(Rec."Source Enum ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+            AllObject.Get(AllObject."Object Type"::Enum, "Source Enum ID");
+            exit(Format("Source Enum ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
         end else
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
 
     trigger OnOpenPage()
     begin
-        IsVisible := not Rec.IsTemporary();
+        IsVisible := not IsTemporary;
         if not IsVisible then
             CurrPage.Editable(false);
     end;

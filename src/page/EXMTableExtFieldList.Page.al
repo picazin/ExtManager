@@ -13,53 +13,53 @@ page 83204 "EXM TableExt Field List"
         {
             repeater(Fields)
             {
-                field("Extension Code"; Rec."Extension Code")
+                field("Extension Code"; "Extension Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Source Table ID"; Rec."Source Table ID")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Table ID"; Rec."Table ID")
+                field("Source Table ID"; "Source Table ID")
                 {
                     ApplicationArea = All;
                     Visible = false;
                 }
-                field("Field ID"; Rec."Field ID")
+                field("Table ID"; "Table ID")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
+                field("Field ID"; "Field ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Field Name"; Rec."Field Name")
+                field("Field Name"; "Field Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Data Type"; Rec."Data Type")
+                field("Data Type"; "Data Type")
                 {
                     ApplicationArea = All;
                 }
-                field(Lenght; Rec.Lenght)
+                field(Lenght; Lenght)
                 {
                     ApplicationArea = All;
                 }
-                field("Field Class"; Rec."Field Class")
+                field("Field Class"; "Field Class")
                 {
                     ApplicationArea = All;
                 }
-                field("Option String"; Rec."Option String")
+                field("Option String"; "Option String")
                 {
                     ApplicationArea = All;
                 }
-                field(Obsolete; Rec.Obsolete)
+                field(Obsolete; Obsolete)
                 {
                     ApplicationArea = All;
                 }
-                field("Created by"; Rec."Created by")
+                field("Created by"; "Created by")
                 {
                     ApplicationArea = All;
                 }
-                field("Creation Date"; Rec."Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                     ApplicationArea = All;
                 }

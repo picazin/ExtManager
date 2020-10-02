@@ -15,15 +15,15 @@ page 83216 "EXM Related Data List"
         {
             repeater(General)
             {
-                field("Code"; Rec.Code)
+                field("Code"; Code)
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Rec.Description)
+                field(Description; Description)
                 {
                     ApplicationArea = All;
                 }
-                field("Related Tables No."; Rec."Related Tables No.")
+                field("Related Tables No."; "Related Tables No.")
                 {
                     ApplicationArea = All;
                 }

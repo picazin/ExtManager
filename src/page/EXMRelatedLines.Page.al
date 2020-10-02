@@ -12,11 +12,11 @@ page 83218 "EXM Related Lines"
         {
             repeater(General)
             {
-                field("Table ID"; Rec."Table ID")
+                field("Table ID"; "Table ID")
                 {
                     ApplicationArea = All;
                 }
-                field(Name; Rec.Name)
+                field(Name; Name)
                 {
                     ApplicationArea = All;
                 }

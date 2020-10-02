@@ -11,7 +11,7 @@ page 83213 "EXM Extension FactBox"
         {
             cuegroup(General)
             {
-                field("No. of Tables"; Rec."No. of Tables")
+                field("No. of Tables"; "No. of Tables")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -19,7 +19,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Table)
                     end;
                 }
-                field("No. of TableExtensions"; Rec."No. of TableExtensions")
+                field("No. of TableExtensions"; "No. of TableExtensions")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -27,7 +27,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::"TableExtension")
                     end;
                 }
-                field("No. of Page"; Rec."No. of Page")
+                field("No. of Page"; "No. of Page")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -35,7 +35,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Page)
                     end;
                 }
-                field("No. of PageExtensions"; Rec."No. of PageExtensions")
+                field("No. of PageExtensions"; "No. of PageExtensions")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -43,7 +43,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::"PageExtension")
                     end;
                 }
-                field("No. of Codeunits"; Rec."No. of Codeunits")
+                field("No. of Codeunits"; "No. of Codeunits")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -51,7 +51,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Codeunit)
                     end;
                 }
-                field("No. of Reports"; Rec."No. of Reports")
+                field("No. of Reports"; "No. of Reports")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -59,7 +59,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Report)
                     end;
                 }
-                field("No. of Querys"; Rec."No. of Querys")
+                field("No. of Querys"; "No. of Querys")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -67,7 +67,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Query)
                     end;
                 }
-                field("No. of XMLports"; Rec."No. of XMLports")
+                field("No. of XMLports"; "No. of XMLports")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -75,7 +75,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::XMLport)
                     end;
                 }
-                field("No. of Enums"; Rec."No. of Enums")
+                field("No. of Enums"; "No. of Enums")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -83,7 +83,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Enum)
                     end;
                 }
-                field("No. of EnumExtensions"; Rec."No. of EnumExtensions")
+                field("No. of EnumExtensions"; "No. of EnumExtensions")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -91,7 +91,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::EnumExtension)
                     end;
                 }
-                field("No. of Profiles"; Rec."No. of Profiles")
+                field("No. of Profiles"; "No. of Profiles")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -99,7 +99,7 @@ page 83213 "EXM Extension FactBox"
                         ViewObjectDetail(Objects::Profile)
                     end;
                 }
-                field("No. of ProfileExtensions"; Rec."No. of ProfileExtensions")
+                field("No. of ProfileExtensions"; "No. of ProfileExtensions")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
@@ -116,7 +116,7 @@ page 83213 "EXM Extension FactBox"
         EXMObjectDetail: Page "EXM Object Detail";
     begin
         EXMExtLine.FilterGroup(2);
-        EXMExtLine.SetRange("Extension Code", Rec.Code);
+        EXMExtLine.SetRange("Extension Code", Code);
         EXMExtLine.SetRange("Object Type", ObjType);
         EXMExtLine.FilterGroup(0);
 
