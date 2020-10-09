@@ -59,4 +59,9 @@ codeunit 83201 "EXM Install Setup"
         ExtEnum.ModifyAll("Customer No.", ExtHeader."Customer No.");
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Company-Initialize", 'OnCompanyInitialize', '', false, false)]
+    local procedure CompanyInitialize()
+    begin
+
+    end;
 }

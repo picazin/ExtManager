@@ -314,12 +314,15 @@ table 83202 "EXM Extension Lines"
         If EXMSetup."Disable Auto. Objects ID" then
             exit;
 
+        EXMExtHeader.Get("Extension Code");
+        if EXMExtHeader."Object Ending ID" = 0 then
+            exit;
+
         IsHandled := false;
         OnBeforeCalculateObjectID(ObjectType, CustNo, ObjectID, IsHandled);
         if IsHandled then
             exit(ObjectID);
 
-        EXMExtHeader.Get("Extension Code");
         EXMExtLine.SetCurrentKey("Customer No.", "Object Type", "Object ID");
         EXMExtLine.SetRange("Customer No.", CustNo);
         EXMExtLine.SetRange("Object Type", ObjectType);
@@ -342,10 +345,10 @@ table 83202 "EXM Extension Lines"
         end else
             ObjectID := EXMExtHeader."Object Starting ID";
 
+        OnAfterAssignObjectID(ObjectType, CustNo, ObjectID);
+
         if ObjectID > EXMExtHeader."Object Ending ID" then
             Error(ObjectIdErr, ObjectID, EXMExtHeader."Object Ending ID");
-
-        OnAfterAssignObjectID(ObjectType, CustNo, ObjectID);
 
         exit(ObjectID)
     end;

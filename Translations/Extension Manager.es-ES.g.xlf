@@ -371,6 +371,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Ending ID - Property Caption</note>
           <target>Nº final</target>
         </trans-unit>
+        <trans-unit id="Page 2608205474 - Method 4177352842 - NamedType 2218492339" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 should have value.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="%1 deberia tener valor."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Method OnQueryClosePage - NamedType EmptyIDMsg</note>
+          <target>%1 deberia tener valor.</target>
+        </trans-unit>
         <trans-unit id="Table 70614016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Objects</source>
           <note from="Developer" annotates="general" priority="2">ESP="Objetos extensión"</note>

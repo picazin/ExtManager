@@ -2,7 +2,7 @@
     "al.codeAnalyzers": [
         "${CodeCop}",
         "${UICop}",
-        "${AppSourceCop}"
+        "${PerTenantExtensionCop}"
     ],
     "al.ruleSetPath": ".vscode/picazin.ruleset.json",
     "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
