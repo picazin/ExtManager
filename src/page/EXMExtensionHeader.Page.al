@@ -107,10 +107,15 @@ page 83201 "EXM Extension Header"
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        EmptyIDMsg: Label '%1 should have value.', comment = 'ESP="%1 deberia tener valor."';
     begin
         if Code <> '' then begin
-            TestField("Object Starting ID");
-            TestField("Object Ending ID");
+            if Rec."Object Starting ID" = 0 then
+                Message(StrSubstNo(EmptyIDMsg, Rec.FieldCaption("Object Starting ID")));
+
+            if Rec."Object Ending ID" = 0 then
+                Message(StrSubstNo(EmptyIDMsg, Rec.FieldCaption("Object Ending ID")));
         end;
     end;
 }

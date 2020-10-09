@@ -39,11 +39,14 @@ table 83201 "EXM Extension Header"
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
-                if (("Object Starting ID" > "Object Ending ID") and ("Object Ending ID" <> 0)) then
-                    "Object Ending ID" := "Object Starting ID";
+                if xRec."Object Starting ID" <> Rec."Object Starting ID" then begin
+                    if (("Object Starting ID" > "Object Ending ID") and ("Object Ending ID" <> 0)) then
+                        "Object Ending ID" := "Object Starting ID";
 
-                EXMExtMgt.AllowedObjectsID("Object Starting ID");
-                CheckObjectRange();
+                    if "Object Starting ID" <> 0 then
+                        EXMExtMgt.AllowedObjectsID("Object Starting ID");
+                    CheckObjectRange();
+                end;
             end;
         }
         field(5; "Object Ending ID"; Integer)
@@ -56,11 +59,14 @@ table 83201 "EXM Extension Header"
                 EXMExtMgt: Codeunit "EXM Extension Management";
                 ObjectRangeErr: Label '%1 must be greater then %2.', comment = 'ESP="%1 debe ser superior a %2."';
             begin
-                if ("Object Ending ID" < "Object Starting ID") then
-                    Error(ObjectRangeErr, FieldCaption("Object Ending ID"), FieldCaption("Object Starting ID"));
+                if xRec."Object Ending ID" <> Rec."Object Ending ID" then begin
+                    if ("Object Ending ID" < "Object Starting ID") then
+                        Error(ObjectRangeErr, FieldCaption("Object Ending ID"), FieldCaption("Object Starting ID"));
 
-                EXMExtMgt.AllowedObjectsID("Object Ending ID");
-                CheckObjectRange();
+                    if "Object Ending ID" <> 0 then
+                        EXMExtMgt.AllowedObjectsID("Object Ending ID");
+                    CheckObjectRange();
+                end;
             end;
         }
         field(6; "Customer No."; Code[20])
@@ -104,7 +110,7 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'Dependencies', Comment = 'ESP="Dependencias"';
             FieldClass = FlowField;
-            CalcFormula = Count ("EXM Extension Dependencies" where("Extensión Code" = field(Code)));
+            CalcFormula = Count("EXM Extension Dependencies" where("Extensión Code" = field(Code)));
             Editable = false;
         }
 
@@ -147,84 +153,84 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'No. of Tables', Comment = 'ESP="Nº Tablas"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Table)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Table)));
             Editable = false;
         }
         field(26; "No. of Reports"; Integer)
         {
             Caption = 'No. of Reports', Comment = 'ESP="Nº Informes"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Report)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Report)));
             Editable = false;
         }
         field(27; "No. of Codeunits"; Integer)
         {
             Caption = 'No. of Codeunits', Comment = 'ESP="Nº Codeunits"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Codeunit)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Codeunit)));
             Editable = false;
         }
         field(28; "No. of XMLports"; Integer)
         {
             Caption = 'No. of XMLports', Comment = 'ESP="Nº XMLports"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(XMLport)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(XMLport)));
             Editable = false;
         }
         field(29; "No. of Page"; Integer)
         {
             Caption = 'No. of Pages', Comment = 'ESP="Nº Pages"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Page)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Page)));
             Editable = false;
         }
         field(30; "No. of Querys"; Integer)
         {
             Caption = 'No. of Querys', Comment = 'ESP="Nº Querys"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Query)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Query)));
             Editable = false;
         }
         field(31; "No. of PageExtensions"; Integer)
         {
             Caption = 'No. of PageExtensions', Comment = 'ESP="Nº PageExtensions"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("PageExtension")));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("PageExtension")));
             Editable = false;
         }
         field(32; "No. of TableExtensions"; Integer)
         {
             Caption = 'No. of TableExtensions', Comment = 'ESP="Nº TableExtensions"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("TableExtension")));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("TableExtension")));
             Editable = false;
         }
         field(33; "No. of Enums"; Integer)
         {
             Caption = 'No. of Enums', Comment = 'ESP="Nº Enums"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Enum)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Enum)));
             Editable = false;
         }
         field(34; "No. of EnumExtensions"; Integer)
         {
             Caption = 'No. of EnumExtensions', Comment = 'ESP="Nº EnumExtensions"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(EnumExtension)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(EnumExtension)));
             Editable = false;
         }
         field(35; "No. of Profiles"; Integer)
         {
             Caption = 'No. of Profiles', Comment = 'ESP="Nº Profiles"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Profile)));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Profile)));
             Editable = false;
         }
         field(36; "No. of ProfileExtensions"; Integer)
         {
             Caption = 'No. of ProfileExtensions', Comment = 'ESP="Nº ProfileExtensions"';
             FieldClass = FlowField;
-            CalcFormula = count ("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("ProfileExtension")));
+            CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("ProfileExtension")));
             Editable = false;
         }
         field(50; "GIT Repository URL"; Text[2048])
@@ -338,11 +344,10 @@ table 83201 "EXM Extension Header"
         ExtSetup: Record "EXM Extension Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
-        if Code = '' then begin
-            ExtSetup.Get();
+        ExtSetup.Get();
+        if Code = '' then
             if ExtSetup."Extension Nos." <> '' then
                 Code := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
-        end;
 
         "Object Starting ID" := ExtSetup."Default Object Starting ID";
         "Object Ending ID" := ExtSetup."Default Object Ending ID";
