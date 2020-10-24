@@ -1,8 +1,8 @@
 table 83203 "EXM Table Fields"
 {
     Caption = 'Extension Fields', Comment = 'ESP="Campos extensión"';
-    LookupPageId = "EXM Field List";
     DataClassification = OrganizationIdentifiableInformation;
+    LookupPageId = "EXM Field List";
 
     fields
     {
@@ -28,14 +28,14 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Source Object Type', Comment = 'ESP="Tipo objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
             OptionCaption = ',Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
         }
         field(4; "Source Table ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Source Table ID', Comment = 'ESP="Id. tabla origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
@@ -47,9 +47,9 @@ table 83203 "EXM Table Fields"
         }
         field(5; "Table ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Table ID', Comment = 'ESP="Id. tabla"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
@@ -61,9 +61,9 @@ table 83203 "EXM Table Fields"
         }
         field(6; "Field ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Field ID', Comment = 'ESP="Id. campo"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
         }
         field(7; "Field Name"; Text[30])
         {
@@ -79,14 +79,14 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Data Type', Comment = 'ESP="Tipo datos"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
             InitValue = " ";
+            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
         }
         field(10; Lenght; Integer)
         {
+            BlankZero = true;
             Caption = 'Lenght', Comment = 'ESP="Longitud"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
         }
         field(11; "Field Class"; Option)
         {
@@ -151,11 +151,11 @@ table 83203 "EXM Table Fields"
 
     local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]) FieldID: Integer
     var
-        EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
+        EXMSetup: Record "EXM Extension Setup";
         EXMFields: Record "EXM Table Fields";
-        ExpectedId: Integer;
         IsHandled: Boolean;
+        ExpectedId: Integer;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then

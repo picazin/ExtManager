@@ -4,8 +4,8 @@ codeunit 83201 "EXM Install Setup"
 
     trigger OnInstallAppPerCompany()
     var
-        EXMExtSetup: Record "EXM Extension Setup";
         ExtHeader: Record "EXM Extension Header";
+        EXMExtSetup: Record "EXM Extension Setup";
     begin
         if not EXMExtSetup.Get() then begin
             EXMExtSetup.Init();
@@ -21,10 +21,12 @@ codeunit 83201 "EXM Install Setup"
         end;
     end;
 
-    local procedure CheckUpdateCustomerNoData(): Boolean
+    procedure GetCurrentlyInstalledVersionNo(): Text
+    var
+        AppInfo: ModuleInfo;
     begin
-        //"version": "0.2.9.0" set customer no. to lines. Must update data if installed version is lower version
-        Exit((GetInstallingVersionNo() >= '0.2.9.0') and (GetCurrentlyInstalledVersionNo() < '0.2.9.0'));
+        NavApp.GetCurrentModuleInfo(AppInfo);
+        exit(Format(AppInfo.DataVersion()));
     end;
 
     procedure GetInstallingVersionNo(): Text
@@ -35,19 +37,17 @@ codeunit 83201 "EXM Install Setup"
         exit(Format(AppInfo.AppVersion()));
     end;
 
-    procedure GetCurrentlyInstalledVersionNo(): Text
-    var
-        AppInfo: ModuleInfo;
+    local procedure CheckUpdateCustomerNoData(): Boolean
     begin
-        NavApp.GetCurrentModuleInfo(AppInfo);
-        exit(Format(AppInfo.DataVersion()));
+        //"version": "0.2.9.0" set customer no. to lines. Must update data if installed version is lower version
+        Exit((GetInstallingVersionNo() >= '0.2.9.0') and (GetCurrentlyInstalledVersionNo() < '0.2.9.0'));
     end;
 
     local procedure SetCustomerData(ExtHeader: Record "EXM Extension Header")
     var
+        ExtEnum: Record "EXM Enum Values";
         ExtLine: Record "EXM Extension Lines";
         ExtField: Record "EXM Table Fields";
-        ExtEnum: Record "EXM Enum Values";
     begin
         ExtLine.SetRange("Extension Code", ExtHeader.Code);
         ExtLine.ModifyAll("Customer No.", ExtHeader."Customer No.");

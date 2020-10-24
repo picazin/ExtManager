@@ -1,9 +1,9 @@
 page 83213 "EXM Extension FactBox"
 {
-    PageType = CardPart;
-    SourceTable = "EXM Extension Header";
     Caption = 'Extension objects detail', Comment = 'ESP="Detalle objetos extensión"';
     Editable = false;
+    PageType = CardPart;
+    SourceTable = "EXM Extension Header";
 
     layout
     {
@@ -14,6 +14,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Tables"; "No. of Tables")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Tables in the extension', Comment = 'ESP="Muestra el Nº Tablas en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Table)
@@ -22,6 +23,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of TableExtensions"; "No. of TableExtensions")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of TableExtensions in the extension', Comment = 'ESP="Muestra el Nº TableExtensions en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::"TableExtension")
@@ -30,6 +32,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Page"; "No. of Page")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Pages in the extension', Comment = 'ESP="Muestra el Nº Pages en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Page)
@@ -38,6 +41,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of PageExtensions"; "No. of PageExtensions")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of PageExtensions in the extension', Comment = 'ESP ="Muestra el Nº PageExtensions en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::"PageExtension")
@@ -46,6 +50,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Codeunits"; "No. of Codeunits")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Codeunits in the extension', Comment = 'ESP ="Muestra el Nº Codeunits en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Codeunit)
@@ -54,6 +59,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Reports"; "No. of Reports")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Reports in the extension', Comment = 'ESP ="Muestra el Nº Informes en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Report)
@@ -62,6 +68,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Querys"; "No. of Querys")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Querys in the extension', Comment = 'ESP ="Muestra el Nº Querys en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Query)
@@ -70,6 +77,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of XMLports"; "No. of XMLports")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of XMLports in the extension', Comment = 'ESP ="Muestra el Nº XMLports en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::XMLport)
@@ -78,6 +86,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Enums"; "No. of Enums")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Enums in the extension', Comment = 'ESP ="Muestra el Nº Enums en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Enum)
@@ -86,6 +95,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of EnumExtensions"; "No. of EnumExtensions")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of EnumExtensions in the extension', Comment = 'ESP ="Muestra el Nº EnumExtensions en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::EnumExtension)
@@ -94,6 +104,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of Profiles"; "No. of Profiles")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of Profiles in the extension', Comment = 'ESP ="Muestra el Nº Profiles en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::Profile)
@@ -102,6 +113,7 @@ page 83213 "EXM Extension FactBox"
                 field("No. of ProfileExtensions"; "No. of ProfileExtensions")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the No. of ProfileExtensions in the extension', Comment = 'ESP ="Muestra el Nº ProfileExtensions en la extensión"';
                     trigger OnDrillDown()
                     begin
                         ViewObjectDetail(Objects::"ProfileExtension")
@@ -110,6 +122,10 @@ page 83213 "EXM Extension FactBox"
             }
         }
     }
+
+    var
+        Objects: Option "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+
     local procedure ViewObjectDetail(ObjType: Integer);
     var
         EXMExtLine: Record "EXM Extension Lines";
@@ -125,7 +141,4 @@ page 83213 "EXM Extension FactBox"
         EXMObjectDetail.SetTableView(EXMExtLine);
         EXMObjectDetail.RunModal();
     end;
-
-    var
-        Objects: Option "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
 }

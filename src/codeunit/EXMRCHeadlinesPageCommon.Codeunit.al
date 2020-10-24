@@ -5,10 +5,39 @@ codeunit 83202 "EXM RC Headlines Page Common"
         Headlines: Codeunit Headlines;
         RCHeadlinesExecutor: Codeunit "RC Headlines Executor";
         DefaultFieldsVisible: Boolean;
-        DocumentationTxt: Label 'Want to learn more about EXM?', Comment = 'ESP="Desea más información sobre EXM (Extension Manager)?"';
-        GreetingText: Text[250];
-        DocumentationText: Text[250];
         UserGreetingVisible: Boolean;
+        DocumentationTxt: Label 'Want to learn more about EXM?', Comment = 'ESP="Desea más información sobre EXM (Extension Manager)?"';
+        DocumentationText: Text[250];
+        GreetingText: Text[250];
+
+    procedure AreDefaultFieldsVisible(): Boolean
+    begin
+        exit(DefaultFieldsVisible);
+    end;
+
+    procedure ComputeDefaultFieldsVisibility(RoleCenterPageID: Integer)
+    var
+        ExtensionHeadlinesVisible: Boolean;
+    begin
+        OnIsAnyExtensionHeadlineVisible(ExtensionHeadlinesVisible, RoleCenterPageID);
+        DefaultFieldsVisible := not ExtensionHeadlinesVisible;
+        UserGreetingVisible := Headlines.ShouldUserGreetingBeVisible();
+    end;
+
+    procedure DocumentationUrlTxt(): Text
+    begin
+        exit('https://picazin.dev');
+    end;
+
+    procedure GetDocumentationText(): Text
+    begin
+        exit(DocumentationText);
+    end;
+
+    procedure GetGreetingText(): Text
+    begin
+        exit(GreetingText);
+    end;
 
     procedure HeadlineOnOpenPage(RoleCenterPageID: Integer)
     var
@@ -36,6 +65,11 @@ codeunit 83202 "EXM RC Headlines Page Common"
         Commit(); // not to mess up the other page parts that may do IF CODEUNIT.RUN()
     end;
 
+    procedure IsUserGreetingVisible(): Boolean
+    begin
+        exit(UserGreetingVisible);
+    end;
+
     local procedure ShouldCreateAComputeJob(RCHeadlinesUserData: Record "RC Headlines User Data"): Boolean
     var
         OneHour: Duration;
@@ -44,40 +78,6 @@ codeunit 83202 "EXM RC Headlines Page Common"
             exit(true);
         OneHour := 60 * 60 * 1000;
         exit(CurrentDateTime() - RCHeadlinesUserData."Last Computed" > OneHour);
-    end;
-
-    procedure ComputeDefaultFieldsVisibility(RoleCenterPageID: Integer)
-    var
-        ExtensionHeadlinesVisible: Boolean;
-    begin
-        OnIsAnyExtensionHeadlineVisible(ExtensionHeadlinesVisible, RoleCenterPageID);
-        DefaultFieldsVisible := not ExtensionHeadlinesVisible;
-        UserGreetingVisible := Headlines.ShouldUserGreetingBeVisible();
-    end;
-
-    procedure DocumentationUrlTxt(): Text
-    begin
-        exit('https://picazin.dev');
-    end;
-
-    procedure IsUserGreetingVisible(): Boolean
-    begin
-        exit(UserGreetingVisible);
-    end;
-
-    procedure GetGreetingText(): Text
-    begin
-        exit(GreetingText);
-    end;
-
-    procedure AreDefaultFieldsVisible(): Boolean
-    begin
-        exit(DefaultFieldsVisible);
-    end;
-
-    procedure GetDocumentationText(): Text
-    begin
-        exit(DocumentationText);
     end;
 
     [IntegrationEvent(false, false)]

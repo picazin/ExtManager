@@ -81,17 +81,83 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Property Caption</note>
           <target>Enum</target>
         </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Extension Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión.</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 312545736 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Line No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº línea origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Source Line No. - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº línea origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 1753214751 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Source Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 3603434469 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Enum ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. Enum origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Source Enum ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. Enum origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 72044306 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Enum ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Enum ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. Enum</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 988276474 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ordinal ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. ordinal"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Ordinal ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. ordinal</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 1156442700 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Enum Value field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Valor Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Enum Value - Property ToolTip</note>
+          <target>Especifica el valor del campo Valor Enum</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 98207365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created by field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Created by - Property ToolTip</note>
+          <target>Especifica el valor del campo Creado por</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Control Creation Date - Property ToolTip</note>
+          <target>Especifica el valor del campo Fecha creación</target>
+        </trans-unit>
         <trans-unit id="Page 2931733741 - Action 744506414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View / Hide values</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar valores"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action AllEnumValues - Property Caption</note>
           <target>Ver / ocultar valores</target>
         </trans-unit>
+        <trans-unit id="Page 2931733741 - Action 744506414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the View / Hide values action to view other values for same table on other extensions.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar valores del resto de extensiones para la misma tabla."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action AllEnumValues - Property ToolTip</note>
+          <target>Ver / ocultar valores del resto de extensiones para la misma tabla.</target>
+        </trans-unit>
         <trans-unit id="Page 2931733741 - Action 721040237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View source Enum</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver Enum origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action ViewSourceEnum - Property Caption</note>
           <target>Ver Enum origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2931733741 - Action 721040237 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View source Enum values</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver valores de Enum origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Enum Values - Action ViewSourceEnum - Property ToolTip</note>
+          <target>Ver valores de Enum origen</target>
         </trans-unit>
         <trans-unit id="Table 38012172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Dependencies</source>
@@ -101,8 +167,9 @@
         </trans-unit>
         <trans-unit id="Table 38012172 - Field 1555295332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extensión Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Extensión Code - Property Caption</note>
+          <target>Cód. extensión</target>
         </trans-unit>
         <trans-unit id="Table 38012172 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer No.</source>
@@ -112,24 +179,39 @@
         </trans-unit>
         <trans-unit id="Table 38012172 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº línea"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Line No. - Property Caption</note>
+          <target>Nº línea</target>
         </trans-unit>
         <trans-unit id="Table 38012172 - Field 3822673717 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dependent Ext. Code</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. extensión dependiente"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Dependent Ext. Code - Property Caption</note>
+          <target>Cód. extensión dependiente</target>
         </trans-unit>
         <trans-unit id="Table 38012172 - Field 84179483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dependent Ext. Name</source>
-          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre extensión dependiente"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Dependencies - Field Dependent Ext. Name - Property Caption</note>
+          <target>Nombre extensión dependiente</target>
         </trans-unit>
         <trans-unit id="Page 38012172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM Extension Dependencies</source>
           <note from="Developer" annotates="general" priority="2">ESP="Dependencias extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dependencies - Property Caption</note>
           <target>Dependencias extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 38012172 - Control 3822673717 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Dependent Ext. Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión dependiente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dependencies - Control Dependent Ext. Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión dependiente</target>
+        </trans-unit>
+        <trans-unit id="Page 38012172 - Control 84179483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Dependent Ext. Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre extensión dependiente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dependencies - Control Dependent Ext. Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre extensión dependiente</target>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension</source>
@@ -317,12 +399,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Field GIT Repository URL - Property Caption</note>
           <target>URL repositorio GIT</target>
         </trans-unit>
-        <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2715715622" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Already exist objects outside range %1 - %2.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Existen objetos fuera del rango %1 - %2."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType ObjectIDRangeErr</note>
-          <target>Existen objetos fuera del rango %1 - %2.</target>
-        </trans-unit>
         <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2565769143" size-unit="char" translate="yes" xml:space="preserve">
           <source>Already exist field IDs on TableExtensions outside range %1 - %2.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Existen IDs de campo en TableExtension fuera del rango %1 - %2."</note>
@@ -334,6 +410,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Existen IDs en EnumExtension fuera del rango %1 - %2."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType OrdinalIDRangeErr</note>
           <target>Existen IDs en EnumExtension fuera del rango %1 - %2.</target>
+        </trans-unit>
+        <trans-unit id="Table 2608205474 - Method 582785192 - NamedType 2715715622" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Already exist objects outside range %1 - %2.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Existen objetos fuera del rango %1 - %2."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Extension Header - Method CheckObjectRange - NamedType ObjectIDRangeErr</note>
+          <target>Existen objetos fuera del rango %1 - %2.</target>
         </trans-unit>
         <trans-unit id="Table 2608205474 - Method 804474859 - NamedType 430254759" size-unit="char" translate="yes" xml:space="preserve">
           <source>You cannot rename an %1.</source>
@@ -353,6 +435,48 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Header - Property Caption</note>
           <target>Información</target>
         </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Código</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Description - Property ToolTip</note>
+          <target>Especifica el valor del campo Descripción</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 2709452997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the App Version field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Versión App"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control App Version - Property ToolTip</note>
+          <target>Especifica el valor del campo Versión App</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 3523694699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Dependencies field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Dependencias"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Dependencies - Property ToolTip</note>
+          <target>Especifica el valor del campo Dependencias</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Customer No. - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº Cliente</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 1171137197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Customer Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
         <trans-unit id="Page 2608205474 - Control 2606000766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Object Range</source>
           <note from="Developer" annotates="general" priority="2">ESP="Rango objetos"</note>
@@ -365,11 +489,29 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Starting ID - Property Caption</note>
           <target>Nº inicial</target>
         </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 1568877572 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Starting No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº inicial"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Starting ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº inicial</target>
+        </trans-unit>
         <trans-unit id="Page 2608205474 - Control 3193109377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ending No.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº final"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Ending ID - Property Caption</note>
           <target>Nº final</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 3193109377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ending No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº final"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control Object Ending ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº final</target>
+        </trans-unit>
+        <trans-unit id="Page 2608205474 - Control 3161662877 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the GIT Repository URL field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo URL repositorio GIT"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Header - Control GIT Repository URL - Property ToolTip</note>
+          <target>Especifica el valor del campo URL repositorio GIT</target>
         </trans-unit>
         <trans-unit id="Page 2608205474 - Method 4177352842 - NamedType 2218492339" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 should have value.</source>
@@ -496,6 +638,65 @@
           <note from="Developer" annotates="general" priority="2">ESP="Objetos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Property Caption</note>
           <target>Objetos</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 1085746399 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 3711240756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 2837438916 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Source Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 4264439119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Source Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 1343707150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre Origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Source Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre Origen</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 3481801877 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows Total related fields', Comment = 'ESP="Muestra el total de Campos relacionados"</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Total Fields - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 139345763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Obsolete field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Obsolete - Property ToolTip</note>
+          <target>Especifica el valor del campo Obsoleto</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 98207365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created by field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Created by - Property ToolTip</note>
+          <target>Especifica el valor del campo Creado por</target>
+        </trans-unit>
+        <trans-unit id="Page 70614016 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Lines - Control Creation Date - Property ToolTip</note>
+          <target>Especifica el valor del campo Fecha creación</target>
         </trans-unit>
         <trans-unit id="Page 70614016 - Action 445248289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View detail</source>
@@ -655,6 +856,18 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Lines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1724440998 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID Tabla"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Lines - Control Table ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID Tabla</target>
+        </trans-unit>
+        <trans-unit id="Page 1724440998 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Lines - Control Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
         <trans-unit id="Table 2974860049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Fields</source>
           <note from="Developer" annotates="general" priority="2">ESP="Campos extensión"</note>
@@ -775,11 +988,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Table Fields - Method ValidateData - NamedType SelectDataTypeErr</note>
           <target>Debe seleccionar un tipo de datos.</target>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set up Extension Manager</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardTxt</note>
-          <target>Configurar Gestor Extensiones</target>
+        <trans-unit id="Codeunit 245402963 - Method 1858114840 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method OnReRunOfCompletedSetup - NamedType AlreadySetUpQst</note>
+          <target>La configuración se ha realizado. Desea ejecutar nuevamente?</target>
         </trans-unit>
         <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 198194196" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM need some amazing information from you to make everything works fine!</source>
@@ -787,11 +1000,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType InitialEXMSetupDescTxt</note>
           <target>EXM necesita pedirte información para funcionar correctamente, Será rápido!!</target>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 1858114840 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?</source>
-          <note from="Developer" annotates="general" priority="2">ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method OnReRunOfCompletedSetup - NamedType AlreadySetUpQst</note>
-          <target>La configuración se ha realizado. Desea ejecutar nuevamente?</target>
+        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set up Extension Manager</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardTxt</note>
+          <target>Configurar Gestor Extensiones</target>
         </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Acording to Microsoft guides, current ID not allowed.Check guide:</source>
@@ -804,17 +1017,17 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method AllowedObjectsID - NamedType URLLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 378922342 - Method 1886970247 - NamedType 3929586841" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ID must be on definid object range %1 - %2</source>
-          <note from="Developer" annotates="general" priority="2">ESP="ID debe estar dentro del rango definido %1 - %2"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
-          <target>ID debe estar dentro del rango definido %1 - %2</target>
-        </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 2372545329 - NamedType 1636972671" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 used on %2 extension.</source>
           <note from="Developer" annotates="general" priority="2">ESP="%1 usado en extensión %2"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ChechManualObjectID - NamedType ObjectIDErr</note>
           <target>%1 usado en extensión %2</target>
+        </trans-unit>
+        <trans-unit id="Codeunit 378922342 - Method 1886970247 - NamedType 3929586841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID must be on definid object range %1 - %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="ID debe estar dentro del rango definido %1 - %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Extension Management - Method ValidateExtensionRangeID - NamedType IDRangeErr</note>
+          <target>ID debe estar dentro del rango definido %1 - %2</target>
         </trans-unit>
         <trans-unit id="Codeunit 2989322446 - NamedType 96739838" size-unit="char" translate="yes" xml:space="preserve">
           <source>Want to learn more about EXM?</source>
@@ -828,11 +1041,53 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Property Caption</note>
           <target>Valores EnumExt</target>
         </trans-unit>
+        <trans-unit id="Page 2206494614 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Código Extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Control Extension Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Código Extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2206494614 - Control 988276474 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ordinal ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID Ordinal"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Control Ordinal ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID Ordinal</target>
+        </trans-unit>
+        <trans-unit id="Page 2206494614 - Control 1156442700 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Enum Value field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo valor Enum"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Control Enum Value - Property ToolTip</note>
+          <target>Especifica el valor del campo valor Enum</target>
+        </trans-unit>
+        <trans-unit id="Page 2206494614 - Control 98207365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created by field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica quién creo el registro."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Control Created by - Property ToolTip</note>
+          <target>Especifica quién creo el registro.</target>
+        </trans-unit>
+        <trans-unit id="Page 2206494614 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica la fecha de creación del registro."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM EnumExt Values - Control Creation Date - Property ToolTip</note>
+          <target>Especifica la fecha de creación del registro.</target>
+        </trans-unit>
         <trans-unit id="Page 2163887421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension dependencies</source>
           <note from="Developer" annotates="general" priority="2">ESP="Dependencias extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dep. Factbox - Property Caption</note>
           <target>Dependencias extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2163887421 - Control 3822673717 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Dependent Ext. Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión dependiente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dep. Factbox - Control Dependent Ext. Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión dependiente</target>
+        </trans-unit>
+        <trans-unit id="Page 2163887421 - Control 84179483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Dependent Ext. Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre extensión dependiente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Dep. Factbox - Control Dependent Ext. Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre extensión dependiente</target>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension objects detail</source>
@@ -840,17 +1095,128 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Property Caption</note>
           <target>Detalle objetos extensión</target>
         </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 666729213 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Tables in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Tablas en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Tables - Property ToolTip</note>
+          <target>Muestra el Nº Tablas en la extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 474168246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of TableExtensions in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº TableExtensions en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of TableExtensions - Property ToolTip</note>
+          <target>Muestra el Nº TableExtensions en la extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 2344331711 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Pages in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Pages en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Page - Property ToolTip</note>
+          <target>Muestra el Nº Pages en la extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 1103067705 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of PageExtensions in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº PageExtensions en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of PageExtensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 330729858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Codeunits in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Codeunits en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Codeunits - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 3594050349 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Reports in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Informes en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Reports - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 1343285977 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Querys in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Querys en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Querys - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 975612191 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of XMLports in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº XMLports en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of XMLports - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 2917606818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Enums in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Enums en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Enums - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 1245727137 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of EnumExtensions in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº EnumExtensions en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of EnumExtensions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 1319746146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of Profiles in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Profiles en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Profiles - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1954438744 - Control 3125457377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the No. of ProfileExtensions in the extension</source>
+          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº ProfileExtensions en la extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of ProfileExtensions - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1097993837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extension Manager</source>
           <note from="Developer" annotates="general" priority="2">ESP="Gestor Extensiones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Property Caption</note>
           <target>Gestor Extensiones</target>
         </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Código</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Description - Property ToolTip</note>
+          <target>Especifica el valor del campo Descripción</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº Cliente"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Customer No. - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº Cliente</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 1171137197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Customer Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 1568877572 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Starting ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Inicio ID objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Object Starting ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Inicio ID objetos</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Control 3193109377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Ending ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Final ID objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Control Object Ending ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Final ID objetos</target>
+        </trans-unit>
         <trans-unit id="Page 1097993837 - Action 1621166485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tree view</source>
           <note from="Developer" annotates="general" priority="2">ESP="Vista arbol"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Action TreeView - Property Caption</note>
           <target>Vista arbol</target>
+        </trans-unit>
+        <trans-unit id="Page 1097993837 - Action 1621166485 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Tree view action</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver objectos en Vista arbol"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension List - Action TreeView - Property ToolTip</note>
+          <target>Ver objectos en Vista arbol</target>
         </trans-unit>
         <trans-unit id="Page 1097993837 - Action 1621166485 - Method 1377591017 - NamedType 1253109618" size-unit="char" translate="yes" xml:space="preserve">
           <source>All,Selected</source>
@@ -870,6 +1236,30 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control General - Property Caption</note>
           <target>General</target>
         </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 3826841295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Nos. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº série extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Extension Nos. - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº série extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 1694956315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Names field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Object Names - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre objetos</target>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 3376224445 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Default Starting Range field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Rango inicial por defecto."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Default Object Starting ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Rango inicial por defecto.</target>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 3719745416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Default Ending Range field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Rango final por defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Default Object Ending ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Rango final por defecto</target>
+        </trans-unit>
         <trans-unit id="Page 3805068503 - Control 3657230932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Always find for possible gaps between IDs.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Buscar siempre huecos entre los ID."</note>
@@ -881,6 +1271,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Opciones avanzadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Advanced - Property Caption</note>
           <target>Opciones avanzadas</target>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 819995202 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow to disable automatic ID assginment for Objects</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Permite deshabilitar la asignación de ID a los objetos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Disable Auto. Objects ID - Property ToolTip</note>
+          <target>Permite deshabilitar la asignación de ID a los objetos</target>
+        </trans-unit>
+        <trans-unit id="Page 3805068503 - Control 2192616486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allow to disable automatic ID assginment for Fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Permite deshabilitar la asignación del ID  a los campos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension Manager Setup - Control Disable Auto. Field ID - Property ToolTip</note>
+          <target>Permite deshabilitar la asignación del ID  a los campos</target>
         </trans-unit>
         <trans-unit id="Page 3805068503 - Action 3523525559 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Donate</source>
@@ -941,11 +1343,149 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Extension Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 1085746399 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 3711240756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 4264439119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Source Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 2837438916 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Source Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 1343707150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Source Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
         <trans-unit id="Page 2385468214 - Control 3481801877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Level</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nivel"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Total Fields - Property Caption</note>
           <target>Nivel</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 3481801877 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Level field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nivel"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Total Fields - Property ToolTip</note>
+          <target>Especifica el valor del campo Nivel</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Extension Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 312545736 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Line No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nº línea origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Source Line No. - Property ToolTip</note>
+          <target>Especifica el valor del campo Nº línea origen</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 4147314965 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Table Source Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 90601618 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Table ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. tabla origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Source Table ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. tabla origen</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. tabla"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Table ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. tabla</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 1378277395 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Is Part Of Primary Key field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Forma parte clave primária"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control IsPK - Property ToolTip</note>
+          <target>Especifica el valor del campo Forma parte clave primária</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 869342929 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Field ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. campo</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 3070320983 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre de campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Field Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre de campo</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 2145620180 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Data Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo datos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Data Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo datos</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 758032408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lenght field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Longitud"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Lenght - Property ToolTip</note>
+          <target>Especifica el valor del campo Longitud</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 1409525680 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Class field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Clase campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Field Class - Property ToolTip</note>
+          <target>Especifica el valor del campo Clase campo</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 1871922346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Option String field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Texto opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Option String - Property ToolTip</note>
+          <target>Especifica el valor del campo Texto opciones</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 139345763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Obsolete field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Obsolete - Property ToolTip</note>
+          <target>Especifica el valor del campo Obsoleto</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 98207365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created by field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Created by - Property ToolTip</note>
+          <target>Especifica el valor del campo Creado por</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Control Creation Date - Property ToolTip</note>
+          <target>Especifica el valor del campo Fecha creación</target>
         </trans-unit>
         <trans-unit id="Page 1644431652 - Action 4223896452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View / Hide fields</source>
@@ -953,17 +1493,35 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AllFields - Property Caption</note>
           <target>Ver / ocultar campos</target>
         </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 4223896452 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View / Hide fields of selected table for other extensions</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ver / ocultar campos de tabla en otras extensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AllFields - Property ToolTip</note>
+          <target>Ver / ocultar campos de tabla en otras extensiones</target>
+        </trans-unit>
         <trans-unit id="Page 1644431652 - Action 524230234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>View source table</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver tabla origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property Caption</note>
           <target>Ver tabla origen</target>
         </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 524230234 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View source table fields</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra los campos de la tabla de origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action ViewSourceTable - Property ToolTip</note>
+          <target>Muestra los campos de la tabla de origen</target>
+        </trans-unit>
         <trans-unit id="Page 1644431652 - Action 3349517884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Add to Related Tables</source>
           <note from="Developer" annotates="general" priority="2">ESP="Añadir a tablas relacionadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AddRelField - Property Caption</note>
           <target>Añadir a tablas relacionadas</target>
+        </trans-unit>
+        <trans-unit id="Page 1644431652 - Action 3349517884 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add current field to defined related tables</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Añade campo actual a tablas relacionadas definidas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Field List - Action AddRelField - Property ToolTip</note>
+          <target>Añade campo actual a tablas relacionadas definidas</target>
         </trans-unit>
         <trans-unit id="Page 1644431652 - Method 4177352842 - NamedType 4100000954" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary key must be set.</source>
@@ -984,7 +1542,7 @@
           <target>Bienvenida!</target>
         </trans-unit>
         <trans-unit id="Page 1528526893 - Control 3322762936 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Welcome message. If pressed go to picazin.dev website</source>
+          <source>Welcome message. If pressed opens picazin.dev website</source>
           <note from="Developer" annotates="general" priority="2">ESP="Mensaje de bienvenida. Visitar picazin.dev si pulsamos."</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Headline RC Ext. Manager - Control GreetingText - Property ToolTip</note>
           <target>Mensaje de bienvenida. Visitar picazin.dev si pulsamos.</target>
@@ -1007,11 +1565,65 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Property Caption</note>
           <target>Detalle Objetos</target>
         </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 1085746399 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 3711240756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto</target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre</target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 2837438916 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Source Object Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 4264439119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Object ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo ID objeto origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Source Object ID - Property ToolTip</note>
+          <target>Especifica el valor del campo ID objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 1343707150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre Origen" </note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Source Name - Property ToolTip</note>
+          <target>"Especifica el valor del campo Nombre Origen" </target>
+        </trans-unit>
+        <trans-unit id="Page 2272169128 - Control 3481801877 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows the value of the Total fields field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Campos relacionados"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Total Fields - Property ToolTip</note>
+          <target>Especifica el valor del campo Campos relacionados</target>
+        </trans-unit>
         <trans-unit id="Page 3445873649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXM - Create fields on related tables</source>
           <note from="Developer" annotates="general" priority="2">ESP="EXM - Crear campos en tablas relacionadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data - Property Caption</note>
           <target>EXM - Crear campos en tablas relacionadas</target>
+        </trans-unit>
+        <trans-unit id="Page 3445873649 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data - Control Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Código</target>
+        </trans-unit>
+        <trans-unit id="Page 3445873649 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data - Control Description - Property ToolTip</note>
+          <target>Especifica el valor del campo Descripción</target>
         </trans-unit>
         <trans-unit id="Page 3445873649 - Control 3471137671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Related tables</source>
@@ -1024,6 +1636,24 @@
           <note from="Developer" annotates="general" priority="2">ESP="EXM Campos tablas relacionadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Property Caption</note>
           <target>EXM Campos tablas relacionadas</target>
+        </trans-unit>
+        <trans-unit id="Page 3952319399 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Código"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Control Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Código</target>
+        </trans-unit>
+        <trans-unit id="Page 3952319399 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Descripción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Control Description - Property ToolTip</note>
+          <target>Especifica el valor del campo Descripción</target>
+        </trans-unit>
+        <trans-unit id="Page 3952319399 - Control 3079439231 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Related Tables No. field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº tablas relacionadas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Related Data List - Control Related Tables No. - Property ToolTip</note>
+          <target>Muestra el Nº tablas relacionadas</target>
         </trans-unit>
         <trans-unit id="Page 2457472809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EXtension Manager</source>
@@ -1361,11 +1991,131 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Property Caption</note>
           <target>Campos TableExtensions</target>
         </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Extension Code field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Extension Code - Property ToolTip</note>
+          <target>Especifica el valor del campo Cód. extensión</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 90601618 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Source Table ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. tabla origen"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Source Table ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. tabla origen</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. tabla"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Table ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. tabla</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 869342929 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Field ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. campo</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 3070320983 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre de campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Field Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre de campo</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 2145620180 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Data Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo datos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Data Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo datos</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 758032408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lenght field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Longitud"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Lenght - Property ToolTip</note>
+          <target>Especifica el valor del campo Longitud</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 1409525680 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Class field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Clase campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Field Class - Property ToolTip</note>
+          <target>Especifica el valor del campo Clase campo</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 1871922346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Option String field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Texto opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Option String - Property ToolTip</note>
+          <target>Especifica el valor del campo Texto opciones</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 139345763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Obsolete field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Obsolete - Property ToolTip</note>
+          <target>Especifica el valor del campo Obsoleto</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 98207365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created by field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Creado por"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Created by - Property ToolTip</note>
+          <target>Especifica el valor del campo Creado por</target>
+        </trans-unit>
+        <trans-unit id="Page 3527060737 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Creation Date field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Fecha creación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM TableExt Field List - Control Creation Date - Property ToolTip</note>
+          <target>Especifica el valor del campo Fecha creación</target>
+        </trans-unit>
         <trans-unit id="Page 230153975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table Fields</source>
           <note from="Developer" annotates="general" priority="2">ESP="Campos Tabla"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Property Caption</note>
           <target>Campos Tabla</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 869342929 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field ID field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Id. campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Field ID - Property ToolTip</note>
+          <target>Especifica el valor del campo Id. campo</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 3070320983 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Name field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre de campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Field Name - Property ToolTip</note>
+          <target>Especifica el valor del campo Nombre de campo</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 823559016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Caption field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Título campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Field Caption - Property ToolTip</note>
+          <target>Especifica el valor del campo Título campo</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 2145620180 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Data Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo datos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Data Type - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo datos</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 758032408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lenght field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Longitud"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Lenght - Property ToolTip</note>
+          <target>Especifica el valor del campo Longitud</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 1409525680 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Field Class field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Clase campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Field Class - Property ToolTip</note>
+          <target>Especifica el valor del campo Clase campo</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 1871922346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Option String field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Texto opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Option String - Property ToolTip</note>
+          <target>Especifica el valor del campo Texto opciones</target>
+        </trans-unit>
+        <trans-unit id="Page 230153975 - Control 139345763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Obsolete field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Obsoleto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Table Field Detail - Control Obsolete - Property ToolTip</note>
+          <target>Especifica el valor del campo Obsoleto</target>
         </trans-unit>
         <trans-unit id="PageExtension 3125390708 - Action 2792072681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Extensions</source>

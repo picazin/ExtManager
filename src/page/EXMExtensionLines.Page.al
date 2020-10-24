@@ -1,12 +1,10 @@
 page 83202 "EXM Extension Lines"
 {
+    AutoSplitKey = true;
     Caption = ' Objects', Comment = 'ESP="Objetos"';
+    DelayedInsert = true;
     PageType = ListPart;
     SourceTable = "EXM Extension Lines";
-    //SourceTableView = sorting("Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID");
-    DelayedInsert = true;
-    AutoSplitKey = true;
-
 
     layout
     {
@@ -18,10 +16,12 @@ page 83202 "EXM Extension Lines"
                 field("Object Type"; "Object Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
                 field("Object ID"; "Object ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                     trigger OnValidate()
                     var
                         EXMExtMgt: Codeunit "EXM Extension Management";
@@ -33,25 +33,30 @@ page 83202 "EXM Extension Lines"
                 field(Name; "Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
                 field("Source Object Type"; "Source Object Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                 }
                 field("Source Object ID"; "Source Object ID")
                 {
                     ApplicationArea = All;
                     Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile);
+                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
                 field("Source Name"; "Source Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen"';
                 }
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows Total related fields'', Comment = ''ESP="Muestra el total de Campos relacionados"';
                     trigger OnAssistEdit()
                     begin
                         ViewRelatedFields();
@@ -60,14 +65,17 @@ page 83202 "EXM Extension Lines"
                 field(Obsolete; Obsolete)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
                 }
                 field("Created by"; "Created by")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
                 }
                 field("Creation Date"; "Creation Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica el valor del campo Fecha creación"';
                 }
             }
         }
@@ -78,13 +86,13 @@ page 83202 "EXM Extension Lines"
         {
             action(ViewField)
             {
-                Caption = 'View detail', Comment = 'ESP="Ver detalle"';
                 ApplicationArea = All;
+                Caption = 'View detail', Comment = 'ESP="Ver detalle"';
                 Image = ViewPage;
                 Promoted = true;
                 PromotedCategory = Process;
-                PromotedOnly = true;
                 PromotedIsBig = true;
+                PromotedOnly = true;
                 ToolTip = 'View object detail.', Comment = 'ESP="Ver detalle objeto."';
 
                 trigger OnAction()
@@ -106,10 +114,10 @@ page 83202 "EXM Extension Lines"
 
     local procedure ViewRelatedFields()
     var
-        EXMTableFields: Record "EXM Table Fields";
         EXMEnumValues: Record "EXM Enum Values";
-        EXMFieldList: Page "EXM Field List";
+        EXMTableFields: Record "EXM Table Fields";
         EXMEnumVal: Page "EXM Enum Values";
+        EXMFieldList: Page "EXM Field List";
     begin
         case "Object Type" of
             "Object Type"::"Table", "Object Type"::"TableExtension":

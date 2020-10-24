@@ -3,24 +3,24 @@ codeunit 83203 "EXM Assisted Setup"
     var
         AssistedSetup: Codeunit "Assisted Setup";
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', false, false)]
-    local procedure SetupInitialize()
-    var
-        Language: Codeunit Language;
-        AssistedSetupGroup: Enum "Assisted Setup Group";
-        VideoCategory: Enum "Video Category";
-        CurrentGlobalLanguage: Integer;
-        SetupWizardLinkTxt: Label 'https://www.picazin.dev', Locked = true;
-        SetupWizardTxt: Label 'Set up Extension Manager', Comment = 'ESP="Configurar Gestor Extensiones"';
-        InitialEXMSetupDescTxt: Label 'EXM need some amazing information from you to make everything works fine!', Comment = 'ESP="EXM necesita pedirte información para funcionar correctamente, Será rápido!!"';
+    procedure WizardComplete()
     begin
-        CurrentGlobalLanguage := GlobalLanguage();
-        AssistedSetup.Add(GetAppId(), Page::"EXM Setup Wizard", SetupWizardTxt, AssistedSetupGroup::Extensions, '', VideoCategory::Extensions, SetupWizardLinkTxt, InitialEXMSetupDescTxt);
-        GlobalLanguage(Language.GetDefaultApplicationLanguageId());
+        AssistedSetup.Complete(Page::"EXM Setup Wizard");
+    end;
 
-        AssistedSetup.AddTranslation(Page::"EXM Setup Wizard", Language.GetDefaultApplicationLanguageId(), SetupWizardTxt);
-        GlobalLanguage(CurrentGlobalLanguage);
-        GetInformationSetupStatus();
+    local procedure GetAppId(): Guid
+    var
+        EmptyGuid: Guid;
+        Info: ModuleInfo;
+    begin
+        if Info.Id() = EmptyGuid then
+            NavApp.GetCurrentModuleInfo(Info);
+        exit(Info.Id());
+    end;
+
+    local procedure GetInformationSetupStatus()
+    begin
+        AssistedSetup.IsComplete(Page::"EXM Setup Wizard");
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnReRunOfCompletedSetup', '', false, false)]
@@ -41,23 +41,23 @@ codeunit 83203 "EXM Assisted Setup"
         end;
     end;
 
-    local procedure GetAppId(): Guid
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', false, false)]
+    local procedure SetupInitialize()
     var
-        Info: ModuleInfo;
-        EmptyGuid: Guid;
+        Language: Codeunit Language;
+        AssistedSetupGroup: Enum "Assisted Setup Group";
+        VideoCategory: Enum "Video Category";
+        CurrentGlobalLanguage: Integer;
+        InitialEXMSetupDescTxt: Label 'EXM need some amazing information from you to make everything works fine!', Comment = 'ESP="EXM necesita pedirte información para funcionar correctamente, Será rápido!!"';
+        SetupWizardLinkTxt: Label 'https://www.picazin.dev', Locked = true;
+        SetupWizardTxt: Label 'Set up Extension Manager', Comment = 'ESP="Configurar Gestor Extensiones"';
     begin
-        if Info.Id() = EmptyGuid then
-            NavApp.GetCurrentModuleInfo(Info);
-        exit(Info.Id());
-    end;
+        CurrentGlobalLanguage := GlobalLanguage();
+        AssistedSetup.Add(GetAppId(), Page::"EXM Setup Wizard", SetupWizardTxt, AssistedSetupGroup::Extensions, '', VideoCategory::Extensions, SetupWizardLinkTxt, InitialEXMSetupDescTxt);
+        GlobalLanguage(Language.GetDefaultApplicationLanguageId());
 
-    procedure WizardComplete()
-    begin
-        AssistedSetup.Complete(Page::"EXM Setup Wizard");
-    end;
-
-    local procedure GetInformationSetupStatus()
-    begin
-        AssistedSetup.IsComplete(Page::"EXM Setup Wizard");
+        AssistedSetup.AddTranslation(Page::"EXM Setup Wizard", Language.GetDefaultApplicationLanguageId(), SetupWizardTxt);
+        GlobalLanguage(CurrentGlobalLanguage);
+        GetInformationSetupStatus();
     end;
 }

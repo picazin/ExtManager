@@ -1,7 +1,7 @@
 table 83201 "EXM Extension Header"
 {
-    DataClassification = OrganizationIdentifiableInformation;
     Caption = 'Extension', Comment = 'ESP="Extensión"';
+    DataClassification = OrganizationIdentifiableInformation;
 
     fields
     {
@@ -19,8 +19,8 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'Type', Comment = 'ESP="Tipo"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = Internal,External;
             OptionCaption = 'Internal,External', Comment = 'ESP="Interna,Externa"';
+            OptionMembers = Internal,External;
             trigger OnValidate()
             begin
                 if (xRec.Type <> Rec.Type) and (Rec.Type = Rec.Type::Internal) then begin
@@ -32,9 +32,9 @@ table 83201 "EXM Extension Header"
         }
         field(4; "Object Starting ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Object Starting ID', Comment = 'ESP="Inicio ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
@@ -51,9 +51,9 @@ table 83201 "EXM Extension Header"
         }
         field(5; "Object Ending ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Object Ending ID', Comment = 'ESP="Final ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
@@ -108,10 +108,10 @@ table 83201 "EXM Extension Header"
         }
         field(10; Dependencies; Integer)
         {
-            Caption = 'Dependencies', Comment = 'ESP="Dependencias"';
-            FieldClass = FlowField;
             CalcFormula = Count("EXM Extension Dependencies" where("Extensión Code" = field(Code)));
+            Caption = 'Dependencies', Comment = 'ESP="Dependencias"';
             Editable = false;
+            FieldClass = FlowField;
         }
 
         field(20; Price; Decimal)
@@ -133,9 +133,9 @@ table 83201 "EXM Extension Header"
         {
 
             Caption = 'Installations', Comment = 'ESP="Instalaciones"';
-            OptionMembers = " ",Account,Item;
-            OptionCaption = ' ,Account,Item', Comment = 'ESP=" ,Cuenta,Producto"';
             DataClassification = OrganizationIdentifiableInformation;
+            OptionCaption = ' ,Account,Item', Comment = 'ESP=" ,Cuenta,Producto"';
+            OptionMembers = " ",Account,Item;
             trigger OnValidate()
             begin
                 if "Sell-Type" = "Sell-Type"::" " then
@@ -151,87 +151,87 @@ table 83201 "EXM Extension Header"
         }
         field(25; "No. of Tables"; Integer)
         {
-            Caption = 'No. of Tables', Comment = 'ESP="Nº Tablas"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Table)));
+            Caption = 'No. of Tables', Comment = 'ESP="Nº Tablas"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(26; "No. of Reports"; Integer)
         {
-            Caption = 'No. of Reports', Comment = 'ESP="Nº Informes"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Report)));
+            Caption = 'No. of Reports', Comment = 'ESP="Nº Informes"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(27; "No. of Codeunits"; Integer)
         {
-            Caption = 'No. of Codeunits', Comment = 'ESP="Nº Codeunits"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Codeunit)));
+            Caption = 'No. of Codeunits', Comment = 'ESP="Nº Codeunits"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(28; "No. of XMLports"; Integer)
         {
-            Caption = 'No. of XMLports', Comment = 'ESP="Nº XMLports"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(XMLport)));
+            Caption = 'No. of XMLports', Comment = 'ESP="Nº XMLports"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(29; "No. of Page"; Integer)
         {
-            Caption = 'No. of Pages', Comment = 'ESP="Nº Pages"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Page)));
+            Caption = 'No. of Pages', Comment = 'ESP="Nº Pages"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(30; "No. of Querys"; Integer)
         {
-            Caption = 'No. of Querys', Comment = 'ESP="Nº Querys"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Query)));
+            Caption = 'No. of Querys', Comment = 'ESP="Nº Querys"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(31; "No. of PageExtensions"; Integer)
         {
-            Caption = 'No. of PageExtensions', Comment = 'ESP="Nº PageExtensions"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("PageExtension")));
+            Caption = 'No. of PageExtensions', Comment = 'ESP="Nº PageExtensions"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(32; "No. of TableExtensions"; Integer)
         {
-            Caption = 'No. of TableExtensions', Comment = 'ESP="Nº TableExtensions"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("TableExtension")));
+            Caption = 'No. of TableExtensions', Comment = 'ESP="Nº TableExtensions"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(33; "No. of Enums"; Integer)
         {
-            Caption = 'No. of Enums', Comment = 'ESP="Nº Enums"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Enum)));
+            Caption = 'No. of Enums', Comment = 'ESP="Nº Enums"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(34; "No. of EnumExtensions"; Integer)
         {
-            Caption = 'No. of EnumExtensions', Comment = 'ESP="Nº EnumExtensions"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(EnumExtension)));
+            Caption = 'No. of EnumExtensions', Comment = 'ESP="Nº EnumExtensions"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(35; "No. of Profiles"; Integer)
         {
-            Caption = 'No. of Profiles', Comment = 'ESP="Nº Profiles"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter(Profile)));
+            Caption = 'No. of Profiles', Comment = 'ESP="Nº Profiles"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(36; "No. of ProfileExtensions"; Integer)
         {
-            Caption = 'No. of ProfileExtensions', Comment = 'ESP="Nº ProfileExtensions"';
-            FieldClass = FlowField;
             CalcFormula = count("EXM Extension Lines" where("Extension Code" = field(Code), "Object Type" = filter("ProfileExtension")));
+            Caption = 'No. of ProfileExtensions', Comment = 'ESP="Nº ProfileExtensions"';
             Editable = false;
+            FieldClass = FlowField;
         }
         field(50; "GIT Repository URL"; Text[2048])
         {
@@ -252,14 +252,14 @@ table 83201 "EXM Extension Header"
     }
     local procedure CheckObjectRange();
     var
+        ExtEnum: Record "EXM Enum Values";
         ExtLine: Record "EXM Extension Lines";
         ExtField: Record "EXM Table Fields";
-        ExtEnum: Record "EXM Enum Values";
-        ErrorMsg: Text;
         ShowError: Boolean;
-        ObjectIDRangeErr: Label 'Already exist objects outside range %1 - %2.', comment = 'ESP="Existen objetos fuera del rango %1 - %2."';
         FieldIDRangeErr: Label 'Already exist field IDs on TableExtensions outside range %1 - %2.', comment = 'ESP="Existen IDs de campo en TableExtension fuera del rango %1 - %2."';
         OrdinalIDRangeErr: Label 'Already exist IDs on EnumExtensions outside range %1 - %2.', comment = 'ESP="Existen IDs en EnumExtension fuera del rango %1 - %2."';
+        ObjectIDRangeErr: Label 'Already exist objects outside range %1 - %2.', comment = 'ESP="Existen objetos fuera del rango %1 - %2."';
+        ErrorMsg: Text;
     begin
         //Check Objects ID fits current range
         ExtLine.SetRange("Extension Code", Code);
@@ -325,9 +325,9 @@ table 83201 "EXM Extension Header"
 
     local procedure SetRelLines()
     var
+        ExtEnum: Record "EXM Enum Values";
         ExtLine: Record "EXM Extension Lines";
         ExtField: Record "EXM Table Fields";
-        ExtEnum: Record "EXM Enum Values";
     begin
         ExtLine.SetRange("Extension Code", Code);
         ExtLine.ModifyAll("Customer No.", "Customer No.");
@@ -355,9 +355,9 @@ table 83201 "EXM Extension Header"
 
     trigger OnDelete()
     var
+        EXMEnumValues: Record "EXM Enum Values";
         EXMExtLines: Record "EXM Extension Lines";
         EXMFields: Record "EXM Table Fields";
-        EXMEnumValues: Record "EXM Enum Values";
     begin
         EXMExtLines.SetRange("Extension Code", Code);
         EXMExtLines.DeleteAll();

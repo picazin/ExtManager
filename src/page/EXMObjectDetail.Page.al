@@ -1,9 +1,9 @@
 page 83214 "EXM Object Detail"
 {
-    PageType = List;
-    SourceTable = "EXM Extension Lines";
     Caption = 'Objects Detail', Comment = 'ESP="Detalle Objetos"';
     Editable = false;
+    PageType = List;
+    SourceTable = "EXM Extension Lines";
 
     layout
     {
@@ -14,33 +14,40 @@ page 83214 "EXM Object Detail"
                 field("Object Type"; "Object Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
                 field("Object ID"; "Object ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                 }
                 field(Name; Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
                 field("Source Object Type"; "Source Object Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                     Visible = SourceVisible;
                 }
                 field("Source Object ID"; "Source Object ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                     Visible = SourceVisible;
                 }
                 field("Source Name"; "Source Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen" ';
                     Visible = SourceVisible;
                 }
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows the value of the Total fields field', Comment = 'ESP="Especifica el valor del campo Campos relacionados"';
                     Visible = FieldsVisible;
                     trigger OnAssistEdit()
                     begin
@@ -50,12 +57,23 @@ page 83214 "EXM Object Detail"
             }
         }
     }
+
+    trigger OnAfterGetRecord()
+    begin
+        SourceVisible := ("Source Object Type" <> "Source Object Type"::" ");
+        FieldsVisible := "Object Type" in ["Object Type"::Table, "Object Type"::"TableExtension", "Object Type"::Enum, "Object Type"::EnumExtension]
+    end;
+
+    var
+        FieldsVisible: Boolean;
+        SourceVisible: Boolean;
+
     local procedure ViewRelatedFields()
     var
-        EXMTableFields: Record "EXM Table Fields";
         EXMEnumValues: Record "EXM Enum Values";
-        EXMFieldList: Page "EXM Field List";
+        EXMTableFields: Record "EXM Table Fields";
         EXMEnumVal: Page "EXM Enum Values";
+        EXMFieldList: Page "EXM Field List";
     begin
         case "Object Type" of
             "Object Type"::"Table", "Object Type"::"TableExtension":
@@ -94,14 +112,4 @@ page 83214 "EXM Object Detail"
                 exit;
         end;
     end;
-
-    trigger OnAfterGetRecord()
-    begin
-        SourceVisible := ("Source Object Type" <> "Source Object Type"::" ");
-        FieldsVisible := "Object Type" in ["Object Type"::Table, "Object Type"::"TableExtension", "Object Type"::Enum, "Object Type"::EnumExtension]
-    end;
-
-    var
-        FieldsVisible: Boolean;
-        SourceVisible: Boolean;
 }

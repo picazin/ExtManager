@@ -1,10 +1,9 @@
 page 83201 "EXM Extension Header"
 {
     Caption = 'Extension Card', Comment = 'ESP="Ficha extensión"';
+    DataCaptionFields = Code, Description;
     PageType = Document;
     SourceTable = "EXM Extension Header";
-    DataCaptionFields = Code, Description;
-
 
     layout
     {
@@ -16,18 +15,22 @@ page 83201 "EXM Extension Header"
                 field("Code"; "Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Code field', Comment = 'ESP="Especifica el valor del campo Código"';
                 }
                 field(Description; "Description")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Description field', Comment = 'ESP="Especifica el valor del campo Descripción"';
                 }
                 field("App Version"; "App Version")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the App Version field', Comment = 'ESP="Especifica el valor del campo Versión App"';
                 }
                 field(Dependencies; Dependencies)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Dependencies field', Comment = 'ESP="Especifica el valor del campo Dependencias"';
                 }
                 group(Target)
                 {
@@ -35,15 +38,18 @@ page 83201 "EXM Extension Header"
                     field(Type; "Type")
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Type field', Comment = 'ESP="Especifica el valor del campo Tipo"';
                     }
                     field("Customer No."; "Customer No.")
                     {
                         ApplicationArea = All;
                         Editable = (Type = Type::External);
+                        ToolTip = 'Specifies the value of the Customer No. field', Comment = 'ESP="Especifica el valor del campo Nº Cliente"';
                     }
                     field("Customer Name"; "Customer Name")
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                     }
                 }
 
@@ -52,8 +58,9 @@ page 83201 "EXM Extension Header"
                     Caption = 'Object Range', Comment = 'ESP="Rango objetos"';
                     field("Object Starting ID"; "Object Starting ID")
                     {
-                        Caption = 'Starting No.', Comment = 'ESP="Nº inicial"';
                         ApplicationArea = All;
+                        Caption = 'Starting No.', Comment = 'ESP="Nº inicial"';
+                        ToolTip = 'Specifies the value of the Starting No. field', Comment = 'ESP="Especifica el valor del campo Nº inicial"';
                         trigger OnValidate()
                         begin
                             if xRec."Object Starting ID" <> "Object Starting ID" then
@@ -62,8 +69,9 @@ page 83201 "EXM Extension Header"
                     }
                     field("Object Ending ID"; "Object Ending ID")
                     {
-                        Caption = 'Ending No.', Comment = 'ESP="Nº final"';
                         ApplicationArea = All;
+                        Caption = 'Ending No.', Comment = 'ESP="Nº final"';
+                        ToolTip = 'Specifies the value of the Ending No. field', Comment = 'ESP="Especifica el valor del campo Nº final"';
                         trigger OnValidate()
                         begin
                             if xRec."Object Ending ID" <> "Object Ending ID" then
@@ -83,6 +91,7 @@ page 83201 "EXM Extension Header"
                 {
                     ApplicationArea = All;
                     ExtendedDatatype = URL;
+                    ToolTip = 'Specifies the value of the GIT Repository URL field', Comment = 'ESP="Especifica el valor del campo URL repositorio GIT"';
                 }
             }
         }

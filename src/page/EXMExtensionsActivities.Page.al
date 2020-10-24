@@ -3,8 +3,8 @@ page 83209 "EXM Extensions Activities"
     Caption = 'Activities', Comment = 'ESP="Actividades"';
     PageType = CardPart;
     RefreshOnActivate = true;
-    SourceTable = "EXM Extension Manager Cue";
     ShowFilter = false;
+    SourceTable = "EXM Extension Manager Cue";
 
     layout
     {

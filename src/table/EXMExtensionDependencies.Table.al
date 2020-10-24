@@ -2,14 +2,14 @@ table 83208 "EXM Extension Dependencies"
 {
     Caption = 'Extension Dependencies', comment = 'ESP="Dependencias extensión"';
     DataClassification = SystemMetadata;
-    LookupPageId = "EXM Extension Dependencies";
     DrillDownPageId = "EXM Extension Dependencies";
+    LookupPageId = "EXM Extension Dependencies";
 
     fields
     {
         field(1; "Extensión Code"; Code[20])
         {
-            Caption = 'Extensión Code';
+            Caption = 'Extensión Code', comment = 'ESP="Cód. extensión"';
             DataClassification = SystemMetadata;
             TableRelation = "EXM Extension Header";
         }
@@ -17,17 +17,17 @@ table 83208 "EXM Extension Dependencies"
         {
             Caption = 'Customer No.', Comment = 'ESP="Nº Cliente"';
             DataClassification = SystemMetadata;
-            TableRelation = Customer;
             Editable = false;
+            TableRelation = Customer;
         }
         field(5; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'Line No.', comment = 'ESP="Nº línea"';
             DataClassification = SystemMetadata;
         }
         field(10; "Dependent Ext. Code"; Code[20])
         {
-            Caption = 'Dependent Ext. Code';
+            Caption = 'Dependent Ext. Code', comment = 'ESP="Cód. extensión dependiente"';
             DataClassification = SystemMetadata;
             TableRelation = "EXM Extension Header";
 
@@ -46,8 +46,8 @@ table 83208 "EXM Extension Dependencies"
 
             trigger OnLookup()
             var
-                ExtHeader: Record "EXM Extension Header";
                 AvailableExt: Record "EXM Extension Header";
+                ExtHeader: Record "EXM Extension Header";
                 ExtHeaderList: Page "EXM Extension List";
             begin
                 ExtHeader.Get("Extensión Code");
@@ -69,7 +69,7 @@ table 83208 "EXM Extension Dependencies"
         }
         field(15; "Dependent Ext. Name"; Text[100])
         {
-            Caption = 'Dependent Ext. Name';
+            Caption = 'Dependent Ext. Name', comment = 'ESP="Nombre extensión dependiente"';
             DataClassification = SystemMetadata;
             Editable = false;
         }

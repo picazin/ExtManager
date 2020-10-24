@@ -1,8 +1,8 @@
 table 83205 "EXM Enum Values"
 {
     Caption = 'Enums values', Comment = 'ESP="Valores Enum"';
-    LookupPageId = "EXM Enum Values";
     DataClassification = OrganizationIdentifiableInformation;
+    LookupPageId = "EXM Enum Values";
 
     fields
     {
@@ -28,14 +28,14 @@ table 83205 "EXM Enum Values"
         {
             Caption = 'Source Type', Comment = 'ESP="Tipo origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
             OptionCaption = ',,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
         }
         field(4; "Source Enum ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Source Enum ID', Comment = 'ESP="Id. Enum origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
@@ -47,9 +47,9 @@ table 83205 "EXM Enum Values"
         }
         field(5; "Enum ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Enum ID', Comment = 'ESP="Id. Enum"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
@@ -119,11 +119,11 @@ table 83205 "EXM Enum Values"
     //TODO Improvement - Look for empty ID
     local procedure SetEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]) EnumValueID: Integer
     var
-        EXMSetup: Record "EXM Extension Setup";
-        EXMExtHeader: Record "EXM Extension Header";
         EXMEnumValues: Record "EXM Enum Values";
-        ExpectedId: Integer;
+        EXMExtHeader: Record "EXM Extension Header";
+        EXMSetup: Record "EXM Extension Setup";
         IsHandled: Boolean;
+        ExpectedId: Integer;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
@@ -200,12 +200,12 @@ table 83205 "EXM Enum Values"
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer; var IsHandled: Boolean)
+    local procedure OnAfterAssignEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer)
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterAssignEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer)
+    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer; var IsHandled: Boolean)
     begin
     end;
 }

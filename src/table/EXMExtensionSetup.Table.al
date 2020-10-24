@@ -42,8 +42,8 @@ table 83200 "EXM Extension Setup"
         {
             Caption = 'Object Names', Comment = 'ESP="Nombre objetos"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = Caption,Name;
             OptionCaption = 'Caption,Name', Comment = 'ESP="Traducción,Original"';
+            OptionMembers = Caption,Name;
         }
         field(6; "Disable Auto. Objects ID"; Boolean)
         {

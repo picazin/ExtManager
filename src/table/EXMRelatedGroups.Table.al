@@ -17,10 +17,10 @@ table 83206 "EXM Related Groups"
         }
         field(3; "Related Tables No."; Integer)
         {
+            CalcFormula = Count("EXM Related Lines" where(Code = field(Code)));
             Caption = 'Related Tables No.', comment = 'ESP="Nº tablas relacionadas"';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Count ("EXM Related Lines" where(Code = field(Code)));
         }
     }
     keys

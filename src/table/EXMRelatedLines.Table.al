@@ -15,8 +15,8 @@ table 83207 "EXM Related Lines"
         {
             Caption = 'Table ID', comment = 'ESP="ID Tabla"';
             DataClassification = OrganizationIdentifiableInformation;
-            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
             NotBlank = true;
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
 
             trigger OnValidate()
             var

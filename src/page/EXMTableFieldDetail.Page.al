@@ -1,14 +1,14 @@
 page 83206 "EXM Table Field Detail"
 {
     Caption = 'Table Fields', Comment = 'ESP="Campos Tabla"';
-    PageType = List;
-    SourceTable = "EXM Table Fields";
+    DataCaptionExpression = GetTableDesc();
+    DeleteAllowed = false;
+    Editable = false;
     InsertAllowed = false;
     ModifyAllowed = false;
-    DeleteAllowed = false;
+    PageType = List;
     ShowFilter = false;
-    Editable = false;
-    DataCaptionExpression = GetTableDesc();
+    SourceTable = "EXM Table Fields";
 
     layout
     {
@@ -20,42 +20,50 @@ page 83206 "EXM Table Field Detail"
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field ID field', Comment = 'ESP="Especifica el valor del campo Id. campo"';
                 }
                 field("Field Name"; "Field Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Name field', Comment = 'ESP="Especifica el valor del campo Nombre de campo"';
                 }
-                
+
                 field("Field Caption"; "Field Caption")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Caption field', Comment = 'ESP="Especifica el valor del campo Título campo"';
                 }
                 field("Data Type"; "Data Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Data Type field', Comment = 'ESP="Especifica el valor del campo Tipo datos"';
                 }
                 field(Lenght; Lenght)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Lenght field', Comment = 'ESP="Especifica el valor del campo Longitud"';
                 }
                 field("Field Class"; "Field Class")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Class field', Comment = 'ESP="Especifica el valor del campo Clase campo"';
                 }
                 field("Option String"; "Option String")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Option String field', Comment = 'ESP="Especifica el valor del campo Texto opciones"';
                 }
                 field(Obsolete; Obsolete)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
                 }
             }
         }
@@ -68,6 +76,9 @@ page 83206 "EXM Table Field Detail"
             StyleExp := 'strong';
     end;
 
+    var
+        StyleExp: Text;
+
     local procedure GetTableDesc(): Text
     var
         AllObject: Record AllObj;
@@ -75,7 +86,4 @@ page 83206 "EXM Table Field Detail"
         AllObject.Get(AllObject."Object Type"::Table, "Table ID");
         exit(Format("Table ID") + ' ' + AllObject."Object Name")
     end;
-
-    var
-        StyleExp: Text;
 }

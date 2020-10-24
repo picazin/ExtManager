@@ -1,12 +1,12 @@
 page 83215 "EXM Extension TreeView"
 {
-    PageType = List;
     Caption = 'EXM Extension TreeView';
-    SourceTable = "EXM Extension Lines";
-    SourceTableTemporary = true;
+    DeleteAllowed = false;
     InsertAllowed = false;
     ModifyAllowed = false;
-    DeleteAllowed = false;
+    PageType = List;
+    SourceTable = "EXM Extension Lines";
+    SourceTableTemporary = true;
 
     layout
     {
@@ -23,44 +23,52 @@ page 83215 "EXM Extension TreeView"
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
                 }
 
                 field("Object Type"; "Object Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
                 field("Object ID"; "Object ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                 }
                 field(Name; Name)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
 
                 field("Source Object ID"; "Source Object ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
                 field("Source Object Type"; "Source Object Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                 }
                 field("Source Name"; "Source Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
                 field("Total Fields"; "Total Fields")
                 {
                     ApplicationArea = All;
                     Caption = 'Level', Comment = 'ESP="Nivel"';
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Level field', Comment = 'ESP="Especifica el valor del campo Nivel"';
                     Visible = false;
                 }
             }
@@ -154,16 +162,16 @@ page 83215 "EXM Extension TreeView"
             StyleExp := 'standardaccent';
     end;
 
+    var
+        StyleExp: Text;
+        ExtCode: Code[20];
+        ViewCustNoExt: Code[20];
+        ExtType: Integer;
+
     internal procedure SetFilters(SetExtType: Integer; SetExtCode: Code[20]; SetCustNo: Code[20])
     begin
         ExtType := SetExtType;
         ExtCode := SetExtCode;
         ViewCustNoExt := SetCustNo;
     end;
-
-    var
-        StyleExp: Text;
-        ExtCode: Code[20];
-        ViewCustNoExt: Code[20];
-        ExtType: Integer;
 }
