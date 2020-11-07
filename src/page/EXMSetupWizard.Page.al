@@ -64,7 +64,7 @@ page 83212 "EXM Setup Wizard"
                     InstructionalText = 'When retriving data from Business Central how would you like to see objects and fields names?', Comment = 'ESP="Al recuperar datos de Business Central, ¿cómo le gustaría ver los nombres de objetos y campos?"';
                     Visible = SecondPageVisible;
 
-                    field("Object Names"; "Object Names")
+                    field("Object Names"; Rec."Object Names")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Object Names', Comment = 'ESP="Nombre objetos" field';
@@ -75,7 +75,7 @@ page 83212 "EXM Setup Wizard"
                     Caption = 'Set Extensions Series Nos.', Comment = 'ESP="Definir numerador extensiones"';
                     InstructionalText = 'Define an Extension Series Nos. in order to assign default extension code when creating new extensions.', Comment = 'ESP="Defina un numerador para asignar automaticamente un código al generar una nueva extensión."';
                     Visible = SecondPageVisible;
-                    field("Extension Nos."; "Extension Nos.")
+                    field("Extension Nos."; Rec."Extension Nos.")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Extension Nos.', Comment = 'ESP="Nº série extensión" field';
@@ -92,17 +92,17 @@ page 83212 "EXM Setup Wizard"
                     Caption = 'Set Objects Default IDs', Comment = 'ESP="Definir IDs objetos por defecto"';
                     InstructionalText = 'Define starting and ending default object IDs for extensions. You can change them in every extension.', Comment = 'ESP="Defina IDs iniciales y finales por defecto en las extensiones. Se pueden modificar en cada extensión."';
                     Visible = ThirdPageVisible;
-                    field("Default Object Starting ID"; "Default Object Starting ID")
+                    field("Default Object Starting ID"; Rec."Default Object Starting ID")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Default Starting Range', Comment = 'ESP="Indicar valor para campo Rango inicial por defecto"';
                     }
-                    field("Default Object Ending ID"; "Default Object Ending ID")
+                    field("Default Object Ending ID"; Rec."Default Object Ending ID")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Default Ending Range', Comment = 'ESP="Indicar valor para campo Rango final por defecto"';
                     }
-                    field("Find Object ID Gaps"; "Find Object ID Gaps")
+                    field("Find Object ID Gaps"; Rec."Find Object ID Gaps")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Always find for possible gaps between IDs.', comment = 'ESP="Buscar siempre huecos entre los ID."';
@@ -114,12 +114,12 @@ page 83212 "EXM Setup Wizard"
                     Caption = 'Disable automatic IDs', Comment = 'ESP="Deshabilitar IDs automáticos"';
                     InstructionalText = 'Define if you want do disable automatic objects and fields ID. OPTION NOT RECOMMENDED.', Comment = 'ESP="Defina si quiere deshabilitar la asignación automática de ID para objetos y campos. OPCIÓN NO RECOMENDADA."';
                     Visible = ThirdPageVisible;
-                    field("Disable Auto. Objects ID"; "Disable Auto. Objects ID")
+                    field("Disable Auto. Objects ID"; Rec."Disable Auto. Objects ID")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Disable Auto Objects ID', Comment = 'ESP="Deshabilitar asignación ID objetos"';
                     }
-                    field("Disable Auto. Field ID"; "Disable Auto. Field ID")
+                    field("Disable Auto. Field ID"; Rec."Disable Auto. Field ID")
                     {
                         ApplicationArea = All;
                         ToolTip = 'Specifies the value of the Disable Auto Field ID', Comment = 'ESP="Deshabilitar asignación ID campos"';

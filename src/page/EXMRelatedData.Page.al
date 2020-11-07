@@ -10,12 +10,12 @@ page 83217 "EXM Related Data"
         {
             group(General)
             {
-                field("Code"; Code)
+                field("Code"; Rec."Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Code field', comment = 'ESP="Especifica el valor del campo Código"';
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Description field', comment = 'ESP="Especifica el valor del campo Descripción"';
@@ -25,7 +25,7 @@ page 83217 "EXM Related Data"
             {
                 ApplicationArea = All;
                 Caption = 'Related tables', comment = 'ESP="Tablas relacionadas"';
-                SubPageLink = Code = field(Code);
+                SubPageLink = Code = field("Code");
             }
         }
     }

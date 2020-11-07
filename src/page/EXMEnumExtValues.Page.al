@@ -14,27 +14,27 @@ page 83211 "EXM EnumExt Values"
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Código Extensión"';
                 }
-                field("Ordinal ID"; "Ordinal ID")
+                field("Ordinal ID"; Rec."Ordinal ID")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Ordinal ID field', Comment = 'ESP="Especifica el valor del campo ID Ordinal"';
                 }
-                field("Enum Value"; "Enum Value")
+                field("Enum Value"; Rec."Enum Value")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Enum Value field', Comment = 'ESP="Especifica el valor del campo valor Enum"';
                 }
-                field("Created by"; "Created by")
+                field("Created by"; Rec."Created by")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica quién creo el registro."';
                 }
-                field("Creation Date"; "Creation Date")
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica la fecha de creación del registro."';

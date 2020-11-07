@@ -24,7 +24,7 @@ table 83200 "EXM Extension Setup"
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
-                EXMExtMgt.AllowedObjectsID("Default Object Starting ID");
+                EXMExtMgt.AllowedObjectsID(Rec."Default Object Starting ID");
             end;
         }
         field(4; "Default Object Ending ID"; Integer)
@@ -35,7 +35,7 @@ table 83200 "EXM Extension Setup"
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
-                EXMExtMgt.AllowedObjectsID("Default Object Ending ID");
+                EXMExtMgt.AllowedObjectsID(Rec."Default Object Ending ID");
             end;
         }
         field(5; "Object Names"; Option)
@@ -53,7 +53,7 @@ table 83200 "EXM Extension Setup"
             var
                 DisableQst: Label 'Enable this option will disable all objects ID validations and may cause extensions errors. Continue?', Comment = 'ESP="Habilitar esta opción implica que no se validaran los ID de los objetos y puede llevar a errores. Continuar?"';
             begin
-                if "Disable Auto. Objects ID" then
+                if Rec."Disable Auto. Objects ID" then
                     if not Confirm(DisableQst, false) then
                         Error('');
             end;
@@ -66,7 +66,7 @@ table 83200 "EXM Extension Setup"
             var
                 DisableQst: Label 'Enable this option will disable all fields ID validations and may cause extensions errors. Continue?', Comment = 'ESP="Habilitar esta opción implica que no se validaran los ID de los campos y puede llevar a errores. Continuar?"';
             begin
-                if "Disable Auto. Field ID" then
+                if Rec."Disable Auto. Field ID" then
                     if not Confirm(DisableQst, false) then
                         Error('');
             end;

@@ -22,8 +22,8 @@ table 83207 "EXM Related Lines"
             var
                 ExtMngt: Codeunit "EXM Extension Management";
             begin
-                if xRec."Table ID" <> "Table ID" then
-                    Name := ExtMngt.GetObjectName(1, "Table ID");
+                if xRec."Table ID" <> Rec."Table ID" then
+                    Rec.Name := ExtMngt.GetObjectName(1, Rec."Table ID");
             end;
         }
         field(3; Name; Text[250])

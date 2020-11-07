@@ -24,8 +24,8 @@ table 83201 "EXM Extension Header"
             trigger OnValidate()
             begin
                 if (xRec.Type <> Rec.Type) and (Rec.Type = Rec.Type::Internal) then begin
-                    "Customer No." := '';
-                    "Customer Name" := '';
+                    Rec."Customer No." := '';
+                    Rec."Customer Name" := '';
                     SetRelLines();
                 end;
             end;
@@ -40,11 +40,11 @@ table 83201 "EXM Extension Header"
                 EXMExtMgt: Codeunit "EXM Extension Management";
             begin
                 if xRec."Object Starting ID" <> Rec."Object Starting ID" then begin
-                    if (("Object Starting ID" > "Object Ending ID") and ("Object Ending ID" <> 0)) then
-                        "Object Ending ID" := "Object Starting ID";
+                    if ((Rec."Object Starting ID" > Rec."Object Ending ID") and (Rec."Object Ending ID" <> 0)) then
+                        Rec."Object Ending ID" := Rec."Object Starting ID";
 
-                    if "Object Starting ID" <> 0 then
-                        EXMExtMgt.AllowedObjectsID("Object Starting ID");
+                    if Rec."Object Starting ID" <> 0 then
+                        EXMExtMgt.AllowedObjectsID(Rec."Object Starting ID");
                     CheckObjectRange();
                 end;
             end;
@@ -60,11 +60,11 @@ table 83201 "EXM Extension Header"
                 ObjectRangeErr: Label '%1 must be greater then %2.', comment = 'ESP="%1 debe ser superior a %2."';
             begin
                 if xRec."Object Ending ID" <> Rec."Object Ending ID" then begin
-                    if ("Object Ending ID" < "Object Starting ID") then
-                        Error(ObjectRangeErr, FieldCaption("Object Ending ID"), FieldCaption("Object Starting ID"));
+                    if (Rec."Object Ending ID" < Rec."Object Starting ID") then
+                        Error(ObjectRangeErr, Rec.FieldCaption("Object Ending ID"), Rec.FieldCaption("Object Starting ID"));
 
-                    if "Object Ending ID" <> 0 then
-                        EXMExtMgt.AllowedObjectsID("Object Ending ID");
+                    if Rec."Object Ending ID" <> 0 then
+                        EXMExtMgt.AllowedObjectsID(Rec."Object Ending ID");
                     CheckObjectRange();
                 end;
             end;
@@ -79,12 +79,12 @@ table 83201 "EXM Extension Header"
                 Cust: Record Customer;
 
             begin
-                if xRec."Customer No." <> "Customer No." then begin
-                    if "Customer No." = '' then
-                        "Customer Name" := ''
+                if xRec."Customer No." <> Rec."Customer No." then begin
+                    if Rec."Customer No." = '' then
+                        Rec."Customer Name" := ''
                     else
-                        if Cust.Get("Customer No.") then
-                            "Customer Name" := Cust."Search Name";
+                        if Cust.Get(Rec."Customer No.") then
+                            Rec."Customer Name" := Cust."Search Name";
 
                     SetRelLines();
                 end;
@@ -138,8 +138,8 @@ table 83201 "EXM Extension Header"
             OptionMembers = " ",Account,Item;
             trigger OnValidate()
             begin
-                if "Sell-Type" = "Sell-Type"::" " then
-                    "No." := '';
+                if Rec."Sell-Type" = Rec."Sell-Type"::" " then
+                    Rec."No." := '';
             end;
         }
         field(23; "No."; Code[20])
@@ -266,42 +266,42 @@ table 83201 "EXM Extension Header"
         ExtLine.SetFilter("Object ID", '<%1', "Object Starting ID");
         if not ExtLine.IsEmpty() then begin
             ShowError := true;
-            SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
         end else begin
-            ExtLine.SetFilter("Object ID", '>%1', "Object Ending ID");
+            ExtLine.SetFilter("Object ID", '>%1', Rec."Object Ending ID");
             if not ExtLine.IsEmpty() then begin
                 ShowError := true;
-                SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, "Object Starting ID", "Object Ending ID"));
+                SetErrorMessage(ErrorMsg, StrSubstNo(ObjectIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
             end;
         end;
 
         //Check Fields ID for TableExt fits current range.
         ExtField.SetRange("Extension Code", Code);
         ExtField.SetRange("Table Source Type", ExtField."Table Source Type"::"TableExtension");
-        ExtField.SetFilter("Field ID", '<%1', "Object Starting ID");
+        ExtField.SetFilter("Field ID", '<%1', Rec."Object Starting ID");
         if not ExtField.IsEmpty() then begin
             ShowError := true;
-            SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
         end else begin
-            ExtField.SetFilter("Field ID", '>%1', "Object Ending ID");
+            ExtField.SetFilter("Field ID", '>%1', Rec."Object Ending ID");
             if not ExtField.IsEmpty() then begin
                 ShowError := true;
-                SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, "Object Starting ID", "Object Ending ID"));
+                SetErrorMessage(ErrorMsg, StrSubstNo(FieldIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
             end;
         end;
 
         //Check Ordinals ID for EnumExt fits current range
-        ExtEnum.SetRange("Extension Code", Code);
+        ExtEnum.SetRange("Extension Code", Rec."Code");
         ExtEnum.SetRange("Source Type", ExtEnum."Source Type"::EnumExtension);
-        ExtEnum.SetFilter("Ordinal ID", '<%1', "Object Starting ID");
+        ExtEnum.SetFilter("Ordinal ID", '<%1', Rec."Object Starting ID");
         if not ExtEnum.IsEmpty() then begin
             ShowError := true;
-            SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, "Object Starting ID", "Object Ending ID"));
+            SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
         end else begin
-            ExtEnum.SetFilter("Ordinal ID", '>%1', "Object Ending ID");
+            ExtEnum.SetFilter("Ordinal ID", '>%1', Rec."Object Ending ID");
             if not ExtEnum.IsEmpty() then begin
                 ShowError := true;
-                SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, "Object Starting ID", "Object Ending ID"));
+                SetErrorMessage(ErrorMsg, StrSubstNo(OrdinalIDRangeErr, Rec."Object Starting ID", Rec."Object Ending ID"));
             end;
         end;
 
@@ -329,14 +329,14 @@ table 83201 "EXM Extension Header"
         ExtLine: Record "EXM Extension Lines";
         ExtField: Record "EXM Table Fields";
     begin
-        ExtLine.SetRange("Extension Code", Code);
-        ExtLine.ModifyAll("Customer No.", "Customer No.");
+        ExtLine.SetRange("Extension Code", Rec."Code");
+        ExtLine.ModifyAll("Customer No.", Rec."Customer No.");
 
-        ExtField.SetRange("Extension Code", Code);
-        ExtField.ModifyAll("Customer No.", "Customer No.");
+        ExtField.SetRange("Extension Code", Rec."Code");
+        ExtField.ModifyAll("Customer No.", Rec."Customer No.");
 
-        ExtEnum.SetRange("Extension Code", Code);
-        ExtEnum.ModifyAll("Customer No.", "Customer No.");
+        ExtEnum.SetRange("Extension Code", Rec."Code");
+        ExtEnum.ModifyAll("Customer No.", Rec."Customer No.");
     end;
 
     procedure InitRecord()
@@ -345,12 +345,12 @@ table 83201 "EXM Extension Header"
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
         ExtSetup.Get();
-        if Code = '' then
+        if Rec."Code" = '' then
             if ExtSetup."Extension Nos." <> '' then
-                Code := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
+                Rec."Code" := NoSeriesMgt.GetNextNo(ExtSetup."Extension Nos.", 0D, true);
 
-        "Object Starting ID" := ExtSetup."Default Object Starting ID";
-        "Object Ending ID" := ExtSetup."Default Object Ending ID";
+        Rec."Object Starting ID" := ExtSetup."Default Object Starting ID";
+        Rec."Object Ending ID" := ExtSetup."Default Object Ending ID";
     end;
 
     trigger OnDelete()
@@ -359,13 +359,13 @@ table 83201 "EXM Extension Header"
         EXMExtLines: Record "EXM Extension Lines";
         EXMFields: Record "EXM Table Fields";
     begin
-        EXMExtLines.SetRange("Extension Code", Code);
+        EXMExtLines.SetRange("Extension Code", Rec."Code");
         EXMExtLines.DeleteAll();
 
-        EXMFields.SetRange("Extension Code", Code);
+        EXMFields.SetRange("Extension Code", Rec."Code");
         EXMFields.DeleteAll();
 
-        EXMEnumValues.SetRange("Extension Code", Code);
+        EXMEnumValues.SetRange("Extension Code", Rec."Code");
         EXMEnumValues.DeleteAll();
     end;
 

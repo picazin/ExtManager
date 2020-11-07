@@ -35,12 +35,12 @@ table 83208 "EXM Extension Dependencies"
             var
                 ExtHeader: Record "EXM Extension Header";
             begin
-                if xRec."Dependent Ext. Code" <> "Dependent Ext. Code" then
-                    if "Dependent Ext. Code" = '' then
-                        "Dependent Ext. Name" := ''
+                if xRec."Dependent Ext. Code" <> Rec."Dependent Ext. Code" then
+                    if Rec."Dependent Ext. Code" = '' then
+                        Rec."Dependent Ext. Name" := ''
                     else begin
-                        ExtHeader.Get("Dependent Ext. Code");
-                        "Dependent Ext. Name" := ExtHeader.Description;
+                        ExtHeader.Get(Rec."Dependent Ext. Code");
+                        Rec."Dependent Ext. Name" := ExtHeader.Description;
                     end;
             end;
 
@@ -52,7 +52,7 @@ table 83208 "EXM Extension Dependencies"
             begin
                 ExtHeader.Get("Extensión Code");
 
-                AvailableExt.SetFilter(Code, '<>%1', "Extensión Code");
+                AvailableExt.SetFilter(Code, '<>%1', Rec."Extensión Code");
                 if ExtHeader.Type = ExtHeader.Type::Internal then
                     AvailableExt.SetRange(Type, AvailableExt.Type::Internal)
                 else
@@ -62,7 +62,7 @@ table 83208 "EXM Extension Dependencies"
                 ExtHeaderList.SetTableView(AvailableExt);
                 if ExtHeaderList.RunModal() = Action::LookupOK then begin
                     ExtHeaderList.GetRecord(AvailableExt);
-                    Validate("Dependent Ext. Code", AvailableExt.Code);
+                    Rec.Validate("Dependent Ext. Code", AvailableExt.Code);
                 end;
             end;
 

@@ -11,12 +11,12 @@ page 83218 "EXM Related Lines"
         {
             repeater(General)
             {
-                field("Table ID"; "Table ID")
+                field("Table ID"; Rec."Table ID")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Table ID field', comment = 'ESP="Especifica el valor del campo ID Tabla"';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Name field', comment = 'ESP="Especifica el valor del campo Nombre"';

@@ -35,7 +35,7 @@ table 83206 "EXM Related Groups"
     var
         RelLines: Record "EXM Related Lines";
     begin
-        RelLines.SetRange(Code, Code);
+        RelLines.SetRange(Code, Rec.Code);
         RelLines.DeleteAll();
     end;
 }

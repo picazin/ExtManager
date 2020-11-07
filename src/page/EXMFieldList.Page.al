@@ -12,7 +12,7 @@ page 83203 "EXM Field List"
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -20,7 +20,7 @@ page 83203 "EXM Field List"
                     ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
                     Visible = false;
                 }
-                field("Source Line No."; "Source Line No.")
+                field("Source Line No."; Rec."Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -28,7 +28,7 @@ page 83203 "EXM Field List"
                     ToolTip = 'Specifies the value of the Source Line No. field', Comment = 'ESP="Especifica el valor del campo Nº línea origen"';
                     Visible = false;
                 }
-                field("Table Source Type"; "Table Source Type")
+                field("Table Source Type"; Rec."Table Source Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -36,7 +36,7 @@ page 83203 "EXM Field List"
                     ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                     Visible = false;
                 }
-                field("Source Table ID"; "Source Table ID")
+                field("Source Table ID"; Rec."Source Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -44,7 +44,7 @@ page 83203 "EXM Field List"
                     ToolTip = 'Specifies the value of the Source Table ID field', Comment = 'ESP="Especifica el valor del campo Id. tabla origen"';
                     Visible = false;
                 }
-                field("Table ID"; "Table ID")
+                field("Table ID"; Rec."Table ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -52,7 +52,7 @@ page 83203 "EXM Field List"
                     ToolTip = 'Specifies the value of the Table ID field', Comment = 'ESP="Especifica el valor del campo Id. tabla"';
                     Visible = false;
                 }
-                field(IsPK; IsPK)
+                field(IsPK; Rec.IsPK)
                 {
                     ApplicationArea = All;
                     Enabled = ("Source Table ID" = 0);
@@ -61,61 +61,61 @@ page 83203 "EXM Field List"
                     Visible = PKVisible;
                     trigger OnValidate()
                     begin
-                        if xRec.IsPK <> IsPK then
+                        if xRec.IsPK <> Rec.IsPK then
                             CurrPage.Update(true);
                     end;
                 }
-                field("Field ID"; "Field ID")
+                field("Field ID"; Rec."Field ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Field ID field', Comment = 'ESP="Especifica el valor del campo Id. campo"';
                 }
-                field("Field Name"; "Field Name")
+                field("Field Name"; Rec."Field Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Field Name field', Comment = 'ESP="Especifica el valor del campo Nombre de campo"';
                 }
-                field("Data Type"; "Data Type")
+                field("Data Type"; Rec."Data Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Data Type field', Comment = 'ESP="Especifica el valor del campo Tipo datos"';
                 }
-                field(Lenght; Lenght)
+                field(Lenght; Rec.Lenght)
                 {
                     ApplicationArea = All;
                     Editable = (("Data Type" = "Data Type"::Text) or ("Data Type" = "Data Type"::Code));
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Lenght field', Comment = 'ESP="Especifica el valor del campo Longitud"';
                 }
-                field("Field Class"; "Field Class")
+                field("Field Class"; Rec."Field Class")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Field Class field', Comment = 'ESP="Especifica el valor del campo Clase campo"';
                 }
-                field("Option String"; "Option String")
+                field("Option String"; Rec."Option String")
                 {
                     ApplicationArea = All;
-                    Editable = ("Data Type" = "Data Type"::Option);
+                    Editable = (Rec."Data Type" = Rec."Data Type"::Option);
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Option String field', Comment = 'ESP="Especifica el valor del campo Texto opciones"';
                 }
-                field(Obsolete; Obsolete)
+                field(Obsolete; Rec.Obsolete)
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
                 }
-                field("Created by"; "Created by")
+                field("Created by"; Rec."Created by")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
                 }
-                field("Creation Date"; "Creation Date")
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
@@ -141,7 +141,7 @@ page 83203 "EXM Field List"
             {
                 ApplicationArea = All;
                 Caption = 'View / Hide fields', Comment = 'ESP="Ver / ocultar campos"';
-                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Enabled = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
                 Image = ResetStatus;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -161,7 +161,7 @@ page 83203 "EXM Field List"
             {
                 ApplicationArea = All;
                 Caption = 'View source table', Comment = 'ESP="Ver tabla origen"';
-                Enabled = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Enabled = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
                 Image = Table;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -173,7 +173,7 @@ page 83203 "EXM Field List"
                 var
                     EXMExtMgt: Codeunit "EXM Extension Management";
                 begin
-                    EXMExtMgt.GetTableFieldData("Source Table ID");
+                    EXMExtMgt.GetTableFieldData(Rec."Source Table ID");
                 end;
             }
             action(AddRelField)
@@ -186,13 +186,13 @@ page 83203 "EXM Field List"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 ToolTip = 'Add current field to defined related tables', Comment = 'ESP="Añade campo actual a tablas relacionadas definidas"';
-                Visible = ("Table Source Type" = "Table Source Type"::"TableExtension");
+                Visible = (Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension");
 
                 trigger OnAction()
                 var
                     ExtMngt: Codeunit "EXM Extension Management";
                 begin
-                    TestField("Table Source Type", "Table Source Type"::"TableExtension");
+                    Rec.TestField("Table Source Type", Rec."Table Source Type"::"TableExtension");
                     ExtMngt.CreateRelatedFields(Rec);
                 end;
             }
@@ -220,10 +220,10 @@ page 83203 "EXM Field List"
         PKErr: Label 'Primary key must be set.', Comment = 'ESP="Se debe indicar clave primária"';
     begin
         if CloseAction = CloseAction::LookupOK then
-            if "Source Table ID" = 0 then begin
-                EXMTableFields.SetRange("Extension Code", "Extension Code");
-                EXMTableFields.SetRange("Source Line No.", "Source Line No.");
-                EXMTableFields.SetRange("Table Source Type", "Table Source Type"::Table);
+            if Rec."Source Table ID" = 0 then begin
+                EXMTableFields.SetRange("Extension Code", Rec."Extension Code");
+                EXMTableFields.SetRange("Source Line No.", Rec."Source Line No.");
+                EXMTableFields.SetRange("Table Source Type", Rec."Table Source Type"::Table);
                 EXMTableFields.SetRange(IsPK, true);
                 if EXMTableFields.IsEmpty then
                     Error(PKErr);
@@ -240,19 +240,19 @@ page 83203 "EXM Field List"
         AllObject: Record AllObj;
         EXMExtLine: Record "EXM Extension Lines";
     begin
-        EXMExtLine.Get("Extension Code", "Source Line No.");
+        EXMExtLine.Get(Rec."Extension Code", Rec."Source Line No.");
         if Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension" then begin
-            AllObject.Get(AllObject."Object Type"::Table, "Source Table ID");
-            exit(Format("Source Table ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+            AllObject.Get(AllObject."Object Type"::Table, Rec."Source Table ID");
+            exit(Format(Rec."Source Table ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
         end else
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
 
     local procedure GetPKStyle()
     begin
-        PKVisible := ("Source Table ID" = 0);
+        PKVisible := (Rec."Source Table ID" = 0);
         StyleExp := 'standard';
-        if IsPK then
+        if Rec.IsPK then
             StyleExp := 'strong';
     end;
 }

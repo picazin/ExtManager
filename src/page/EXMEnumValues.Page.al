@@ -13,57 +13,57 @@ page 83210 "EXM Enum Values"
         {
             repeater(Fields)
             {
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión."';
                     Visible = false;
                 }
-                field("Source Line No."; "Source Line No.")
+                field("Source Line No."; Rec."Source Line No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     ToolTip = 'Specifies the value of the Source Line No. field', Comment = 'ESP="Especifica el valor del campo Nº línea origen"';
                     Visible = false;
                 }
-                field("Source Type"; "Source Type")
+                field("Source Type"; Rec."Source Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     ToolTip = 'Specifies the value of the Source Type field', Comment = 'ESP="Especifica el valor del campo Tipo origen"';
                     Visible = false;
                 }
-                field("Source Enum ID"; "Source Enum ID")
+                field("Source Enum ID"; Rec."Source Enum ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     ToolTip = 'Specifies the value of the Source Enum ID field', Comment = 'ESP="Especifica el valor del campo Id. Enum origen"';
                     Visible = false;
                 }
-                field("Enum ID"; "Enum ID")
+                field("Enum ID"; Rec."Enum ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     ToolTip = 'Specifies the value of the Enum ID field', Comment = 'ESP="Especifica el valor del campo Id. Enum"';
                     Visible = false;
                 }
-                field("Ordinal ID"; "Ordinal ID")
+                field("Ordinal ID"; Rec."Ordinal ID")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Ordinal ID field', Comment = 'ESP="Especifica el valor del campo Id. ordinal"';
                 }
-                field("Enum Value"; "Enum Value")
+                field("Enum Value"; Rec."Enum Value")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Enum Value field', Comment = 'ESP="Especifica el valor del campo Valor Enum"';
                 }
-                field("Created by"; "Created by")
+                field("Created by"; Rec."Created by")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
                     Visible = IsVisible;
                 }
-                field("Creation Date"; "Creation Date")
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica el valor del campo Fecha creación"';
@@ -122,7 +122,7 @@ page 83210 "EXM Enum Values"
                 var
                     EXMExtMgt: Codeunit "EXM Extension Management";
                 begin
-                    EXMExtMgt.GetEnumValues("Source Enum ID");
+                    EXMExtMgt.GetEnumValues(Rec."Source Enum ID");
                 end;
             }
         }
@@ -146,14 +146,14 @@ page 83210 "EXM Enum Values"
         EXMExtLine: Record "EXM Extension Lines";
     begin
         if IsTemporary then begin
-            AllObject.Get(AllObject."Object Type"::Enum, "Enum ID");
+            AllObject.Get(AllObject."Object Type"::Enum, Rec."Enum ID");
             exit(Format("Enum ID") + ' ' + AllObject."Object Name");
         end;
 
-        EXMExtLine.Get("Extension Code", "Source Line No.");
+        EXMExtLine.Get(Rec."Extension Code", Rec."Source Line No.");
         if Rec."Source Type" = Rec."Source Type"::"EnumExtension" then begin
-            AllObject.Get(AllObject."Object Type"::Enum, "Source Enum ID");
-            exit(Format("Source Enum ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
+            AllObject.Get(AllObject."Object Type"::Enum, Rec."Source Enum ID");
+            exit(Format(Rec."Source Enum ID") + ' ' + AllObject."Object Name" + ' - ' + Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
         end else
             exit(Format(EXMExtLine."Object ID") + ' ' + EXMExtLine.Name);
     end;
