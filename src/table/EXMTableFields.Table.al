@@ -1,8 +1,8 @@
 table 83203 "EXM Table Fields"
 {
     Caption = 'Extension Fields', Comment = 'ESP="Campos extensión"';
-    LookupPageId = "EXM Field List";
     DataClassification = OrganizationIdentifiableInformation;
+    LookupPageId = "EXM Field List";
 
     fields
     {
@@ -15,8 +15,8 @@ table 83203 "EXM Table Fields"
             var
                 ExtHeader: Record "EXM Extension Header";
             begin
-                ExtHeader.Get("Extension Code");
-                "Customer No." := ExtHeader."Customer No.";
+                ExtHeader.Get(Rec."Extension Code");
+                Rec."Customer No." := ExtHeader."Customer No.";
             end;
         }
         field(2; "Source Line No."; Integer)
@@ -28,42 +28,42 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Source Object Type', Comment = 'ESP="Tipo objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
             OptionCaption = ',Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
         }
         field(4; "Source Table ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Source Table ID', Comment = 'ESP="Id. tabla origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
-                EXMExtHeader.Get("Extension Code");
-                Validate("Field ID", SetFieldID("Source Table ID", "Table ID", EXMExtHeader."Customer No."))
+                EXMExtHeader.Get(Rec."Extension Code");
+                Rec.Validate("Field ID", SetFieldID(Rec."Source Table ID", Rec."Table ID", EXMExtHeader."Customer No."))
             end;
         }
         field(5; "Table ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Table ID', Comment = 'ESP="Id. tabla"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
-                EXMExtHeader.Get("Extension Code");
-                Validate("Field ID", SetFieldID("Source Table ID", "Table ID", EXMExtHeader."Customer No."))
+                EXMExtHeader.Get(Rec."Extension Code");
+                Rec.Validate("Field ID", SetFieldID(Rec."Source Table ID", Rec."Table ID", EXMExtHeader."Customer No."))
             end;
         }
         field(6; "Field ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Field ID', Comment = 'ESP="Id. campo"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
         }
         field(7; "Field Name"; Text[30])
         {
@@ -79,14 +79,14 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Data Type', Comment = 'ESP="Tipo datos"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
             InitValue = " ";
+            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
         }
         field(10; Lenght; Integer)
         {
+            BlankZero = true;
             Caption = 'Lenght', Comment = 'ESP="Longitud"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
         }
         field(11; "Field Class"; Option)
         {
@@ -143,19 +143,19 @@ table 83203 "EXM Table Fields"
 
     trigger OnInsert()
     begin
-        "Created by" := CopyStr(UserId(), 1, MaxStrLen("Created by"));
-        "Creation Date" := CurrentDateTime();
+        Rec."Created by" := CopyStr(UserId(), 1, MaxStrLen(Rec."Created by"));
+        Rec."Creation Date" := CurrentDateTime();
 
         ValidateData();
     end;
 
     local procedure SetFieldID(SourceTableID: Integer; TableID: Integer; CustNo: Code[20]) FieldID: Integer
     var
-        EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
+        EXMSetup: Record "EXM Extension Setup";
         EXMFields: Record "EXM Table Fields";
-        ExpectedId: Integer;
         IsHandled: Boolean;
+        ExpectedId: Integer;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
@@ -166,7 +166,7 @@ table 83203 "EXM Table Fields"
         if IsHandled then
             exit(FieldID);
 
-        EXMExtHeader.Get("Extension Code");
+        EXMExtHeader.Get(Rec."Extension Code");
         if SourceTableID = 0 then
             EXMFields.SetCurrentKey("Source Table ID", "Table ID", "Field ID")
         else begin
@@ -212,30 +212,30 @@ table 83203 "EXM Table Fields"
         EXMExtMgt: Codeunit "EXM Extension Management";
         SelectDataTypeErr: Label 'Must select a data type.', Comment = 'ESP="Debe seleccionar un tipo de datos."';
     begin
-        case "Table Source Type" of
-            "Table Source Type"::Table:
+        case Rec."Table Source Type" of
+            Rec."Table Source Type"::Table:
                 begin
-                    TestField("Source Table ID", 0);
-                    TestField("Table ID");
+                    Rec.TestField("Source Table ID", 0);
+                    Rec.TestField("Table ID");
                 end;
-            "Table Source Type"::"TableExtension":
+            Rec."Table Source Type"::"TableExtension":
                 begin
-                    TestField("Source Table ID");
-                    TestField("Table ID");
+                    Rec.TestField("Source Table ID");
+                    Rec.TestField("Table ID");
                 end;
         end;
 
-        TestField("Field ID");
-        TestField("Field Name");
+        Rec.TestField("Field ID");
+        Rec.TestField("Field Name");
 
-        if "Data Type" = "Data Type"::" " then
+        if Rec."Data Type" = Rec."Data Type"::" " then
             Error(SelectDataTypeErr);
 
-        if ("Data Type" in ["Data Type"::Text, "Data Type"::Code]) then
-            TestField(Lenght);
+        if (Rec."Data Type" in [Rec."Data Type"::Text, Rec."Data Type"::Code]) then
+            Rec.TestField(Lenght);
 
-        if "Table Source Type" = "Table Source Type"::"TableExtension" then
-            EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Field ID");
+        if Rec."Table Source Type" = Rec."Table Source Type"::"TableExtension" then
+            EXMExtMgt.ValidateExtensionRangeID(Rec."Extension Code", Rec."Field ID");
     end;
 
     [IntegrationEvent(false, false)]

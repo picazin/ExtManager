@@ -3,8 +3,8 @@ page 83209 "EXM Extensions Activities"
     Caption = 'Activities', Comment = 'ESP="Actividades"';
     PageType = CardPart;
     RefreshOnActivate = true;
-    SourceTable = "EXM Extension Manager Cue";
     ShowFilter = false;
+    SourceTable = "EXM Extension Manager Cue";
 
     layout
     {
@@ -14,7 +14,7 @@ page 83209 "EXM Extensions Activities"
             {
                 Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 CuegroupLayout = Wide;
-                field(Extensions; Extensions)
+                field(Extensions; Rec.Extensions)
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
@@ -24,14 +24,13 @@ page 83209 "EXM Extensions Activities"
             cuegroup(Detail)
             {
                 Caption = 'Extensions per type', Comment = 'ESP="Extensiones por tipo"';
-                field("Internal Extensions"; "Internal Extensions")
+                field("Internal Extensions"; Rec."Internal Extensions")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";
                     ToolTip = 'View Internal Extensions list', Comment = 'ESP="Muestra todas las extensiones internas"';
                 }
-
-                field("External Extensions"; "External Extensions")
+                field("External Extensions"; Rec."External Extensions")
                 {
                     ApplicationArea = Basic, Suite;
                     DrillDownPageId = "EXM Extension List";

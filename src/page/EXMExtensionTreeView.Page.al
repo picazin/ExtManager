@@ -1,12 +1,12 @@
 page 83215 "EXM Extension TreeView"
 {
-    PageType = List;
     Caption = 'EXM Extension TreeView';
-    SourceTable = "EXM Extension Lines";
-    SourceTableTemporary = true;
+    DeleteAllowed = false;
     InsertAllowed = false;
     ModifyAllowed = false;
-    DeleteAllowed = false;
+    PageType = List;
+    SourceTable = "EXM Tree View";
+    SourceTableTemporary = true;
 
     layout
     {
@@ -14,53 +14,78 @@ page 83215 "EXM Extension TreeView"
         {
             repeater(Content1)
             {
-                IndentationColumn = "Total Fields";
+                IndentationColumn = Rec."Indentation";
                 IndentationControls = "Object Type";
                 ShowAsTree = true;
                 TreeInitialState = ExpandAll;
 
-                field("Extension Code"; "Extension Code")
+                field("Extension Code"; Rec."Extension Code")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
                 }
 
-                field("Object Type"; "Object Type")
+                field("Object Type"; Rec."Object Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
-                field("Object ID"; "Object ID")
+                field("Object ID"; Rec."Object ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                 }
-                field(Name; Name)
+                field("Object Name"; Rec."Object Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
-
-                field("Source Object ID"; "Source Object ID")
+                field("Field ID"; Rec."Field ID")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Id field', Comment = 'ESP="Especifica el valor del campo ID Campo"';
                 }
-                field("Source Object Type"; "Source Object Type")
+                field("Field Name"; Rec."Field Name")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Name field', Comment = 'ESP="Especifica el valor del campo Nombre Campo"';
                 }
-                field("Source Name"; "Source Name")
+                field("Field Data Type"; Rec."Field Data Type")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Field Data Type field', Comment = 'ESP="Especifica el valor del campo Tipo Dato Campo"';
                 }
-                field("Total Fields"; "Total Fields")
+                field("Source Object ID"; Rec."Source Object ID")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
+                }
+                field("Source Object Type"; Rec."Source Object Type")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
+                }
+                field("Source Name"; Rec."Source Name")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
+                }
+                field(Indentation; Rec.Indentation)
                 {
                     ApplicationArea = All;
                     Caption = 'Level', Comment = 'ESP="Nivel"';
                     StyleExpr = StyleExp;
+                    ToolTip = 'Specifies the value of the Level field', Comment = 'ESP="Especifica el valor del campo Nivel"';
                     Visible = false;
                 }
             }
@@ -86,37 +111,49 @@ page 83215 "EXM Extension TreeView"
             repeat
                 ObjType := -1;
 
-                Init();
+                //Extension Header
                 LineNo += 1;
-                "Line No." := LineNo;
-                "Extension Code" := EXMExtHeader.Code;
-                Name := EXMExtHeader.Description;
-                "Total Fields" := 0;
-                "Object Type" := EXMExtLine."Object Type"::" ";
-                Insert();
+
+                Rec.Init();
+                Rec."Line No." := LineNo;
+                Rec.Indentation := 0;
+                Rec."Extension Code" := EXMExtHeader.Code;
+                Rec."Object Name" := EXMExtHeader.Description;
+                Rec."Object Type" := EXMExtLine."Object Type"::" ";
+                Rec.Insert();
 
                 EXMExtLine.SetCurrentKey("Extension Code", "Object Type");
                 EXMExtLine.SetRange("Extension Code", EXMExtHeader.Code);
                 if EXMExtLine.FindSet() then
                     repeat
+                        //Extension object type header
                         if EXMExtLine."Object Type" <> ObjType then begin
-                            Init();
                             LineNo += 1;
-                            "Line No." := LineNo;
-                            "Extension Code" := EXMExtLine."Extension Code";
-                            "Object Type" := EXMExtLine."Object Type";
-                            "Total Fields" := 1;
-                            Insert();
+
+                            Rec.Init();
+                            Rec."Line No." := LineNo;
+                            Rec.Indentation := 1;
+                            Rec."Extension Code" := EXMExtLine."Extension Code";
+                            Rec."Object Type" := EXMExtLine."Object Type";
+                            Rec.Insert();
+
                             ObjType := "Object Type";
                         end;
 
                         LineNo += 1;
 
-                        Init();
-                        Rec := EXMExtLine;
-                        "Line No." := LineNo;
-                        "Total Fields" := 2;
-                        Insert();
+                        //Extension objects
+                        Rec.Init();
+                        Rec."Line No." := LineNo;
+                        Rec.Indentation := 2;
+                        Rec."Extension Code" := EXMExtLine."Extension Code";
+                        Rec."Object Type" := EXMExtLine."Object Type";
+                        Rec."Object ID" := EXMExtLine."Object ID";
+                        Rec."Object Name" := EXMExtLine.Name;
+                        Rec."Source Object Type" := EXMExtLine."Source Object Type";
+                        Rec."Source Object ID" := EXMExtLine."Source Object ID";
+                        Rec."Source Name" := EXMExtLine."Source Name";
+                        Rec.Insert();
 
                         if EXMExtLine."Object Type" in [EXMExtLine."Object Type"::Table, EXMExtLine."Object Type"::"TableExtension"] then begin
                             EXMFields.SetRange("Extension Code", EXMExtHeader.Code);
@@ -125,34 +162,52 @@ page 83215 "EXM Extension TreeView"
                                 repeat
                                     LineNo += 1;
 
-                                    Init();
-                                    "Extension Code" := EXMExtLine."Extension Code";
-                                    "Object Type" := EXMExtLine."Object Type";
-                                    "Object ID" := EXMExtLine."Object ID";
-                                    "Source Object ID" := EXMFields."Field ID";
-                                    Name := EXMFields."Field Name";
-                                    "Line No." := LineNo;
-                                    "Total Fields" := 3;
-                                    Insert();
+                                    //Extension fields
+                                    Rec.Init();
+                                    Rec."Line No." := LineNo;
+                                    Rec.Indentation := 3;
+
+                                    Rec."Extension Code" := EXMExtLine."Extension Code";
+                                    Rec."Object Type" := EXMExtLine."Object Type";
+                                    Rec."Object ID" := EXMExtLine."Object ID";
+                                    Rec."Object Name" := EXMExtLine.Name;
+
+                                    Rec."Field ID" := EXMFields."Field ID";
+                                    Rec."Field Name" := EXMFields."Field Name";
+                                    if EXMFields.Lenght <> 0 then
+                                        Rec."Field Data Type" := Format(EXMFields."Data Type") + '[' + Format(EXMFields.Lenght) + ']'
+                                    else
+                                        Rec."Field Data Type" := Format(EXMFields."Data Type");
+
+                                    Rec."Source Object Type" := EXMExtLine."Source Object Type";
+                                    Rec."Source Object ID" := EXMExtLine."Source Object ID";
+                                    Rec."Source Name" := EXMExtLine."Source Name";
+                                    Rec.Insert();
                                 until EXMFields.Next() = 0;
                         end;
                     until EXMExtLine.Next() = 0;
             until EXMExtHeader.Next() = 0;
 
-        SetCurrentKey("Extension Code", "Line No.");
-        if FindFirst() then;
+        Rec.SetCurrentKey("Extension Code", "Line No.");
+        if Rec.FindFirst() then;
     end;
 
     trigger OnAfterGetRecord()
     begin
         StyleExp := 'standard';
-        if "Total Fields" = 0 then
+        if Rec.Indentation = 0 then
             StyleExp := 'favorable';
-        if "Total Fields" = 1 then
+        if Rec.Indentation = 1 then
             StyleExp := 'strong';
-        if "Total Fields" = 3 then
+        if Rec.Indentation = 3 then
             StyleExp := 'standardaccent';
     end;
+
+    var
+        ExtCode: Code[20];
+        ViewCustNoExt: Code[20];
+        ExtType: Integer;
+        StyleExp: Text;
 
     internal procedure SetFilters(SetExtType: Integer; SetExtCode: Code[20]; SetCustNo: Code[20])
     begin
@@ -160,10 +215,4 @@ page 83215 "EXM Extension TreeView"
         ExtCode := SetExtCode;
         ViewCustNoExt := SetCustNo;
     end;
-
-    var
-        StyleExp: Text;
-        ExtCode: Code[20];
-        ViewCustNoExt: Code[20];
-        ExtType: Integer;
 }

@@ -15,15 +15,15 @@ table 83207 "EXM Related Lines"
         {
             Caption = 'Table ID', comment = 'ESP="ID Tabla"';
             DataClassification = OrganizationIdentifiableInformation;
-            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
             NotBlank = true;
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
 
             trigger OnValidate()
             var
                 ExtMngt: Codeunit "EXM Extension Management";
             begin
-                if xRec."Table ID" <> "Table ID" then
-                    Name := ExtMngt.GetObjectName(1, "Table ID");
+                if xRec."Table ID" <> Rec."Table ID" then
+                    Rec.Name := ExtMngt.GetObjectName(1, Rec."Table ID");
             end;
         }
         field(3; Name; Text[250])

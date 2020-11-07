@@ -1,12 +1,10 @@
 page 83202 "EXM Extension Lines"
 {
+    AutoSplitKey = true;
     Caption = ' Objects', Comment = 'ESP="Objetos"';
+    DelayedInsert = true;
     PageType = ListPart;
     SourceTable = "EXM Extension Lines";
-    //SourceTableView = sorting("Extension Code", "Object Type", "Object ID", "Source Object Type", "Source Object ID");
-    DelayedInsert = true;
-    AutoSplitKey = true;
-
 
     layout
     {
@@ -15,59 +13,69 @@ page 83202 "EXM Extension Lines"
             repeater(Lines)
             {
                 FreezeColumn = Name;
-                field("Object Type"; "Object Type")
+                field("Object Type"; Rec."Object Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
-                field("Object ID"; "Object ID")
+                field("Object ID"; Rec."Object ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                     trigger OnValidate()
                     var
                         EXMExtMgt: Codeunit "EXM Extension Management";
                     begin
-                        if (xRec."Object ID" <> "Object ID") then
+                        if (xRec."Object ID" <> Rec."Object ID") then
                             EXMExtMgt.ChechManualObjectID(Rec);
                     end;
                 }
-                field(Name; "Name")
+                field(Name; Rec."Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
-                field("Source Object Type"; "Source Object Type")
+                field("Source Object Type"; Rec."Source Object Type")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                 }
-                field("Source Object ID"; "Source Object ID")
+                field("Source Object ID"; Rec."Source Object ID")
                 {
                     ApplicationArea = All;
                     Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile);
+                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
-                field("Source Name"; "Source Name")
+                field("Source Name"; Rec."Source Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Source Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen"';
                 }
-                field("Total Fields"; "Total Fields")
+                field("Total Fields"; Rec."Total Fields")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Shows Total related fields'', Comment = ''ESP="Muestra el total de Campos relacionados"';
                     trigger OnAssistEdit()
                     begin
                         ViewRelatedFields();
                     end;
                 }
-                field(Obsolete; Obsolete)
+                field(Obsolete; Rec.Obsolete)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
                 }
-                field("Created by"; "Created by")
+                field("Created by"; Rec."Created by")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
                 }
-                field("Creation Date"; "Creation Date")
+                field("Creation Date"; Rec."Creation Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica el valor del campo Fecha creación"';
                 }
             }
         }
@@ -78,13 +86,13 @@ page 83202 "EXM Extension Lines"
         {
             action(ViewField)
             {
-                Caption = 'View detail', Comment = 'ESP="Ver detalle"';
                 ApplicationArea = All;
+                Caption = 'View detail', Comment = 'ESP="Ver detalle"';
                 Image = ViewPage;
                 Promoted = true;
                 PromotedCategory = Process;
-                PromotedOnly = true;
                 PromotedIsBig = true;
+                PromotedOnly = true;
                 ToolTip = 'View object detail.', Comment = 'ESP="Ver detalle objeto."';
 
                 trigger OnAction()
@@ -96,40 +104,40 @@ page 83202 "EXM Extension Lines"
     }
     trigger OnAfterGetRecord()
     begin
-        "Total Fields" := GetTotalFields();
+        Rec."Total Fields" := GetTotalFields();
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        Validate("Object Type", xRec."Object Type");
+        Rec.Validate("Object Type", xRec."Object Type");
     end;
 
     local procedure ViewRelatedFields()
     var
-        EXMTableFields: Record "EXM Table Fields";
         EXMEnumValues: Record "EXM Enum Values";
-        EXMFieldList: Page "EXM Field List";
+        EXMTableFields: Record "EXM Table Fields";
         EXMEnumVal: Page "EXM Enum Values";
+        EXMFieldList: Page "EXM Field List";
     begin
-        case "Object Type" of
-            "Object Type"::"Table", "Object Type"::"TableExtension":
+        case Rec."Object Type" of
+            Rec."Object Type"::"Table", Rec."Object Type"::"TableExtension":
                 begin
                     CurrPage.SaveRecord();
                     Commit();
 
-                    if ("Object Type" = "Object Type"::Table) and ("Source Object ID" = 0) then begin
-                        EXMTableFields.SetRange("Extension Code", "Extension Code");
-                        EXMTableFields.SetRange("Source Line No.", "Line No.");
-                        EXMTableFields.SetRange("Table Source Type", "Object Type");
-                        EXMTableFields.SetRange("Table ID", "Object ID");
-                        EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                    if (Rec."Object Type" = Rec."Object Type"::Table) and (Rec."Source Object ID" = 0) then begin
+                        EXMTableFields.SetRange("Extension Code", Rec."Extension Code");
+                        EXMTableFields.SetRange("Source Line No.", Rec."Line No.");
+                        EXMTableFields.SetRange("Table Source Type", Rec."Object Type");
+                        EXMTableFields.SetRange("Table ID", Rec."Object ID");
+                        EXMTableFields.SetRange("Source Table ID", Rec."Source Object ID");
                         if EXMTableFields.IsEmpty() then begin
                             EXMTableFields.Init();
-                            EXMTableFields."Extension Code" := "Extension Code";
-                            EXMTableFields."Source Line No." := "Line No.";
-                            EXMTableFields."Table Source Type" := "Object Type";
-                            EXMTableFields."Table ID" := "Object ID";
-                            EXMTableFields."Source Table ID" := "Source Object ID";
+                            EXMTableFields."Extension Code" := Rec."Extension Code";
+                            EXMTableFields."Source Line No." := Rec."Line No.";
+                            EXMTableFields."Table Source Type" := Rec."Object Type";
+                            EXMTableFields."Table ID" := Rec."Object ID";
+                            EXMTableFields."Source Table ID" := Rec."Source Object ID";
                             EXMTableFields."Field ID" := 1;
                             EXMTableFields.IsPK := true;
                             EXMTableFields."Created by" := CopyStr(UserId(), 1, MaxStrLen(EXMTableFields."Created by"));
@@ -139,27 +147,27 @@ page 83202 "EXM Extension Lines"
                         end;
                     end;
 
-                    EXMTableFields.SetRange("Extension Code", "Extension Code");
-                    EXMTableFields.SetRange("Source Line No.", "Line No.");
-                    EXMTableFields.SetRange("Table Source Type", "Object Type");
-                    EXMTableFields.SetRange("Table ID", "Object ID");
-                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                    EXMTableFields.SetRange("Extension Code", Rec."Extension Code");
+                    EXMTableFields.SetRange("Source Line No.", Rec."Line No.");
+                    EXMTableFields.SetRange("Table Source Type", Rec."Object Type");
+                    EXMTableFields.SetRange("Table ID", Rec."Object ID");
+                    EXMTableFields.SetRange("Source Table ID", Rec."Source Object ID");
                     EXMFieldList.SetTableView(EXMTableFields);
 
                     EXMFieldList.Editable(true);
                     EXMFieldList.RunModal();
                 end;
 
-            "Object Type"::Enum, "Object Type"::EnumExtension:
+            Rec."Object Type"::Enum, Rec."Object Type"::EnumExtension:
                 begin
                     CurrPage.SaveRecord();
                     Commit();
 
-                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
-                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
-                    EXMEnumValues.SetRange("Source Type", "Object Type");
-                    EXMEnumValues.SetRange("Enum ID", "Object ID");
-                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
+                    EXMEnumValues.SetRange("Extension Code", Rec."Extension Code");
+                    EXMEnumValues.SetRange("Source Line No.", Rec."Line No.");
+                    EXMEnumValues.SetRange("Source Type", Rec."Object Type");
+                    EXMEnumValues.SetRange("Enum ID", Rec."Object ID");
+                    EXMEnumValues.SetRange("Source Enum ID", Rec."Source Object ID");
 
                     EXMEnumVal.SetTableView(EXMEnumValues);
                     EXMEnumVal.RunModal();

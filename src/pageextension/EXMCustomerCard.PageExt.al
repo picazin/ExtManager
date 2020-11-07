@@ -6,8 +6,8 @@ pageextension 83201 "EXM Customer Card" extends "Customer Card"
         {
             action(EXMALExtensions)
             {
-                Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 ApplicationArea = All;
+                Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 Image = Design;
                 Promoted = true;
                 PromotedCategory = Category9;

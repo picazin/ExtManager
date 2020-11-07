@@ -8,24 +8,24 @@ table 83204 "EXM Extension Manager Cue"
         }
         field(10; Extensions; Integer)
         {
+            CalcFormula = Count("EXM Extension Header");
             Caption = 'Extensions', Comment = 'ESP="Extensiones"';
-            FieldClass = FlowField;
-            CalcFormula = Count ("EXM Extension Header");
             Editable = false;
+            FieldClass = FlowField;
         }
         field(15; "Internal Extensions"; Integer)
         {
+            CalcFormula = Count("EXM Extension Header" where(Type = filter(Internal)));
             Caption = 'Internal Extensions', Comment = 'ESP="Extensiones internas"';
-            FieldClass = FlowField;
-            CalcFormula = Count ("EXM Extension Header" where(Type = filter(Internal)));
             Editable = false;
+            FieldClass = FlowField;
         }
         field(20; "External Extensions"; Integer)
         {
+            CalcFormula = Count("EXM Extension Header" where(Type = filter(External)));
             Caption = 'External Extensions', Comment = 'ESP="Extensiones externas"';
-            FieldClass = FlowField;
-            CalcFormula = Count ("EXM Extension Header" where(Type = filter(External)));
             Editable = false;
+            FieldClass = FlowField;
         }
     }
 

@@ -1,6 +1,5 @@
 page 83217 "EXM Related Data"
 {
-
     Caption = 'EXM - Create fields on related tables', comment = 'ESP="EXM - Crear campos en tablas relacionadas"';
     PageType = Document;
     SourceTable = "EXM Related Groups";
@@ -11,20 +10,22 @@ page 83217 "EXM Related Data"
         {
             group(General)
             {
-                field("Code"; Code)
+                field("Code"; Rec."Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Code field', comment = 'ESP="Especifica el valor del campo Código"';
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Description field', comment = 'ESP="Especifica el valor del campo Descripción"';
                 }
             }
             part(Lines; "EXM Related Lines")
             {
                 ApplicationArea = All;
                 Caption = 'Related tables', comment = 'ESP="Tablas relacionadas"';
-                SubPageLink = Code = field(Code);
+                SubPageLink = Code = field("Code");
             }
         }
     }

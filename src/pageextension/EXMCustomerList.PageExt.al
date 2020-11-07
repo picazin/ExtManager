@@ -6,8 +6,8 @@ pageextension 83200 "EXM Customer List" extends "Customer List"
         {
             action(EXMALExtensions)
             {
-                Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 ApplicationArea = All;
+                Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 Image = Design;
                 Promoted = true;
                 PromotedCategory = Category7;

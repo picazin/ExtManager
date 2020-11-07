@@ -26,9 +26,9 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Object Type', Comment = 'ESP="Tipo objeto"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
-            OptionCaption = ',Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, "';
             InitValue = " ";
+            OptionCaption = ',Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
 
             trigger OnValidate()
             var
@@ -53,9 +53,9 @@ table 83202 "EXM Extension Lines"
         }
         field(4; "Object ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Object ID', Comment = 'ESP="ID objeto"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
             NotBlank = true;
 
             trigger OnValidate()
@@ -73,9 +73,9 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Source Object Type', Comment = 'ESP="Tipo objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
-            OptionCaption = ',Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, "';
             InitValue = " ";
+            OptionCaption = ',Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
 
             trigger OnValidate()
             var
@@ -97,14 +97,14 @@ table 83202 "EXM Extension Lines"
         }
         field(7; "Source Object ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Source Object ID', Comment = 'ESP="ID objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
-                AllProfile: Record "All Profile";
                 AllObjects: Record AllObjWithCaption;
+                AllProfile: Record "All Profile";
                 ExtMngt: Codeunit "EXM Extension Management";
                 ProfileNotFoundErr: Label 'Profile with %1 %2 not found.', Comment = 'ESP="Perfil con %1 %2 no encontrado."';
             begin
@@ -126,10 +126,10 @@ table 83202 "EXM Extension Lines"
 
             trigger OnLookup()
             var
-                AllProfile: Record "All Profile";
                 AllObjects: Record AllObjWithCaption;
-                ProfileList: Page "Profile List";
+                AllProfile: Record "All Profile";
                 AllObjList: Page "All Objects with Caption";
+                ProfileList: Page "Profile List";
             begin
                 case "Object Type" of
                     "Object Type"::"ProfileExtension":
@@ -179,9 +179,9 @@ table 83202 "EXM Extension Lines"
 
         field(10; "Total Fields"; Integer)
         {
+            BlankZero = true;
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
             Editable = false;
         }
         field(11; Obsolete; Boolean)
@@ -240,8 +240,8 @@ table 83202 "EXM Extension Lines"
 
     trigger OnDelete()
     var
-        EXMFields: Record "EXM Table Fields";
         EXMEnumValues: Record "EXM Enum Values";
+        EXMFields: Record "EXM Table Fields";
     begin
         EXMFields.SetRange("Extension Code", "Extension Code");
         EXMFields.SetRange("Source Line No.", "Line No.");
@@ -251,61 +251,52 @@ table 83202 "EXM Extension Lines"
         EXMEnumValues.SetRange("Source Line No.", "Line No.");
         EXMEnumValues.DeleteAll();
     end;
-    //#endregion Triggers
 
-    local procedure UpdateRelated()
+    procedure GetLineNo(): Integer
     var
-        TableFields: Record "EXM Table Fields";
-        NewTableFields: Record "EXM Table Fields";
-        EnumValues: Record "EXM Enum Values";
-        NewEnumValues: Record "EXM Enum Values";
+        ExtLine: Record "EXM Extension Lines";
+    begin
+        ExtLine.SetRange("Extension Code", "Extension Code");
+        if ExtLine.FindLast() then
+            exit(ExtLine."Line No." + 10000);
+        exit(10000);
+    end;
+
+    procedure GetTotalFields(): Integer
+    var
+        EXMEnumValues: Record "EXM Enum Values";
+        EXMTableFields: Record "EXM Table Fields";
     begin
         case "Object Type" of
-            "Object Type"::Table, "Object Type"::"TableExtension":
+            "Object Type"::"Table", "Object Type"::"TableExtension":
                 begin
-                    TableFields.SetRange("Extension Code", "Extension Code");
-                    TableFields.SetRange("Source Line No.", "Line No.");
-                    TableFields.SetRange("Table Source Type", xRec."Object Type");
-                    TableFields.SetRange("Source Table ID", xRec."Source Object ID");
-                    TableFields.SetRange("Table ID", xRec."Object ID");
-                    if TableFields.FindSet() then
-                        repeat
-                            NewTableFields.Init();
-                            NewTableFields := TableFields;
-                            NewTableFields."Table Source Type" := "Object Type";
-                            NewTableFields."Source Table ID" := "Source Object ID";
-                            NewTableFields."Table ID" := "Object ID";
-                            NewTableFields.Insert();
-                            TableFields.Delete();
-                        until TableFields.Next() = 0;
+                    EXMTableFields.SetRange("Extension Code", "Extension Code");
+                    EXMTableFields.SetRange("Source Line No.", "Line No.");
+                    EXMTableFields.SetRange("Table Source Type", "Object Type");
+                    EXMTableFields.SetRange("Table ID", "Object ID");
+                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
+                    exit(EXMTableFields.Count());
                 end;
 
             "Object Type"::Enum, "Object Type"::EnumExtension:
                 begin
-                    EnumValues.SetRange("Extension Code", "Extension Code");
-                    EnumValues.SetRange("Source Line No.", "Line No.");
-                    EnumValues.SetRange("Source Type", xRec."Object Type");
-                    EnumValues.SetRange("Source Enum ID", xRec."Object ID");
-                    EnumValues.SetRange("Enum ID", xRec."Object ID");
-                    if EnumValues.FindSet() then
-                        repeat
-                            NewEnumValues.Init();
-                            NewEnumValues := EnumValues;
-                            NewEnumValues."Source Type" := "Object Type";
-                            NewEnumValues."Source Enum ID" := "Source Object ID";
-                            NewEnumValues."Enum ID" := "Object ID";
-                            NewEnumValues.Insert();
-                            EnumValues.Delete();
-                        until EnumValues.Next() = 0;
+                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
+                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
+                    EXMEnumValues.SetRange("Source Type", "Object Type");
+                    EXMEnumValues.SetRange("Enum ID", "Object ID");
+                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
+                    exit(EXMEnumValues.Count());
                 end;
+            else
+                exit(0);
         end;
     end;
 
     procedure SetObjectID(ObjectType: Integer; CustNo: Code[20]) ObjectID: Integer
     var
-        EXMSetup: Record "EXM Extension Setup";
         EXMExtHeader: Record "EXM Extension Header";
         EXMExtLine: Record "EXM Extension Lines";
+        EXMSetup: Record "EXM Extension Setup";
         IsHandled: Boolean;
         ExpectedId: Integer;
         ObjectIdErr: Label 'Next object ID (%1) is bigger than extension ending id (%2).', comment = 'ESP="Propuesta ID objeto (%1) es superior al id final de la extensión (%2)."';
@@ -352,54 +343,63 @@ table 83202 "EXM Extension Lines"
 
         exit(ObjectID)
     end;
+    //#endregion Triggers
 
-    procedure GetTotalFields(): Integer
+    local procedure UpdateRelated()
     var
-        EXMTableFields: Record "EXM Table Fields";
-        EXMEnumValues: Record "EXM Enum Values";
+        EnumValues: Record "EXM Enum Values";
+        NewEnumValues: Record "EXM Enum Values";
+        NewTableFields: Record "EXM Table Fields";
+        TableFields: Record "EXM Table Fields";
     begin
         case "Object Type" of
-            "Object Type"::"Table", "Object Type"::"TableExtension":
+            "Object Type"::Table, "Object Type"::"TableExtension":
                 begin
-                    EXMTableFields.SetRange("Extension Code", "Extension Code");
-                    EXMTableFields.SetRange("Source Line No.", "Line No.");
-                    EXMTableFields.SetRange("Table Source Type", "Object Type");
-                    EXMTableFields.SetRange("Table ID", "Object ID");
-                    EXMTableFields.SetRange("Source Table ID", "Source Object ID");
-                    exit(EXMTableFields.Count());
+                    TableFields.SetRange("Extension Code", "Extension Code");
+                    TableFields.SetRange("Source Line No.", "Line No.");
+                    TableFields.SetRange("Table Source Type", xRec."Object Type");
+                    TableFields.SetRange("Source Table ID", xRec."Source Object ID");
+                    TableFields.SetRange("Table ID", xRec."Object ID");
+                    if TableFields.FindSet() then
+                        repeat
+                            NewTableFields.Init();
+                            NewTableFields := TableFields;
+                            NewTableFields."Table Source Type" := "Object Type";
+                            NewTableFields."Source Table ID" := "Source Object ID";
+                            NewTableFields."Table ID" := "Object ID";
+                            NewTableFields.Insert();
+                            TableFields.Delete();
+                        until TableFields.Next() = 0;
                 end;
 
             "Object Type"::Enum, "Object Type"::EnumExtension:
                 begin
-                    EXMEnumValues.SetRange("Extension Code", "Extension Code");
-                    EXMEnumValues.SetRange("Source Line No.", "Line No.");
-                    EXMEnumValues.SetRange("Source Type", "Object Type");
-                    EXMEnumValues.SetRange("Enum ID", "Object ID");
-                    EXMEnumValues.SetRange("Source Enum ID", "Source Object ID");
-                    exit(EXMEnumValues.Count());
+                    EnumValues.SetRange("Extension Code", "Extension Code");
+                    EnumValues.SetRange("Source Line No.", "Line No.");
+                    EnumValues.SetRange("Source Type", xRec."Object Type");
+                    EnumValues.SetRange("Source Enum ID", xRec."Object ID");
+                    EnumValues.SetRange("Enum ID", xRec."Object ID");
+                    if EnumValues.FindSet() then
+                        repeat
+                            NewEnumValues.Init();
+                            NewEnumValues := EnumValues;
+                            NewEnumValues."Source Type" := "Object Type";
+                            NewEnumValues."Source Enum ID" := "Source Object ID";
+                            NewEnumValues."Enum ID" := "Object ID";
+                            NewEnumValues.Insert();
+                            EnumValues.Delete();
+                        until EnumValues.Next() = 0;
                 end;
-            else
-                exit(0);
         end;
-    end;
-
-    procedure GetLineNo(): Integer
-    var
-        ExtLine: Record "EXM Extension Lines";
-    begin
-        ExtLine.SetRange("Extension Code", "Extension Code");
-        if ExtLine.FindLast() then
-            exit(ExtLine."Line No." + 10000);
-        exit(10000);
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalculateObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer; var IsHandled: Boolean)
-    begin
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterAssignObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalculateObjectID(ObjectType: Integer; CustNo: Code[20]; var ObjectID: Integer; var IsHandled: Boolean)
     begin
     end;
 }

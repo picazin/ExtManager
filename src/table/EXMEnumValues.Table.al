@@ -1,8 +1,8 @@
 table 83205 "EXM Enum Values"
 {
     Caption = 'Enums values', Comment = 'ESP="Valores Enum"';
-    LookupPageId = "EXM Enum Values";
     DataClassification = OrganizationIdentifiableInformation;
+    LookupPageId = "EXM Enum Values";
 
     fields
     {
@@ -15,8 +15,8 @@ table 83205 "EXM Enum Values"
             var
                 ExtHeader: Record "EXM Extension Header";
             begin
-                ExtHeader.Get("Extension Code");
-                "Customer No." := ExtHeader."Customer No.";
+                ExtHeader.Get(Rec."Extension Code");
+                Rec."Customer No." := ExtHeader."Customer No.";
             end;
         }
         field(2; "Source Line No."; Integer)
@@ -28,35 +28,35 @@ table 83205 "EXM Enum Values"
         {
             Caption = 'Source Type', Comment = 'ESP="Tipo origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
             OptionCaption = ',,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, "';
+            OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
         }
         field(4; "Source Enum ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Source Enum ID', Comment = 'ESP="Id. Enum origen"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
-                EXMExtHeader.Get("Extension Code");
-                Validate("Ordinal ID", SetEnumID("Source Enum ID", "Enum ID", EXMExtHeader."Customer No."))
+                EXMExtHeader.Get(Rec."Extension Code");
+                Rec.Validate("Ordinal ID", SetEnumID(Rec."Source Enum ID", Rec."Enum ID", EXMExtHeader."Customer No."))
             end;
         }
         field(5; "Enum ID"; Integer)
         {
+            BlankZero = true;
             Caption = 'Enum ID', Comment = 'ESP="Id. Enum"';
             DataClassification = OrganizationIdentifiableInformation;
-            BlankZero = true;
 
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
             begin
                 EXMExtHeader.Get("Extension Code");
-                Validate("Ordinal ID", SetEnumID("Source Enum ID", "Enum ID", EXMExtHeader."Customer No."))
+                Rec.Validate("Ordinal ID", SetEnumID(Rec."Source Enum ID", Rec."Enum ID", EXMExtHeader."Customer No."))
             end;
         }
         field(6; "Ordinal ID"; Integer)
@@ -110,8 +110,8 @@ table 83205 "EXM Enum Values"
 
     trigger OnInsert()
     begin
-        "Created by" := CopyStr(UserId(), 1, MaxStrLen("Created by"));
-        "Creation Date" := CurrentDateTime();
+        Rec."Created by" := CopyStr(UserId(), 1, MaxStrLen(Rec."Created by"));
+        Rec."Creation Date" := CurrentDateTime();
 
         ValidateData();
     end;
@@ -119,11 +119,11 @@ table 83205 "EXM Enum Values"
     //TODO Improvement - Look for empty ID
     local procedure SetEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]) EnumValueID: Integer
     var
-        EXMSetup: Record "EXM Extension Setup";
-        EXMExtHeader: Record "EXM Extension Header";
         EXMEnumValues: Record "EXM Enum Values";
-        ExpectedId: Integer;
+        EXMExtHeader: Record "EXM Extension Header";
+        EXMSetup: Record "EXM Extension Setup";
         IsHandled: Boolean;
+        ExpectedId: Integer;
     begin
         EXMSetup.Get();
         If EXMSetup."Disable Auto. Field ID" then
@@ -134,7 +134,7 @@ table 83205 "EXM Enum Values"
         if IsHandled then
             exit(EnumValueID);
 
-        EXMExtHeader.Get("Extension Code");
+        EXMExtHeader.Get(Rec."Extension Code");
         if SourceEnumID = 0 then
             EXMEnumValues.SetCurrentKey("Source Enum ID", "Enum ID", "Ordinal ID")
         else begin
@@ -149,7 +149,7 @@ table 83205 "EXM Enum Values"
         if not EXMEnumValues.IsEmpty() then begin
             if EXMSetup."Find Object ID Gaps" then begin
                 EXMEnumValues.FindSet();
-                if "Source Type" = "Source Type"::Enum then
+                if Rec."Source Type" = Rec."Source Type"::Enum then
                     ExpectedId := 1
                 else
                     ExpectedId := EXMExtHeader."Object Starting ID";
@@ -165,7 +165,7 @@ table 83205 "EXM Enum Values"
                 EnumValueID := EXMEnumValues."Ordinal ID" + 1;
             end;
         end else
-            if "Source Type" = "Source Type"::Enum then
+            if Rec."Source Type" = Rec."Source Type"::Enum then
                 EnumValueID := 1
             else
                 EnumValueID := EXMExtHeader."Object Starting ID";
@@ -179,33 +179,33 @@ table 83205 "EXM Enum Values"
     var
         EXMExtMgt: Codeunit "EXM Extension Management";
     begin
-        case "Source Type" of
-            "Source Type"::Enum:
+        case Rec."Source Type" of
+            Rec."Source Type"::Enum:
                 begin
-                    TestField("Source Enum ID", 0);
-                    TestField("Enum ID");
+                    Rec.TestField("Source Enum ID", 0);
+                    Rec.TestField("Enum ID");
                 end;
-            "Source Type"::"EnumExtension":
+            Rec."Source Type"::"EnumExtension":
                 begin
-                    TestField("Source Enum ID");
-                    TestField("Enum ID");
+                    Rec.TestField("Source Enum ID");
+                    Rec.TestField("Enum ID");
                 end;
         end;
 
-        TestField("Ordinal ID");
-        TestField("Enum Value");
+        Rec.TestField("Ordinal ID");
+        Rec.TestField("Enum Value");
 
-        if "Source Type" = "Source Type"::"EnumExtension" then
-            EXMExtMgt.ValidateExtensionRangeID("Extension Code", "Enum ID");
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer; var IsHandled: Boolean)
-    begin
+        if Rec."Source Type" = Rec."Source Type"::"EnumExtension" then
+            EXMExtMgt.ValidateExtensionRangeID(Rec."Extension Code", Rec."Enum ID");
     end;
 
     [IntegrationEvent(false, false)]
     local procedure OnAfterAssignEnumID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeCalculateEnumValueID(SourceEnumID: Integer; EnumID: Integer; CustNo: Code[20]; var EnumValueID: Integer; var IsHandled: Boolean)
     begin
     end;
 }
