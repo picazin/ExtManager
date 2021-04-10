@@ -37,8 +37,6 @@ Selecting ***"Set up Extension Manager"*** from assisted setup list under list p
 
 ![Assisted setup list](/images/EXM_Assisted_Setup.png)
 
-
-
 Once selected a wizard guides us through the process and ask for all setup data needed in order to work properly.
 
 ![Assisted setup](/images/EXM_Assisted_Setup.gif)

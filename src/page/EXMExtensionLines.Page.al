@@ -44,7 +44,7 @@ page 83202 "EXM Extension Lines"
                 field("Source Object ID"; Rec."Source Object ID")
                 {
                     ApplicationArea = All;
-                    Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile);
+                    Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile) or ("Source Object Type" = "Source Object Type"::Report);
                     ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
                 field("Source Name"; Rec."Source Name")

@@ -181,7 +181,7 @@ table 83203 "EXM Table Fields"
         if not EXMFields.IsEmpty() then begin
             if EXMSetup."Find Object ID Gaps" then begin
                 EXMFields.FindSet();
-                if "Table Source Type" = "Table Source Type"::Table then
+                if Rec."Table Source Type" = Rec."Table Source Type"::Table then
                     ExpectedId := 1
                 else
                     ExpectedId := EXMExtHeader."Object Starting ID";
@@ -197,7 +197,7 @@ table 83203 "EXM Table Fields"
                 FieldID := EXMFields."Field ID" + 1;
             end;
         end else
-            if "Table Source Type" = "Table Source Type"::Table then
+            if Rec."Table Source Type" = Rec."Table Source Type"::Table then
                 FieldID := 1
             else
                 FieldID := EXMExtHeader."Object Starting ID";
