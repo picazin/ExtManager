@@ -99,7 +99,7 @@ page 83203 "EXM Field List"
                 field("Option String"; Rec."Option String")
                 {
                     ApplicationArea = All;
-                    Editable = (Rec."Data Type" = Rec."Data Type"::Option);
+                    Editable = (Rec."Data Type" = Rec."Data Type"::Option) or (Rec."Data Type" = Rec."Data Type"::Enum);
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Option String field', Comment = 'ESP="Especifica el valor del campo Texto opciones"';
                 }

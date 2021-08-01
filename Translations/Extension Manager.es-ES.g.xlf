@@ -786,6 +786,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Tree View - Field Source Object Type - Property OptionCaption</note>
           <target>,Table,,,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, </target>
         </trans-unit>
+        <trans-unit id="Table 237458269 - Field 1099762570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Tipo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table EXM Tree View - Field Type Description - Property Caption</note>
+          <target>Tipo</target>
+        </trans-unit>
         <trans-unit id="Codeunit 245402963 - Method 1858114840 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?</source>
           <note from="Developer" annotates="general" priority="2">ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"</note>
@@ -1416,6 +1422,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2385468214 - Method 716454850 - NamedType 117816908" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Campo"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Method OnOpenPage - NamedType FieldLbl</note>
+          <target>Campo</target>
+        </trans-unit>
         <trans-unit id="Page 2385468214 - Control 460859576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Extension Code field</source>
           <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Cód. extensión"</note>
@@ -1464,12 +1476,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Object Name - Property ToolTip</note>
           <target>Especifica el valor del campo Nombre</target>
         </trans-unit>
-        <trans-unit id="Page 2385468214 - Control 1085746399 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Object Type field</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Object Type - Property ToolTip</note>
-          <target>Especifica el valor del campo Tipo objeto</target>
-        </trans-unit>
         <trans-unit id="Page 2385468214 - Control 1343707150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Name field</source>
           <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre"</note>
@@ -1487,6 +1493,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Source Object Type - Property ToolTip</note>
           <target>Especifica el valor del campo Tipo objeto origen</target>
+        </trans-unit>
+        <trans-unit id="Page 2385468214 - Control 1099762570 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Object Type field</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Tipo objeto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension TreeView - Control Type Description - Property ToolTip</note>
+          <target>Especifica el valor del campo Tipo objeto</target>
         </trans-unit>
         <trans-unit id="Page 2306209299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Activities</source>

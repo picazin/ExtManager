@@ -15,7 +15,7 @@ page 83215 "EXM Extension TreeView"
             repeater(Content1)
             {
                 IndentationColumn = Rec."Indentation";
-                IndentationControls = "Object Type";
+                IndentationControls = "Type Description";
                 ShowAsTree = true;
                 TreeInitialState = ExpandAll;
 
@@ -25,8 +25,7 @@ page 83215 "EXM Extension TreeView"
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
                 }
-
-                field("Object Type"; Rec."Object Type")
+                field("Type Description"; Rec."Type Description")
                 {
                     ApplicationArea = All;
                     StyleExpr = StyleExp;
@@ -99,6 +98,7 @@ page 83215 "EXM Extension TreeView"
         EXMFields: Record "EXM Table Fields";
         LineNo: Integer;
         ObjType: Integer;
+        FieldLbl: Label 'Field', comment = 'ESP="Campo"';
     begin
         if ExtCode <> '' then
             EXMExtHeader.SetRange(Code, ExtCode)
@@ -153,6 +153,7 @@ page 83215 "EXM Extension TreeView"
                         Rec."Source Object Type" := EXMExtLine."Source Object Type";
                         Rec."Source Object ID" := EXMExtLine."Source Object ID";
                         Rec."Source Name" := EXMExtLine."Source Name";
+                        Rec."Type Description" := Format(EXMExtLine."Object Type");
                         Rec.Insert();
 
                         if EXMExtLine."Object Type" in [EXMExtLine."Object Type"::Table, EXMExtLine."Object Type"::"TableExtension"] then begin
@@ -182,6 +183,7 @@ page 83215 "EXM Extension TreeView"
                                     Rec."Source Object Type" := EXMExtLine."Source Object Type";
                                     Rec."Source Object ID" := EXMExtLine."Source Object ID";
                                     Rec."Source Name" := EXMExtLine."Source Name";
+                                    Rec."Type Description" := FieldLbl;
                                     Rec.Insert();
                                 until EXMFields.Next() = 0;
                         end;

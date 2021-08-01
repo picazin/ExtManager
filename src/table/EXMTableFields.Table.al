@@ -80,7 +80,7 @@ table 83203 "EXM Table Fields"
             Caption = 'Data Type', Comment = 'ESP="Tipo datos"';
             DataClassification = OrganizationIdentifiableInformation;
             InitValue = " ";
-            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime," ";
+            OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime,Enum," ";
         }
         field(10; Lenght; Integer)
         {
@@ -98,6 +98,31 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Option String', Comment = 'ESP="Texto opciones"';
             DataClassification = OrganizationIdentifiableInformation;
+
+            trigger OnLookup()
+            var
+                AllObjects: Record AllObjWithCaption;
+                AllObjList: Page "All Objects with Caption";
+            begin
+                if Rec."Data Type" <> Rec."Data Type"::Enum then
+                    exit;
+
+                //if AllObjects.Get(Rec."Source Object Type", Rec."Source Object ID") then
+                //    AllObjList.SetRecord(AllObjects);
+
+                AllObjects.FilterGroup(2);
+                AllObjects.SetRange("Object Type", AllObjects."Object Type"::Enum);
+                AllObjects.FilterGroup(0);
+                if AllObjects.FindSet() then
+                    AllObjList.SetTableView(AllObjects);
+
+                AllObjList.Editable(false);
+                AllObjList.LookupMode(true);
+                if AllObjList.RunModal() = Action::LookupOK then begin
+                    AllObjList.GetRecord(AllObjects);
+                    Rec."Option String" := AllObjects."Object Caption";
+                end;
+            end;
         }
         field(13; Obsolete; Boolean)
         {

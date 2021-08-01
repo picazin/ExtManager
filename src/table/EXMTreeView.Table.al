@@ -69,6 +69,12 @@ table 83209 "EXM Tree View"
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
         }
+        field(12; "Type Description"; Text[250])
+        {
+            Caption = 'Type', Comment = 'ESP="Tipo"';
+            DataClassification = OrganizationIdentifiableInformation;
+        }
+
         field(100; Indentation; Integer)
         {
             Caption = 'Indentation', Comment = 'ESP="Indentación"';
