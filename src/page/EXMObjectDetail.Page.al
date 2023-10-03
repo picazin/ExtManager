@@ -21,7 +21,7 @@ page 83214 "EXM Object Detail"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
@@ -41,7 +41,7 @@ page 83214 "EXM Object Detail"
                 field("Source Name"; Rec."Source Name")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen" ';
+                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen"';
                     Visible = SourceVisible;
                 }
                 field("Total Fields"; Rec."Total Fields")
@@ -88,7 +88,7 @@ page 83214 "EXM Object Detail"
                     EXMFieldList.SetTableView(EXMTableFields);
                     EXMFieldList.LookupMode(true);
                     if EXMFieldList.RunModal() = Action::LookupOK then begin
-                        Rec."Total Fields" := GetTotalFields();
+                        Rec."Total Fields" := Rec.GetTotalFields();
                         CurrPage.Update(true);
                     end;
                 end;
@@ -104,7 +104,7 @@ page 83214 "EXM Object Detail"
                     EXMEnumVal.SetTableView(EXMEnumValues);
                     EXMEnumVal.LookupMode(true);
                     if EXMEnumVal.RunModal() = Action::LookupOK then begin
-                        Rec."Total Fields" := GetTotalFields();
+                        Rec."Total Fields" := Rec.GetTotalFields();
                         CurrPage.Update(true);
                     end;
                 end;

@@ -89,7 +89,7 @@ page 83210 "EXM Enum Values"
             {
                 ApplicationArea = All;
                 Caption = 'View / Hide values', Comment = 'ESP="Ver / ocultar valores"';
-                Enabled = ("Source Type" = "Source Type"::"EnumExtension");
+                Enabled = (Rec."Source Type" = Rec."Source Type"::"EnumExtension");
                 Image = ResetStatus;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -109,7 +109,7 @@ page 83210 "EXM Enum Values"
             {
                 ApplicationArea = All;
                 Caption = 'View source Enum', Comment = 'ESP="Ver Enum origen"';
-                Enabled = ("Source Type" = "Source Type"::"EnumExtension");
+                Enabled = (Rec."Source Type" = Rec."Source Type"::"EnumExtension");
                 Image = Table;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -130,7 +130,7 @@ page 83210 "EXM Enum Values"
 
     trigger OnOpenPage()
     begin
-        IsVisible := not IsTemporary;
+        IsVisible := not Rec.IsTemporary;
         if not IsVisible then
             CurrPage.Editable(false);
     end;
@@ -145,9 +145,9 @@ page 83210 "EXM Enum Values"
         AllObject: Record AllObj;
         EXMExtLine: Record "EXM Extension Lines";
     begin
-        if IsTemporary then begin
+        if Rec.IsTemporary then begin
             AllObject.Get(AllObject."Object Type"::Enum, Rec."Enum ID");
-            exit(Format("Enum ID") + ' ' + AllObject."Object Name");
+            exit(Format(Rec."Enum ID") + ' ' + AllObject."Object Name");
         end;
 
         EXMExtLine.Get(Rec."Extension Code", Rec."Source Line No.");

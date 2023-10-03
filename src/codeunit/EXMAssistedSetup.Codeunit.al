@@ -1,6 +1,6 @@
 codeunit 83203 "EXM Assisted Setup"
 {
-    var
+    /*var
         AssistedSetup: Codeunit "Assisted Setup";
 
     procedure WizardComplete()
@@ -59,5 +59,5 @@ codeunit 83203 "EXM Assisted Setup"
         AssistedSetup.AddTranslation(Page::"EXM Setup Wizard", Language.GetDefaultApplicationLanguageId(), SetupWizardTxt);
         GlobalLanguage(CurrentGlobalLanguage);
         GetInformationSetupStatus();
-    end;
+    end;*/
 }

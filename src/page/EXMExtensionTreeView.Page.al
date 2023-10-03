@@ -137,7 +137,7 @@ page 83215 "EXM Extension TreeView"
                             Rec."Object Type" := EXMExtLine."Object Type";
                             Rec.Insert();
 
-                            ObjType := "Object Type";
+                            ObjType := Rec."Object Type";
                         end;
 
                         LineNo += 1;

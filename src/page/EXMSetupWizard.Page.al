@@ -1,6 +1,6 @@
 page 83212 "EXM Setup Wizard"
 {
-    Caption = 'Extension Manager assisted setup guide', Comment = 'ESP="Asistente configuración gestor extensiones"';
+    /*Caption = 'Extension Manager assisted setup guide', Comment = 'ESP="Asistente configuración gestor extensiones"';
     ContextSensitiveHelpPage = 'README.md';
     DeleteAllowed = false;
     InsertAllowed = false;
@@ -322,5 +322,5 @@ page 83212 "EXM Setup Wizard"
         BackEnabled := true;
         NextEnabled := true;
     end;
+    */
 }
-

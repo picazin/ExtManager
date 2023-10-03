@@ -50,8 +50,6 @@ page 83208 "EXM Headline RC Ext. Manager"
 
     var
         RCHeadlinesPageCommon: Codeunit "EXM RC Headlines Page Common";
-        [InDataSet]
         DefaultFieldsVisible: Boolean;
-        [InDataSet]
         UserGreetingVisible: Boolean;
 }

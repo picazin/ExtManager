@@ -55,7 +55,7 @@ page 83203 "EXM Field List"
                 field(IsPK; Rec.IsPK)
                 {
                     ApplicationArea = All;
-                    Enabled = ("Source Table ID" = 0);
+                    Enabled = (Rec."Source Table ID" = 0);
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Is Part Of Primary Key field', Comment = 'ESP="Especifica el valor del campo Forma parte clave primária"';
                     Visible = PKVisible;
@@ -86,7 +86,7 @@ page 83203 "EXM Field List"
                 field(Lenght; Rec.Lenght)
                 {
                     ApplicationArea = All;
-                    Editable = (("Data Type" = "Data Type"::Text) or ("Data Type" = "Data Type"::Code));
+                    Editable = ((Rec."Data Type" = Rec."Data Type"::Text) or (Rec."Data Type" = Rec."Data Type"::Code));
                     StyleExpr = StyleExp;
                     ToolTip = 'Specifies the value of the Lenght field', Comment = 'ESP="Especifica el valor del campo Longitud"';
                 }

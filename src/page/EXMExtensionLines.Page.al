@@ -44,7 +44,7 @@ page 83202 "EXM Extension Lines"
                 field("Source Object ID"; Rec."Source Object ID")
                 {
                     ApplicationArea = All;
-                    Editable = ("Source Object Type" = "Source Object Type"::Table) or ("Source Object Type" = "Source Object Type"::Page) or ("Source Object Type" = "Source Object Type"::Enum) or ("Source Object Type" = "Source Object Type"::Profile) or ("Source Object Type" = "Source Object Type"::Report);
+                    Editable = (Rec."Source Object Type" = Rec."Source Object Type"::Table) or (Rec."Source Object Type" = Rec."Source Object Type"::Page) or (Rec."Source Object Type" = Rec."Source Object Type"::Enum) or (Rec."Source Object Type" = Rec."Source Object Type"::Profile) or (Rec."Source Object Type" = Rec."Source Object Type"::Report);
                     ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
                 field("Source Name"; Rec."Source Name")
@@ -104,7 +104,7 @@ page 83202 "EXM Extension Lines"
     }
     trigger OnAfterGetRecord()
     begin
-        Rec."Total Fields" := GetTotalFields();
+        Rec."Total Fields" := Rec.GetTotalFields();
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)

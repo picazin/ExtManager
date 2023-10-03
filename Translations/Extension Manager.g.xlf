@@ -663,21 +663,6 @@
           <note from="Developer" annotates="general" priority="2">ESP="Tipo"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table EXM Tree View - Field Type Description - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 1858114840 - NamedType 2007470713" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Setup is already set up. To change settings for it, go to the setup again. Do you want go there now ?</source>
-          <note from="Developer" annotates="general" priority="2">ESP="La configuración se ha realizado. Desea ejecutar nuevamente?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method OnReRunOfCompletedSetup - NamedType AlreadySetUpQst</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 198194196" size-unit="char" translate="yes" xml:space="preserve">
-          <source>EXM need some amazing information from you to make everything works fine!</source>
-          <note from="Developer" annotates="general" priority="2">ESP="EXM necesita pedirte información para funcionar correctamente, Será rápido!!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType InitialEXMSetupDescTxt</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 245402963 - Method 4053452145 - NamedType 2722763728" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set up Extension Manager</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Configurar Gestor Extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit EXM Assisted Setup - Method SetupInitialize - NamedType SetupWizardTxt</note>
-        </trans-unit>
         <trans-unit id="Codeunit 378922342 - Method 3261942589 - NamedType 1374359639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Acording to Microsoft guides, current ID not allowed.Check guide:</source>
           <note from="Developer" annotates="general" priority="2">ESP="ID no permitido según guias de Microsoft. Más información:"</note>
@@ -840,17 +825,17 @@
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 330729858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of Codeunits in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Codeunits en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Codeunits en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Codeunits - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 1245727137 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of EnumExtensions in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº EnumExtensions en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº EnumExtensions en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of EnumExtensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 2917606818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of Enums in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Enums en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Enums en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Enums - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 2344331711 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -860,27 +845,27 @@
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 1103067705 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of PageExtensions in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº PageExtensions en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº PageExtensions en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of PageExtensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 3125457377 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of ProfileExtensions in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº ProfileExtensions en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº ProfileExtensions en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of ProfileExtensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 1319746146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of Profiles in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Profiles en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Profiles en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Profiles - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 1343285977 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of Querys in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Querys en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Querys en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Querys - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 3594050349 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of Reports in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº Informes en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº Informes en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of Reports - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 474168246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -895,7 +880,7 @@
         </trans-unit>
         <trans-unit id="Page 1954438744 - Control 975612191 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shows the No. of XMLports in the extension</source>
-          <note from="Developer" annotates="general" priority="2">ESP ="Muestra el Nº XMLports en la extensión"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Muestra el Nº XMLports en la extensión"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Extension FactBox - Control No. of XMLports - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2608205474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1455,7 +1440,7 @@
         </trans-unit>
         <trans-unit id="Page 2272169128 - Control 1343707150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Name field</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre Origen" </note>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el valor del campo Nombre Origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Object Detail - Control Source Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2272169128 - Control 4264439119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -1622,191 +1607,6 @@
           <source>Related Table Fields</source>
           <note from="Developer" annotates="general" priority="2">ESP="Campos tablas relacionadas"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page EXM Role Center - Action Related Table Fields - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extension Manager assisted setup guide</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Asistente configuración gestor extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 368964769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control FinalPage - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3559045584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You're done! Hope you enjoy this app!!</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Hecho!! Espero que disfrute de esta aplicación!!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ActivationDone - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3882300021 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Click Finish to start managing your extensions.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Pulse Finalizar para empezar a gestionar sus extensiones."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DoneMessage - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3882300021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DoneMessage - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1966572419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control FirstPage - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3800514526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Welcome to Extension Manager Setup</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Bienvenido a la configuración de EXM Gestor Extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Welcome - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 203669508 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>We'll need to ask you for a few things in order to get a proper user experience. Don't worry, it won't take long.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Debemos preguntarle algunas cosas para empezar a trabajar. No sé preocupe, será rápido!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Introduction - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 203669508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Introduction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3647570164 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Choose Next so you can specify Extension Manager information.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Pulse Siguiente para configurar el gestor de extensiones."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Let's go! - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3647570164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Let's go!</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Vamos!!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Let's go! - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2332231641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control MediaStandard - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2237194031 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the MediaResourcesStandard.Media Reference field</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control MediaRef - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1746393414 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Define an Extension Series Nos. in order to assign default extension code when creating new extensions.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Defina un numerador para asignar automaticamente un código al generar una nueva extensión."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control NosSerie - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1746393414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set Extensions Series Nos.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Definir numerador extensiones"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control NosSerie - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3826841295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Extension Nos.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nº série extensión" field</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Extension Nos. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2950281083 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>When retriving data from Business Central how would you like to see objects and fields names?</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Al recuperar datos de Business Central, ¿cómo le gustaría ver los nombres de objetos y campos?"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectNames - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2950281083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Object and Fields names</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nombres de objetos y campos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectNames - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1694956315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Object Names</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nombre objetos" field</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Object Names - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1513475938 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Define if you want do disable automatic objects and fields ID. OPTION NOT RECOMMENDED.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Defina si quiere deshabilitar la asignación automática de ID para objetos y campos. OPCIÓN NO RECOMENDADA."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DisableIDSuggestions - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 1513475938 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Disable automatic IDs</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar IDs automáticos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control DisableIDSuggestions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2192616486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Disable Auto Field ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID campos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Field ID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 819995202 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Disable Auto Objects ID</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Deshabilitar asignación ID objetos"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Disable Auto. Objects ID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2606000766 - Property 1968111052" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Define starting and ending default object IDs for extensions. You can change them in every extension.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Defina IDs iniciales y finales por defecto en las extensiones. Se pueden modificar en cada extensión."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectRange - Property InstructionalText</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 2606000766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set Objects Default IDs</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Definir IDs objetos por defecto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control ObjectRange - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3719745416 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Default Ending Range</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Indicar valor para campo Rango final por defecto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Ending ID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3376224445 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Default Starting Range</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Indicar valor para campo Rango inicial por defecto"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Default Object Starting ID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Control 3657230932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Always find for possible gaps between IDs.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Buscar siempre huecos entre los ID."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Control Find Object ID Gaps - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 2438272767 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Go Back</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Volver atrás"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionBack - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 2438272767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Back</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Atrás"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionBack - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 3259912055 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish setup</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Finalizar la configuración"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionFinish - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 3259912055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Finish</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Finalizar"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionFinish - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 914282563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Move to next page</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Ver siguiente página"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionNext - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 914282563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Next</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Siguiente"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action ActionNext - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 3523525559 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Thanks developer with an small tip.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Agradece al desarrollador con una propina."</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action Donate - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 3523525559 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Donate</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Donar"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action Donate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1798175232 - Action 3523525559 - Method 1377591017 - NamedType 4000782645" size-unit="char" translate="yes" xml:space="preserve">
-          <source>If you are enjoying this extension and want to thank me for my work, please donate.</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Si te ha resultado útil esta extensión y quieres agradecer mi trabajo, por favor, haz un donativo!!"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page EXM Setup Wizard - Action Donate - Method OnAction - NamedType DonateQst</note>
         </trans-unit>
         <trans-unit id="Page 230153975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table Fields</source>
