@@ -15,8 +15,6 @@ page 83207 "EXM Role Center"
             {
                 AccessByPermission = TableData "Report Inbox" = R;
             }
-            part("Power BI Report Spinner Part"; "Power BI Report Spinner Part")
-            { }
             systempart(Control1901377608; MyNotes)
             { }
         }
