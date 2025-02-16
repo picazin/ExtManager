@@ -11,6 +11,7 @@ table 83205 "EXM Enum Values"
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
             TableRelation = "EXM Extension Header";
+            ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Código Extensión"';
             trigger OnValidate()
             var
                 ExtHeader: Record "EXM Extension Header";
@@ -23,6 +24,7 @@ table 83205 "EXM Enum Values"
         {
             Caption = 'Source Line No.', Comment = 'ESP="Nº línea origen"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Source Line No. field', Comment = 'ESP="Especifica el valor del campo Nº línea origen"';
         }
         field(3; "Source Type"; Option)
         {
@@ -30,13 +32,14 @@ table 83205 "EXM Enum Values"
             DataClassification = OrganizationIdentifiableInformation;
             OptionCaption = ',,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",,,,,,,,,,,,,,,,Enum,EnumExtension,,,,,,,,,,,,,,,,,,,,, "';
             OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+            ToolTip = 'Specifies the value of the Source Type field', Comment = 'ESP="Especifica el valor del campo Tipo origen"';
         }
         field(4; "Source Enum ID"; Integer)
         {
             BlankZero = true;
             Caption = 'Source Enum ID', Comment = 'ESP="Id. Enum origen"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Source Enum ID field', Comment = 'ESP="Especifica el valor del campo Id. Enum origen"';
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
@@ -50,7 +53,7 @@ table 83205 "EXM Enum Values"
             BlankZero = true;
             Caption = 'Enum ID', Comment = 'ESP="Id. Enum"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Enum ID field', Comment = 'ESP="Especifica el valor del campo Id. Enum"';
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
@@ -63,11 +66,13 @@ table 83205 "EXM Enum Values"
         {
             Caption = 'Ordinal ID', Comment = 'ESP="Id. ordinal"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Ordinal ID field', Comment = 'ESP="Especifica el valor del campo ID Ordinal"';
         }
         field(7; "Enum Value"; Text[250])
         {
             Caption = 'Enum Value', Comment = 'ESP="Valor Enum"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Enum Value field', Comment = 'ESP="Especifica el valor del campo valor Enum"';
         }
         /*
         field(8; "Enum Caption"; Text[250])
@@ -81,12 +86,14 @@ table 83205 "EXM Enum Values"
             Caption = 'Created by', Comment = 'ESP="Creado por"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica quién creo el registro."';
         }
         field(16; "Creation Date"; DateTime)
         {
             Caption = 'Creation Date', Comment = 'ESP="Fecha creación"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica la fecha de creación del registro."';
         }
         field(17; "Customer No."; Code[20])
         {

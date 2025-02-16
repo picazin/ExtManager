@@ -3,6 +3,7 @@ page 83208 "EXM Headline RC Ext. Manager"
     Caption = 'EXM Extension Manager', Comment = 'ESP="EXM Gestor Extensiones"';
     PageType = HeadlinePart;
     RefreshOnActivate = true;
+    ApplicationArea = All;
 
     layout
     {
@@ -14,7 +15,6 @@ page 83208 "EXM Headline RC Ext. Manager"
                 Visible = UserGreetingVisible;
                 field(GreetingText; RCHeadlinesPageCommon.GetGreetingText())
                 {
-                    ApplicationArea = Basic, Suite;
                     Caption = 'Greeting headline', Comment = 'ESP="Bienvenida!"';
                     Editable = false;
                     ToolTip = 'Welcome message. If pressed opens picazin.dev website', Comment = 'ESP="Mensaje de bienvenida. Visitar picazin.dev si pulsamos."';
@@ -26,7 +26,6 @@ page 83208 "EXM Headline RC Ext. Manager"
                 Visible = DefaultFieldsVisible;
                 field(DocumentationText; RCHeadlinesPageCommon.GetDocumentationText())
                 {
-                    ApplicationArea = Basic, Suite;
                     Caption = 'Documentation headline', Comment = 'ESP="Documentación"';
                     DrillDown = true;
                     Editable = false;

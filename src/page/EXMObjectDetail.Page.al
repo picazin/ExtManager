@@ -4,7 +4,7 @@ page 83214 "EXM Object Detail"
     Editable = false;
     PageType = List;
     SourceTable = "EXM Extension Lines";
-
+    ApplicationArea = All;
     layout
     {
         area(content)
@@ -12,41 +12,26 @@ page 83214 "EXM Object Detail"
             repeater(General)
             {
                 field("Object Type"; Rec."Object Type")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
-                }
+                { }
                 field("Object ID"; Rec."Object ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
-                }
+                { }
                 field(Name; Rec.Name)
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
-                }
+                { }
                 field("Source Object Type"; Rec."Source Object Type")
                 {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                     Visible = SourceVisible;
                 }
                 field("Source Object ID"; Rec."Source Object ID")
                 {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                     Visible = SourceVisible;
                 }
                 field("Source Name"; Rec."Source Name")
                 {
-                    ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen"';
                     Visible = SourceVisible;
                 }
                 field("Total Fields"; Rec."Total Fields")
                 {
-                    ApplicationArea = All;
                     ToolTip = 'Shows the value of the Total fields field', Comment = 'ESP="Especifica el valor del campo Campos relacionados"';
                     Visible = FieldsVisible;
                     trigger OnAssistEdit()
@@ -65,8 +50,7 @@ page 83214 "EXM Object Detail"
     end;
 
     var
-        FieldsVisible: Boolean;
-        SourceVisible: Boolean;
+        FieldsVisible, SourceVisible : Boolean;
 
     local procedure ViewRelatedFields()
     var

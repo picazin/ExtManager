@@ -30,7 +30,7 @@ table 83208 "EXM Extension Dependencies"
             Caption = 'Dependent Ext. Code', comment = 'ESP="Cód. extensión dependiente"';
             DataClassification = SystemMetadata;
             TableRelation = "EXM Extension Header";
-
+            ToolTip = 'Specifies the value of the Dependent Ext. Code field', comment = 'ESP="Especifica el valor del campo Cód. extensión dependiente"';
             trigger OnValidate()
             var
                 ExtHeader: Record "EXM Extension Header";
@@ -72,6 +72,7 @@ table 83208 "EXM Extension Dependencies"
             Caption = 'Dependent Ext. Name', comment = 'ESP="Nombre extensión dependiente"';
             DataClassification = SystemMetadata;
             Editable = false;
+            ToolTip = 'Specifies the value of the Dependent Ext. Name field', comment = 'ESP="Especifica el valor del campo Nombre extensión dependiente"';
         }
     }
     keys

@@ -17,7 +17,7 @@ table 83207 "EXM Related Lines"
             DataClassification = OrganizationIdentifiableInformation;
             NotBlank = true;
             TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
-
+            ToolTip = 'Specifies the value of the Table ID field', comment = 'ESP="Especifica el valor del campo ID Tabla"';
             trigger OnValidate()
             var
                 ExtMngt: Codeunit "EXM Extension Management";
@@ -31,6 +31,7 @@ table 83207 "EXM Related Lines"
             Caption = 'Name', comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Name field', comment = 'ESP="Especifica el valor del campo Nombre"';
         }
     }
     keys

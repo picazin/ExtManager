@@ -29,7 +29,7 @@ table 83202 "EXM Extension Lines"
             InitValue = " ";
             OptionCaption = ',Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,ReportExtension,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,,,,,PageExtension,TableExtension,Enum,EnumExtension,Profile,ProfileExtension,ReportExtension,,,,,,,,,,,,,,,,,, "';
             OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension","ReportExtension",,,,,,,,,,,,,,,,,," ";
-
+            ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
@@ -59,7 +59,7 @@ table 83202 "EXM Extension Lines"
             Caption = 'Object ID', Comment = 'ESP="ID objeto"';
             DataClassification = OrganizationIdentifiableInformation;
             NotBlank = true;
-
+            ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
             trigger OnValidate()
             begin
                 if (xRec."Object ID" <> Rec."Object ID") then
@@ -70,6 +70,7 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
         }
         field(6; "Source Object Type"; Option)
         {
@@ -78,7 +79,7 @@ table 83202 "EXM Extension Lines"
             InitValue = " ";
             OptionCaption = ',Table,,Report,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,Report,,,,,Page,,,,,,,,Enum,,Profile,,,,,,,,,,,,,,,,,,,, "';
             OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension","ReportExtension",,,,,,,,,,,,,,,,,," ";
-
+            ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
             trigger OnValidate()
             var
                 NotAllowedValueErr: Label 'Source value not allowed.', Comment = 'ESP="Valor no permitido"';
@@ -104,7 +105,7 @@ table 83202 "EXM Extension Lines"
             BlankZero = true;
             Caption = 'Source Object ID', Comment = 'ESP="ID objeto origen"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
             trigger OnValidate()
             var
                 AllObjects: Record AllObjWithCaption;
@@ -179,6 +180,7 @@ table 83202 "EXM Extension Lines"
         {
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Source Name field', Comment = 'ESP="Especifica el valor del campo Nombre Origen"';
         }
 
         field(10; "Total Fields"; Integer)
@@ -187,23 +189,27 @@ table 83202 "EXM Extension Lines"
             Caption = 'Total fields', Comment = 'ESP="Campos relacionados"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Shows Total related fields'', Comment = ''ESP="Muestra el total de Campos relacionados"';
         }
         field(11; Obsolete; Boolean)
         {
             Caption = 'Obsolete', Comment = 'ESP="Obsoleto"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
         }
         field(12; "Created by"; Code[50])
         {
             Caption = 'Created by', Comment = 'ESP="Creado por"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
         }
         field(13; "Creation Date"; DateTime)
         {
             Caption = 'Creation Date', Comment = 'ESP="Fecha creación"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica el valor del campo Fecha creación"';
         }
         field(14; "Customer No."; Code[20])
         {

@@ -9,11 +9,13 @@ table 83201 "EXM Extension Header"
         {
             Caption = 'Code', Comment = 'ESP="Código"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Code field', Comment = 'ESP="Especifica el valor del campo Código"';
         }
         field(2; Description; Text[100])
         {
             Caption = 'Description', Comment = 'ESP="Descripción"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Description field', Comment = 'ESP="Especifica el valor del campo Descripción"';
         }
         field(3; Type; Option)
         {
@@ -21,6 +23,7 @@ table 83201 "EXM Extension Header"
             DataClassification = OrganizationIdentifiableInformation;
             OptionCaption = 'Internal,External', Comment = 'ESP="Interna,Externa"';
             OptionMembers = Internal,External;
+            ToolTip = 'Specifies the value of the Type field', Comment = 'ESP="Especifica el valor del campo Tipo"';
             trigger OnValidate()
             begin
                 if (xRec.Type <> Rec.Type) and (Rec.Type = Rec.Type::Internal) then begin
@@ -35,6 +38,7 @@ table 83201 "EXM Extension Header"
             BlankZero = true;
             Caption = 'Object Starting ID', Comment = 'ESP="Inicio ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Starting No. field', Comment = 'ESP="Especifica el valor del campo Nº inicial"';
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
@@ -54,6 +58,7 @@ table 83201 "EXM Extension Header"
             BlankZero = true;
             Caption = 'Object Ending ID', Comment = 'ESP="Final ID objetos"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Ending No. field', Comment = 'ESP="Especifica el valor del campo Nº final"';
             trigger OnValidate()
             var
                 EXMExtMgt: Codeunit "EXM Extension Management";
@@ -74,6 +79,7 @@ table 83201 "EXM Extension Header"
             Caption = 'Customer No.', Comment = 'ESP="Nº Cliente"';
             DataClassification = OrganizationIdentifiableInformation;
             TableRelation = Customer;
+            ToolTip = 'Specifies the value of the Customer No. field', Comment = 'ESP="Especifica el valor del campo Nº Cliente"';
             trigger OnValidate()
             var
                 Cust: Record Customer;
@@ -95,11 +101,13 @@ table 83201 "EXM Extension Header"
             Caption = 'Name', Comment = 'ESP="Nombre"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
         }
         field(8; "App Version"; Code[20])
         {
             Caption = 'App Version', Comment = 'ESP="Versión App"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the App Version field', Comment = 'ESP="Especifica el valor del campo Versión App"';
         }
         field(9; "App File"; Blob)
         {
@@ -112,6 +120,7 @@ table 83201 "EXM Extension Header"
             Caption = 'Dependencies', Comment = 'ESP="Dependencias"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Specifies the value of the Dependencies field', Comment = 'ESP="Especifica el valor del campo Dependencias"';
         }
 
         field(20; Price; Decimal)
@@ -155,6 +164,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Tables', Comment = 'ESP="Nº Tablas"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Tables in the extension', Comment = 'ESP="Muestra el Nº Tablas en la extensión"';
         }
         field(26; "No. of Reports"; Integer)
         {
@@ -162,6 +172,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Reports', Comment = 'ESP="Nº Informes"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Reports in the extension', Comment = 'ESP="Muestra el Nº Informes en la extensión"';
         }
         field(27; "No. of Codeunits"; Integer)
         {
@@ -169,6 +180,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Codeunits', Comment = 'ESP="Nº Codeunits"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Codeunits in the extension', Comment = 'ESP="Muestra el Nº Codeunits en la extensión"';
         }
         field(28; "No. of XMLports"; Integer)
         {
@@ -176,6 +188,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of XMLports', Comment = 'ESP="Nº XMLports"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of XMLports in the extension', Comment = 'ESP="Muestra el Nº XMLports en la extensión"';
         }
         field(29; "No. of Page"; Integer)
         {
@@ -183,6 +196,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Pages', Comment = 'ESP="Nº Pages"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Pages in the extension', Comment = 'ESP="Muestra el Nº Pages en la extensión"';
         }
         field(30; "No. of Querys"; Integer)
         {
@@ -190,6 +204,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Querys', Comment = 'ESP="Nº Querys"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Querys in the extension', Comment = 'ESP="Muestra el Nº Querys en la extensión"';
         }
         field(31; "No. of PageExtensions"; Integer)
         {
@@ -197,6 +212,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of PageExtensions', Comment = 'ESP="Nº PageExtensions"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of PageExtensions in the extension', Comment = 'ESP="Muestra el Nº PageExtensions en la extensión"';
         }
         field(32; "No. of TableExtensions"; Integer)
         {
@@ -204,6 +220,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of TableExtensions', Comment = 'ESP="Nº TableExtensions"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of TableExtensions in the extension', Comment = 'ESP="Muestra el Nº TableExtensions en la extensión"';
         }
         field(33; "No. of Enums"; Integer)
         {
@@ -211,6 +228,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Enums', Comment = 'ESP="Nº Enums"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Enums in the extension', Comment = 'ESP="Muestra el Nº Enums en la extensión"';
         }
         field(34; "No. of EnumExtensions"; Integer)
         {
@@ -218,6 +236,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of EnumExtensions', Comment = 'ESP="Nº EnumExtensions"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of EnumExtensions in the extension', Comment = 'ESP="Muestra el Nº EnumExtensions en la extensión"';
         }
         field(35; "No. of Profiles"; Integer)
         {
@@ -225,6 +244,7 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of Profiles', Comment = 'ESP="Nº Profiles"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of Profiles in the extension', Comment = 'ESP="Muestra el Nº Profiles en la extensión"';
         }
         field(36; "No. of ProfileExtensions"; Integer)
         {
@@ -232,12 +252,14 @@ table 83201 "EXM Extension Header"
             Caption = 'No. of ProfileExtensions', Comment = 'ESP="Nº ProfileExtensions"';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Shows the No. of ProfileExtensions in the extension', Comment = 'ESP="Muestra el Nº ProfileExtensions en la extensión"';
         }
         field(50; "GIT Repository URL"; Text[2048])
         {
             Caption = 'GIT Repository URL', Comment = 'ESP="URL repositorio GIT"';
             DataClassification = OrganizationIdentifiableInformation;
             ExtendedDatatype = URL;
+            ToolTip = 'Specifies the value of the GIT Repository URL field', Comment = 'ESP="Especifica el valor del campo URL repositorio GIT"';
         }
     }
 
@@ -342,7 +364,7 @@ table 83201 "EXM Extension Header"
     procedure InitRecord()
     var
         ExtSetup: Record "EXM Extension Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
     begin
         ExtSetup.Get();
         if Rec."Code" = '' then

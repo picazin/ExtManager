@@ -11,6 +11,7 @@ table 83203 "EXM Table Fields"
             Caption = 'Extension Code', Comment = 'ESP="Cód. extensión"';
             DataClassification = OrganizationIdentifiableInformation;
             TableRelation = "EXM Extension Header";
+            ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
             trigger OnValidate()
             var
                 ExtHeader: Record "EXM Extension Header";
@@ -23,6 +24,7 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Source Line No.', Comment = 'ESP="Nº línea origen"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Source Line No. field', Comment = 'ESP="Especifica el valor del campo Nº línea origen"';
         }
         field(3; "Table Source Type"; Option)
         {
@@ -30,13 +32,14 @@ table 83203 "EXM Table Fields"
             DataClassification = OrganizationIdentifiableInformation;
             OptionCaption = ',Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, ', Comment = 'ESP=",Table,,,,,,,,,,,,,,TableExt,,,,,,,,,,,,,,,,,,,,,,, "';
             OptionMembers = "TableData","Table",,"Report",,"Codeunit","XMLport","MenuSuite","Page","Query","System","FieldNumber",,,"PageExtension","TableExtension","Enum","EnumExtension","Profile","ProfileExtension",,,,,,,,,,,,,,,,,,," ";
+            ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
         }
         field(4; "Source Table ID"; Integer)
         {
             BlankZero = true;
             Caption = 'Source Table ID', Comment = 'ESP="Id. tabla origen"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Source Table ID field', Comment = 'ESP="Especifica el valor del campo Id. tabla origen"';
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
@@ -50,7 +53,7 @@ table 83203 "EXM Table Fields"
             BlankZero = true;
             Caption = 'Table ID', Comment = 'ESP="Id. tabla"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Table ID field', Comment = 'ESP="Especifica el valor del campo Id. tabla"';
             trigger OnValidate()
             var
                 EXMExtHeader: Record "EXM Extension Header";
@@ -64,16 +67,19 @@ table 83203 "EXM Table Fields"
             BlankZero = true;
             Caption = 'Field ID', Comment = 'ESP="Id. campo"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Field ID field', Comment = 'ESP="Especifica el valor del campo Id. campo"';
         }
         field(7; "Field Name"; Text[30])
         {
             Caption = 'Field Name', Comment = 'ESP="Nombre de campo"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Field Name field', Comment = 'ESP="Especifica el valor del campo Nombre de campo"';
         }
         field(8; "Field Caption"; Text[250])
         {
             Caption = 'Field Caption', Comment = 'ESP="Título campo"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Field Caption field', Comment = 'ESP="Especifica el valor del campo Título campo"';
         }
         field(9; "Data Type"; Option)
         {
@@ -81,24 +87,27 @@ table 83203 "EXM Table Fields"
             DataClassification = OrganizationIdentifiableInformation;
             InitValue = " ";
             OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime,Enum," ";
+            ToolTip = 'Specifies the value of the Data Type field', Comment = 'ESP="Especifica el valor del campo Tipo datos"';
         }
         field(10; Lenght; Integer)
         {
             BlankZero = true;
             Caption = 'Lenght', Comment = 'ESP="Longitud"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Lenght field', Comment = 'ESP="Especifica el valor del campo Longitud"';
         }
         field(11; "Field Class"; Option)
         {
             Caption = 'Field Class', Comment = 'ESP="Clase campo"';
             DataClassification = OrganizationIdentifiableInformation;
             OptionMembers = Normal,FlowField,FlowFilter;
+            ToolTip = 'Specifies the value of the Field Class field', Comment = 'ESP="Especifica el valor del campo Clase campo"';
         }
         field(12; "Option String"; Text[250])
         {
             Caption = 'Option String', Comment = 'ESP="Texto opciones"';
             DataClassification = OrganizationIdentifiableInformation;
-
+            ToolTip = 'Specifies the value of the Option String field', Comment = 'ESP="Especifica el valor del campo Texto opciones"';
             trigger OnLookup()
             var
                 AllObjects: Record AllObjWithCaption;
@@ -128,18 +137,21 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Obsolete', Comment = 'ESP="Obsoleto"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Obsolete field', Comment = 'ESP="Especifica el valor del campo Obsoleto"';
         }
         field(14; "Created by"; Code[50])
         {
             Caption = 'Created by', Comment = 'ESP="Creado por"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Created by field', Comment = 'ESP="Especifica el valor del campo Creado por"';
         }
         field(15; "Creation Date"; DateTime)
         {
             Caption = 'Creation Date', Comment = 'ESP="Fecha creación"';
             DataClassification = OrganizationIdentifiableInformation;
             Editable = false;
+            ToolTip = 'Specifies the value of the Creation Date field', Comment = 'ESP="Especifica el valor del campo Fecha creación"';
         }
         field(16; "Customer No."; Code[20])
         {
@@ -151,6 +163,7 @@ table 83203 "EXM Table Fields"
         {
             Caption = 'Is Part Of Primary Key', Comment = 'ESP="Forma parte clave primária"';
             DataClassification = OrganizationIdentifiableInformation;
+            ToolTip = 'Specifies the value of the Is Part Of Primary Key field', Comment = 'ESP="Especifica el valor del campo Forma parte clave primária"';
         }
 
     }

@@ -2,7 +2,7 @@
   "id": "b9954c96-ee6b-44ff-9b0d-3d8146fc034a",
   "name": "Extension Manager",
   "publisher": "picazin dev",
-  "version": "0.3.23.0",
+  "version": "0.3.3.0",
   "brief": "Manager for developing extensions.",
   "description": "Manage your extension data. Development status. Customers, invoicing and all related data.",
   "privacyStatement": "http://www.picazin.dev",
@@ -10,14 +10,14 @@
   "help": "https://github.com/picazin/ExtManager/blob/master/README.md",
   "url": "http://www.picazin.dev",
   "logo": "./src/logo/extmanager.png",
-  "platform": "22.0.0.0",
-  "application": "22.0.0.0",
+  "platform": "25.0.0.0",
+  "application": "25.0.0.0",
   "screenshots": [],
-  "features": [ "TranslationFile","NoImplicitWith"],
+  "features": [ "TranslationFile","NoImplicitWith","NoPromotedActionProperties"],
   "idRanges": [
     {
       "from": 83200,
-      "to": 834399
+      "to": 83399
     }
   ],
   "contextSensitiveHelpUrl": "https://github.com/picazin/ExtManager/blob/master/README.md",
@@ -27,5 +27,5 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "11.0"
+  "runtime": "14.0"
 }

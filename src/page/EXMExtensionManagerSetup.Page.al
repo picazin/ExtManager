@@ -16,44 +16,23 @@ page 83205 "EXM Extension Manager Setup"
             {
                 Caption = 'General', Comment = 'ESP="General"';
                 field("Extension Nos."; Rec."Extension Nos.")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Extension Nos. field', Comment = 'ESP="Especifica el valor del campo Nº série extensión"';
-                }
+                { }
                 field("Object Names"; Rec."Object Names")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Object Names field', Comment = 'ESP="Especifica el valor del campo Nombre objetos"';
-                }
+                { }
                 field("Default Object Starting ID"; Rec."Default Object Starting ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Default Starting Range field', Comment = 'ESP="Especifica el valor del campo Rango inicial por defecto."';
-                }
+                { }
                 field("Default Object Ending ID"; Rec."Default Object Ending ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Default Ending Range field', Comment = 'ESP="Especifica el valor del campo Rango final por defecto"';
-                }
+                { }
                 field("Find Object ID Gaps"; Rec."Find Object ID Gaps")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Always find for possible gaps between IDs.', comment = 'ESP="Buscar siempre huecos entre los ID."';
-                }
+                { }
             }
             group(Advanced)
             {
                 Caption = 'Advanced Options', Comment = 'ESP="Opciones avanzadas"';
                 field("Disable Auto. Objects ID"; Rec."Disable Auto. Objects ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Allow to disable automatic ID assginment for Objects', Comment = 'ESP="Permite deshabilitar la asignación de ID a los objetos"';
-                }
+                { }
                 field("Disable Auto. Field ID"; Rec."Disable Auto. Field ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Allow to disable automatic ID assginment for Fields', Comment = 'ESP="Permite deshabilitar la asignación del ID  a los campos"';
-                }
+                { }
             }
         }
     }
@@ -66,10 +45,6 @@ page 83205 "EXM Extension Manager Setup"
                 ApplicationArea = All;
                 Caption = 'Donate', Comment = 'ESP="Donar"';
                 Image = Payment;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                PromotedOnly = true;
                 ToolTip = 'Thanks developer with an small tip.', Comment = 'ESP="Agradece al desarrollador con una propina."';
 
                 trigger OnAction()
@@ -79,6 +54,15 @@ page 83205 "EXM Extension Manager Setup"
                     if Confirm(DonateQst, true) then
                         Hyperlink('https://paypal.me/picazin');
                 end;
+            }
+        }
+        area(Promoted)
+        {
+            group(Category_Process)
+            {
+                actionref(Donate_Promoted; Donate)
+                {
+                }
             }
         }
     }

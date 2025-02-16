@@ -2,32 +2,23 @@ page 83207 "EXM Role Center"
 {
     Caption = 'EXtension Manager', Comment = 'ESP="Gestor Extensiones"';
     PageType = RoleCenter;
-
+    ApplicationArea = All;
     layout
     {
         area(RoleCenter)
         {
             part(Headline; "EXM Headline RC Ext. Manager")
-            {
-                ApplicationArea = All;
-            }
+            { }
             part(Activities; "EXM Extensions Activities")
-            {
-                ApplicationArea = Basic, Suite;
-            }
+            { }
             part("Report Inbox Part"; "Report Inbox Part")
             {
                 AccessByPermission = TableData "Report Inbox" = R;
-                ApplicationArea = Basic, Suite;
             }
             part("Power BI Report Spinner Part"; "Power BI Report Spinner Part")
-            {
-                ApplicationArea = Basic, Suite;
-            }
+            { }
             systempart(Control1901377608; MyNotes)
-            {
-                ApplicationArea = Basic, Suite;
-            }
+            { }
         }
     }
 
@@ -37,7 +28,6 @@ page 83207 "EXM Role Center"
         {
             action(EXMExtensionCard)
             {
-                ApplicationArea = Basic, Suite;
                 Caption = 'New extension', Comment = 'ESP="Nueva extensión"';
                 Image = New;
                 RunObject = Page "EXM Extension Header";
@@ -46,7 +36,6 @@ page 83207 "EXM Role Center"
             }
             action(RelatedTables)
             {
-                ApplicationArea = Basic, Suite;
                 Caption = 'New table group', Comment = 'ESP="Nuevo grupo de tablas"';
                 Image = New;
                 RunObject = Page "EXM Related Data";
@@ -58,14 +47,12 @@ page 83207 "EXM Role Center"
         {
             action(EXMExtensionList)
             {
-                ApplicationArea = Basic, Suite;
                 Caption = 'Extensions', Comment = 'ESP="Extensiones"';
                 RunObject = Page "EXM Extension List";
                 ToolTip = 'View all extensions', Comment = 'ESP="Ver extensiones"';
             }
             action(Customers)
             {
-                ApplicationArea = Basic, Suite;
                 Caption = 'Customers', Comment = 'ESP="Clientes"';
                 Image = Customer;
                 RunObject = Page "Customer List";
@@ -73,7 +60,6 @@ page 83207 "EXM Role Center"
             }
             action(TreeView)
             {
-                ApplicationArea = Basic, Suite;
                 Caption = 'Extensions Tree View', Comment = 'ESP="Vista arbol extensiones"';
                 Image = Customer;
                 RunObject = Page "EXM Extension TreeView";

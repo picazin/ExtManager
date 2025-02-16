@@ -7,6 +7,8 @@ page 83215 "EXM Extension TreeView"
     PageType = List;
     SourceTable = "EXM Tree View";
     SourceTableTemporary = true;
+    ApplicationArea = All;
+
 
     layout
     {
@@ -21,70 +23,48 @@ page 83215 "EXM Extension TreeView"
 
                 field("Extension Code"; Rec."Extension Code")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Extension Code field', Comment = 'ESP="Especifica el valor del campo Cód. extensión"';
                 }
                 field("Type Description"; Rec."Type Description")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto"';
                 }
                 field("Object ID"; Rec."Object ID")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto"';
                 }
                 field("Object Name"; Rec."Object Name")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
                 field("Field ID"; Rec."Field ID")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Field Id field', Comment = 'ESP="Especifica el valor del campo ID Campo"';
                 }
                 field("Field Name"; Rec."Field Name")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Field Name field', Comment = 'ESP="Especifica el valor del campo Nombre Campo"';
                 }
                 field("Field Data Type"; Rec."Field Data Type")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Field Data Type field', Comment = 'ESP="Especifica el valor del campo Tipo Dato Campo"';
                 }
                 field("Source Object ID"; Rec."Source Object ID")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Source Object ID field', Comment = 'ESP="Especifica el valor del campo ID objeto origen"';
                 }
                 field("Source Object Type"; Rec."Source Object Type")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Source Object Type field', Comment = 'ESP="Especifica el valor del campo Tipo objeto origen"';
                 }
                 field("Source Name"; Rec."Source Name")
                 {
-                    ApplicationArea = All;
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Name field', Comment = 'ESP="Especifica el valor del campo Nombre"';
                 }
                 field(Indentation; Rec.Indentation)
                 {
-                    ApplicationArea = All;
                     Caption = 'Level', Comment = 'ESP="Nivel"';
                     StyleExpr = StyleExp;
-                    ToolTip = 'Specifies the value of the Level field', Comment = 'ESP="Especifica el valor del campo Nivel"';
                     Visible = false;
                 }
             }

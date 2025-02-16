@@ -5,7 +5,7 @@ page 83219 "EXM Extension Dependencies"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "EXM Extension Dependencies";
-
+    ApplicationArea = All;
     layout
     {
         area(content)
@@ -13,15 +13,9 @@ page 83219 "EXM Extension Dependencies"
             repeater(General)
             {
                 field("Dependent Ext. Code"; Rec."Dependent Ext. Code")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Dependent Ext. Code field', comment = 'ESP="Especifica el valor del campo Cód. extensión dependiente"';
-                }
+                { }
                 field("Dependent Ext. Name"; Rec."Dependent Ext. Name")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Dependent Ext. Name field', comment = 'ESP="Especifica el valor del campo Nombre extensión dependiente"';
-                }
+                { }
             }
         }
     }
